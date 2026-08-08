@@ -80,7 +80,7 @@ export function MobileNavigation({ open, onClose, triggerRef }: Props) {
       animate={{ opacity: 1, y: 0 }}
       exit={reduce ? undefined : { opacity: 0, y: -6 }}
       transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-      className="fixed inset-x-0 bottom-0 top-14 z-40 overflow-y-auto border-t border-border-subtle bg-bg lg:hidden"
+      className="fixed inset-x-0 bottom-0 top-14 z-50 overflow-y-auto border-t border-border-subtle bg-bg lg:hidden"
     >
       <div className="container-site space-y-1 py-4 pb-10">
         <MobileDisclosure title="Platform" defaultOpen>
