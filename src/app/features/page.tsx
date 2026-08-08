@@ -165,9 +165,9 @@ export default function FeaturesPage() {
               <FeatureRow name="Posts & Checkpoints" purpose="Patrol and inspection points." stage="foundation" />
               <FeatureRow name="Assets" purpose="Equipment and resource registration." stage="development" />
               <FeatureRow name="Emergency Contacts" purpose="Object-level emergency context." stage="foundation" />
-              <FeatureRow name="Documents" purpose="Object-linked documentation." stage="foundation" />
+              <FeatureRow name="Documents" purpose="Object-linked documentation." stage="development" />
               <FeatureRow name="Object History" purpose="Historical operational context per object." stage="development" />
-              <FeatureRow name="Requirements & Risks" purpose="Site-specific instructions and risk notes." stage="foundation" />
+              <FeatureRow name="Requirements & Risks" purpose="Site-specific instructions and risk notes." stage="development" />
               <FeatureRow name="Escalation Procedures" purpose="Object-linked escalation paths." stage="development" />
               <FeatureRow name="Patrol Routes" purpose="Route definitions across checkpoints." stage="planned" />
               <FeatureRow name="Resources" purpose="Object-linked operational resources." stage="planned" />
@@ -209,7 +209,7 @@ export default function FeaturesPage() {
               <FeatureRow name="Availability" purpose="Duty availability context." stage="development" />
               <FeatureRow name="Scheduling Foundations" purpose="Shift planning foundations." stage="planned" />
               <FeatureRow name="Team Management" purpose="Team structure for operational coordination." stage="development" />
-              <FeatureRow name="Assignments" purpose="Link personnel to objects and shifts." stage="foundation" />
+              <FeatureRow name="Assignments" purpose="Link personnel to objects and shifts." stage="development" />
             </div>
           </div>
         </div>

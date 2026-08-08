@@ -54,7 +54,7 @@ const PILLARS: Pillar[] = [
       "Action recorded",
     ],
     connected: ["People", "Objects", "Reporting", "Compliance"],
-    outcome: "Live operational control with recorded handovers and clear accountability.",
+    outcome: "Centralized operational control with recorded handovers and clear accountability.",
   },
   {
     id: "reporting",

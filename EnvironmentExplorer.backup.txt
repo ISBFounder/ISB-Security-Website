@@ -4,7 +4,6 @@ import {
   useState,
   useRef,
   useCallback,
-  useEffect,
   type KeyboardEvent as RKEvent,
 } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
@@ -534,27 +533,6 @@ export function EnvironmentExplorer() {
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
   const reduce = useReducedMotion();
   const current = ENVS.find((e) => e.id === active)!;
-  useEffect(() => {
-  const hash = window.location.hash.replace("#", "");
-
-  const map: Record<string, EnvId> = {
-    "object-security": "object",
-    "mobile-patrol": "mobile",
-    "event-security": "event",
-    retail: "retail",
-    corporate: "corporate",
-    healthcare: "healthcare",
-    education: "education",
-    government: "government",
-    "security-companies": "object",
-  };
-
-  const target = map[hash];
-
-  if (target) {
-    setActive(target);
-  }
-}, []);
 
   const select = useCallback((id: EnvId, i: number) => {
     setActive(id);
