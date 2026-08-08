@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  ISB Security Solutions — Global design system
+  Institutional · Enterprise · Architectural
+*/
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-bg font-sans text-base text-ink;
+  }
+
+  ::selection {
+    background: rgba(198, 161, 91, 0.28);
+    color: #fff;
+  }
+
+  /* Clear focus — gold ring on dark surfaces, WCAG-visible */
+  :focus-visible {
+    outline: 2px solid #c6a15b;
+    outline-offset: 2px;
+  }
+
+  /* Default heading face */
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* ——— Layout width ——— */
+  .container-site {
+    @apply mx-auto w-full max-w-content px-5 sm:px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply mx-auto w-full max-w-wide px-5 sm:px-6 lg:px-8;
+  }
+
+  .container-narrow {
+    @apply mx-auto w-full max-w-narrow px-5 sm:px-6;
+  }
+
+  .text-measure {
+    @apply max-w-prose;
+  }
+
+  /* ——— Section rhythm ——— */
+  .section {
+    @apply py-16 md:py-22 lg:py-30;
+  }
+
+  .section-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  .section-lg {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  /* ——— Typography scale ——— */
+  .display-xl {
+    @apply font-display text-[2.25rem] font-semibold tracking-tighter text-ink sm:text-[2.75rem] lg:text-display-xl;
+  }
+
+  .display-l {
+    @apply font-display text-[2rem] font-semibold tracking-tighter text-ink sm:text-[2.35rem] lg:text-display-l;
+  }
+
+  .heading-xl {
+    @apply font-display text-[2rem] font-semibold tracking-tighter text-ink sm:text-h1 lg:text-display-l;
+  }
+
+  .heading-lg {
+    @apply font-display text-h2 font-semibold tracking-tight text-ink md:text-[2rem] lg:text-h1;
+  }
+
+  .heading-md {
+    @apply font-display text-h3 font-semibold tracking-tight text-ink md:text-h2;
+  }
+
+  .heading-sm {
+    @apply font-display text-h4 font-semibold tracking-tight text-ink;
+  }
+
+  .body-lg {
+    @apply text-base leading-relaxed text-ink-secondary sm:text-lg;
+  }
+
+  .body {
+    @apply text-base leading-relaxed text-ink-secondary;
+  }
+
+  .body-sm {
+    @apply text-sm leading-relaxed text-ink-muted;
+  }
+
+  .caption {
+    @apply text-caption text-ink-muted;
+  }
+
+  /* Technical / system labels — mono, uppercase, restrained gold */
+  .label {
+    @apply font-mono text-label font-medium uppercase text-gold;
+  }
+
+  .label-muted {
+    @apply font-mono text-label font-medium uppercase text-ink-muted;
+  }
+
+  /* ——— Surfaces ——— */
+  .divider {
+    @apply border-t border-border-subtle;
+  }
+
+  .panel {
+    @apply border border-border bg-surface shadow-panel;
+  }
+
+  .panel-elevated {
+    @apply border border-border bg-surface-elevated shadow-elevated;
+  }
+
+  .panel-flat {
+    @apply border border-border-subtle bg-surface;
+  }
+
+  /* ——— A11y ——— */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-gold focus:px-4 focus:py-2 focus:font-sans focus:text-sm focus:font-medium focus:text-bg focus:outline-none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Restrained scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #070809;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a3037;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a424c;
+}
