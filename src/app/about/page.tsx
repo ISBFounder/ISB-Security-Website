@@ -9,19 +9,19 @@ import { breadcrumbJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "About ISB Security Solutions",
   description:
-    "Why ISB Security Solutions exists — operational origin, mission, vision, modular strategy and European focus for professional security software.",
+    "ISB Security Solutions builds an enterprise security operations platform with an established foundation and expanding capabilities — operational origin, modular strategy and European focus.",
   alternates: { canonical: `${SITE.url}/about` },
   openGraph: {
     title: `About ISB Security Solutions | ${SITE.name}`,
     description:
-      "Why ISB Security Solutions exists — operational origin, mission, vision, modular strategy and European focus for professional security software.",
+      "Enterprise security operations platform with an established foundation and expanding capabilities for professional security organizations.",
     url: `${SITE.url}/about`,
   },
   twitter: {
     card: "summary_large_image",
     title: `About ISB Security Solutions | ${SITE.name}`,
     description:
-      "Why ISB Security Solutions exists — operational origin, mission, vision, modular strategy and European focus for professional security software.",
+      "Enterprise security operations platform with an established foundation and expanding capabilities.",
   },
 };
 
@@ -67,12 +67,14 @@ export default function AboutPage() {
           <div className="max-w-3xl">
             <p className="label">About ISB</p>
             <h1 className="heading-xl mt-3">
-              Built from the operational reality of security work.
+              Enterprise security operations platform with an established foundation.
             </h1>
             <p className="body-lg mt-6 max-w-2xl">
-              ISB Security Solutions was founded around a simple operational
-              observation: critical security work is still too often spread across
-              paper, spreadsheets, messaging tools and disconnected systems.
+              ISB Security Solutions builds an enterprise security operations
+              platform with an established operational foundation and continuously
+              expanding capabilities — conceived from the reality that critical
+              security work is still too often spread across paper, spreadsheets,
+              messaging tools and disconnected systems.
             </p>
           </div>
         </div>
@@ -168,7 +170,7 @@ export default function AboutPage() {
           </div>
           <p className="mt-4 max-w-2xl text-[13px] text-ink-muted">
             An architectural company principle: domains expand without rebuilding
-            identity, permissions, tenant boundaries or audit foundations.
+            identity, permissions, tenant isolation, document security and audit foundations.
           </p>
         </div>
       </section>
@@ -239,35 +241,37 @@ export default function AboutPage() {
           <SectionHeader
             align="left"
             eyebrow="Modular strategy"
-            title="Core foundation. Security domains. Future expansion."
+            title="Established foundation. Active expansion. Future intelligence."
           />
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             <div className="border border-border bg-surface/30 p-5">
               <p className="font-mono text-[10px] uppercase tracking-wider text-gold">
-                Core foundation
+                Established foundation
               </p>
               <p className="mt-3 text-[13px] text-ink-secondary">
-                Identity · Permissions · Tenant context · Audit · Notifications ·
-                Data context
+                Multi-tenant architecture · Authentication · RBAC · RLS · Tenant
+                isolation · Object hierarchy · Document lifecycle · Reporting
+                foundation · Auditability
               </p>
             </div>
             <div className="border border-border bg-surface/30 p-5">
               <p className="font-mono text-[10px] uppercase tracking-wider text-gold">
-                Security domains
+                Active expansion
               </p>
               <p className="mt-3 text-[13px] text-ink-secondary">
-                Reporting · Objects · Personnel · Operations · Compliance · AI ·
-                Intelligence
+                Workforce operations · Scheduling expansion · Service requests ·
+                Dispatch capabilities · Compliance engine — Phase 2.2 in active
+                development
               </p>
             </div>
             <div className="border border-border bg-surface/30 p-5">
               <p className="font-mono text-[10px] uppercase tracking-wider text-gold">
-                Future adjacent domains
+                Future intelligence
               </p>
               <p className="mt-3 text-[13px] text-ink-secondary">
-                Future modular expansion may support adjacent operational sectors.
-                Not a public commitment to specific industries beyond security
-                operations.
+                AI intelligence layer · Talent intelligence · Team compatibility —
+                planned expansion on structured operational data. Not autonomous
+                decision systems.
               </p>
             </div>
           </div>
@@ -392,8 +396,8 @@ export default function AboutPage() {
         <div className="container-site">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="heading-lg">
-              Explore how ISB is being built around professional security
-              operations.
+              Explore an enterprise security operations platform with an
+              established foundation and expanding capabilities.
             </h2>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button href="/platform">
