@@ -27,18 +27,14 @@ export function MobileNavigation({ open, onClose, triggerRef }: Props) {
         panel.querySelectorAll<HTMLElement>(
           'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
         )
-      ).filter((el) => !el.hasAttribute("disabled") && el.offsetParent !== null);
+      ).filter(
+        (el) => !el.hasAttribute("disabled") && el.offsetParent !== null
+      );
 
     const list = focusables();
     list[0]?.focus();
 
     function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") {
-        e.preventDefault();
-        onClose();
-        triggerRef.current?.focus();
-        return;
-      }
       if (e.key !== "Tab") return;
       const items = focusables();
       if (items.length === 0) return;
@@ -57,17 +53,28 @@ export function MobileNavigation({ open, onClose, triggerRef }: Props) {
     return () => panel.removeEventListener("keydown", onKey);
   }, [open, onClose, triggerRef]);
 
-  // Body scroll lock
+  // Body scroll lock (iOS-friendly)
   useEffect(() => {
     if (!open) return;
-    const prev = document.body.style.overflow;
+    const scrollY = window.scrollY;
+    const prevOverflow = document.body.style.overflow;
+    const prevPosition = document.body.style.position;
+    const prevTop = document.body.style.top;
+    const prevWidth = document.body.style.width;
+
     document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
+
     return () => {
-      document.body.style.overflow = prev;
+      document.body.style.overflow = prevOverflow;
+      document.body.style.position = prevPosition;
+      document.body.style.top = prevTop;
+      document.body.style.width = prevWidth;
+      window.scrollTo(0, scrollY);
     };
   }, [open]);
-
-  if (!open) return null;
 
   return (
     <motion.div
@@ -80,7 +87,8 @@ export function MobileNavigation({ open, onClose, triggerRef }: Props) {
       animate={{ opacity: 1, y: 0 }}
       exit={reduce ? undefined : { opacity: 0, y: -6 }}
       transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-      className="fixed inset-x-0 bottom-0 top-14 z-50 overflow-y-auto border-t border-border-subtle bg-bg lg:hidden"
+      className="fixed inset-x-0 bottom-0 top-14 z-[55] overflow-y-auto overscroll-contain border-t border-border-subtle bg-bg lg:hidden"
+      style={{ WebkitOverflowScrolling: "touch" }}
     >
       <div className="container-site space-y-1 py-4 pb-10">
         <MobileDisclosure title="Platform" defaultOpen>
