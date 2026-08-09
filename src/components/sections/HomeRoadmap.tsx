@@ -5,64 +5,58 @@ import { cn } from "@/lib/utils";
 const STAGES = [
   {
     index: "01",
-    label: "Current Foundation",
+    label: "Platform Foundation",
     emphasis: "current" as const,
     items: [
-      "Multi-tenant foundations",
-      "Role-based access foundations",
-      "Audit foundations",
-      "Company and user context",
-      "Object/location hierarchy foundations",
-      "Specific Report workflow",
-      "AI-assisted Specific Report workflow",
-      "Structured reporting foundations",
+      "Multi-tenant SaaS architecture",
+      "Authentication & RBAC",
+      "Row Level Security",
+      "Tenant isolation",
+      "Audit framework",
+      "Secure storage model",
+      "Reporting foundation",
     ],
   },
   {
-    index: "02",
-    label: "Active Development",
+    index: "02.1",
+    label: "Object Hierarchy",
+    emphasis: "current" as const,
+    items: [
+      "Company → Customer → Object hierarchy",
+      "Building through checkpoint structure",
+      "Instructions, risks, escalations",
+      "Document lifecycle",
+      "Persona-based authorization",
+      "Entity-scoped audit",
+    ],
+  },
+  {
+    index: "02.2",
+    label: "Workforce Operations",
     emphasis: "active" as const,
     items: [
-      "Broader reporting workflows",
-      "Operational notifications",
-      "Object management expansion",
-      "Personnel context",
-      "Workflow coordination",
-      "Supervisor review flows",
-      "Mobile experience",
-      "Operational dashboards",
+      "Shift & assignment lifecycle",
+      "Service contracts & requests",
+      "Scheduling expansion",
+      "Dispatch system",
+      "Compliance & matching engines",
+      "Persona workspaces",
     ],
   },
   {
     index: "03",
-    label: "Planned Expansion",
+    label: "AI Intelligence",
     emphasis: "planned" as const,
     items: [
-      "Scheduling",
-      "Patrol workflow expansion",
-      "Checkpoint workflows",
-      "Customer portals",
-      "Offline capabilities",
-      "Realtime synchronization expansion",
-      "Integration framework",
-      "Advanced analytics",
-    ],
-  },
-  {
-    index: "04",
-    label: "Future Intelligence",
-    emphasis: "future" as const,
-    items: [
-      "Operational pattern analysis",
-      "Risk signals",
-      "Recommendations",
-      "Talent & Operations Intelligence",
-      "Team Compatibility Engine",
-      "Predictive operational support",
-      "Cross-sector modular expansion",
+      "AI reporting assistant expansion",
+      "Risk detection",
+      "Operational recommendations",
+      "Talent intelligence",
+      "Team compatibility engine",
     ],
   },
 ] as const;
+
 
 export function HomeRoadmap() {
   return (
@@ -119,8 +113,7 @@ export function HomeRoadmap() {
       </div>
 
       <p className="mt-5 text-[12px] text-ink-muted">
-        Roadmap items describe current product direction and may change as
-        development, validation and customer requirements evolve.
+        Platform foundation and object hierarchy are completed. Workforce operations are active. AI intelligence is planned — not delivery commitments.
       </p>
 
       <div className="mt-6">
