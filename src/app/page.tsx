@@ -4,19 +4,19 @@ import { SITE } from "@/lib/constants";
 export const metadata: Metadata = {
   title: { absolute: `${SITE.name} | Enterprise Security Operations Software` },
   description:
-    "ISB Security Solutions develops ISB Security Platform, a modular security operations platform for reporting, objects, personnel, operational workflows, compliance and AI-assisted reporting.",
+    "ISB Security Solutions develops ISB Security Platform, an enterprise security operations platform with an established multi-tenant foundation, operational object hierarchy and expanding workforce capabilities.",
   alternates: { canonical: SITE.url },
   openGraph: {
     title: `${SITE.name} | Enterprise Security Operations Software`,
     description:
-      "Modular security operations platform under active development for professional security organizations across Europe.",
+      "Enterprise security operations platform with an established foundation and expanding capabilities for professional security organizations across Europe.",
     url: SITE.url,
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE.name} | Enterprise Security Operations Software`,
     description:
-      "Modular security operations platform under active development for professional security organizations.",
+      "Enterprise security operations platform with an established foundation and expanding capabilities for professional security organizations.",
   },
 };
 
@@ -39,7 +39,6 @@ export default function HomePage() {
     <>
       <HomeHero />
 
-      {/* Fragmentation architecture */}
       <section className="section divider">
         <div className="container-site">
           <SectionHeader
@@ -53,7 +52,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Platform pillars explorer */}
       <section className="section divider bg-bg-secondary/40">
         <div className="container-site">
           <SectionHeader
@@ -67,7 +65,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Operational capability explorer */}
       <section className="section divider">
         <div className="container-site">
           <SectionHeader
@@ -78,22 +75,15 @@ export default function HomePage() {
           <div className="mt-12 md:mt-14">
             <OperationalCapabilityExplorer />
           </div>
-          <div className="mt-8 text-center">
-            <Button href="/features" variant="secondary">
-              Full feature catalogue
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-          </div>
         </div>
       </section>
 
-      {/* AI Report Assistant showcase */}
       <section className="section divider bg-bg-secondary/40">
         <div className="container-site">
           <SectionHeader
             eyebrow="AI Report Assistant"
             title="AI that supports the report. Not the decision."
-            description="ISB AI assists with structure, clarity and completeness while keeping the officer and supervisor responsible for the final operational record."
+            description="AI capabilities are built on top of structured operational data, secure workflows and validated platform context. ISB AI assists with structure, clarity and completeness while keeping the officer and supervisor responsible for the final operational record."
           />
           <div className="mt-12 md:mt-14">
             <AIReportAssistantShowcase />
@@ -107,13 +97,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Security & Trust architecture */}
       <section className="section divider">
         <div className="container-site">
           <SectionHeader
             eyebrow="Security & trust"
             title="Trust starts with architecture."
-            description="ISB is being designed around identity, role-based access, tenant boundaries, traceability and controlled operational data flows. Production controls remain subject to deployment and infrastructure validation."
+            description="ISB is built around identity, role-based access, tenant isolation, traceability and controlled operational data flows — with an established security and audit foundation and continuously expanding operational capabilities."
           />
           <div className="mt-12 md:mt-14">
             <SecurityTrustArchitecture />
@@ -127,7 +116,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Industry solutions explorer */}
       <section className="section divider bg-bg-secondary/40">
         <div className="container-site">
           <SectionHeader
@@ -150,13 +138,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Roadmap preview */}
       <section className="section divider">
         <div className="container-site">
           <SectionHeader
             eyebrow="Roadmap"
             title="Transparent product direction"
-            description="Stages describe intent — not delivery dates or contractual commitments."
+            description="Platform foundation and object hierarchy are completed. Workforce operations are active. AI intelligence is planned — not delivery commitments."
           />
           <div className="mt-12 md:mt-14">
             <HomeRoadmap />
@@ -164,7 +151,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About / company story */}
       <section className="section divider bg-bg-secondary/40">
         <div className="container-site">
           <HomeAbout />
@@ -172,6 +158,6 @@ export default function HomePage() {
       </section>
 
       <HomeEnterpriseCTA />
-</>
+    </>
   );
 }
