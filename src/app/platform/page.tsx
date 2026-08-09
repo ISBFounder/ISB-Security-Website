@@ -10,19 +10,19 @@ import { breadcrumbJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Security Operations Platform",
   description:
-    "Architecture of ISB Security Platform — multi-tenant organization structure, objects, personnel, shared engines and modular design for professional security operations.",
+    "ISB Security Platform — enterprise security operations platform with an established multi-tenant foundation, operational object hierarchy and expanding workforce capabilities.",
   alternates: { canonical: `${SITE.url}/platform` },
   openGraph: {
     title: `Security Operations Platform | ${SITE.name}`,
     description:
-      "Architecture of ISB Security Platform — multi-tenant organization structure, objects, personnel, shared engines and modular design for professional security operations.",
+      "Enterprise security operations platform with an established operational foundation and continuously expanding capabilities.",
     url: `${SITE.url}/platform`,
   },
   twitter: {
     card: "summary_large_image",
     title: `Security Operations Platform | ${SITE.name}`,
     description:
-      "Architecture of ISB Security Platform — multi-tenant organization structure, objects, personnel, shared engines and modular design for professional security operations.",
+      "Enterprise security operations platform with an established operational foundation and continuously expanding capabilities.",
   },
 };
 
@@ -35,24 +35,23 @@ export default function PlatformPage() {
           { name: "Platform", path: "/platform" },
         ])}
       />
-      {/* Hero */}
+
       <section className="section !pb-10">
         <div className="container-site">
           <div className="max-w-3xl">
             <p className="label">Platform</p>
             <h1 className="heading-xl mt-3">
-              The architecture behind unified security operations.
+              Enterprise security operations platform with an established operational foundation.
             </h1>
             <p className="body-lg mt-6 max-w-2xl">
-              ISB Security Platform connects organizations, customers, objects,
-              personnel and operational workflows through one shared platform
-              architecture.
+              ISB Security Platform is an enterprise security operations platform with an
+              established operational foundation and continuously expanding capabilities —
+              connecting organizations, customers, objects, personnel and operational workflows.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Main architecture */}
       <section className="section divider">
         <div className="container-site">
           <SectionHeader
@@ -67,7 +66,6 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      {/* Multi-tenant */}
       <section className="section divider bg-bg-secondary/40">
         <div className="container-site">
           <div className="grid gap-10 lg:grid-cols-2">
@@ -75,10 +73,9 @@ export default function PlatformPage() {
               <p className="label">Multi-tenant structure</p>
               <h2 className="heading-md mt-3">Tenant-aware platform boundaries</h2>
               <p className="body mt-4">
-                Organizations and their customers remain separated. Service
-                providers can manage multiple customers; customers receive scoped
-                visibility; objects carry their own requirements; permissions stay
-                context-aware.
+                Organizations and their customers remain separated. Service providers can manage
+                multiple customers; customers receive scoped visibility; objects carry their own
+                requirements; permissions stay context-aware.
               </p>
               <ul className="mt-5 space-y-2 text-[13px] text-ink-secondary">
                 <li>Service providers managing multiple customers</li>
@@ -105,7 +102,6 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      {/* Object hierarchy detail */}
       <section className="section divider">
         <div className="container-site">
           <SectionHeader
@@ -142,7 +138,6 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      {/* People & access */}
       <section className="section divider bg-bg-secondary/40">
         <div className="container-site">
           <SectionHeader
@@ -153,22 +148,10 @@ export default function PlatformPage() {
           />
           <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              {
-                role: "Officer",
-                scope: "Field reporting on assigned objects. Limited organizational visibility.",
-              },
-              {
-                role: "Supervisor",
-                scope: "Review, approval, escalation and team oversight within scope.",
-              },
-              {
-                role: "Customer representative",
-                scope: "Scoped visibility into relevant objects and records. Expansion planned.",
-              },
-              {
-                role: "Administrator",
-                scope: "Organization configuration, users and structural setup.",
-              },
+              { role: "Officer", scope: "Field reporting on assigned objects. Limited organizational visibility." },
+              { role: "Supervisor", scope: "Review, approval, escalation and team oversight within scope." },
+              { role: "Customer representative", scope: "Scoped visibility into relevant objects and records. Expansion planned." },
+              { role: "Administrator", scope: "Organization configuration, users and structural setup." },
             ].map((r) => (
               <div key={r.role} className="border border-border bg-surface/30 p-4">
                 <p className="text-[14px] font-semibold text-ink">{r.role}</p>
@@ -179,7 +162,6 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      {/* Platform engines detail */}
       <section className="section divider">
         <div className="container-site">
           <SectionHeader
@@ -192,7 +174,7 @@ export default function PlatformPage() {
             {[
               {
                 title: "Reporting Engine",
-                text: "Specific, Incident, Daily, Damage and Accident reports with review, approval, attachments, history and AI assistance. Specific Report workflow is current foundation; broader report types under active development.",
+                text: "Specific Report workflow with review, approval, attachments and history is implemented foundation. Broader report types expand from this baseline.",
               },
               {
                 title: "Notification Engine",
@@ -204,7 +186,7 @@ export default function PlatformPage() {
               },
               {
                 title: "Realtime & Offline",
-                text: "Architecture is being designed to support realtime synchronization and offline-capable field workflows. Not claimed as fully released.",
+                text: "Architecture supports realtime synchronization and offline-capable field workflows as expansion direction on the completed platform foundation.",
               },
               {
                 title: "API Foundations",
@@ -225,7 +207,6 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      {/* Modular architecture */}
       <section className="section divider bg-bg-secondary/40">
         <div className="container-site">
           <SectionHeader
@@ -236,64 +217,76 @@ export default function PlatformPage() {
           />
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             <div className="border border-border bg-surface/30 p-5">
-              <p className="font-mono text-[10px] uppercase tracking-wider text-gold">
-                Example · smaller provider
-              </p>
-              <p className="mt-3 text-[13px] text-ink-secondary">
-                Reporting · Objects · Personnel
-              </p>
+              <p className="font-mono text-[10px] uppercase tracking-wider text-gold">Example · smaller provider</p>
+              <p className="mt-3 text-[13px] text-ink-secondary">Reporting · Objects · Personnel</p>
             </div>
             <div className="border border-border bg-surface/30 p-5">
-              <p className="font-mono text-[10px] uppercase tracking-wider text-gold">
-                Example · larger provider
-              </p>
+              <p className="font-mono text-[10px] uppercase tracking-wider text-gold">Example · larger provider</p>
               <p className="mt-3 text-[13px] text-ink-secondary">
-                Reporting · Objects · Personnel · Patrols · Scheduling · Customer
-                visibility · Compliance · Intelligence
+                Reporting · Objects · Personnel · Patrols · Scheduling · Customer visibility · Compliance · Intelligence
               </p>
             </div>
           </div>
-          <p className="mt-4 text-[12px] text-ink-muted">
-            Scale is conceptual: multiple organizations, customers, objects and
-            users with role separation on a shared foundation. No claimed load
-            limits.
-          </p>
         </div>
       </section>
 
-      {/* Maturity */}
       <section className="section divider">
         <div className="container-site">
           <SectionHeader
             align="left"
+            eyebrow="Current platform foundation"
+            title="What is already established."
+            description="ISB Security Platform is not only an architecture concept. The operational foundation below is implemented and forms the base for workforce expansion and future intelligence."
+          />
+          <div className="mt-10 grid gap-0 border border-border sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { t: "Multi-tenant architecture", d: "Authentication, RBAC, row-level security, tenant isolation and company/customer separation." },
+              { t: "Operational object hierarchy", d: "Company → Customer → Object through building, floor, zone, room, post and checkpoint — with instructions, risks, escalations and patrol requirements." },
+              { t: "Secure document lifecycle", d: "Upload, versioning, archive/restore, signed downloads, classification controls and expiry handling." },
+              { t: "Reporting foundation", d: "Structured Specific Report workflow with review, approval and history on shared operational context." },
+              { t: "Workforce foundation", d: "Canonical shift lifecycle, assignment lifecycle, shift reconciliation and workforce notifications foundation — expanding in Phase 2.2." },
+              { t: "Auditability", d: "Entity-scoped audit history, actor tracking, correlation IDs, changed-field summaries and operational event logging." },
+            ].map((item, i) => (
+              <div
+                key={item.t}
+                className={`p-5 border-border ${i < 5 ? "border-b" : ""} ${i % 2 === 0 ? "sm:border-r" : ""} ${i % 3 !== 2 ? "lg:border-r" : "lg:border-r-0"} ${i < 3 ? "lg:border-b" : "lg:border-b-0"}`}
+              >
+                <p className="font-mono text-[10px] uppercase tracking-wider text-gold">{String(i + 1).padStart(2, "0")}</p>
+                <h3 className="mt-2 text-[14px] font-semibold text-ink">{item.t}</h3>
+                <p className="mt-2 text-[13px] leading-relaxed text-ink-secondary">{item.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section divider bg-bg-secondary/40">
+        <div className="container-site">
+          <SectionHeader
+            align="left"
             eyebrow="Development maturity"
-            title="What exists. What is being built. What is planned."
+            title="Established foundation. Active expansion. Planned intelligence."
           />
           <div className="mt-10 grid gap-0 border border-border md:grid-cols-3">
             {[
               {
-                stage: "Current foundation",
+                stage: "Implemented foundation",
                 items:
-                  "Multi-tenant architecture · Company/user context · Object hierarchy foundations · Specific Report workflow · AI-assisted Specific Report · Role/access foundations · Audit foundations",
+                  "Multi-tenant SaaS · Authentication · RBAC · RLS · Tenant isolation · Operational object hierarchy · Document lifecycle · Reporting foundation · Audit framework · Secure storage",
               },
               {
                 stage: "Active development",
                 items:
-                  "Broader operational workflows · Personnel · Notifications · Object capabilities · Mobile experience",
+                  "Workforce operations · Scheduling expansion · Service requests · Dispatch · Compliance engine · Matching engine · Persona workspaces",
               },
               {
                 stage: "Planned",
                 items:
-                  "Expanded patrols · Offline workflows · Scheduling · Customer portals · Integrations · Advanced analytics",
+                  "AI intelligence layer · Risk detection · Operational recommendations · Talent intelligence · Team compatibility",
               },
             ].map((m, i) => (
-              <div
-                key={m.stage}
-                className={`p-5 ${i < 2 ? "border-b border-border md:border-b-0 md:border-r" : ""}`}
-              >
-                <p className="font-mono text-[10px] uppercase tracking-wider text-gold">
-                  {m.stage}
-                </p>
+              <div key={m.stage} className={`p-5 ${i < 2 ? "border-b border-border md:border-b-0 md:border-r" : ""}`}>
+                <p className="font-mono text-[10px] uppercase tracking-wider text-gold">{m.stage}</p>
                 <p className="mt-3 text-[13px] text-ink-secondary">{m.items}</p>
               </div>
             ))}
@@ -301,25 +294,19 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section divider bg-bg-secondary/40">
+      <section className="section divider">
         <div className="container-site">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="heading-lg">
-              Explore how ISB could map to your operation.
-            </h2>
+            <h2 className="heading-lg">Explore how ISB could map to your operation.</h2>
             <p className="body mt-4">
-              Discuss architecture fit, current foundation and development
-              direction with the ISB team.
+              Discuss platform foundation, operational fit and development direction with the ISB team.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button href="/request-demo">
                 Request Demo
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Button>
-              <Button href="/contact" variant="secondary">
-                Contact ISB
-              </Button>
+              <Button href="/contact" variant="secondary">Contact ISB</Button>
             </div>
           </div>
         </div>
