@@ -57,11 +57,9 @@ const STAGES = [
   },
 ] as const;
 
-
 export function HomeRoadmap() {
   return (
     <div>
-      {/* Track */}
       <div className="grid gap-0 border border-border md:grid-cols-4">
         {STAGES.map((stage, i) => (
           <div
@@ -77,8 +75,7 @@ export function HomeRoadmap() {
                   "font-mono text-[11px]",
                   stage.emphasis === "current" && "text-ink",
                   stage.emphasis === "active" && "text-gold",
-                  stage.emphasis === "planned" && "text-ink-muted",
-                  stage.emphasis === "future" && "text-ink-faint"
+                  stage.emphasis === "planned" && "text-ink-muted"
                 )}
               >
                 {stage.index}
@@ -88,8 +85,7 @@ export function HomeRoadmap() {
                   "text-[13px] font-semibold",
                   stage.emphasis === "current" && "text-ink",
                   stage.emphasis === "active" && "text-gold",
-                  stage.emphasis === "planned" && "text-ink-secondary",
-                  stage.emphasis === "future" && "text-ink-muted"
+                  stage.emphasis === "planned" && "text-ink-secondary"
                 )}
               >
                 {stage.label}
@@ -97,13 +93,7 @@ export function HomeRoadmap() {
             </div>
             <ul className="mt-4 space-y-1.5">
               {stage.items.map((item) => (
-                <li
-                  key={item}
-                  className={cn(
-                    "text-[12px] leading-snug",
-                    stage.emphasis === "future" ? "text-ink-faint" : "text-ink-secondary"
-                  )}
-                >
+                <li key={item} className="text-[12px] leading-snug text-ink-secondary">
                   {item}
                 </li>
               ))}
