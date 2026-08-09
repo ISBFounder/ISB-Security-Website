@@ -37,7 +37,6 @@ export default function FeaturesPage() {
           { name: "Features", path: "/features" },
         ])}
       />
-      {/* Hero */}
       <section className="section !pb-8">
         <div className="container-site">
           <div className="max-w-3xl">
@@ -51,7 +50,7 @@ export default function FeaturesPage() {
               object, access and audit context.
             </p>
             <p className="mt-4 text-[13px] text-ink-muted">
-              Capabilities are shown by development stage: Implemented foundation ·
+              Capabilities are labeled by stage on an established platform foundation: Implemented foundation ·
               Active development · Planned · Future direction.
             </p>
           </div>
@@ -60,7 +59,6 @@ export default function FeaturesPage() {
 
       <CapabilityNav />
 
-      {/* Reporting */}
       <section id="reporting" className="section scroll-mt-28">
         <div className="container-site">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -110,7 +108,6 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Organizations */}
       <section id="organizations" className="section divider scroll-mt-28 bg-bg-secondary/40">
         <div className="container-site">
           <div className="grid gap-10 lg:grid-cols-2">
@@ -141,7 +138,6 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Objects */}
       <section id="objects" className="section divider scroll-mt-28">
         <div className="container-site">
           <p className="label">Objects & Locations</p>
@@ -165,10 +161,10 @@ export default function FeaturesPage() {
               <FeatureRow name="Posts & Checkpoints" purpose="Patrol and inspection points." stage="foundation" />
               <FeatureRow name="Assets" purpose="Equipment and resource registration." stage="development" />
               <FeatureRow name="Emergency Contacts" purpose="Object-level emergency context." stage="foundation" />
-              <FeatureRow name="Documents" purpose="Object-linked documentation." stage="development" />
-              <FeatureRow name="Object History" purpose="Historical operational context per object." stage="development" />
-              <FeatureRow name="Requirements & Risks" purpose="Site-specific instructions and risk notes." stage="development" />
-              <FeatureRow name="Escalation Procedures" purpose="Object-linked escalation paths." stage="development" />
+              <FeatureRow name="Documents" purpose="Object-linked documentation." stage="foundation" />
+              <FeatureRow name="Object History" purpose="Historical operational context per object." stage="foundation" />
+              <FeatureRow name="Requirements & Risks" purpose="Site-specific instructions and risk notes." stage="foundation" />
+              <FeatureRow name="Escalation Procedures" purpose="Object-linked escalation paths." stage="foundation" />
               <FeatureRow name="Patrol Routes" purpose="Route definitions across checkpoints." stage="planned" />
               <FeatureRow name="Resources" purpose="Object-linked operational resources." stage="planned" />
             </div>
@@ -176,7 +172,6 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Personnel */}
       <section id="personnel" className="section divider scroll-mt-28 bg-bg-secondary/40">
         <div className="container-site">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -205,9 +200,9 @@ export default function FeaturesPage() {
               <FeatureRow name="User Management" purpose="Account and identity foundations." stage="foundation" />
               <FeatureRow name="Personnel Records" purpose="Operational personnel context." stage="foundation" />
               <FeatureRow name="Roles & Permissions" purpose="Least-privilege access scopes." stage="foundation" />
-              <FeatureRow name="Qualifications & Certifications" purpose="Qualification tracking for assignments." stage="development" />
+              <FeatureRow name="Qualifications & Certifications" purpose="Qualification tracking for assignments." stage="foundation" />
               <FeatureRow name="Availability" purpose="Duty availability context." stage="development" />
-              <FeatureRow name="Scheduling Foundations" purpose="Shift planning foundations." stage="planned" />
+              <FeatureRow name="Scheduling Foundations" purpose="Shift planning foundations." stage="development" />
               <FeatureRow name="Team Management" purpose="Team structure for operational coordination." stage="development" />
               <FeatureRow name="Assignments" purpose="Link personnel to objects and shifts." stage="development" />
             </div>
@@ -215,7 +210,6 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Operations */}
       <section id="operations" className="section divider scroll-mt-28">
         <div className="container-site">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -244,8 +238,8 @@ export default function FeaturesPage() {
               <FeatureRow name="Notifications" purpose="Workflow and escalation notices." stage="development" />
               <FeatureRow name="Tasks" purpose="Operational task assignment and tracking." stage="development" />
               <FeatureRow name="Patrols" purpose="Patrol execution against routes and objects." stage="development" />
-              <FeatureRow name="Checkpoint Verification" purpose="Confirm or exception at checkpoints." stage="planned" />
-              <FeatureRow name="Escalations" purpose="Structured escalation handling." stage="development" />
+              <FeatureRow name="Checkpoint Verification" purpose="Confirm or exception at checkpoints." stage="planned" note="Not fully released" />
+              <FeatureRow name="Escalations" purpose="Structured escalation handling." stage="foundation" />
               <FeatureRow name="Realtime Updates" purpose="Architecture for live operational status." stage="planned" note="Not fully released" />
               <FeatureRow name="Offline Support" purpose="Field workflows without continuous connectivity." stage="planned" note="Architecture direction" />
               <FeatureRow name="Mobile Foundations" purpose="Field-oriented interface foundations." stage="development" />
@@ -254,7 +248,6 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Security */}
       <section id="security" className="section divider scroll-mt-28 bg-bg-secondary/40">
         <div className="container-site">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -283,7 +276,6 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Intelligence */}
       <section id="intelligence" className="section divider scroll-mt-28">
         <div className="container-site">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -321,7 +313,6 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Status model legend */}
       <section className="section divider bg-bg-secondary/40">
         <div className="container-site">
           <SectionHeader
@@ -347,7 +338,6 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="section divider">
         <div className="container-site">
           <div className="mx-auto max-w-2xl text-center">
