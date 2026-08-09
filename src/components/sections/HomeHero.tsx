@@ -9,7 +9,7 @@ import { ProductInterface } from "@/components/visuals/ProductInterface";
 const CREDIBILITY = [
   "Built for multi-customer security operations",
   "Modular multi-tenant architecture",
-  "AI-assisted reporting foundation",
+  "Established multi-tenant & object foundation",
   "Developed from operational security experience",
   "European security industry focus",
 ] as const;
@@ -28,7 +28,6 @@ export function HomeHero() {
 
   return (
     <section className="relative overflow-hidden pb-12 pt-14 md:pb-16 md:pt-20 lg:pt-24">
-      {/* Architectural background — restrained */}
       <div className="pointer-events-none absolute inset-0" aria-hidden>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,#14171B_0%,transparent_55%)]" />
         <div
@@ -43,12 +42,11 @@ export function HomeHero() {
       </div>
 
       <div className="container-site relative">
-        {/* Asymmetric editorial band */}
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
           <motion.div className="lg:col-span-7" {...fade(0)}>
             <div className="mb-5 inline-flex items-center gap-2 border border-border bg-surface/60 px-3 py-1 font-mono text-[11px] text-ink-secondary">
               <span className="h-1.5 w-1.5 bg-gold" aria-hidden />
-              Platform development active
+              Platform foundation established
             </div>
 
             <h1 className="display-xl">
@@ -83,7 +81,6 @@ export function HomeHero() {
             </p>
           </motion.div>
 
-          {/* Metadata column */}
           <motion.div
             className="flex flex-col justify-end lg:col-span-5"
             {...fade(0.08)}
@@ -102,7 +99,6 @@ export function HomeHero() {
           </motion.div>
         </div>
 
-        {/* Flagship product scene */}
         <motion.div className="mt-12 md:mt-14 lg:mt-16" {...fade(0.14)}>
           <ProductInterface />
         </motion.div>
