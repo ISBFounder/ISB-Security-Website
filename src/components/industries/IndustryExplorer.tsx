@@ -369,7 +369,7 @@ export function IndustryExplorer() {
   }
 
   return (
-    <div className="border border-border">
+    <div className="overflow-hidden border border-border">
       <div className="grid lg:grid-cols-[minmax(0,0.28fr)_minmax(0,0.72fr)]">
         <div
           role="tablist"
@@ -411,7 +411,7 @@ export function IndustryExplorer() {
           role="tabpanel"
           id={`ind-panel-${current.id}`}
           aria-labelledby={`ind-tab-${current.id}`}
-          className="bg-surface/15 p-5 md:p-6"
+          className="min-w-0 overflow-x-auto bg-surface/15 p-4 sm:p-5 md:p-6"
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -446,9 +446,9 @@ export function IndustryExplorer() {
               </div>
 
               <div className="grid gap-5 lg:grid-cols-2">
-                <div>
+                <div className="min-w-0">
                   <p className="label mb-2">Object structure</p>
-                  <p className="font-mono text-[12px] text-ink-secondary">
+                  <p className="font-mono text-[12px] text-ink-secondary break-words">
                     {current.objectModel.join(" ")}
                   </p>
                   <p className="label mb-2 mt-4">Reporting mix</p>
@@ -456,7 +456,7 @@ export function IndustryExplorer() {
                   <p className="label mb-2 mt-4">Escalation</p>
                   <p className="text-[12px] text-ink-secondary">{current.escalation}</p>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="label mb-2">Relevant platform domains</p>
                   <div className="flex flex-wrap gap-1.5">
                     {current.domains.map((d) => (
@@ -477,7 +477,7 @@ export function IndustryExplorer() {
                 </div>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <p className="label mb-2">Architecture pattern</p>
                 <ol className="flex flex-wrap items-center gap-2 font-mono text-[11px] text-ink-secondary">
                   {current.architecture.map((a, i) => (
