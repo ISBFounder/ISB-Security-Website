@@ -284,7 +284,7 @@ const CAPABILITIES: Capability[] = [
 function ReportingInterface() {
   return (
     <div className="overflow-x-auto border border-border-subtle">
-      <table className="w-full min-w-[360px] text-left text-[12px]">
+      <table className="w-full min-w-[300px] text-left text-[12px]">
         <thead>
           <tr className="border-b border-border-subtle bg-surface/50 font-mono text-[9px] uppercase tracking-wide text-ink-faint">
             <th className="px-3 py-2 font-medium">ID</th>
@@ -352,7 +352,7 @@ function ObjectsInterface() {
 function PersonnelInterface() {
   return (
     <div className="overflow-x-auto border border-border-subtle">
-      <table className="w-full min-w-[360px] text-left text-[12px]">
+      <table className="w-full min-w-[300px] text-left text-[12px]">
         <thead>
           <tr className="border-b border-border-subtle bg-surface/50 font-mono text-[9px] uppercase tracking-wide text-ink-faint">
             <th className="px-3 py-2">Officer</th>
@@ -602,7 +602,7 @@ export function OperationalCapabilityExplorer() {
               </div>
 
               <div className="grid gap-6 lg:grid-cols-2">
-                <div>
+                <div className="min-w-0">
                   <p className="label mb-3">Operational workflow</p>
                   <ol className="border border-border-subtle bg-bg/40 p-3">
                     {current.workflow.map((step, i) => (
@@ -626,7 +626,7 @@ export function OperationalCapabilityExplorer() {
                   </ol>
                 </div>
 
-                <div>
+                <div className="min-w-0">
                   <p className="label mb-3">Example interface</p>
                   <CapabilityInterface id={current.id} />
                   <p className="mt-2 font-mono text-[9px] text-ink-faint">
@@ -635,7 +635,7 @@ export function OperationalCapabilityExplorer() {
                 </div>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <p className="label mb-3">Modules</p>
                 <div className="flex flex-wrap gap-1.5">
                   {current.modules.map((m) => (
@@ -649,7 +649,7 @@ export function OperationalCapabilityExplorer() {
                 </div>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <p className="label mb-3">Related capabilities</p>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="border border-gold/30 bg-gold/10 px-2.5 py-1.5 text-[12px] font-medium text-ink">
