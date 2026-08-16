@@ -580,7 +580,7 @@ export function EnvironmentExplorer() {
   }
 
   return (
-    <div className="border border-border">
+    <div className="overflow-hidden border border-border">
       <div className="grid lg:grid-cols-[minmax(0,0.28fr)_minmax(0,0.72fr)]">
         <div
           role="tablist"
@@ -622,7 +622,7 @@ export function EnvironmentExplorer() {
           role="tabpanel"
           id={`sol-panel-${current.id}`}
           aria-labelledby={`sol-tab-${current.id}`}
-          className="bg-surface/15 p-5 md:p-6"
+          className="min-w-0 overflow-x-auto bg-surface/15 p-4 sm:p-5 md:p-6"
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -649,7 +649,7 @@ export function EnvironmentExplorer() {
               </div>
 
               <div className="grid gap-6 lg:grid-cols-2">
-                <div>
+                <div className="min-w-0">
                   <p className="label mb-2">Typical stakeholders</p>
                   <ul className="space-y-1">
                     {current.stakeholders.map((s) => (
@@ -662,7 +662,7 @@ export function EnvironmentExplorer() {
                     ))}
                   </ul>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="label mb-2">Primary operational risks</p>
                   <ul className="space-y-1">
                     {current.risks.map((r) => (
@@ -677,7 +677,7 @@ export function EnvironmentExplorer() {
                 </div>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <p className="label mb-3">Illustrative operational workflow</p>
                 <ol className="border border-border-subtle bg-bg/40 p-3">
                   {current.workflow.map((step, i) => (
@@ -704,7 +704,7 @@ export function EnvironmentExplorer() {
               </div>
 
               <div className="grid gap-6 sm:grid-cols-2">
-                <div>
+                <div className="min-w-0">
                   <p className="label mb-2">Typical reports</p>
                   <p className="text-[12px] text-ink-secondary">
                     {current.reports.join(" · ")}
@@ -714,7 +714,7 @@ export function EnvironmentExplorer() {
                     {current.controls.join(" · ")}
                   </p>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="label mb-2">Relevant ISB capabilities</p>
                   <div className="flex flex-wrap gap-1.5">
                     {current.capabilities.map((c) => (
@@ -744,7 +744,7 @@ export function EnvironmentExplorer() {
                 </div>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <p className="label mb-2">Human decision points</p>
                 <ul className="space-y-1">
                   {current.decisions.map((d) => (
@@ -756,7 +756,7 @@ export function EnvironmentExplorer() {
               </div>
 
               <div className="grid gap-4 border-t border-border-subtle pt-4 lg:grid-cols-2">
-                <div>
+                <div className="min-w-0">
                   <p className="label mb-2">Fragmented reality</p>
                   <ul className="space-y-1.5">
                     {current.challenges.map((c) => (
@@ -766,7 +766,7 @@ export function EnvironmentExplorer() {
                     ))}
                   </ul>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="label mb-2">How ISB changes the flow</p>
                   <p className="text-[13px] text-ink-secondary">{current.change}</p>
                 </div>
