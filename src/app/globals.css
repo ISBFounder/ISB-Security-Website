@@ -113,12 +113,59 @@
     @apply text-caption text-ink-muted;
   }
 
+  /* Technical / system labels — mono, uppercase, restrained gold */
   .label {
-    @apply font-mono text-[10px] font-semibold uppercase tracking-wider text-gold;
+    @apply font-mono text-label font-medium uppercase text-gold;
   }
 
-  /* ——— Dividers ——— */
+  .label-muted {
+    @apply font-mono text-label font-medium uppercase text-ink-muted;
+  }
+
+  /* ——— Surfaces ——— */
   .divider {
     @apply border-t border-border-subtle;
   }
+
+  .panel {
+    @apply border border-border bg-surface shadow-panel;
+  }
+
+  .panel-elevated {
+    @apply border border-border bg-surface-elevated shadow-elevated;
+  }
+
+  .panel-flat {
+    @apply border border-border-subtle bg-surface;
+  }
+
+  /* ——— A11y ——— */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-gold focus:px-4 focus:py-2 focus:font-sans focus:text-sm focus:font-medium focus:text-bg focus:outline-none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Restrained scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #070809;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a3037;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a424c;
 }
