@@ -1,1 +1,1 @@
-PLACEHOLDER_WILL_REPLACE
+export { IndustryExplorer as IndustrySolutionsExplorer } from "@/components/industries/IndustryExplorer";
