@@ -110,7 +110,7 @@ export function HomeAbout() {
           <p>Designed with European operating environments in mind</p>
           <p className="text-ink-faint">Future international ambition</p>
           <p className="mt-4 text-ink-faint">
-            ISB Security Solutions · Tilburg, The Netherlands · KVK 42099495
+            ISB Security Solutions · Tilburg, The Netherlands · KVK 42099496
           </p>
           <p className="text-ink-faint">Enterprise Security Operations Software</p>
         </div>
