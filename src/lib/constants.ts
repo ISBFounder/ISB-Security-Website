@@ -4,7 +4,7 @@ export const SITE = {
   url: "https://isbsecuritysolutions.nl",
   email: "info@isbsecuritysolutions.nl",
   location: "Tilburg, The Netherlands",
-  kvk: "42099496",
+  kvk: "42099495",
   mission:
     "Build a unified Security Operations Platform for professional security organizations.",
   vision:
