@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { Button } from "@/components/ui/Button";
 import { TechnologyArchitecture } from "@/components/technology/TechnologyArchitecture";
 import { TechnologyStackExplorer } from "@/components/technology/TechnologyStackExplorer";
 import { OsContinuity } from "@/components/os/OsContinuity";
