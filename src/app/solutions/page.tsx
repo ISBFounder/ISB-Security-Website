@@ -14,18 +14,6 @@ export const metadata: Metadata = {
   description:
     "Operational workflows and solution scenarios for object security, mobile patrol, events, retail, corporate, healthcare and public-sector environments.",
   alternates: { canonical: `${SITE.url}/solutions` },
-  openGraph: {
-    title: `Security Operations Solutions | ${SITE.name}`,
-    description:
-      "Operational workflows and solution scenarios for object security, mobile patrol, events, retail, corporate, healthcare and public-sector environments.",
-    url: `${SITE.url}/solutions`,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `Security Operations Solutions | ${SITE.name}`,
-    description:
-      "Operational workflows and solution scenarios for object security, mobile patrol, events, retail, corporate, healthcare and public-sector environments.",
-  },
 };
 
 export default function SolutionsPage() {
@@ -93,6 +81,23 @@ export default function SolutionsPage() {
           />
           <div className="mt-10">
             <EnvironmentExplorer />
+          </div>
+        </div>
+      </section>
+
+      <section className="section divider">
+        <div className="container-site">
+          <div className="border border-border bg-surface/40 p-8 md:p-10">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="heading-lg">Discuss how ISB maps to your operation.</h2>
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
+                <Button href="/request-demo">
+                  Request Demo
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </Button>
+                <Button href="/contact" variant="secondary">Contact ISB</Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
