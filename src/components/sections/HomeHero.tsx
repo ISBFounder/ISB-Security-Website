@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { ProductInterface } from "@/components/visuals/ProductInterface";
+import { HeroProductStage } from "@/components/visuals/HeroProductStage";
 
 const CREDIBILITY = [
   "Built for multi-customer security operations",
@@ -29,13 +30,14 @@ export function HomeHero() {
   return (
     <section className="relative overflow-hidden pb-12 pt-14 md:pb-16 md:pt-20 lg:pt-24">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,#14171B_0%,transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_48%_at_50%_-8%,#1B1F24_0%,transparent_58%)]" />
+        <div className="absolute left-1/2 top-[18%] h-[42%] w-[70%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(198,161,91,0.05),transparent_70%)]" />
         <div
-          className="absolute inset-0 opacity-[0.035]"
+          className="absolute inset-0 opacity-[0.028]"
           style={{
             backgroundImage:
               "linear-gradient(to right, #A1A7AF 1px, transparent 1px), linear-gradient(to bottom, #A1A7AF 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
+            backgroundSize: "56px 56px",
           }}
         />
         <div className="absolute inset-x-0 top-0 h-px bg-border-subtle" />
@@ -86,7 +88,7 @@ export function HomeHero() {
             className="flex flex-col justify-end lg:col-span-5"
             {...fade(0.08)}
           >
-            <div className="border border-border bg-surface/30 p-5 lg:ml-auto lg:max-w-sm">
+            <div className="surface-3 p-5 lg:ml-auto lg:max-w-sm">
               <p className="label mb-4">Institutional scope</p>
               <ul className="space-y-2.5 font-mono text-[11px] leading-relaxed text-ink-muted">
                 {CREDIBILITY.map((line) => (
@@ -101,7 +103,9 @@ export function HomeHero() {
         </div>
 
         <motion.div className="mt-12 md:mt-14 lg:mt-16" {...fade(0.14)}>
-          <ProductInterface />
+          <HeroProductStage>
+            <ProductInterface />
+          </HeroProductStage>
         </motion.div>
       </div>
     </section>
