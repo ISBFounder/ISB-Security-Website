@@ -24,3 +24,14 @@ export const springSnappy = {
   damping: 36,
   mass: 0.7,
 };
+
+/** Semantic panel change — selection / state, not decoration. */
+export const osPanelTransition = {
+  duration: motionDuration.fast,
+  ease: motionEase.standard,
+} as const;
+
+export const osSelectTransition = {
+  duration: motionDuration.instant,
+  ease: motionEase.out,
+} as const;
