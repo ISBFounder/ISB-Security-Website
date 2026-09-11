@@ -37,7 +37,7 @@ export const NAV = {
     { label: "Retail Security", href: "/solutions#retail", description: "Multi-location consistency" },
     { label: "Corporate Security", href: "/solutions#corporate", description: "Enterprise auditability" },
     { label: "Healthcare Security", href: "/solutions#healthcare", description: "Sensitive environments" },
-    { label: "Education Security", href: "/education", description: "Campus and facilities" },
+    { label: "Education Security", href: "/solutions#education", description: "Campus and facilities" },
     { label: "Municipal Security", href: "/solutions#government", description: "Public-sector accountability" },
     { label: "Government Contractors", href: "/solutions#government", description: "Governance-ready operations" },
   ] as const satisfies readonly NavLink[],
