@@ -30,7 +30,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     category: "platform",
     question: "What is ISB Security Platform?",
     answer:
-      "ISB Security Platform is a multi-tenant operational software system designed for professional security organizations. It connects reporting, objects, personnel, operations, governance and AI-assisted workflows through one shared organizational, access and audit context.",
+      "ISB Security Platform is the Security OS ISB is building for professional security organizations: a multi-tenant operational system that connects reporting, objects, personnel, operations, governance and AI-assisted workflows through one shared organizational, access and audit context.",
   },
   {
     id: "who-designed-for",
@@ -88,14 +88,14 @@ export const FAQ_ITEMS: FAQItem[] = [
     category: "availability",
     question: "What parts of the platform currently exist?",
     answer:
-      "Current foundation includes multi-tenant and access foundations, object/location hierarchy foundations, audit foundations, the Specific Report workflow, and the AI-assisted Specific Report MVP. Broader modules are in active development or planned.",
+      "Current foundation includes multi-tenant and access foundations, object/location hierarchy foundations, audit foundations, the Specific Report workflow, the AI-assisted Specific Report MVP, and Workforce Operations Phase 2.2 foundations (canonical shift and assignment lifecycle, shift reconciliation, workforce notifications). Broader modules remain in active development or planned.",
   },
   {
     id: "active-development",
     category: "availability",
     question: "What is currently in active development?",
     answer:
-      "Broader reporting workflows, notifications, escalation and supervisor workflows, deeper object and personnel context, mobile-oriented field usability and operational overview. See the Roadmap for the full staged view.",
+      "Workforce operations expansion (service contracts and requests, scheduling, availability, compliance and matching engines, dispatch, persona workspaces), plus broader reporting, notifications, escalation and supervisor workflows, deeper object and personnel context, and mobile-oriented field usability. Payroll integration is in discovery only — not a released product. See the Roadmap for the staged view.",
   },
   {
     id: "implemented-foundation",
@@ -188,7 +188,14 @@ export const FAQ_ITEMS: FAQItem[] = [
     category: "operations",
     question: "Can ISB support personnel qualifications and assignments?",
     answer:
-      "Assignments are part of the foundation model linking people to objects and operational context. Qualifications, certifications and availability are in active development. Scheduling foundations are planned.",
+      "Assignments are part of the foundation model linking people to objects and operational context. Qualifications, certifications and availability are in active development as part of Workforce Operations Phase 2.2. Scheduling expansion is in progress. Payroll connectivity is discovery work only and is not a production capability.",
+  },
+  {
+    id: "payroll-discovery",
+    category: "operations",
+    question: "Does ISB include payroll?",
+    answer:
+      "No. Payroll is not a released ISB product. Integration with existing payroll systems is under discovery so workforce hours and assignments can later connect to administration without ISB becoming a payroll engine. Nothing in discovery should be treated as current availability.",
   },
   {
     id: "ai-reporting-how",
@@ -237,7 +244,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     category: "ai",
     question: "What AI capability exists today?",
     answer:
-      "The AI-assisted Specific Report MVP: structured drafting, language clarity support, basic information extraction and a mandatory human review workflow.",
+      "The AI reporting assistant MVP for Specific Reports: structured drafting from field notes, language-clarity support, basic extraction, and a mandatory human review workflow. AI supports the report. It does not make the decision.",
   },
   {
     id: "ai-future",
