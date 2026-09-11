@@ -57,9 +57,10 @@ export function HomeHero() {
             </h1>
 
             <p className="body-lg mt-6 max-w-xl">
-              ISB Security Platform brings reporting, objects, personnel, patrols,
-              compliance and AI-assisted workflows together in one operational
-              ecosystem built specifically for professional security organizations.
+              ISB Security Platform is a unified Security Operations Platform —
+              a Security OS that connects reporting, objects, personnel, workforce
+              operations and AI-assisted workflows in one multi-tenant environment
+              for professional security organizations.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
