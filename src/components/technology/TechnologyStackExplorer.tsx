@@ -70,8 +70,11 @@ export function TechnologyStackExplorer() {
 
   return (
     <div>
-      <div className="space-y-1">
-        {LAYERS.map((layer) => {
+      <p className="mb-3 font-mono text-[10px] uppercase tracking-wider text-ink-faint">
+        Experience depends on domain · domain depends on services · services rest on foundation
+      </p>
+      <div className="space-y-1.5">
+        {LAYERS.map((layer, idx) => {
           const selected = active === layer.id;
           return (
             <button
@@ -79,19 +82,20 @@ export function TechnologyStackExplorer() {
               type="button"
               aria-pressed={selected}
               onClick={() => setActive(layer.id)}
-              onFocus={() => setActive(layer.id)}
               className={cn(
-                "w-full border px-4 py-3 text-left transition-colors",
+                "w-full px-4 py-3 text-left transition-[background-color,border-color,box-shadow] duration-150",
                 "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-gold",
                 selected
-                  ? "border-gold/30 bg-gold/10 text-ink"
-                  : "border-border-subtle bg-surface/20 text-ink-secondary hover:text-ink"
+                  ? "surface-3 text-ink os-selected"
+                  : "border border-border-subtle bg-surface/15 text-ink-secondary hover:text-ink"
               )}
+              style={{ marginLeft: `${idx * 10}px`, width: `calc(100% - ${idx * 10}px)` }}
             >
               <span className="font-mono text-[9px] text-ink-faint">
                 {layer.index}
               </span>
               <span className="ml-2 text-[13px] font-medium">{layer.title}</span>
+              <span className="mt-0.5 block text-[11px] text-ink-faint">{layer.purpose}</span>
             </button>
           );
         })}
