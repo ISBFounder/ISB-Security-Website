@@ -190,7 +190,16 @@ export function AIHumanWorkflow() {
                 <dt className="font-mono text-[9px] uppercase tracking-wide text-ink-faint">
                   {k}
                 </dt>
-                <dd className="mt-1 text-[13px] text-ink-secondary">{v}</dd>
+                <dd
+                  className={cn(
+                    "mt-1 text-[13px]",
+                    k === "Authority" && current.actor !== "AI"
+                      ? "text-gold"
+                      : "text-ink-secondary"
+                  )}
+                >
+                  {v}
+                </dd>
               </div>
             ))}
           </dl>
