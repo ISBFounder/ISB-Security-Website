@@ -24,7 +24,9 @@ export function AuditTrailVisual() {
             <span className="font-mono text-ink-faint">{e.t}</span>
             <div>
               <p className="text-ink-secondary">
-                <span className="text-ink">{e.actor}</span>
+                <span className={e.actor === "Supervisor" ? "text-gold" : "text-ink"}>
+                  {e.actor}
+                </span>
                 {" · "}
                 {e.action}
               </p>

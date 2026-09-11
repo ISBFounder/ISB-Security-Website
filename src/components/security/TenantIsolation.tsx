@@ -32,7 +32,7 @@ export function TenantIsolation() {
             aria-selected={org === id}
             onClick={() => setOrg(id)}
             className={cn(
-              "border px-3 py-1.5 text-[12px]",
+              "min-h-11 border px-3 py-1.5 text-[12px]",
               "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold",
               org === id
                 ? "border-gold/40 bg-gold/10 text-ink"
