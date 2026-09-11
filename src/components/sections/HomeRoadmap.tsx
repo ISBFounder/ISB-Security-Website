@@ -103,7 +103,7 @@ export function HomeRoadmap() {
       </div>
 
       <p className="mt-5 text-[12px] text-ink-muted">
-        Platform foundation and object hierarchy are completed. Workforce operations are active. AI intelligence is planned — not delivery commitments.
+        Platform foundation and object hierarchy are completed. Workforce operations are in active development. AI intelligence and later domains such as executive protection, secure mobility and visitor flow remain planned — not delivery commitments.
       </p>
 
       <div className="mt-6">
