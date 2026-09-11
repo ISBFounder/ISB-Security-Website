@@ -21,17 +21,14 @@ export function Header() {
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
-  // Portal target available after mount (SSR-safe)
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Close mobile on route change
   useEffect(() => {
     closeMobile();
   }, [pathname, closeMobile]);
 
-  // Scroll state — subtle opacity / border
   useEffect(() => {
     function onScroll() {
       setScrolled(window.scrollY > 8);
@@ -41,7 +38,6 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Escape from anywhere while open
   useEffect(() => {
     if (!mobileOpen) return;
     function onKey(e: KeyboardEvent) {
@@ -84,17 +80,20 @@ export function Header() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 border-b transition-[background-color,border-color] duration-200",
-          scrolled
-            ? "border-border bg-bg/95 backdrop-blur-md"
-            : "border-border-subtle bg-bg/80 backdrop-blur-sm"
+          "fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow,border-color] duration-[280ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]",
+          scrolled ? "glass-nav-scrolled" : "glass-nav"
         )}
       >
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
 
-        <div className="container-site flex h-14 items-center justify-between lg:h-16">
+        <div
+          className={cn(
+            "container-site flex items-center justify-between transition-[height] duration-[280ms]",
+            scrolled ? "h-12 lg:h-14" : "h-14 lg:h-16"
+          )}
+        >
           <Logo size="sm" />
 
           <DesktopNavigation />
@@ -129,13 +128,6 @@ export function Header() {
         </div>
       </header>
 
-      {/*
-        Mobile navigation is portaled to document.body so it is NOT a
-        descendant of the header. Header uses backdrop-filter which creates
-        a containing block for position:fixed children in modern browsers,
-        clipping the panel to the header height (~56px). Portal restores
-        viewport-relative fixed positioning.
-      */}
       {mobilePanel}
     </>
   );
