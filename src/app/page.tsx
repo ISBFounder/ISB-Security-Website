@@ -39,7 +39,7 @@ export default function HomePage() {
     <>
       <HomeHero />
 
-      <section className="section divider">
+      <section className="section divider os-layer">
         <div className="container-site">
           <SectionHeader
             eyebrow="Industry reality"
@@ -65,7 +65,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section divider">
+      <section className="section divider os-layer">
         <div className="container-site">
           <SectionHeader
             eyebrow="Operational capabilities"
@@ -97,7 +97,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section divider">
+      <section className="section divider os-layer">
         <div className="container-site">
           <SectionHeader
             eyebrow="Security & trust"
@@ -138,7 +138,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section divider">
+      <section className="section divider os-layer">
         <div className="container-site">
           <SectionHeader
             eyebrow="Roadmap"
