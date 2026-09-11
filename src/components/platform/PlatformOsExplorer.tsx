@@ -180,7 +180,7 @@ export function PlatformOsExplorer() {
                   "min-w-0 bg-bg px-3 py-3 text-left",
                   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-gold",
                   selected
-                    ? "surface-3 text-ink"
+                    ? "surface-3 os-selected text-ink"
                     : related
                       ? "bg-surface/70 text-ink-secondary"
                       : "text-ink-muted hover:text-ink-secondary"
