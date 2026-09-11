@@ -69,7 +69,7 @@ export default function HomePage() {
         <div className="container-site">
           <SectionHeader
             eyebrow="Operational capabilities"
-            title="One platform. Hundreds of operational workflows."
+            title="One platform. Designed for hundreds of operational workflows."
             description="Every capability shares the same operational context, security model and organizational structure. Different workflows. One platform foundation."
           />
           <div className="mt-12 md:mt-14">
@@ -102,7 +102,7 @@ export default function HomePage() {
           <SectionHeader
             eyebrow="Security & trust"
             title="Trust starts with architecture."
-            description="ISB is built around identity, role-based access, tenant isolation, traceability and controlled operational data flows — with an established security and audit foundation and continuously expanding operational capabilities."
+            description="One security model: identity, permissions, tenant boundaries and auditability — designed into the operating system, not added per module."
           />
           <div className="mt-12 md:mt-14">
             <SecurityTrustArchitecture />
