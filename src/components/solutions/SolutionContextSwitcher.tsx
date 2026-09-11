@@ -92,7 +92,7 @@ export function SolutionContextSwitcher() {
               className={cn(
                 "bg-bg px-3 py-2.5 text-[12px]",
                 "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-gold",
-                selected ? "surface-3 text-ink" : "text-ink-muted hover:text-ink-secondary"
+                selected ? "surface-3 os-selected text-ink" : "text-ink-muted hover:text-ink-secondary"
               )}
             >
               {c.title}
