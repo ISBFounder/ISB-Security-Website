@@ -3,7 +3,10 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { useReducedMotion } from "framer-motion";
 
-/** Desktop-only, low-amplitude pointer tilt. Off on touch, small viewports, reduced motion. */
+/**
+ * Desktop-only, low-amplitude pointer tilt for the product window.
+ * Disabled on coarse pointers, small viewports, and reduced motion.
+ */
 export function HeroProductStage({ children }: { children: ReactNode }) {
   const reduce = useReducedMotion();
   const stageRef = useRef<HTMLDivElement>(null);
@@ -52,7 +55,11 @@ export function HeroProductStage({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <div className="relative" onMouseMove={onMove} onMouseLeave={reset}>
+    <div
+      className="relative"
+      onMouseMove={onMove}
+      onMouseLeave={reset}
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute -inset-8 hidden rounded-[2px] bg-[radial-gradient(ellipse_at_center,rgba(198,161,91,0.07),transparent_62%)] lg:block"
