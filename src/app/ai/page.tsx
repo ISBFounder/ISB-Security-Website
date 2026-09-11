@@ -79,19 +79,10 @@ export default function AIPage() {
             eyebrow="AI operating principle"
             title="Assistance inside a controlled workflow."
           />
-          <div className="mt-8 flex flex-wrap items-center gap-2 font-mono text-[12px] text-ink-secondary">
-            {["Field notes", "Structured extraction", "AI draft", "Human review", "Supervisor approval", "Locked record"].map(
-              (s, i) => (
-                <span key={s} className="flex items-center gap-2">
-                  {i > 0 && <span className="text-ink-faint" aria-hidden>→</span>}
-                  <span className="border border-border bg-surface/40 px-2.5 py-1.5">{s}</span>
-                </span>
-              )
-            )}
-          </div>
           <p className="mt-4 max-w-2xl text-[13px] text-ink-muted">
-            AI assists with structure, clarity and completeness. The officer and supervisor remain
-            responsible for the final operational record.
+            The operational sequence is field notes, structured extraction, an AI draft,
+            officer review, supervisor approval, then a locked record. The explorer below
+            is the working model. AI assists with structure only.
           </p>
         </div>
       </section>
