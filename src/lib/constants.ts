@@ -6,9 +6,9 @@ export const SITE = {
   location: "Tilburg, The Netherlands",
   kvk: "42099496",
   mission:
-    "Transform the European security industry through one intelligent operational platform.",
+    "Build a unified Security Operations Platform for professional security organizations.",
   vision:
-    "Replace paper reporting, spreadsheets, disconnected messaging tools and fragmented operational systems with one secure, modular and AI-assisted security operations ecosystem.",
+    "Replace fragmented reporting software, rostering tools, personnel systems, incident tools, messaging, compliance administration and spreadsheets with one multi-tenant Security OS.",
 } as const;
 
 /** Controlled legal policy date — do not auto-update on every build */
@@ -37,7 +37,7 @@ export const NAV = {
     { label: "Retail Security", href: "/solutions#retail", description: "Multi-location consistency" },
     { label: "Corporate Security", href: "/solutions#corporate", description: "Enterprise auditability" },
     { label: "Healthcare Security", href: "/solutions#healthcare", description: "Sensitive environments" },
-    { label: "Education Security", href: "/solutions#education", description: "Campus and facilities" },
+    { label: "Education Security", href: "/education", description: "Campus and facilities" },
     { label: "Municipal Security", href: "/solutions#government", description: "Public-sector accountability" },
     { label: "Government Contractors", href: "/solutions#government", description: "Governance-ready operations" },
   ] as const satisfies readonly NavLink[],
