@@ -8,6 +8,7 @@ import {
 } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { osPanelTransition } from "@/lib/motion";
 
 type StageId =
   | "notes"
@@ -17,13 +18,18 @@ type StageId =
   | "approval"
   | "locked";
 
-const STAGES: { id: StageId; label: string; index: string }[] = [
-  { id: "notes", label: "Field Notes", index: "01" },
-  { id: "extraction", label: "Extraction", index: "02" },
-  { id: "draft", label: "Draft Report", index: "03" },
-  { id: "review", label: "Human Review", index: "04" },
-  { id: "approval", label: "Supervisor", index: "05" },
-  { id: "locked", label: "Locked Record", index: "06" },
+const STAGES: {
+  id: StageId;
+  label: string;
+  index: string;
+  actor: "Officer" | "AI" | "Supervisor" | "System";
+}[] = [
+  { id: "notes", label: "Field Notes", index: "01", actor: "Officer" },
+  { id: "extraction", label: "Extraction", index: "02", actor: "AI" },
+  { id: "draft", label: "Draft Report", index: "03", actor: "AI" },
+  { id: "review", label: "Human Review", index: "04", actor: "Officer" },
+  { id: "approval", label: "Supervisor", index: "05", actor: "Supervisor" },
+  { id: "locked", label: "Locked Record", index: "06", actor: "System" },
 ];
 
 function FieldNotesView() {
@@ -278,21 +284,24 @@ export function AIReportAssistantShowcase() {
     select(STAGES[n].id, n);
   }
 
+  const currentIndex = STAGES.findIndex((s) => s.id === active);
+  const current = STAGES[currentIndex];
+
   return (
     <div className="space-y-6">
       {/* Human control rail — persistent */}
       <div className="flex flex-wrap items-center justify-center gap-2 border border-border bg-surface/30 px-4 py-3 font-mono text-[11px] text-ink-muted sm:gap-3">
-        <span className="text-gold">AI assists</span>
+        <span className="text-ink-muted">AI assists</span>
         <span className="text-ink-faint" aria-hidden>
-          ↓
+          →
         </span>
         <span className="text-ink-secondary">Officer reviews</span>
         <span className="text-ink-faint" aria-hidden>
-          ↓
+          →
         </span>
-        <span className="text-ink-secondary">Supervisor approves</span>
+        <span className="text-gold">Supervisor approves</span>
         <span className="ml-0 w-full text-center text-[10px] text-ink-faint sm:ml-2 sm:w-auto sm:text-left">
-          Human responsibility remains central
+          AI supports the report. Not the decision.
         </span>
       </div>
 
@@ -327,7 +336,9 @@ export function AIReportAssistantShowcase() {
                     : "border-transparent text-ink-muted hover:text-ink-secondary"
                 )}
               >
-                <span className="font-mono text-[9px] text-ink-faint">{s.index}</span>
+                <span className="font-mono text-[9px] text-ink-faint">
+                  {s.index} · {s.actor}
+                </span>
                 <span className="text-[12px] font-medium sm:text-[13px]">{s.label}</span>
               </button>
             );
@@ -342,13 +353,44 @@ export function AIReportAssistantShowcase() {
             aria-labelledby={`ai-tab-${active}`}
             className="bg-surface/15 p-5 md:p-6"
           >
+            <div className="mb-4 flex items-center justify-between gap-3 text-[12px] text-ink-muted">
+              <p>
+                Actor ·{" "}
+                <span className={current.actor === "AI" ? "text-ink-muted" : "text-ink-secondary"}>
+                  {current.actor}
+                </span>
+                {current.actor === "AI"
+                  ? " · suggestion only"
+                  : current.actor === "System"
+                    ? " · audit state"
+                    : " · decision authority"}
+              </p>
+              <div className="flex gap-2 lg:hidden">
+                <button
+                  type="button"
+                  className="border border-border-subtle px-2.5 py-1 disabled:opacity-40"
+                  disabled={currentIndex === 0}
+                  onClick={() => select(STAGES[currentIndex - 1].id, currentIndex - 1)}
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  className="border border-border-subtle px-2.5 py-1 disabled:opacity-40"
+                  disabled={currentIndex === STAGES.length - 1}
+                  onClick={() => select(STAGES[currentIndex + 1].id, currentIndex + 1)}
+                >
+                  Next
+                </button>
+              </div>
+            </div>
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
                 initial={reduce ? false : { opacity: 0, x: 8 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={reduce ? undefined : { opacity: 0 }}
-                transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={osPanelTransition}
               >
                 <StageContent id={active} />
               </motion.div>
