@@ -143,7 +143,7 @@ export default function HomePage() {
           <SectionHeader
             eyebrow="Roadmap"
             title="Transparent product direction"
-            description="Platform foundation and object hierarchy are completed. Workforce operations are active. AI intelligence is planned — not delivery commitments."
+            description="Platform foundation and object hierarchy are completed. Workforce operations are in active development. AI intelligence and later operational domains remain planned — not delivery commitments."
           />
           <div className="mt-12 md:mt-14">
             <HomeRoadmap />
