@@ -26,7 +26,7 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-gold text-bg hover:bg-gold-light focus-visible:outline-gold disabled:opacity-50",
+    "bg-gold text-bg shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] hover:bg-gold-light focus-visible:outline-gold disabled:opacity-50",
   secondary:
     "border border-border bg-transparent text-ink hover:border-gold/40 hover:bg-surface focus-visible:outline-gold",
   ghost: "text-ink-secondary hover:text-ink focus-visible:outline-gold",
@@ -46,7 +46,8 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 font-medium transition-colors duration-150",
+    "inline-flex items-center justify-center gap-2 font-medium transition-[color,background-color,border-color,transform,box-shadow] duration-150",
+    "active:scale-[0.98] motion-reduce:active:scale-100",
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
     variants[variant],
     sizes[size],
