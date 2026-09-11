@@ -8,6 +8,7 @@ import {
 } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { osPanelTransition } from "@/lib/motion";
 
 type TabId = "command" | "reporting" | "objects" | "personnel";
 
@@ -18,17 +19,24 @@ const TABS: { id: TabId; label: string }[] = [
   { id: "personnel", label: "Personnel" },
 ];
 
-const SIDE_NAV = [
-  "Command",
-  "Reports",
-  "Objects",
-  "Personnel",
-  "Patrols",
-  "Incidents",
-  "Compliance",
-  "Intelligence",
-  "Administration",
-] as const;
+const SIDE_NAV: { label: string; tab?: TabId }[] = [
+  { label: "Command", tab: "command" },
+  { label: "Reports", tab: "reporting" },
+  { label: "Objects", tab: "objects" },
+  { label: "Personnel", tab: "personnel" },
+  { label: "Patrols" },
+  { label: "Incidents" },
+  { label: "Compliance" },
+  { label: "Intelligence" },
+  { label: "Administration" },
+];
+
+const TAB_CONTEXT: Record<TabId, string> = {
+  command: "Command",
+  reporting: "Reporting",
+  objects: "Objects",
+  personnel: "Personnel",
+};
 
 export function ProductInterface() {
   const [tab, setTab] = useState<TabId>("command");
@@ -71,7 +79,7 @@ export function ProductInterface() {
         className="pointer-events-none absolute -inset-px border border-border/80"
         aria-hidden
       />
-      <div className="relative border border-border bg-bg-secondary shadow-elevated">
+      <div className="glass-os relative overflow-hidden">
         {/* Window chrome */}
         <div className="flex items-center gap-3 border-b border-border-subtle bg-surface px-3 py-2 sm:px-4">
           <div className="flex gap-1.5" aria-hidden>
@@ -117,30 +125,50 @@ export function ProductInterface() {
             <span className="h-1.5 w-1.5 bg-status-success" aria-hidden />
             Normal Operations
           </span>
+          <span className="w-full font-mono text-[10px] text-ink-faint sm:w-auto">
+            View · {TAB_CONTEXT[tab]}
+          </span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-[160px_1fr] lg:grid-cols-[180px_1fr]">
           {/* App side nav — desktop/tablet */}
           <aside
             className="hidden border-r border-border-subtle bg-bg/50 p-2 md:block"
-            aria-hidden
+            aria-label="Security OS modules"
           >
             <p className="mb-2 px-2 font-mono text-[9px] uppercase tracking-wider text-ink-faint">
               Modules
             </p>
-            {SIDE_NAV.map((item, i) => (
-              <div
-                key={item}
-                className={cn(
-                  "mb-0.5 px-2 py-1.5 text-[12px]",
-                  i === 0
-                    ? "border-l-2 border-gold bg-surface text-ink"
-                    : "border-l-2 border-transparent text-ink-muted"
-                )}
-              >
-                {item}
-              </div>
-            ))}
+            {SIDE_NAV.map((item) => {
+              const selected = item.tab === tab;
+              if (item.tab) {
+                const index = TABS.findIndex((t) => t.id === item.tab);
+                return (
+                  <button
+                    key={item.label}
+                    type="button"
+                    onClick={() => selectTab(item.tab!, index)}
+                    className={cn(
+                      "mb-0.5 w-full px-2 py-1.5 text-left text-[12px]",
+                      "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-gold",
+                      selected
+                        ? "border-l-2 border-gold bg-surface text-ink"
+                        : "border-l-2 border-transparent text-ink-muted hover:text-ink-secondary"
+                    )}
+                  >
+                    {item.label}
+                  </button>
+                );
+              }
+              return (
+                <div
+                  key={item.label}
+                  className="mb-0.5 border-l-2 border-transparent px-2 py-1.5 text-[12px] text-ink-faint"
+                >
+                  {item.label}
+                </div>
+              );
+            })}
           </aside>
 
           <div className="min-w-0">
@@ -186,10 +214,10 @@ export function ProductInterface() {
                   role="tabpanel"
                   id={`panel-${tab}`}
                   aria-labelledby={`tab-${tab}`}
-                  initial={reduce ? false : { opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={reduce ? undefined : { opacity: 0 }}
-                  transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                  initial={reduce ? false : { opacity: 0, x: 8 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={reduce ? undefined : { opacity: 0, x: -6 }}
+                  transition={osPanelTransition}
                 >
                   {tab === "command" && <CommandView />}
                   {tab === "reporting" && <ReportingView />}
