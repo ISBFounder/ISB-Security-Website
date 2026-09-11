@@ -131,6 +131,7 @@ const STAGES = [
           "Matching engine",
           "Dispatch system",
           "Persona workspaces",
+          "Payroll discovery (research — not a released product)",
         ],
       },
     ],
@@ -223,7 +224,7 @@ export default function RoadmapPage() {
 
       <section className="section divider">
         <div className="container-site">
-          <SectionHeader align="left" eyebrow="Product roadmap" title="Four phases. One connected direction." />
+          <SectionHeader align="left" eyebrow="Product roadmap" title="Operational layers. One connected direction." />
           <div className="mt-10 grid gap-0 border border-border md:grid-cols-2 xl:grid-cols-4">
             {STAGES.map((stage, i) => (
               <div
@@ -308,6 +309,30 @@ export default function RoadmapPage() {
                 <p className="font-mono text-[10px] text-ink-faint sm:text-center">depends on</p>
                 <p className="text-[13px] text-ink-secondary">{dep.depends}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section divider">
+        <div className="container-site">
+          <SectionHeader
+            align="left"
+            eyebrow="Future domains"
+            title="Adjacent operational surfaces under research."
+            description="These domains are not current product claims. They describe possible later surfaces on the same Security OS foundations."
+          />
+          <div className="mt-8 flex flex-wrap gap-1.5">
+            {[
+              "Executive Protection",
+              "Secure Mobility",
+              "Visitor & Client Flow",
+              "LPR",
+              "Talent / TCE",
+            ].map((p) => (
+              <span key={p} className="border border-border-subtle bg-bg/50 px-2.5 py-1.5 text-[12px] text-ink-secondary">
+                {p}
+              </span>
             ))}
           </div>
         </div>
