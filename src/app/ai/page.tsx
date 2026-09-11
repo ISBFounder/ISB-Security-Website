@@ -3,6 +3,9 @@ import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { AILifecycleExplorer } from "@/components/ai/AILifecycleExplorer";
+import { AIHumanWorkflow } from "@/components/ai/AIHumanWorkflow";
+import { AIBeforeAfter } from "@/components/ai/AIBeforeAfter";
+import { OsContinuity } from "@/components/os/OsContinuity";
 import { SITE } from "@/lib/constants";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/seo";
@@ -39,7 +42,13 @@ export default function AIPage() {
       <section className="section !pb-10">
         <div className="container-site">
           <div className="max-w-3xl">
-            <p className="label">AI</p>
+            <OsContinuity
+              steps={[
+                { label: "Homepage AI pipeline", href: "/" },
+                { label: "Full AI workflow" },
+              ]}
+            />
+            <p className="label mt-3">AI</p>
             <h1 className="heading-xl mt-3">
               AI that assists the operation. Not the operator.
             </h1>
@@ -95,6 +104,12 @@ export default function AIPage() {
             title="Specific Report assistant · built on structured operational data."
             description="The demonstrable AI workflow turns field notes into structured draft reports for human review. Expansion beyond this foundation remains under development."
           />
+          <div className="mt-10">
+            <AIHumanWorkflow />
+          </div>
+          <div className="mt-10">
+            <AIBeforeAfter />
+          </div>
           <div className="mt-10">
             <AILifecycleExplorer />
           </div>
