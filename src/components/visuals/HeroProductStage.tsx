@@ -4,8 +4,7 @@ import { useCallback, useEffect, useRef, useState, type ReactNode } from "react"
 import { useReducedMotion } from "framer-motion";
 
 /**
- * Desktop-only, low-amplitude pointer tilt for the product window.
- * Disabled on coarse pointers, small viewports, and reduced motion.
+ * Product stage wrapper. Pointer tilt is disabled so the OS frame stays still.
  */
 export function HeroProductStage({ children }: { children: ReactNode }) {
   const reduce = useReducedMotion();
@@ -16,7 +15,7 @@ export function HeroProductStage({ children }: { children: ReactNode }) {
   useEffect(() => {
     const mqFine = window.matchMedia("(hover: hover) and (pointer: fine)");
     const mqWide = window.matchMedia("(min-width: 1024px)");
-    const update = () => setEnabled(mqFine.matches && mqWide.matches && !reduce);
+    const update = () => setEnabled(false);
     update();
     mqFine.addEventListener("change", update);
     mqWide.addEventListener("change", update);

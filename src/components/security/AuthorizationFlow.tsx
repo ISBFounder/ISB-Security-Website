@@ -69,7 +69,7 @@ export function AuthorizationFlow() {
               </p>
               <p className="mt-0.5 font-mono text-[11px] text-ink-muted">{s.note}</p>
             </div>
-            {i < steps.length - 1 && !blocked && (
+            {i < steps.length - 1 && !blocked && !(route === "rejected" && i === steps.length - 2) && (
               <span className="font-mono text-[10px] text-ink-faint" aria-hidden>
                 ↓
               </span>

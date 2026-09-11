@@ -73,9 +73,14 @@ export function TechnologyStackExplorer() {
       <p className="mb-3 font-mono text-[10px] uppercase tracking-wider text-ink-faint">
         Experience depends on domain · domain depends on services · services rest on foundation
       </p>
-      <div className="space-y-1.5">
+      <div className="relative space-y-0">
+        <span
+          aria-hidden
+          className="pointer-events-none absolute bottom-3 left-[7px] top-3 w-px bg-border"
+        />
         {LAYERS.map((layer, idx) => {
           const selected = active === layer.id;
+          const isFoundation = layer.id === "foundation";
           return (
             <button
               key={layer.id}
@@ -83,13 +88,16 @@ export function TechnologyStackExplorer() {
               aria-pressed={selected}
               onClick={() => setActive(layer.id)}
               className={cn(
-                "w-full px-4 py-3 text-left transition-[background-color,border-color,box-shadow] duration-150",
+                "relative w-full px-4 py-3 text-left transition-[background-color,border-color,box-shadow] duration-150",
                 "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-gold",
+                idx > 0 && "-mt-px",
                 selected
-                  ? "surface-3 text-ink os-selected"
-                  : "border border-border-subtle bg-surface/15 text-ink-secondary hover:text-ink"
+                  ? "surface-3 text-ink os-selected z-[1]"
+                  : isFoundation
+                    ? "border border-border bg-surface/40 text-ink-secondary hover:text-ink"
+                    : "border border-border-subtle bg-bg/30 text-ink-secondary hover:text-ink"
               )}
-              style={{ marginLeft: `${idx * 10}px`, width: `calc(100% - ${idx * 10}px)` }}
+              style={{ marginLeft: `${idx * 16}px`, width: `calc(100% - ${idx * 16}px)` }}
             >
               <span className="font-mono text-[9px] text-ink-faint">
                 {layer.index}
