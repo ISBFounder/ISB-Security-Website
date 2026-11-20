@@ -30,7 +30,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     category: "platform",
     question: "What is ISB Security Platform?",
     answer:
-      "ISB Security Platform is the Security OS ISB is building for professional security organizations: a multi-tenant operational system that connects reporting, objects, personnel, operations, governance and AI-assisted workflows through one shared organizational, access and audit context.",
+      "The ISB Security Platform is in active development. ISB Security Solutions is building a unified platform for professional security operations, reporting, personnel planning and site management. It has not been announced as commercially available or production-validated, and no public release date has been established.",
   },
   {
     id: "who-designed-for",
@@ -51,7 +51,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     category: "platform",
     question: "Is ISB one application or a collection of separate modules?",
     answer:
-      "ISB is one platform with modular capability domains. Domains such as reporting, objects, personnel and operations share the same identity, permission, tenant, object and audit foundations. Modules expand without becoming isolated products.",
+      "ISB is one platform with modular capability domains. Reporting, objects, personnel and operations are in active development on shared identity, permission and audit foundations. Modules are not separate products, and not every module is available.",
   },
   {
     id: "multi-customer-objects",
@@ -66,7 +66,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     question:
       "How is the platform structured around organizations, customers and objects?",
     answer:
-      "Organization → Customers → Objects, with further location hierarchy (buildings, floors, zones, rooms, posts, checkpoints and assets). Users, roles, reports and operational actions attach to this structure so permissions and records remain context-aware.",
+      "The development platform includes customer and object hierarchy management. Objects and locations are in active development. The intended structure runs from organization and customer to object and finer locations. It is not presented as a completed production hierarchy.",
   },
   {
     id: "company-vs-platform",
@@ -81,49 +81,56 @@ export const FAQ_ITEMS: FAQItem[] = [
     category: "availability",
     question: "Is ISB Security Platform commercially available?",
     answer:
-      "The platform is under active development. It is not presented as commercially production-available. Organizations can request a demonstration and discuss pilot or early engagement options.",
+      "No. The platform has not been announced as commercially available or production-validated. No public release date has been established. Organizations can request a demonstration. A demonstration is not a production release.",
   },
   {
     id: "what-exists",
     category: "availability",
     question: "What parts of the platform currently exist?",
     answer:
-      "Current foundation includes multi-tenant and access foundations, object/location hierarchy foundations, audit foundations, the Specific Report workflow, the AI-assisted Specific Report MVP, and Workforce Operations Phase 2.2 foundations (canonical shift and assignment lifecycle, shift reconciliation, workforce notifications). Broader modules remain in active development or planned.",
+      "Foundation established: authentication and role-based access, company-scoped multi-tenant data, scheduling and assignment authority, attendance and finalized worked time, audit and events, bounded financial, billing and payroll-data foundations, an integration outbox, and selected offline reporting and patrol workflows. These are technical foundations, not commercial availability. Security operations, patrols, reporting and recovery, incidents, personnel and workforce management, objects and locations, AI-assisted report drafting, selected mobile workflows, service requests and contracts, document workspaces and client-facing reporting are in active development.",
   },
   {
     id: "active-development",
     category: "availability",
     question: "What is currently in active development?",
     answer:
-      "Workforce operations expansion (service contracts and requests, scheduling, availability, compliance and matching engines, dispatch, persona workspaces), plus broader reporting, notifications, escalation and supervisor workflows, deeper object and personnel context, and mobile-oriented field usability. Payroll integration is in discovery only — not a released product. See the Roadmap for the staged view.",
+      "Security operations, patrols, reporting and recovery, incident workflows, personnel and workforce management, objects and locations, AI-assisted report drafting, selected mobile and offline workflows, service requests and contracts, document workspaces and client-facing reporting workflows. Payroll is not a released product. Bounded financial, billing and payroll-data foundations exist and do not make ISB a payroll system.",
   },
   {
     id: "implemented-foundation",
     category: "availability",
-    question: 'What does "Implemented Foundation" mean?',
+    question: 'What does "Foundation established" mean?',
     answer:
-      "Core capability or architecture exists as part of the current development foundation. It is not automatically a claim that the capability is production-complete for every deployment scenario.",
+      "A technical foundation exists in the development platform. It is not a claim of commercial availability, production validation or completeness for every deployment.",
+  },
+  {
+    id: "discovery-architecture",
+    category: "availability",
+    question: 'What does "Discovery / architecture" mean?',
+    answer:
+      "An authority or design question is under study and is not an available capability. This category covers immutable evidence custody, definitive document publication authority, personnel qualification authority, and privacy retention and legal-hold governance.",
   },
   {
     id: "planned-meaning",
     category: "availability",
     question: 'What does "Planned" mean?',
     answer:
-      "The capability is part of the intended platform direction but is not yet committed to release timing. Placement on the roadmap is not a contractual delivery promise.",
+      "The capability is part of the intended platform direction. No public release date has been established. Placement on the roadmap is not a contractual delivery promise.",
   },
   {
     id: "future-direction",
     category: "availability",
-    question: 'What does "Future Direction" mean?',
+    question: 'What does "Future / research" mean?',
     answer:
-      "Long-term product direction subject to research, validation and prioritization. Future direction items are not committed delivery and should not be treated as near-term availability.",
+      "Research direction subject to validation and prioritization. Wearable integrations and predictive AI risk analysis are in this category. They are not committed delivery and not near-term availability.",
   },
   {
     id: "roadmap-dates",
     category: "availability",
     question: "Does the roadmap contain release dates?",
     answer:
-      "No. The roadmap intentionally avoids quarter labels and artificial deadlines. Stages describe maturity, not a delivery calendar.",
+      "No. No public release date has been established. The public horizons are Now, Next and Later. They describe direction, not a delivery calendar.",
   },
   {
     id: "roadmap-change",
@@ -145,35 +152,35 @@ export const FAQ_ITEMS: FAQItem[] = [
     question:
       "Can the platform model buildings, floors, zones and checkpoints?",
     answer:
-      "Yes. Object hierarchy foundations include buildings, floors, zones, rooms, posts, checkpoints and assets so operational context can attach at the appropriate level.",
+      "Objects and locations are in active development, including the customer and object hierarchy. The model is intended to cover buildings, floors, zones, rooms, posts and checkpoints. It is not a completed production hierarchy. Interactive site maps are planned.",
   },
   {
     id: "field-use",
     category: "operations",
     question: "Can officers use ISB in the field?",
     answer:
-      "Interfaces are designed with field use in mind. Mobile-oriented workflows and field usability are part of active development. Native mobile apps are not claimed unless released.",
+      "Selected mobile workflows are in active development. Native mobile apps are not claimed.",
   },
   {
     id: "mobile-patrol",
     category: "operations",
     question: "Does ISB support mobile patrol operations?",
     answer:
-      "Mobile patrol is a supported operational environment in the product model. Route continuity, object context and rapid reporting are design goals. Broader patrol workflow expansion is planned or in development depending on the specific capability.",
+      "Patrols are in active development. Selected offline reporting and patrol workflows are part of the technical foundation. Not every patrol capability, and not every module, works offline.",
   },
   {
     id: "offline",
     category: "operations",
     question: "Does ISB support offline use?",
     answer:
-      "Offline-capable field workflows are an architecture direction and planned expansion item. They are not presented as fully released. The intended model is local workflow, reconnect, controlled synchronization, conflict handling and audit history.",
+      "Selected offline reporting and patrol workflows form part of the technical foundation. Selected mobile and offline workflows remain in active development. Not every module works offline.",
   },
   {
     id: "realtime",
     category: "operations",
     question: "Does ISB support realtime updates?",
     answer:
-      "Realtime foundations are being designed to support synchronized operational state for authorized users (for example incident status, review state, assignments). Guaranteed zero-latency or millisecond SLAs are not claimed.",
+      "No realtime service level is claimed. Synchronized operational state is not presented as a guaranteed live service.",
   },
   {
     id: "customer-access",
@@ -181,35 +188,35 @@ export const FAQ_ITEMS: FAQItem[] = [
     question:
       "Can customers receive access to their own operational information?",
     answer:
-      "Scoped customer visibility and customer portals are planned expansion. They depend on tenant and permission boundaries. Current focus remains the operator-side operational platform.",
+      "Client-facing reporting workflows are in active development. They are not a released customer-portal product. Access remains company-scoped.",
   },
   {
     id: "qualifications-assignments",
     category: "operations",
     question: "Can ISB support personnel qualifications and assignments?",
     answer:
-      "Assignments are part of the foundation model linking people to objects and operational context. Qualifications, certifications and availability are in active development as part of Workforce Operations Phase 2.2. Scheduling expansion is in progress. Payroll connectivity is discovery work only and is not a production capability.",
+      "Scheduling and assignment authority are established foundations. Personnel and workforce management is in active development. Personnel qualification authority is in discovery and is not an available qualification system. Payroll is not a released product.",
   },
   {
     id: "payroll-discovery",
     category: "operations",
     question: "Does ISB include payroll?",
     answer:
-      "No. Payroll is not a released ISB product. Integration with existing payroll systems is under discovery so workforce hours and assignments can later connect to administration without ISB becoming a payroll engine. Nothing in discovery should be treated as current availability.",
+      "No. Payroll is not a released ISB product. Bounded financial, billing and payroll-data foundations exist in the development platform. They do not make ISB a payroll system, and no payroll integration is announced as available.",
   },
   {
     id: "ai-reporting-how",
     category: "ai",
     question: "How does AI-assisted reporting work?",
     answer:
-      "Field notes can be structured into a draft Specific Report. Suggested extraction and language clarity support are available under the MVP. A human must review the draft. Where the workflow requires approval, a supervisor decides. AI does not finalize the official record alone.",
+      "AI-assisted report drafting is in active development. A draft is not an official record. A human must review it, and a supervisor decides where approval is required. AI does not finalize records or make autonomous operational decisions.",
   },
   {
     id: "ai-automatic",
     category: "ai",
     question: "Does AI write reports automatically?",
     answer:
-      "AI can generate a draft from field input. The draft is not an official operational record until human review (and approval where required). Completeness suggestions are guidance, not legal validation.",
+      "AI-assisted drafting can propose a draft from field input while that workflow is in development. The draft is not an official operational record until human review, and approval where required. AI does not make autonomous operational decisions.",
   },
   {
     id: "ai-replace-officer",
@@ -244,14 +251,14 @@ export const FAQ_ITEMS: FAQItem[] = [
     category: "ai",
     question: "What AI capability exists today?",
     answer:
-      "The AI reporting assistant MVP for Specific Reports: structured drafting from field notes, language-clarity support, basic extraction, and a mandatory human review workflow. AI supports the report. It does not make the decision.",
+      "AI-assisted report drafting remains under development. It is not a completed assistant. Human review is required, and AI does not make the operational decision.",
   },
   {
     id: "ai-future",
     category: "ai",
-    question: "What AI capabilities are future direction?",
+    question: "What AI capabilities are future research?",
     answer:
-      "Operational insights, pattern detection, risk signals, recommendations, Talent & Operations Intelligence and the Team Compatibility Engine. These are staged as planned or future direction and are not current production claims.",
+      "Predictive AI risk analysis is future research. Connected analytics is planned. Neither is an autonomous decision system, and neither is available now.",
   },
   {
     id: "toi-tce",
@@ -259,7 +266,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     question:
       "What are Talent & Operations Intelligence and the Team Compatibility Engine?",
     answer:
-      "Future decision-support directions for role-fit insight, training recommendations and team composition support under human review. They are not automated hiring systems, personality diagnosis tools or systems that make employment decisions without human judgment.",
+      "Those names are not part of the current published platform direction. Predictive AI risk analysis is future research under human control. It is not an automated hiring system and it does not make employment or operational decisions.",
   },
   {
     id: "data-separation",
@@ -273,14 +280,14 @@ export const FAQ_ITEMS: FAQItem[] = [
     category: "security",
     question: "Does ISB support role-based access?",
     answer:
-      "Yes. The platform is designed around least-privilege role and permission scopes for roles such as officer, supervisor, customer representative (planned expansion) and administrator.",
+      "Yes. Authentication and role-based access foundations exist, and data handling is company-scoped. Client-facing reporting workflows are in active development. This is not a claim that every role is production-validated.",
   },
   {
     id: "audit",
     category: "security",
     question: "How are actions audited?",
     answer:
-      "Critical operational actions are designed to be logged and associated with users — for example report creation, review, approval and key configuration changes. Traceable operational actions are the goal; legal immutability is not claimed.",
+      "Audit and event foundations exist for critical actions. Immutable evidence custody is in discovery and is not claimed as legally immutable storage.",
   },
   {
     id: "iso",
@@ -301,7 +308,7 @@ export const FAQ_ITEMS: FAQItem[] = [
     category: "security",
     question: "How does ISB approach privacy?",
     answer:
-      "Design aims to collect operationally relevant data, limit access by role and context, separate organizational data and review retention. The product is designed with European privacy requirements in mind. Full GDPR compliance certification is not claimed.",
+      "The product is being designed with European privacy requirements in mind. Privacy retention and legal-hold governance are in discovery. No GDPR certification is claimed.",
   },
   {
     id: "backups",
@@ -329,35 +336,35 @@ export const FAQ_ITEMS: FAQItem[] = [
     category: "technology",
     question: "Does ISB have API capabilities?",
     answer:
-      "API foundations and a controlled external access boundary are part of the architecture direction. Broader API integration is planned. Specific third-party integrations are not claimed unless implemented.",
+      "An integration outbox is part of the technical foundation. Enterprise connectors are planned. Specific third-party integrations are not claimed as available.",
   },
   {
     id: "integrations",
     category: "technology",
     question: "Can ISB integrate with other systems?",
     answer:
-      "Integration is a planned direction through controlled API boundaries that respect tenant and permission controls. No inventory of live integrations is claimed on this site.",
+      "Enterprise connectors and alarm-provider integrations are planned. An integration outbox foundation exists. No inventory of live third-party integrations is claimed.",
   },
   {
     id: "offline-arch",
     category: "technology",
     question: "How does offline synchronization fit into the architecture?",
     answer:
-      "As a planned expansion: local workflow, temporary offline state, reconnect, controlled synchronization, conflict handling and audit history. Not claimed as fully released.",
+      "Selected offline reporting and patrol workflows are part of the technical foundation. Broader offline synchronization is not claimed, and not every module works offline.",
   },
   {
     id: "mobile-first",
     category: "technology",
     question: "Is ISB mobile-first?",
     answer:
-      "The architecture is intended to support mobile-first field use. Mobile workflow foundations are in active development. Native apps are not claimed unless released.",
+      "Selected mobile and offline workflows are in active development. Native apps are not claimed.",
   },
   {
     id: "realtime-tech",
     category: "technology",
     question: "How does ISB approach realtime data?",
     answer:
-      "Realtime foundations are being designed so authorized users can receive synchronized operational state. Event → platform → authorized users → updated state is the conceptual model. No latency SLA is claimed.",
+      "No latency or realtime service level is claimed. Synchronized operational state is not presented as a guaranteed live service.",
   },
   {
     id: "modular",

@@ -49,7 +49,7 @@ export default function FAQPage() {
               operations.
             </p>
             <p className="mt-4 font-mono text-[11px] uppercase tracking-wide text-ink-muted">
-              Platform development active
+              Active development · not commercially available
             </p>
           </div>
         </div>

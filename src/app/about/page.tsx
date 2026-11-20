@@ -9,19 +9,19 @@ import { breadcrumbJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: { absolute: "About ISB Security Solutions" },
   description:
-    "ISB Security Solutions builds an enterprise security operations platform with an established foundation, modular strategy and European focus.",
+    "ISB Security Solutions is building the ISB Security Platform. The platform is in active development and is not commercially available.",
   alternates: { canonical: `${SITE.url}/about` },
   openGraph: {
     title: "About ISB Security Solutions",
     description:
-      "Enterprise security operations platform with an established foundation, modular strategy and European focus.",
+      "The ISB Security Platform is in active development. No public release date has been established.",
     url: `${SITE.url}/about`,
   },
   twitter: {
     card: "summary_large_image",
     title: "About ISB Security Solutions",
     description:
-      "Enterprise security operations platform with an established foundation, modular strategy and European focus.",
+      "The ISB Security Platform is in active development. No public release date has been established.",
   },
 };
 
@@ -67,14 +67,13 @@ export default function AboutPage() {
           <div className="max-w-3xl">
             <p className="label">About ISB</p>
             <h1 className="heading-xl mt-3">
-              Enterprise security operations platform with an established foundation.
+              ISB Security Platform: Active Development
             </h1>
             <p className="body-lg mt-6 max-w-2xl">
-              ISB Security Solutions builds an enterprise security operations
-              platform with an established operational foundation and continuously
-              expanding capabilities — conceived from the reality that critical
-              security work is still too often spread across paper, spreadsheets,
-              messaging tools and disconnected systems.
+              ISB Security Solutions is building a unified platform for professional
+              security operations, reporting, personnel planning and site management.
+              The platform has not been announced as commercially available or
+              production-validated. No public release date has been established.
             </p>
           </div>
         </div>
@@ -170,7 +169,7 @@ export default function AboutPage() {
           </div>
           <p className="mt-4 max-w-2xl text-[13px] text-ink-muted">
             An architectural company principle: domains expand without rebuilding
-            identity, permissions, tenant isolation, document security and audit foundations.
+            identity, permissions, company-scoped data and audit foundations.
           </p>
         </div>
       </section>
@@ -241,37 +240,40 @@ export default function AboutPage() {
           <SectionHeader
             align="left"
             eyebrow="Modular strategy"
-            title="Established foundation. Active expansion. Future intelligence."
+            title="Foundation established. Active development. Future research."
           />
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             <div className="border border-border bg-surface/30 p-5">
               <p className="font-mono text-[10px] uppercase tracking-wider text-gold">
-                Established foundation
+                Foundation established
               </p>
               <p className="mt-3 text-[13px] text-ink-secondary">
-                Multi-tenant architecture · Authentication · RBAC · RLS · Tenant
-                isolation · Object hierarchy · Document lifecycle · Reporting
-                foundation · Auditability
+                Role-based access · Company-scoped data · Scheduling and assignment
+                authority · Attendance and worked time · Audit and events · Bounded
+                billing and payroll data · Integration outbox · Selected offline
+                reporting and patrol workflows
               </p>
             </div>
             <div className="border border-border bg-surface/30 p-5">
               <p className="font-mono text-[10px] uppercase tracking-wider text-gold">
-                Active expansion
+                Active development
               </p>
               <p className="mt-3 text-[13px] text-ink-secondary">
-                Workforce operations · Scheduling expansion · Service requests ·
-                Dispatch capabilities · Compliance engine — Phase 2.2 in active
-                development
+                Security operations · Patrols · Reporting and recovery · Workforce ·
+                Objects and locations · AI-assisted report drafting · Selected mobile
+                workflows · Service requests and contracts · Document workspaces ·
+                Client-facing reporting
               </p>
             </div>
             <div className="border border-border bg-surface/30 p-5">
               <p className="font-mono text-[10px] uppercase tracking-wider text-gold">
-                Future intelligence
+                Future / research
               </p>
               <p className="mt-3 text-[13px] text-ink-secondary">
-                AI intelligence layer · Talent intelligence · Team compatibility —
-                planned expansion on structured operational data. Not autonomous
-                decision systems.
+                Connected operational capabilities, external integrations and advanced
+                AI research come later. Predictive AI risk analysis and wearable
+                integrations are research, not autonomous decision systems. No release
+                date is established.
               </p>
             </div>
           </div>
@@ -396,8 +398,7 @@ export default function AboutPage() {
         <div className="container-site">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="heading-lg">
-              Explore an enterprise security operations platform with an
-              established foundation and expanding capabilities.
+              Review the platform direction and current development status.
             </h2>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button href="/platform">

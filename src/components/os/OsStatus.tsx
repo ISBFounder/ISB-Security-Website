@@ -3,12 +3,14 @@ import { cn } from "@/lib/utils";
 export type OsMaturity =
   | "foundation"
   | "development"
+  | "discovery"
   | "planned"
   | "future";
 
 const LABEL: Record<OsMaturity, string> = {
-  foundation: "Foundation",
+  foundation: "Foundation established",
   development: "Active development",
+  discovery: "Discovery / architecture",
   planned: "Planned",
   future: "Future / research",
 };

@@ -59,7 +59,7 @@ export default function AIPage() {
               responsibility with authorized personnel — not autonomous decisions.
             </p>
             <div className="mt-6 flex flex-wrap gap-1.5">
-              {["MVP foundation", "Active development", "Planned intelligence", "Future direction"].map((s) => (
+              {["Active development", "Human review required", "Planned analytics", "Future / research"].map((s) => (
                 <span
                   key={s}
                   className="border border-border-subtle bg-surface/40 px-2.5 py-1 font-mono text-[10px] text-ink-muted"
@@ -93,7 +93,7 @@ export default function AIPage() {
             align="left"
             eyebrow="Report assistant"
             title="Specific Report assistant · built on structured operational data."
-            description="The demonstrable AI workflow turns field notes into structured draft reports for human review. Expansion beyond this foundation remains under development."
+            description="AI-assisted report drafting is in active development. Drafts require human review. AI does not make autonomous operational decisions."
           />
           <div className="mt-10">
             <AIHumanWorkflow />
@@ -135,13 +135,13 @@ export default function AIPage() {
           <SectionHeader
             align="left"
             eyebrow="Capability maturity"
-            title="MVP foundation through future direction."
+            title="Active development through future research."
           />
           <div className="mt-8 grid gap-0 border border-border md:grid-cols-3">
             {[
-              { stage: "Implemented foundation / MVP", items: "Specific Report AI assistant · structured extraction support · human review required" },
-              { stage: "Active development", items: "Broader report-type assistance · improved review UX · audit visibility of AI activity" },
-              { stage: "Planned / future", items: "Risk signals · operational recommendations · talent intelligence · team compatibility — not live decision systems" },
+              { stage: "Active development", items: "AI-assisted report drafting · human review required · no autonomous decisions" },
+              { stage: "Planned", items: "Connected analytics · not an autonomous decision system" },
+              { stage: "Future / research", items: "Predictive AI risk analysis · wearable integrations · not live decision systems" },
             ].map((m, i) => (
               <div key={m.stage} className={`p-5 ${i < 2 ? "border-b border-border md:border-b-0 md:border-r" : ""}`}>
                 <p className="font-mono text-[10px] uppercase tracking-wider text-gold">{m.stage}</p>

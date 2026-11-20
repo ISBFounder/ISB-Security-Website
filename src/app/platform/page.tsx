@@ -11,7 +11,7 @@ import { breadcrumbJsonLd, routeMetadata } from "@/lib/seo";
 export const metadata: Metadata = routeMetadata({
   title: "Security Operations Platform",
   description:
-    "ISB Security Platform: established multi-tenant foundation, operational object hierarchy and expanding workforce capabilities.",
+    "The ISB Security Platform is in active development for security operations, reporting, personnel planning and site management. Not commercially available.",
   path: "/platform",
 });
 
@@ -38,12 +38,32 @@ export default function PlatformPage() {
             />
             <p className="label mt-3">Platform</p>
             <h1 className="heading-xl mt-3">
-              Enterprise security operations platform with an established operational foundation.
+              ISB Security Platform: Active Development
             </h1>
-            <p className="body-lg mt-6 max-w-2xl">
-              ISB Security Platform connects organizations, customers, objects, personnel
-              and operational workflows on one shared foundation.
-            </p>
+            <div className="body-lg mt-6 max-w-2xl space-y-4">
+              <p>The ISB Security Platform is in active development.</p>
+              <p>
+                ISB Security Solutions is building a unified platform for professional
+                security operations, reporting, personnel planning and site management.
+              </p>
+              <p>
+                The development platform includes operational workspaces, patrol and
+                reporting workflows, personnel and assignment management, and customer
+                and object hierarchy management.
+              </p>
+              <p>
+                Role-based access, company-scoped data handling and selected offline
+                reporting and patrol workflows form part of the technical foundation.
+              </p>
+              <p>
+                AI-assisted reporting, operational integration and broader environment
+                validation remain under development.
+              </p>
+              <p>
+                The platform has not been announced as commercially available or
+                production-validated. No public release date has been established.
+              </p>
+            </div>
           </div>
         </div>
       </section>

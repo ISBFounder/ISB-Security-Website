@@ -32,7 +32,7 @@ const STEPS: {
     action: "Capture raw observation",
     output: "Unstructured note",
     authority: "Officer",
-    status: "foundation",
+    status: "development",
   },
   {
     id: "extraction",
@@ -42,7 +42,7 @@ const STEPS: {
     action: "Suggest fields",
     output: "Candidate structure",
     authority: "Suggestion only",
-    status: "foundation",
+    status: "development",
   },
   {
     id: "draft",
@@ -62,7 +62,7 @@ const STEPS: {
     action: "Correct and accept",
     output: "Officer version",
     authority: "Officer",
-    status: "foundation",
+    status: "development",
   },
   {
     id: "approval",
@@ -72,7 +72,7 @@ const STEPS: {
     action: "Approve or return",
     output: "Authorized record",
     authority: "Supervisor",
-    status: "foundation",
+    status: "development",
   },
   {
     id: "locked",
@@ -81,8 +81,8 @@ const STEPS: {
     input: "Approved version",
     action: "Retain history",
     output: "Operational record",
-    authority: "Audit state",
-    status: "foundation",
+    authority: "Not immutable custody",
+    status: "discovery",
   },
 ];
 

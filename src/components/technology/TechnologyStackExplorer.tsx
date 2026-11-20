@@ -45,8 +45,8 @@ const LAYERS: {
       "Authorization",
       "Audit",
       "Notifications",
-      "Storage foundations",
-      "API foundations",
+      "Integration outbox",
+      "Selected offline workflows",
     ],
   },
   {
@@ -58,7 +58,7 @@ const LAYERS: {
       "Tenant-aware boundaries",
       "Row-level access direction",
       "Environment separation",
-      "Secure storage foundations",
+      "Bounded billing and payroll data",
     ],
   },
 ];

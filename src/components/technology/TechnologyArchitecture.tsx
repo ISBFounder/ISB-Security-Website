@@ -17,11 +17,11 @@ const LAYERS: {
     items: [
       "Web application",
       "Mobile interfaces",
-      "Customer access direction",
+      "Client-facing reporting workflows",
       "Administrative interfaces",
     ],
     detail:
-      "User interfaces for officers, supervisors, administrators and future customer access. Interface layer only — business logic lives in platform services.",
+      "Interfaces for officers, supervisors and administrators. Client-facing reporting is in active development. Interface layer only — business logic lives in platform services.",
   },
   {
     id: "platform",
@@ -44,10 +44,10 @@ const LAYERS: {
     id: "data",
     label: "Data & infrastructure",
     items: [
-      "Tenant-aware data layer",
-      "Secure storage foundations",
-      "Realtime foundations",
-      "Offline synchronization direction",
+      "Company-scoped data",
+      "Audit and events",
+      "Integration outbox",
+      "Selected offline reporting and patrol workflows",
       "Environment separation",
       "Logging / observability foundations",
     ],

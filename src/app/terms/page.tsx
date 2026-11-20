@@ -64,12 +64,12 @@ export default function TermsPage() {
         title="Development-stage information"
       >
         <p>
-          ISB Security Platform is under active development. Website descriptions
-          may include current foundation capabilities, active development work,
-          planned capabilities, and future direction. Status labels such as
-          “Implemented foundation”, “Active development”, “Planned”, and “Future
-          direction” are used to communicate maturity, not to create delivery
-          deadlines.
+          ISB Security Platform is in active development. It has not been announced
+          as commercially available or production-validated, and no public release
+          date has been established. Website descriptions may use these development
+          categories: “Foundation established”, “Active development”, “Discovery /
+          architecture”, “Planned”, and “Future / research”. The labels communicate
+          maturity. They do not create delivery deadlines or commercial availability.
         </p>
       </LegalSection>
 

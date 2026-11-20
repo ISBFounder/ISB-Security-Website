@@ -4,19 +4,19 @@ import { SITE } from "@/lib/constants";
 export const metadata: Metadata = {
   title: { absolute: `${SITE.name} | Enterprise Security Operations Software` },
   description:
-    "ISB Security Solutions develops ISB Security Platform: multi-tenant foundation, operational object hierarchy and expanding workforce capabilities.",
+    "The ISB Security Platform is in active development for security operations, reporting, personnel planning and site management.",
   alternates: { canonical: SITE.url },
   openGraph: {
     title: `${SITE.name} | Enterprise Security Operations Software`,
     description:
-      "Enterprise security operations platform with an established foundation and expanding capabilities for professional security organizations across Europe.",
+      "The ISB Security Platform is in active development. It has not been announced as commercially available or production-validated.",
     url: SITE.url,
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE.name} | Enterprise Security Operations Software`,
     description:
-      "Enterprise security operations platform with an established foundation and expanding capabilities for professional security organizations.",
+      "The ISB Security Platform is in active development. No public release date has been established.",
   },
 };
 
@@ -143,7 +143,7 @@ export default function HomePage() {
           <SectionHeader
             eyebrow="Roadmap"
             title="Transparent product direction"
-            description="Platform foundation and object hierarchy are completed. Workforce operations are in active development. AI intelligence and later operational domains remain planned — not delivery commitments."
+            description="Now: refine and validate operational, reporting, workforce, planning, object-management and selected offline workflows. No public release date has been established."
           />
           <div className="mt-12 md:mt-14">
             <HomeRoadmap />

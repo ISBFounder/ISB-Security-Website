@@ -56,7 +56,7 @@ const MENUS: {
     featured: {
       title: "Product direction",
       description:
-        "Transparent roadmap from foundation through future intelligence.",
+        "Roadmap horizons are now, next and later. No release date.",
       href: "/roadmap",
     },
   },

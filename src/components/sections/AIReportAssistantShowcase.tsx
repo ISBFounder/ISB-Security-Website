@@ -421,11 +421,11 @@ export function AIReportAssistantShowcase() {
               Capability scope
             </p>
             <ul className="mt-2 space-y-1 text-[11px] text-ink-muted">
-              <li>Structure · foundation</li>
-              <li>Extraction · foundation</li>
-              <li>Completeness checks · foundation</li>
-              <li>Context suggestions · development</li>
-              <li>Pattern analysis · future</li>
+              <li>Structure · active development</li>
+              <li>Extraction · active development</li>
+              <li>Completeness checks · active development</li>
+              <li>Context suggestions · active development</li>
+              <li>Predictive risk analysis · future research</li>
             </ul>
           </aside>
         </div>

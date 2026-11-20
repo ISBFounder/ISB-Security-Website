@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SITE } from "@/lib/constants";
 
 export const DEFAULT_DESCRIPTION =
-  "ISB Security Solutions develops ISB Security Platform, a modular security operations platform for reporting, objects, personnel, operational workflows, compliance and AI-assisted reporting.";
+  "ISB Security Solutions is building the ISB Security Platform for professional security operations, reporting, personnel planning and site management. The platform is in active development.";
 
 export function absoluteUrl(path: string = "/"): string {
   if (path.startsWith("http")) return path;
@@ -91,7 +91,7 @@ export function softwareApplicationJsonLd() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:
-      "Modular security operations platform for professional security organizations — reporting, objects, personnel, operational workflows, compliance and AI-assisted reporting under human control. Platform under active development.",
+      "The ISB Security Platform is in active development for professional security operations, reporting, personnel planning and site management. It has not been announced as commercially available or production-validated. AI-assisted reporting does not make autonomous operational decisions.",
     provider: {
       "@type": "Organization",
       name: SITE.name,

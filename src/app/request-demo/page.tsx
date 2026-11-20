@@ -65,12 +65,12 @@ export default function RequestDemoPage() {
                 </p>
                 <ul className="mt-3 space-y-1.5 text-[13px] text-ink-secondary">
                   {[
-                    "Reporting foundations and Specific Report workflow",
-                    "Object and location structure",
-                    "Operational workflow direction",
+                    "Reporting and patrol workflows in active development",
+                    "Objects and locations in active development",
+                    "Personnel planning and assignment foundations",
                     "AI-assisted reporting under human review",
-                    "Security and access architecture",
-                    "Roadmap and product maturity",
+                    "Role-based access and company-scoped data",
+                    "Roadmap and development status",
                   ].map((item) => (
                     <li key={item} className="flex gap-2">
                       <span className="mt-2 h-1 w-1 shrink-0 bg-gold/70" aria-hidden />
@@ -79,8 +79,9 @@ export default function RequestDemoPage() {
                   ))}
                 </ul>
                 <p className="mt-4 text-[12px] text-ink-faint">
-                  Not every module is production-complete. Capability availability
-                  is discussed honestly against the current foundation and roadmap.
+                  The platform is in active development. It has not been announced as
+                  commercially available or production-validated. No public release
+                  date has been established.
                 </p>
               </div>
               <div className="border border-border-subtle px-5 py-4 text-[13px] text-ink-muted">

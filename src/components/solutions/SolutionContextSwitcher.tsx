@@ -22,7 +22,7 @@ const CONTEXTS: {
     priorities: ["Objects", "Reporting", "Personnel", "Incidents"],
     modules: ["Objects", "Reporting", "People", "Operations"],
     workflow: ["Post assignment", "Patrol / check", "Incident", "Approved record"],
-    status: "foundation",
+    status: "development",
   },
   {
     id: "event",
@@ -59,10 +59,8 @@ const CONTEXTS: {
 ];
 
 const FUTURE = [
-  "Executive Protection",
-  "Secure Mobility / High-Risk Transport",
-  "Visitor & Client Flow",
-  "Vehicle Intelligence / LPR",
+  "Wearable integrations",
+  "Predictive AI risk analysis",
 ];
 
 export function SolutionContextSwitcher() {

@@ -29,7 +29,7 @@ const DOMAINS: {
     title: "Operations",
     summary: "Shifts, patrols, tasks and escalations in a shared operational context.",
     connected: ["people", "objects", "reporting", "compliance"],
-    concepts: ["Shift context", "Patrol workflows", "Escalations", "Handovers"],
+    concepts: ["Shift context", "Patrol workflows", "Escalations", "Tasks"],
     status: "development",
   },
   {
@@ -39,7 +39,7 @@ const DOMAINS: {
     summary: "Field observation to approved record. Human review remains mandatory.",
     connected: ["operations", "objects", "intelligence", "compliance"],
     concepts: ["Specific Report", "AI-assisted draft", "Approval", "History"],
-    status: "foundation",
+    status: "development",
   },
   {
     id: "people",
@@ -47,7 +47,7 @@ const DOMAINS: {
     title: "People",
     summary: "Roles, qualifications and assignments bound to the same objects and rules.",
     connected: ["operations", "compliance", "objects"],
-    concepts: ["Profiles", "Qualifications", "Assignments", "Availability"],
+    concepts: ["Profiles", "Assignments", "Availability", "Qualifications — discovery"],
     status: "development",
   },
   {
@@ -57,29 +57,29 @@ const DOMAINS: {
     summary: "The physical hierarchy that anchors reports, patrols and instructions.",
     connected: ["operations", "reporting", "compliance"],
     concepts: ["Customer", "Object", "Zone", "Checkpoint"],
-    status: "foundation",
+    status: "development",
   },
   {
     id: "compliance",
     index: "05",
     title: "Compliance",
-    summary: "Access boundaries, evidence and change history designed into the platform.",
+    summary: "Role-based access, company-scoped data and audit foundations. Evidence custody and privacy retention are in discovery.",
     connected: ["reporting", "people", "objects"],
-    concepts: ["RBAC", "Audit logging", "Approval trails", "Evidence"],
+    concepts: ["RBAC", "Company scope", "Audit events", "Evidence custody — discovery"],
     status: "foundation",
   },
   {
     id: "intelligence",
     index: "06",
     title: "Intelligence",
-    summary: "AI assists structure and insight. Human judgment remains required.",
+    summary: "AI-assisted report drafting is in active development. AI does not make autonomous operational decisions.",
     connected: ["reporting", "operations", "people", "objects"],
     concepts: [
-      "Report drafting — foundation",
-      "Pattern analysis — planned",
-      "Recommendations — future",
+      "Report drafting — active development",
+      "Connected analytics — planned",
+      "Predictive risk analysis — future research",
     ],
-    status: "planned",
+    status: "development",
   },
 ];
 
@@ -93,14 +93,14 @@ const CONTEXT = [
 ] as const;
 
 const FOUNDATION = [
-  "Multi-tenancy",
-  "Authentication",
-  "Authorization / RBAC",
-  "Tenant isolation",
-  "Auditability",
-  "Secure storage foundations",
-  "Realtime foundations",
-  "Modular architecture",
+  "Authentication and role-based access",
+  "Company-scoped multi-tenant data",
+  "Scheduling and assignment authority",
+  "Attendance and worked time",
+  "Audit and events",
+  "Bounded billing and payroll data",
+  "Integration outbox",
+  "Selected offline reporting and patrol workflows",
 ] as const;
 
 export function PlatformOsExplorer() {

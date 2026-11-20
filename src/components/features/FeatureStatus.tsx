@@ -3,19 +3,22 @@ import { cn } from "@/lib/utils";
 export type FeatureStage =
   | "foundation"
   | "development"
+  | "discovery"
   | "planned"
   | "future";
 
 const LABELS: Record<FeatureStage, string> = {
-  foundation: "Implemented foundation",
+  foundation: "Foundation established",
   development: "Active development",
+  discovery: "Discovery / architecture",
   planned: "Planned",
-  future: "Future direction",
+  future: "Future / research",
 };
 
 const STYLES: Record<FeatureStage, string> = {
   foundation: "border-border-subtle text-ink-secondary",
   development: "border-gold/40 text-gold",
+  discovery: "border-border text-ink-muted",
   planned: "border-border text-ink-muted",
   future: "border-dashed border-border text-ink-faint",
 };

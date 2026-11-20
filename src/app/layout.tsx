@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description:
-    "ISB Security Solutions develops ISB Security Platform, a modular security operations platform for reporting, objects, personnel, operational workflows, compliance and AI-assisted reporting.",
+    "ISB Security Solutions is building the ISB Security Platform for professional security operations, reporting, personnel planning and site management. The platform is in active development.",
   keywords: [
     "Security Operations Platform",
     "Security Management Software",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: `${SITE.name} | Enterprise Security Operations Software`,
     description:
-      "ISB Security Solutions develops ISB Security Platform for professional security operations — reporting, objects, personnel, compliance and AI-assisted workflows under human control.",
+      "The ISB Security Platform is in active development for professional security operations, reporting, personnel planning and site management.",
   },
   twitter: {
     card: "summary_large_image",

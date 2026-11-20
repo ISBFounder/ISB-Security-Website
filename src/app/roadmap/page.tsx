@@ -9,147 +9,108 @@ import { breadcrumbJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Product Roadmap",
   description:
-    "ISB Security Platform product direction — completed platform foundation, operational object hierarchy, active workforce operations and planned AI intelligence.",
+    "ISB Security Platform roadmap: now, next and later. No public release date. The platform is in active development and is not commercially available.",
   alternates: { canonical: `${SITE.url}/roadmap` },
   openGraph: {
     title: `Product Roadmap | ${SITE.name}`,
     description:
-      "ISB Security Platform product direction — completed platform foundation, operational object hierarchy, active workforce operations and planned AI intelligence.",
+      "ISB Security Platform roadmap: now, next and later. No public release date. The platform is in active development and is not commercially available.",
     url: `${SITE.url}/roadmap`,
   },
   twitter: {
     card: "summary_large_image",
     title: `Product Roadmap | ${SITE.name}`,
     description:
-      "ISB Security Platform product direction — completed platform foundation, operational object hierarchy, active workforce operations and planned AI intelligence.",
+      "ISB Security Platform roadmap: now, next and later. No public release date. Not commercially available.",
   },
 };
 
 const STAGES = [
   {
-    index: "01",
-    label: "Platform Foundation",
-    emphasis: "current" as const,
-    layer: "Completed",
-    groups: [
-      {
-        title: "Core platform",
-        items: [
-          "Multi-tenant SaaS architecture",
-          "Authentication",
-          "RBAC",
-          "Row Level Security",
-          "Tenant isolation",
-          "Company and customer separation",
-          "Audit framework",
-          "Secure storage model",
-        ],
-      },
-      {
-        title: "Reporting foundation",
-        items: [
-          "Specific Report workflow",
-          "Structured reporting foundation",
-          "Review and approval foundations",
-          "Report history foundations",
-        ],
-      },
-    ],
-  },
-  {
-    index: "02.1",
-    label: "Operational Object Hierarchy",
-    emphasis: "current" as const,
-    layer: "Completed",
-    groups: [
-      {
-        title: "Hierarchy",
-        items: [
-          "Company → Customer → Object hierarchy",
-          "Building, floor, zone, room, post, checkpoint structure",
-          "Object management",
-          "Building, zone and post configuration",
-        ],
-      },
-      {
-        title: "Operational object context",
-        items: [
-          "Instructions",
-          "Risks",
-          "Qualifications",
-          "Escalations",
-          "Patrol requirements",
-          "Contacts and resources",
-        ],
-      },
-      {
-        title: "Document lifecycle",
-        items: [
-          "Upload, progress and retry handling",
-          "Replacement workflow and version history",
-          "Active version tracking",
-          "Archive and restore",
-          "Signed downloads and expiry handling",
-          "Classification controls",
-        ],
-      },
-      {
-        title: "Security & audit",
-        items: [
-          "Persona-based authorization",
-          "Object-based permissions",
-          "Customer isolation and dispatcher scope control",
-          "Entity-scoped audit history",
-          "Actor tracking and correlation IDs",
-        ],
-      },
-    ],
-  },
-  {
-    index: "02.2",
-    label: "Workforce Operations",
+    index: "Now",
+    label: "Refine and validate",
     emphasis: "active" as const,
     layer: "Active development",
     groups: [
       {
-        title: "Workforce foundation completed",
+        title: "Current focus",
         items: [
-          "Canonical shift lifecycle",
-          "Assignment lifecycle",
-          "Shift reconciliation",
-          "Workforce notifications foundation",
+          "Operational workflows",
+          "Reporting and recovery",
+          "Workforce and personnel planning",
+          "Object management",
+          "Selected offline workflows",
         ],
       },
       {
-        title: "Current expansion",
+        title: "In active development",
         items: [
-          "Service contracts",
-          "Service requests",
-          "Scheduling expansion",
-          "Availability",
-          "Compliance engine",
-          "Matching engine",
-          "Dispatch system",
-          "Persona workspaces",
-          "Payroll discovery (research — not a released product)",
+          "Security operations",
+          "Patrols",
+          "Incident workflows",
+          "Personnel and workforce management",
+          "Objects and locations",
+          "AI-assisted report drafting",
+          "Selected mobile and offline workflows",
+          "Service requests and contracts",
+          "Document workspaces",
+          "Client-facing reporting workflows",
         ],
       },
     ],
   },
   {
-    index: "03",
-    label: "AI Intelligence Layer",
+    index: "Next",
+    label: "Integrate and validate",
     emphasis: "planned" as const,
-    layer: "Planned",
+    layer: "No release date",
     groups: [
       {
-        title: "Intelligence direction",
+        title: "Required next work",
         items: [
-          "AI reporting assistant expansion",
-          "Risk detection",
-          "Operational recommendations",
-          "Talent intelligence",
-          "Team compatibility engine",
+          "Current integration work",
+          "Recovery work",
+          "Environment validation",
+          "Authority validation",
+        ],
+      },
+      {
+        title: "Discovery / architecture",
+        items: [
+          "Immutable evidence custody",
+          "Definitive document publication authority",
+          "Personnel qualification authority",
+          "Privacy retention and legal-hold governance",
+        ],
+      },
+    ],
+  },
+  {
+    index: "Later",
+    label: "Expand and research",
+    emphasis: "planned" as const,
+    layer: "Not committed delivery",
+    groups: [
+      {
+        title: "Planned",
+        items: [
+          "Connected analytics",
+          "Visitor management",
+          "Duty journal and handovers",
+          "Alarm-provider integrations",
+          "Interactive site maps",
+          "Case management",
+          "Work orders",
+          "Voice transcription",
+          "Centralized exports",
+          "Enterprise connectors",
+        ],
+      },
+      {
+        title: "Future / research",
+        items: [
+          "Wearable integrations",
+          "Predictive AI risk analysis",
         ],
       },
     ],
@@ -157,11 +118,11 @@ const STAGES = [
 ] as const;
 
 const DEPENDENCIES = [
-  { capability: "AI reporting", depends: "Structured report workflows" },
-  { capability: "Operational intelligence", depends: "Consistent operational data" },
-  { capability: "Team intelligence", depends: "Personnel and assignment context" },
-  { capability: "Workforce expansion", depends: "Platform foundation and object hierarchy" },
-  { capability: "Customer portals", depends: "Tenant and permission boundaries" },
+  { capability: "AI-assisted reporting", depends: "Reporting workflows in active development" },
+  { capability: "Connected analytics", depends: "Consistent operational data" },
+  { capability: "Predictive AI research", depends: "Validated data and human review" },
+  { capability: "Enterprise connectors", depends: "Integration outbox foundations" },
+  { capability: "Client-facing reporting", depends: "Company-scoped access boundaries" },
 ] as const;
 
 const PRIORITIES = [
@@ -187,17 +148,18 @@ export default function RoadmapPage() {
         <div className="container-site">
           <div className="max-w-3xl">
             <p className="label">Roadmap</p>
-            <h1 className="heading-xl mt-3">Building the platform in operational layers.</h1>
+            <h1 className="heading-xl mt-3">ISB Security Platform: Active Development</h1>
             <p className="body-lg mt-6 max-w-2xl">
-              ISB Security Platform is developed in operational layers. Platform foundation
-              and the operational object hierarchy are completed. Workforce operations
-              are in active development. AI intelligence remains planned.
+              Now: refine and validate operational, reporting, workforce, planning,
+              object-management and selected offline workflows. Next: complete current
+              integration and recovery work, and the required environment and authority
+              validation. Later: expand connected operational capabilities, external
+              integrations and advanced AI research.
             </p>
             <div className="mt-6 border border-border-subtle bg-surface/30 px-4 py-3 text-[13px] text-ink-muted">
-              The roadmap represents current development direction rather than a
-              contractual delivery schedule. Priorities may change based on
-              technical dependencies, validation outcomes, operational requirements
-              and security considerations.
+              The platform has not been announced as commercially available or
+              production-validated. No public release date has been established.
+              Priorities may change. Stage placement is not a delivery commitment.
             </div>
           </div>
         </div>
@@ -207,7 +169,7 @@ export default function RoadmapPage() {
         <div className="container-site">
           <p className="label mb-4">Architecture progression</p>
           <div className="flex flex-wrap items-center gap-2 font-mono text-[12px] text-ink-secondary">
-            {["Platform foundation", "Object hierarchy", "Workforce operations", "AI intelligence"].map(
+            {["Now", "Next", "Later"].map(
               (layer, i) => (
                 <span key={layer} className="flex items-center gap-2">
                   {i > 0 && <span className="text-ink-faint" aria-hidden>↓</span>}
@@ -217,7 +179,7 @@ export default function RoadmapPage() {
             )}
           </div>
           <p className="mt-3 text-[12px] text-ink-faint">
-            Future intelligence depends on structured operational data established in earlier stages.
+            Technical foundations already include role-based access, company-scoped data, scheduling and assignment authority, attendance and worked time, audit and events, bounded billing and payroll data, an integration outbox, and selected offline reporting and patrol workflows. Those foundations are not commercial availability.
           </p>
         </div>
       </section>
@@ -225,37 +187,27 @@ export default function RoadmapPage() {
       <section className="section divider">
         <div className="container-site">
           <SectionHeader align="left" eyebrow="Product roadmap" title="Operational layers. One connected direction." />
-          <div className="mt-10 grid gap-0 border border-border md:grid-cols-2 xl:grid-cols-4">
-            {STAGES.map((stage, i) => (
+          <div className="mt-10 grid gap-px border border-border bg-border-subtle md:grid-cols-3">
+            {STAGES.map((stage) => (
               <div
                 key={stage.index}
-                className={`p-5 ${
-                  i < STAGES.length - 1
-                    ? "border-b border-border md:border-b xl:border-b-0 xl:border-r"
-                    : ""
-                } ${i % 2 === 0 ? "md:border-r" : "md:border-r-0"} ${
-                  i < 2 ? "md:border-b xl:border-b-0" : ""
-                }`}
+                className="bg-bg p-5"
               >
                 <div className="flex items-baseline gap-2">
                   <span
                     className={`font-mono text-[11px] ${
-                      stage.emphasis === "current"
-                        ? "text-ink"
-                        : stage.emphasis === "active"
-                          ? "text-gold"
-                          : "text-ink-muted"
+                      stage.emphasis === "active"
+                        ? "text-gold"
+                        : "text-ink-muted"
                     }`}
                   >
                     {stage.index}
                   </span>
                   <h2
                     className={`text-[14px] font-semibold ${
-                      stage.emphasis === "current"
-                        ? "text-ink"
-                        : stage.emphasis === "active"
-                          ? "text-gold"
-                          : "text-ink-secondary"
+                      stage.emphasis === "active"
+                        ? "text-gold"
+                        : "text-ink-secondary"
                     }`}
                   >
                     {stage.label}
@@ -283,14 +235,15 @@ export default function RoadmapPage() {
       <section className="section divider bg-bg-secondary/40">
         <div className="container-site">
           <SectionHeader align="left" eyebrow="Status definitions" title="How maturity labels are used." />
-          <div className="mt-8 grid gap-0 border border-border sm:grid-cols-2">
+          <div className="mt-8 grid gap-px border border-border bg-border-subtle sm:grid-cols-2">
             {[
-              { t: "Implemented foundation", d: "Capability or architecture is implemented as part of the current platform foundation." },
-              { t: "Active development", d: "Work is actively progressing but may not yet be ready for production use. Progress is not equal across all items." },
-              { t: "Planned", d: "Part of the intended platform direction but not yet committed to release timing." },
-              { t: "Future direction", d: "Long-term product direction subject to research, validation and prioritization. Not committed delivery." },
-            ].map((s, i) => (
-              <div key={s.t} className={`p-5 ${i < 3 ? "border-b border-border" : ""} ${i % 2 === 0 ? "sm:border-r" : ""} ${i < 2 ? "sm:border-b" : "sm:border-b-0"}`}>
+              { t: "Foundation established", d: "Technical foundations exist in the development platform. This is not commercial availability or production validation." },
+              { t: "Active development", d: "Work is actively progressing and is not production-validated. Progress is not equal across all items." },
+              { t: "Discovery / architecture", d: "Authority and design questions are under study. They are not available capabilities." },
+              { t: "Planned", d: "Part of the intended platform direction. No release date is authorized." },
+              { t: "Future / research", d: "Research direction subject to validation and prioritization. Not committed delivery." },
+            ].map((s) => (
+              <div key={s.t} className="bg-bg p-5">
                 <p className="font-mono text-[10px] uppercase tracking-wider text-gold">{s.t}</p>
                 <p className="mt-2 text-[13px] text-ink-secondary">{s.d}</p>
               </div>
@@ -318,17 +271,18 @@ export default function RoadmapPage() {
         <div className="container-site">
           <SectionHeader
             align="left"
-            eyebrow="Future domains"
-            title="Adjacent operational surfaces under research."
-            description="These domains are not current product claims. They describe possible later surfaces on the same Security OS foundations."
+            eyebrow="Boundaries"
+            title="What this roadmap does not claim."
+            description="Development categories are not commercial availability labels. AI does not make autonomous operational decisions."
           />
           <div className="mt-8 flex flex-wrap gap-1.5">
             {[
-              "Executive Protection",
-              "Secure Mobility",
-              "Visitor & Client Flow",
-              "LPR",
-              "Talent / TCE",
+              "No release date",
+              "Not commercially available",
+              "Not production-validated",
+              "No certification claimed",
+              "Not every module works offline",
+              "AI does not decide",
             ].map((p) => (
               <span key={p} className="border border-border-subtle bg-bg/50 px-2.5 py-1.5 text-[12px] text-ink-secondary">
                 {p}

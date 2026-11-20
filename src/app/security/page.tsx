@@ -42,8 +42,9 @@ export default function SecurityPage() {
               Who may perform what, in which context, with what record.
             </h1>
             <p className="body-lg mt-6 max-w-2xl">
-              Authorization, tenant boundaries and auditability are designed into the
-              operating system. Conceptual paths only — no production policy logic is exposed.
+              Role-based access, company-scoped data and audit foundations are established.
+              Privacy retention and legal-hold governance are in discovery. Conceptual
+              paths only — no certification is claimed, and no production policy logic is exposed.
             </p>
           </div>
         </div>

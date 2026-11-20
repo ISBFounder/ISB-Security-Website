@@ -4,55 +4,36 @@ import { cn } from "@/lib/utils";
 
 const STAGES = [
   {
-    index: "01",
-    label: "Platform Foundation",
-    emphasis: "current" as const,
-    items: [
-      "Multi-tenant SaaS architecture",
-      "Authentication & RBAC",
-      "Row Level Security",
-      "Tenant isolation",
-      "Audit framework",
-      "Secure storage model",
-      "Reporting foundation",
-    ],
-  },
-  {
-    index: "02.1",
-    label: "Object Hierarchy",
-    emphasis: "current" as const,
-    items: [
-      "Company → Customer → Object hierarchy",
-      "Building through checkpoint structure",
-      "Instructions, risks, escalations",
-      "Document lifecycle",
-      "Persona-based authorization",
-      "Entity-scoped audit",
-    ],
-  },
-  {
-    index: "02.2",
-    label: "Workforce Operations",
+    index: "Now",
+    label: "Refine and validate",
     emphasis: "active" as const,
     items: [
-      "Shift & assignment lifecycle",
-      "Service contracts & requests",
-      "Scheduling expansion",
-      "Dispatch system",
-      "Compliance & matching engines",
-      "Persona workspaces",
+      "Operational workflows",
+      "Reporting workflows",
+      "Workforce and planning",
+      "Object management",
+      "Selected offline workflows",
     ],
   },
   {
-    index: "03",
-    label: "AI Intelligence",
+    index: "Next",
+    label: "Integrate and validate",
     emphasis: "planned" as const,
     items: [
-      "AI reporting assistant expansion",
-      "Risk detection",
-      "Operational recommendations",
-      "Talent intelligence",
-      "Team compatibility engine",
+      "Current integration work",
+      "Recovery work",
+      "Environment validation",
+      "Authority validation",
+    ],
+  },
+  {
+    index: "Later",
+    label: "Expand and research",
+    emphasis: "planned" as const,
+    items: [
+      "Connected operational capabilities",
+      "External integrations",
+      "Advanced AI research",
     ],
   },
 ] as const;
@@ -60,7 +41,7 @@ const STAGES = [
 export function HomeRoadmap() {
   return (
     <div>
-      <div className="grid gap-0 border border-border md:grid-cols-4">
+      <div className="grid gap-0 border border-border md:grid-cols-3">
         {STAGES.map((stage, i) => (
           <div
             key={stage.index}
@@ -73,7 +54,6 @@ export function HomeRoadmap() {
               <span
                 className={cn(
                   "font-mono text-[11px]",
-                  stage.emphasis === "current" && "text-ink",
                   stage.emphasis === "active" && "text-gold",
                   stage.emphasis === "planned" && "text-ink-muted"
                 )}
@@ -83,7 +63,6 @@ export function HomeRoadmap() {
               <p
                 className={cn(
                   "text-[13px] font-semibold",
-                  stage.emphasis === "current" && "text-ink",
                   stage.emphasis === "active" && "text-gold",
                   stage.emphasis === "planned" && "text-ink-secondary"
                 )}
@@ -103,7 +82,7 @@ export function HomeRoadmap() {
       </div>
 
       <p className="mt-5 text-[12px] text-ink-muted">
-        Platform foundation and object hierarchy are completed. Workforce operations are in active development. AI intelligence and later domains such as executive protection, secure mobility and visitor flow remain planned — not delivery commitments.
+        The platform is in active development. It has not been announced as commercially available or production-validated. No public release date has been established.
       </p>
 
       <div className="mt-6">

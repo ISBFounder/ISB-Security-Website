@@ -11,7 +11,7 @@ import { breadcrumbJsonLd, routeMetadata } from "@/lib/seo";
 export const metadata: Metadata = routeMetadata({
   title: "Technology Architecture",
   description:
-    "Technical foundation of ISB Security Platform — multi-tenant architecture, shared services and tenant-aware data boundaries.",
+    "Technical architecture of the ISB Security Platform in active development — company-scoped data, shared services and tenant-aware boundaries.",
   path: "/technology",
 });
 
@@ -40,7 +40,10 @@ export default function TechnologyPage() {
               Technology designed around operational continuity.
             </h1>
             <p className="body-lg mt-6 max-w-2xl">
-              ISB is one platform with shared services — not a set of separate applications.
+              ISB is one platform in active development, with shared services rather than
+              separate applications. Selected offline reporting and patrol workflows are
+              part of the technical foundation. Not every module works offline. Enterprise
+              connectors remain planned.
             </p>
           </div>
         </div>

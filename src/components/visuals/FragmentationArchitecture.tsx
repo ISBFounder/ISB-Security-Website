@@ -38,10 +38,9 @@ const DOMAINS = [
 
 const PLATFORM_CAPS = [
   "Role-based access",
-  "Audit trail",
-  "Notifications",
-  "Realtime foundations",
-  "Offline foundations",
+  "Audit and events",
+  "Company-scoped data",
+  "Selected offline workflows",
   "AI assistance",
 ] as const;
 
@@ -50,7 +49,7 @@ const OUTPUTS = [
   "Supervisor review",
   "Client visibility",
   "Operational records",
-  "Compliance evidence",
+  "Audit events",
   "Incident follow-up",
 ] as const;
 

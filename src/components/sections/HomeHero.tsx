@@ -9,8 +9,8 @@ import { HeroProductStage } from "@/components/visuals/HeroProductStage";
 
 const CREDIBILITY = [
   "Built for multi-customer security operations",
-  "Modular multi-tenant architecture",
-  "Established multi-tenant & object foundation",
+  "Role-based access and company-scoped data",
+  "Selected offline reporting and patrol workflows",
   "Developed from operational security experience",
   "European security industry focus",
 ] as const;
@@ -48,7 +48,7 @@ export function HomeHero() {
           <motion.div className="lg:col-span-7" {...fade(0)}>
             <div className="mb-5 inline-flex items-center gap-2 border border-border bg-surface/60 px-3 py-1 font-mono text-[11px] text-ink-secondary">
               <span className="h-1.5 w-1.5 bg-gold" aria-hidden />
-              Platform foundation established
+              ISB Security Platform: Active Development
             </div>
 
             <h1 className="display-xl">
@@ -59,10 +59,11 @@ export function HomeHero() {
             </h1>
 
             <p className="body-lg mt-6 max-w-xl">
-              ISB Security Platform is a unified Security Operations Platform —
-              a Security OS that connects reporting, objects, personnel, workforce
-              operations and AI-assisted workflows in one multi-tenant environment
-              for professional security organizations.
+              The ISB Security Platform is in active development. ISB Security
+              Solutions is building a unified platform for professional security
+              operations, reporting, personnel planning and site management. It has
+              not been announced as commercially available or production-validated.
+              No public release date has been established.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">

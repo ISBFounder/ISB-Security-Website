@@ -40,8 +40,8 @@ export default function SolutionsPage() {
             </h1>
             <p className="body-lg mt-6 max-w-2xl">
               Every operational environment has different requirements, risks and
-              stakeholders — while sharing one platform foundation for reporting,
-              objects, personnel and audit.
+              stakeholders. Reporting, objects and personnel workflows are in active
+              development on shared access and audit foundations.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href="/request-demo">
@@ -62,7 +62,7 @@ export default function SolutionsPage() {
             align="left"
             eyebrow="Operational context"
             title="One Security OS. Different configuration."
-            description="Select a live operational context. Future specialist domains stay labelled separately."
+            description="Select an operational context. Future research stays labelled separately. These are development scenarios, not released products."
           />
           <div className="mt-10">
             <SolutionContextSwitcher />

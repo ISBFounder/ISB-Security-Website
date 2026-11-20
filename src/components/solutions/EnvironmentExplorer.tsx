@@ -99,7 +99,7 @@ const ENVS: Env[] = [
       "Repeated data entry across tools",
     ],
     change:
-      "ISB keeps object hierarchy, instructions, reports and audit trail in one operational context so handovers and reviews start from shared information.",
+      "Object hierarchy, instructions and reports are in active development so reviews can share operational context. Duty journal and handovers are planned.",
   },
   {
     id: "mobile",
@@ -128,8 +128,7 @@ const ENVS: Env[] = [
       "Notifications",
       "Tasks",
       "Reporting",
-      "Realtime foundations",
-      "Offline foundations",
+      "Selected offline reporting and patrol workflows",
     ],
     workflow: [
       "Shift begins",
@@ -152,7 +151,7 @@ const ENVS: Env[] = [
       "Escalate missed checkpoint",
       "Adjust remaining route",
     ],
-    stage: "Realtime and offline · architecture direction",
+    stage: "Patrols in active development · selected offline workflows only",
     challenges: [
       "Object instructions scattered across phones and folders",
       "Missed visits hard to evidence",

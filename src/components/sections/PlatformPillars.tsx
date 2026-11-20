@@ -42,8 +42,8 @@ const PILLARS: Pillar[] = [
       "Tasks & open actions",
       "Notifications",
       "Escalations",
-      "Realtime update foundations",
-      "Operational handovers",
+      "Selected offline patrol workflows",
+      "Duty journal and handovers — planned",
     ],
     workflow: [
       "Shift starts",
@@ -55,7 +55,7 @@ const PILLARS: Pillar[] = [
       "Action recorded",
     ],
     connected: ["people", "objects", "reporting", "compliance"],
-    outcome: "Centralized operational control with recorded handovers and clear accountability.",
+    outcome: "Shared operational context for shifts, patrols and escalations. Duty journal and handovers are planned.",
   },
   {
     id: "reporting",
@@ -70,7 +70,7 @@ const PILLARS: Pillar[] = [
       "Attachments",
       "Review and approval",
       "Report history",
-      "Signatures",
+      "Digital signatures — planned",
     ],
     workflow: [
       "Field observation",
@@ -92,16 +92,15 @@ const PILLARS: Pillar[] = [
     capabilities: [
       "User profiles",
       "Roles & permissions",
-      "Qualifications",
-      "Certifications",
+      "Qualifications — discovery",
       "Availability",
       "Teams",
-      "Assignments",
-      "Scheduling foundations",
+      "Assignments — foundation established",
+      "Scheduling and assignment authority",
     ],
     workflow: [
       "Officer profile",
-      "Qualification check",
+      "Role set",
       "Assignment",
       "Shift",
       "Operational activity",
@@ -148,10 +147,9 @@ const PILLARS: Pillar[] = [
       "Role-based access",
       "Audit logging",
       "Approval trails",
-      "Qualification tracking",
-      "Certification status",
+      "Qualification authority — discovery",
       "Change history",
-      "Operational evidence",
+      "Evidence custody — discovery",
       "Customer requirements",
     ],
     workflow: [
@@ -172,13 +170,10 @@ const PILLARS: Pillar[] = [
     summary:
       "AI assists structure and insight. Human judgment remains required. Capabilities are staged by maturity.",
     capabilities: [
-      "AI-assisted report drafting — foundation",
-      "Structured information support — foundation",
-      "Operational insight — planned",
-      "Pattern analysis — planned",
-      "Risk signals — planned",
-      "Recommendations — future direction",
-      "Predictive support — future direction",
+      "AI-assisted report drafting — active development",
+      "Connected analytics — planned",
+      "Predictive AI risk analysis — future research",
+      "Wearable integrations — future research",
     ],
     workflow: [
       "Operational data",
@@ -193,14 +188,14 @@ const PILLARS: Pillar[] = [
 ];
 
 const FOUNDATION = [
-  "Multi-tenant architecture",
-  "Role-based access",
-  "Audit foundation",
-  "Notifications",
-  "Realtime foundations",
-  "Offline foundations",
-  "API foundations",
-  "Secure storage foundations",
+  "Authentication and role-based access",
+  "Company-scoped multi-tenant data",
+  "Scheduling and assignment authority",
+  "Attendance and worked time",
+  "Audit and events",
+  "Bounded billing and payroll data",
+  "Integration outbox",
+  "Selected offline reporting and patrol workflows",
 ] as const;
 
 export function PlatformPillars() {
@@ -403,7 +398,7 @@ export function PlatformPillars() {
             <span key={f} className="border border-border-subtle bg-surface/40 px-2.5 py-1 font-mono text-[10px] text-ink-muted">{f}</span>
           ))}
         </div>
-        <p className="mt-3 text-[11px] text-ink-faint">Different operational domains · same organizational, object, user and audit context</p>
+        <p className="mt-3 text-[11px] text-ink-faint">Technical foundations only. Not commercial availability, and not every module works offline.</p>
       </div>
     </div>
   );

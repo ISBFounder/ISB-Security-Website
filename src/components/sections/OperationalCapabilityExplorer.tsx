@@ -9,7 +9,7 @@ import {
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-type Stage = "foundation" | "development" | "planned" | "future";
+type Stage = "foundation" | "development" | "discovery" | "planned" | "future";
 type CapId =
   | "reporting"
   | "operations"
@@ -36,8 +36,17 @@ type Capability = {
 const STAGE_STYLE: Record<Stage, string> = {
   foundation: "border-border-subtle text-ink-muted",
   development: "border-gold/40 text-gold",
+  discovery: "border-border text-ink-muted",
   planned: "border-border text-ink-faint",
   future: "border-dashed border-border text-ink-faint",
+};
+
+const STAGE_LABEL: Record<Stage, string> = {
+  foundation: "Foundation established",
+  development: "Active development",
+  discovery: "Discovery / architecture",
+  planned: "Planned",
+  future: "Future / research",
 };
 
 const CAPABILITIES: Capability[] = [
@@ -45,9 +54,9 @@ const CAPABILITIES: Capability[] = [
     id: "reporting",
     title: "Reporting",
     category: "DOCUMENTATION",
-    stage: "foundation",
+    stage: "development",
     overview:
-      "Structured operational reports from field observation through supervisor approval and locked history.",
+      "Reporting and recovery are in active development, from field observation through human review.",
     purpose:
       "Replace ad-hoc notes and messaging with traceable reports that share the same object, personnel and audit context as the rest of the platform.",
     workflow: [
@@ -70,15 +79,15 @@ const CAPABILITIES: Capability[] = [
       "History",
     ],
     related: ["Operations", "Objects", "Compliance", "AI Assistance"],
-    stageLabel: "Implemented foundation · AI draft in active development",
+    stageLabel: "Active development. AI-assisted drafting requires human review.",
   },
   {
     id: "operations",
     title: "Operations",
     category: "CONTROL",
-    stage: "foundation",
+    stage: "development",
     overview:
-      "Shift context, patrols, tasks and escalations on a single operational surface.",
+      "Security operations, patrols and incident workflows are in active development. Selected offline reporting and patrol workflows are part of the technical foundation.",
     purpose:
       "Coordinate day-to-day security activity without losing context across tools, shifts or sites.",
     workflow: [
@@ -97,19 +106,19 @@ const CAPABILITIES: Capability[] = [
       "Escalations",
       "Notifications",
       "Open actions",
-      "Handover notes",
-      "Realtime foundations",
+      "Selected offline workflows",
+      "Duty journal — planned",
     ],
     related: ["Personnel", "Objects", "Reporting", "Compliance"],
-    stageLabel: "Implemented foundation · realtime foundations expanding",
+    stageLabel: "Active development. Not every module works offline, and no realtime service level is claimed.",
   },
   {
     id: "objects",
     title: "Object Management",
     category: "STRUCTURE",
-    stage: "foundation",
+    stage: "development",
     overview:
-      "Physical hierarchy from customer and object down to posts, checkpoints and assets.",
+      "Objects and locations, including customer and object hierarchy, are in active development.",
     purpose:
       "Anchor every report, patrol and instruction to a shared site model so context is never re-entered.",
     workflow: [
@@ -134,20 +143,20 @@ const CAPABILITIES: Capability[] = [
       "Risks",
     ],
     related: ["Operations", "Reporting", "Compliance", "Customers"],
-    stageLabel: "Implemented foundation",
+    stageLabel: "Active development. Not a completed production hierarchy.",
   },
   {
     id: "personnel",
     title: "Personnel",
     category: "PEOPLE",
-    stage: "foundation",
+    stage: "development",
     overview:
-      "Roles, qualifications, availability and assignments bound to operational objects.",
+      "Personnel and workforce management are in active development. Scheduling and assignment authority are established foundations.",
     purpose:
-      "Ensure the right qualified people are assigned, with activity retained for review.",
+      "Keep assignments tied to operational objects. Qualification authority is in discovery, not an available qualification system.",
     workflow: [
       "Profile & role set",
-      "Qualification verified",
+      "Qualification — discovery",
       "Assignment to object",
       "Shift active",
       "Operational activity",
@@ -156,15 +165,14 @@ const CAPABILITIES: Capability[] = [
     modules: [
       "Users",
       "Roles",
-      "Qualifications",
-      "Certifications",
+      "Qualifications — discovery",
       "Availability",
-      "Scheduling foundations",
+      "Scheduling and assignment authority",
       "Assignments",
       "Team structure",
     ],
     related: ["Operations", "Compliance", "Objects"],
-    stageLabel: "Implemented foundation · scheduling foundations planned",
+    stageLabel: "Active development. Scheduling and assignment authority are established. Qualification authority is in discovery.",
   },
   {
     id: "customers",
@@ -200,7 +208,7 @@ const CAPABILITIES: Capability[] = [
     category: "GOVERNANCE",
     stage: "foundation",
     overview:
-      "Access boundaries, evidence chains and change history designed into operations.",
+      "Role-based access, company-scoped data and audit foundations are established. Evidence custody and qualification authority are in discovery.",
     purpose:
       "Support oversight and customer requirements without claiming external certifications the product does not hold.",
     workflow: [
@@ -215,13 +223,13 @@ const CAPABILITIES: Capability[] = [
       "Role-based access",
       "Audit logging",
       "Approval trails",
-      "Qualification tracking",
+      "Qualification authority — discovery",
       "Change history",
-      "Operational evidence",
+      "Evidence custody — discovery",
       "Customer requirements",
     ],
     related: ["Reporting", "Personnel", "Objects"],
-    stageLabel: "Implemented foundation",
+    stageLabel: "Access and audit foundations established. Evidence custody and privacy retention are in discovery. No certification is claimed.",
   },
   {
     id: "ai",
@@ -249,7 +257,7 @@ const CAPABILITIES: Capability[] = [
       "Approval link",
     ],
     related: ["Reporting", "Operations", "Compliance"],
-    stageLabel: "Active development · Specific Report workflow in MVP",
+    stageLabel: "Active development. Drafts require human review. AI does not make autonomous operational decisions.",
   },
   {
     id: "intelligence",
@@ -257,7 +265,7 @@ const CAPABILITIES: Capability[] = [
     category: "INSIGHT",
     stage: "planned",
     overview:
-      "Operational insight built on structured platform data. Recommendations remain future direction.",
+      "Connected analytics is planned. Predictive AI risk analysis is future research and does not make operational decisions.",
     purpose:
       "Help supervisors understand patterns over time — without autonomous decision-making.",
     workflow: [
@@ -268,14 +276,12 @@ const CAPABILITIES: Capability[] = [
       "Action decided by operations",
     ],
     modules: [
-      "Insight views — planned",
-      "Pattern analysis — planned",
-      "Risk signals — planned",
-      "Recommendations — future",
-      "Predictive support — future",
+      "Connected analytics — planned",
+      "Predictive AI risk analysis — future research",
+      "Wearable integrations — future research",
     ],
     related: ["Reporting", "Operations", "Personnel", "Objects"],
-    stageLabel: "Planned · future recommendations clearly staged",
+    stageLabel: "Connected analytics is planned. Predictive AI risk analysis is future research.",
   },
 ];
 
@@ -558,7 +564,7 @@ export function OperationalCapabilityExplorer() {
                       STAGE_STYLE[c.stage]
                     )}
                   >
-                    {c.stage}
+                    {STAGE_LABEL[c.stage]}
                   </span>
                 </span>
               </button>
@@ -593,7 +599,7 @@ export function OperationalCapabilityExplorer() {
                       STAGE_STYLE[current.stage]
                     )}
                   >
-                    {current.stage}
+                    {STAGE_LABEL[current.stage]}
                   </span>
                 </div>
                 <h3 className="heading-md mt-1">{current.title}</h3>

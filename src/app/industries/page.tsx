@@ -394,8 +394,8 @@ export default function IndustriesPage() {
                 {[
                   "Identity",
                   "Access model",
-                  "Audit foundation",
-                  "Reporting foundation",
+                  "Audit and event foundations",
+                  "Company-scoped access",
                   "Organizational context",
                   "Platform services",
                 ].map((x) => (

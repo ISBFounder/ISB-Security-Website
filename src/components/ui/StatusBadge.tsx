@@ -7,15 +7,19 @@ const config: Record<FeatureStatus, { label: string; className: string }> = {
     className: "bg-status-success/10 text-status-success border-status-success/25",
   },
   development: {
-    label: "In development",
+    label: "Active development",
     className: "bg-gold/10 text-gold border-gold/25",
+  },
+  discovery: {
+    label: "Discovery / architecture",
+    className: "bg-surface text-ink-secondary border-border",
   },
   planned: {
     label: "Planned",
     className: "bg-surface text-ink-secondary border-border",
   },
   future: {
-    label: "Future direction",
+    label: "Future / research",
     className: "bg-bg text-ink-muted border-border-subtle",
   },
 };

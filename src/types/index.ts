@@ -1,4 +1,9 @@
-export type FeatureStatus = "foundation" | "development" | "planned" | "future";
+export type FeatureStatus =
+  | "foundation"
+  | "development"
+  | "discovery"
+  | "planned"
+  | "future";
 
 export interface NavItem {
   label: string;
