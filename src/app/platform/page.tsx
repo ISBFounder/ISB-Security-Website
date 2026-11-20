@@ -5,16 +5,15 @@ import { Button } from "@/components/ui/Button";
 import { PlatformArchitecture } from "@/components/platform/PlatformArchitecture";
 import { PlatformOsExplorer } from "@/components/platform/PlatformOsExplorer";
 import { OsContinuity } from "@/components/os/OsContinuity";
-import { SITE } from "@/lib/constants";
 import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, routeMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = routeMetadata({
   title: "Security Operations Platform",
   description:
-    "ISB Security Platform — enterprise security operations platform with an established multi-tenant foundation, operational object hierarchy and expanding workforce capabilities.",
-  alternates: { canonical: `${SITE.url}/platform` },
-};
+    "ISB Security Platform: established multi-tenant foundation, operational object hierarchy and expanding workforce capabilities.",
+  path: "/platform",
+});
 
 export default function PlatformPage() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { SITE } from "@/lib/constants";
 
 export const DEFAULT_DESCRIPTION =
@@ -13,23 +14,24 @@ export function routeMetadata(opts: {
   title: string;
   description: string;
   path: string;
-}) {
+}): Metadata {
   const url = absoluteUrl(opts.path);
+  const socialTitle = `${opts.title} | ${SITE.name}`;
   return {
     title: opts.title,
     description: opts.description,
     alternates: { canonical: url },
     openGraph: {
-      title: `${opts.title} | ${SITE.name}`,
+      title: socialTitle,
       description: opts.description,
       url,
       siteName: SITE.name,
-      type: "website" as const,
+      type: "website",
       locale: "en_US",
     },
     twitter: {
-      card: "summary_large_image" as const,
-      title: `${opts.title} | ${SITE.name}`,
+      card: "summary_large_image",
+      title: socialTitle,
       description: opts.description,
     },
   };
@@ -47,10 +49,19 @@ export function organizationJsonLd() {
       addressLocality: "Tilburg",
       addressCountry: "NL",
     },
+    logo: absoluteUrl("/logo.jpg"),
+    image: absoluteUrl("/logo.jpg"),
     identifier: {
       "@type": "PropertyValue",
       name: "KVK",
       value: SITE.kvk,
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "enquiries",
+      email: SITE.email,
+      areaServed: "NL",
+      availableLanguage: ["English"],
     },
   };
 }
@@ -61,6 +72,7 @@ export function websiteJsonLd() {
     "@type": "WebSite",
     name: SITE.name,
     url: SITE.url,
+    inLanguage: "en",
     description: DEFAULT_DESCRIPTION,
     publisher: {
       "@type": "Organization",
@@ -75,6 +87,7 @@ export function softwareApplicationJsonLd() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: SITE.product,
+    url: absoluteUrl("/platform"),
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:

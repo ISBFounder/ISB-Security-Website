@@ -1,7 +1,7 @@
 export const SITE = {
   name: "ISB Security Solutions",
   product: "ISB Security Platform",
-  url: "https://isbsecuritysolutions.nl",
+  url: "https://www.isbsecuritysolutions.nl",
   email: "info@isbsecuritysolutions.nl",
   location: "Tilburg, The Netherlands",
   kvk: "42099496",

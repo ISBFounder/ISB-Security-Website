@@ -5,16 +5,15 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { TechnologyArchitecture } from "@/components/technology/TechnologyArchitecture";
 import { TechnologyStackExplorer } from "@/components/technology/TechnologyStackExplorer";
 import { OsContinuity } from "@/components/os/OsContinuity";
-import { SITE } from "@/lib/constants";
 import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, routeMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = routeMetadata({
   title: "Technology Architecture",
   description:
     "Technical foundation of ISB Security Platform — multi-tenant architecture, shared services and tenant-aware data boundaries.",
-  alternates: { canonical: `${SITE.url}/technology` },
-};
+  path: "/technology",
+});
 
 export default function TechnologyPage() {
   return (

@@ -10,7 +10,9 @@ export function StructuredData({ data }: Props) {
         <script
           key={i}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(item).replace(/</g, "\\u003c"),
+          }}
         />
       ))}
     </>

@@ -21,9 +21,13 @@ const routes: { path: string; priority: number }[] = [
   { path: "/cookies", priority: 0.3 },
 ];
 
+/** Public content revision reflected by this sitemap. Not regenerated per request. */
+const LAST_MODIFIED = new Date("2026-11-20T00:00:00.000Z");
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map(({ path, priority }) => ({
     url: path === "/" ? SITE.url : `${SITE.url}${path}`,
+    lastModified: LAST_MODIFIED,
     priority,
   }));
 }

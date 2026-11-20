@@ -26,7 +26,7 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-faint">Platform</h3>
+            <h2 className="font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-faint">Platform</h2>
             <ul className="mt-4 space-y-2">
               {NAV.platform.map((item) => (
                 <li key={item.href}>
@@ -37,10 +37,10 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-faint">Solutions</h3>
+            <h2 className="font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-faint">Solutions</h2>
             <ul className="mt-4 space-y-2">
-              {NAV.solutions.slice(0, 6).map((item) => (
-                <li key={item.href}>
+              {NAV.solutions.map((item) => (
+                <li key={item.label}>
                   <Link href={item.href} className="text-sm text-ink-muted hover:text-ink">{item.label}</Link>
                 </li>
               ))}
@@ -48,7 +48,7 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-faint">Company</h3>
+            <h2 className="font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-faint">Company</h2>
             <ul className="mt-4 space-y-2">
               {NAV.company.map((item) => (
                 <li key={item.href}>
@@ -56,13 +56,16 @@ export function Footer() {
                 </li>
               ))}
               <li>
+                <Link href="/industries" className="text-sm text-ink-muted hover:text-ink">Industries</Link>
+              </li>
+              <li>
                 <Link href="/request-demo" className="text-sm text-ink-muted hover:text-ink">Request Demo</Link>
               </li>
             </ul>
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-faint">Legal</h3>
+            <h2 className="font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-faint">Legal</h2>
             <ul className="mt-4 space-y-2">
               <li><Link href="/privacy" className="text-sm text-ink-muted hover:text-ink">Privacy Policy</Link></li>
               <li><Link href="/terms" className="text-sm text-ink-muted hover:text-ink">Terms of Use</Link></li>

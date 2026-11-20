@@ -13,7 +13,7 @@ import { breadcrumbJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "AI-Assisted Security Operations",
   description:
-    "AI-assisted reporting for security operations — built on structured operational data and secure workflows, under human review and supervisor approval. No autonomous decisions.",
+    "AI-assisted reporting for security operations, under human review and supervisor approval. No autonomous decisions.",
   alternates: { canonical: `${SITE.url}/ai` },
   openGraph: {
     title: `AI-Assisted Security Operations | ${SITE.name}`,

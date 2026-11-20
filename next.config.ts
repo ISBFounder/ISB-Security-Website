@@ -32,6 +32,16 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "isbsecuritysolutions.nl" }],
+        destination: "https://www.isbsecuritysolutions.nl/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
@@ -69,11 +69,23 @@ export const metadata: Metadata = {
     description:
       "Modular security operations platform under active development for professional security organizations.",
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   alternates: { canonical: SITE.url },
 };
 
-export const viewport = {
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
   themeColor: "#070809",
 };
 

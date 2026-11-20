@@ -9,19 +9,19 @@ import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Contact ISB Security Solutions",
+  title: { absolute: "Contact ISB Security Solutions" },
   description:
     "Contact ISB Security Solutions for platform, pilot, partnership, security or general enquiries. Tilburg, The Netherlands.",
   alternates: { canonical: `${SITE.url}/contact` },
   openGraph: {
-    title: `Contact ISB Security Solutions | ${SITE.name}`,
+    title: "Contact ISB Security Solutions",
     description:
       "Contact ISB Security Solutions for platform, pilot, partnership, security or general enquiries. Tilburg, The Netherlands.",
     url: `${SITE.url}/contact`,
   },
   twitter: {
     card: "summary_large_image",
-    title: `Contact ISB Security Solutions | ${SITE.name}`,
+    title: "Contact ISB Security Solutions",
     description:
       "Contact ISB Security Solutions for platform, pilot, partnership, security or general enquiries. Tilburg, The Netherlands.",
   },

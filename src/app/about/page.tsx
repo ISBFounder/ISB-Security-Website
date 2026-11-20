@@ -7,21 +7,21 @@ import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "About ISB Security Solutions",
+  title: { absolute: "About ISB Security Solutions" },
   description:
-    "ISB Security Solutions builds an enterprise security operations platform with an established foundation and expanding capabilities — operational origin, modular strategy and European focus.",
+    "ISB Security Solutions builds an enterprise security operations platform with an established foundation, modular strategy and European focus.",
   alternates: { canonical: `${SITE.url}/about` },
   openGraph: {
-    title: `About ISB Security Solutions | ${SITE.name}`,
+    title: "About ISB Security Solutions",
     description:
-      "Enterprise security operations platform with an established foundation and expanding capabilities for professional security organizations.",
+      "Enterprise security operations platform with an established foundation, modular strategy and European focus.",
     url: `${SITE.url}/about`,
   },
   twitter: {
     card: "summary_large_image",
-    title: `About ISB Security Solutions | ${SITE.name}`,
+    title: "About ISB Security Solutions",
     description:
-      "Enterprise security operations platform with an established foundation and expanding capabilities.",
+      "Enterprise security operations platform with an established foundation, modular strategy and European focus.",
   },
 };
 

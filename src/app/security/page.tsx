@@ -7,16 +7,15 @@ import { AuthorizationFlow } from "@/components/security/AuthorizationFlow";
 import { TenantIsolation } from "@/components/security/TenantIsolation";
 import { AuditTrailVisual } from "@/components/security/AuditTrailVisual";
 import { OsContinuity } from "@/components/os/OsContinuity";
-import { SITE } from "@/lib/constants";
 import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, routeMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = routeMetadata({
   title: "Security & Trust",
   description:
-    "Who may perform what, within which context, under which authorization, with what auditability.",
-  alternates: { canonical: `${SITE.url}/security` },
-};
+    "Authorization, tenant boundaries and auditability for ISB Security Platform: who may act, in which context, and what is recorded.",
+  path: "/security",
+});
 
 export default function SecurityPage() {
   return (

@@ -14,7 +14,7 @@ import { FreelanceCTA } from "@/components/freelance/FreelanceCTA";
 export const metadata: Metadata = {
   title: "Freelance Security Professional",
   description:
-    "Freelance security services for hospitality, events and operational assignments through established security organizations, provided by the security professional behind ISB Security Solutions.",
+    "Freelance security services for hospitality, events and operational assignments through established security organizations.",
   alternates: { canonical: `${SITE.url}/freelance-security` },
   openGraph: {
     title: `Freelance Security Professional | ${SITE.name}`,

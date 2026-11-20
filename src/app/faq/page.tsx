@@ -8,19 +8,19 @@ import { StructuredData } from "@/components/seo/StructuredData";
 import { faqPageJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "Platform FAQ",
   description:
     "Answers about ISB Security Platform, development status, architecture, AI-assisted reporting, security, operational use and future availability.",
   alternates: { canonical: `${SITE.url}/faq` },
   openGraph: {
-    title: `FAQ | ${SITE.name}`,
+    title: `Platform FAQ | ${SITE.name}`,
     description:
       "Answers about ISB Security Platform, development status, architecture, AI-assisted reporting, security, operational use and future availability.",
     url: `${SITE.url}/faq`,
   },
   twitter: {
     card: "summary_large_image",
-    title: `FAQ | ${SITE.name}`,
+    title: `Platform FAQ | ${SITE.name}`,
     description:
       "Answers about ISB Security Platform, development status, architecture, AI-assisted reporting, security, operational use and future availability.",
   },

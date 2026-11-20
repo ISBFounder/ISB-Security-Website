@@ -5,16 +5,15 @@ import { Button } from "@/components/ui/Button";
 import { EnvironmentExplorer } from "@/components/solutions/EnvironmentExplorer";
 import { SolutionContextSwitcher } from "@/components/solutions/SolutionContextSwitcher";
 import { OsContinuity } from "@/components/os/OsContinuity";
-import { SITE } from "@/lib/constants";
 import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, routeMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = routeMetadata({
   title: "Security Operations Solutions",
   description:
     "Operational workflows and solution scenarios for object security, mobile patrol, events, retail, corporate, healthcare and public-sector environments.",
-  alternates: { canonical: `${SITE.url}/solutions` },
-};
+  path: "/solutions",
+});
 
 export default function SolutionsPage() {
   return (

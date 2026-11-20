@@ -155,7 +155,7 @@ export function FAQAccordion({ items }: Props) {
               const btnId = `faq-btn-${item.id}`;
               return (
                 <div key={item.id} className="border-b border-border">
-                  <h3>
+                  <h2>
                     <button
                       type="button"
                       id={btnId}
@@ -178,7 +178,7 @@ export function FAQAccordion({ items }: Props) {
                         aria-hidden
                       />
                     </button>
-                  </h3>
+                  </h2>
                   <div
                     id={panelId}
                     role="region"

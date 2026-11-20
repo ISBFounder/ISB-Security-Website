@@ -4,7 +4,7 @@ import { SITE } from "@/lib/constants";
 export const metadata: Metadata = {
   title: { absolute: `${SITE.name} | Enterprise Security Operations Software` },
   description:
-    "ISB Security Solutions develops ISB Security Platform, an enterprise security operations platform with an established multi-tenant foundation, operational object hierarchy and expanding workforce capabilities.",
+    "ISB Security Solutions develops ISB Security Platform: multi-tenant foundation, operational object hierarchy and expanding workforce capabilities.",
   alternates: { canonical: SITE.url },
   openGraph: {
     title: `${SITE.name} | Enterprise Security Operations Software`,

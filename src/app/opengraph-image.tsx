@@ -126,7 +126,7 @@ export default async function OpenGraphImage() {
             Platform development active
           </div>
           <div style={{ color: "#686F78", fontSize: 16 }}>
-            isbsecuritysolutions.nl
+            www.isbsecuritysolutions.nl
           </div>
         </div>
       </div>

@@ -529,32 +529,33 @@ const ENVS: Env[] = [
   },
 ];
 
+const HASH_TO_ENV: Record<string, EnvId> = {
+  "object-security": "object",
+  "mobile-patrol": "mobile",
+  "event-security": "event",
+  retail: "retail",
+  corporate: "corporate",
+  healthcare: "healthcare",
+  education: "education",
+  government: "government",
+  "security-companies": "object",
+};
+
 export function EnvironmentExplorer() {
   const [active, setActive] = useState<EnvId>("object");
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
   const reduce = useReducedMotion();
   const current = ENVS.find((e) => e.id === active)!;
   useEffect(() => {
-  const hash = window.location.hash.replace("#", "");
-
-  const map: Record<string, EnvId> = {
-    "object-security": "object",
-    "mobile-patrol": "mobile",
-    "event-security": "event",
-    retail: "retail",
-    corporate: "corporate",
-    healthcare: "healthcare",
-    education: "education",
-    government: "government",
-    "security-companies": "object",
-  };
-
-  const target = map[hash];
-
-  if (target) {
-    setActive(target);
-  }
-}, []);
+    function applyHash() {
+      const hash = window.location.hash.replace("#", "");
+      const target = HASH_TO_ENV[hash];
+      if (target) setActive(target);
+    }
+    applyHash();
+    window.addEventListener("hashchange", applyHash);
+    return () => window.removeEventListener("hashchange", applyHash);
+  }, []);
 
   const select = useCallback((id: EnvId, i: number) => {
     setActive(id);
@@ -580,7 +581,10 @@ export function EnvironmentExplorer() {
   }
 
   return (
-    <div className="overflow-hidden border border-border">
+    <div id="operational-environments" className="relative scroll-mt-24 overflow-hidden border border-border">
+      {Object.keys(HASH_TO_ENV).map((id) => (
+        <span key={id} id={id} className="absolute top-0 h-0 w-0" aria-hidden />
+      ))}
       <div className="grid lg:grid-cols-[minmax(0,0.28fr)_minmax(0,0.72fr)]">
         <div
           role="tablist"
