@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -12,27 +12,37 @@ import {
 } from "@/lib/seo";
 
 /** Display — major headings, hero, editorial statements */
-const fontDisplay = Plus_Jakarta_Sans({
-  subsets: ["latin"],
+const fontDisplay = localFont({
+  src: "../fonts/plus-jakarta-sans-latin.woff2",
+  weight: "500 700",
   display: "swap",
   variable: "--font-display",
-  weight: ["500", "600", "700"],
 });
 
 /** Body / UI — navigation, forms, tables, interface */
-const fontSans = IBM_Plex_Sans({
-  subsets: ["latin"],
+const fontSans = localFont({
+  src: "../fonts/ibm-plex-sans-latin.woff2",
+  weight: "400 600",
   display: "swap",
   variable: "--font-sans",
-  weight: ["400", "500", "600"],
 });
 
 /** Mono — technical labels, status, IDs, architecture metadata */
-const fontMono = IBM_Plex_Mono({
-  subsets: ["latin"],
+const fontMono = localFont({
+  src: [
+    {
+      path: "../fonts/ibm-plex-mono-400.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/ibm-plex-mono-500.woff2",
+      weight: "500",
+      style: "normal",
+    },
+  ],
   display: "swap",
   variable: "--font-mono",
-  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
