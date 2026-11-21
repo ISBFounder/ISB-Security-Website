@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { NAV } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { NavigationLink } from "./NavigationLink";
@@ -16,6 +17,7 @@ type Props = {
 export function MobileNavigation({ open, onClose, triggerRef }: Props) {
   const panelRef = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
+  const t = useTranslations("chrome");
 
   // Focus trap + initial focus
   useEffect(() => {
@@ -82,7 +84,7 @@ export function MobileNavigation({ open, onClose, triggerRef }: Props) {
       id="mobile-nav"
       role="dialog"
       aria-modal="true"
-      aria-label="Main navigation"
+      aria-label={t("mainNav")}
       initial={reduce ? false : { opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
       exit={reduce ? undefined : { opacity: 0, y: -6 }}
@@ -91,62 +93,62 @@ export function MobileNavigation({ open, onClose, triggerRef }: Props) {
       style={{ WebkitOverflowScrolling: "touch" }}
     >
       <div className="container-site space-y-1 py-4 pb-10">
-        <MobileDisclosure title="Platform" defaultOpen>
+        <MobileDisclosure title={t("nav.platform.label")} defaultOpen>
           {NAV.platform.map((item) => (
             <NavigationLink
-              key={item.href}
+              key={item.id}
               href={item.href}
               variant="mobile"
               onNavigate={onClose}
             >
-              {item.label}
+              {t(`nav.platform.${item.id}`)}
             </NavigationLink>
           ))}
         </MobileDisclosure>
 
-        <MobileDisclosure title="Solutions">
+        <MobileDisclosure title={t("nav.solutions.label")}>
           {NAV.solutions.map((item) => (
             <NavigationLink
-              key={item.href + item.label}
+              key={item.id}
               href={item.href}
               variant="mobile"
               onNavigate={onClose}
             >
-              {item.label}
+              {t(`nav.solutions.${item.id}`)}
             </NavigationLink>
           ))}
         </MobileDisclosure>
 
-        <MobileDisclosure title="Company">
+        <MobileDisclosure title={t("nav.company.label")}>
           {NAV.company.map((item) => (
             <NavigationLink
-              key={item.href}
+              key={item.id}
               href={item.href}
               variant="mobile"
               onNavigate={onClose}
             >
-              {item.label}
+              {t(`nav.company.${item.id}`)}
             </NavigationLink>
           ))}
         </MobileDisclosure>
 
         {NAV.direct.map((item) => (
           <NavigationLink
-            key={item.href}
+            key={item.id}
             href={item.href}
             variant="mobile"
             onNavigate={onClose}
           >
-            {item.label}
+            {t(`nav.direct.${item.id}`)}
           </NavigationLink>
         ))}
 
         <div className="mt-6 space-y-3 border-t border-border-subtle pt-6">
           <NavigationLink href="/contact" variant="mobile" onNavigate={onClose}>
-            Contact
+            {t("contact")}
           </NavigationLink>
           <Button href="/request-demo" className="w-full" onClick={onClose}>
-            Request Demo
+            {t("requestDemo")}
           </Button>
         </div>
       </div>

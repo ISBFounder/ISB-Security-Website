@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -21,6 +24,7 @@ export function Logo({
   size = "md",
   href = "/",
 }: LogoProps) {
+  const t = useTranslations("chrome");
   const s = sizes[size];
 
   const content = (
@@ -54,7 +58,7 @@ export function Logo({
 
   if (href) {
     return (
-      <Link href={href} className="inline-flex" aria-label="ISB Security Solutions home">
+      <Link href={href} className="inline-flex" aria-label={t("homeAria")}>
         {content}
       </Link>
     );

@@ -1,0 +1,396 @@
+{
+  "metaTitle": "Mogelijkheden voor beveiligingsoperaties",
+  "metaDescription": "Overzicht van mogelijkheden voor het ISB Security Platform — rapportage, objecten, personeel, operaties, beveiligingsgovernance en intelligentie per ontwikkelingsfase.",
+  "breadcrumbHome": "Home",
+  "breadcrumbCurrent": "Mogelijkheden",
+  "eyebrow": "Mogelijkheden",
+  "title": "Operationele mogelijkheden, gestructureerd per domein.",
+  "intro": "ISB Security Platform is opgebouwd als een modulair operationeel systeem. Mogelijkheden zijn gegroepeerd per domein, maar delen dezelfde organisatie-, object-, toegangs- en auditcontext.",
+  "maturityNote": "Labels voor ontwikkelvolwassenheid, geen commerciële beschikbaarheid: Fundament aanwezig · Actieve ontwikkeling · Verkenning / architectuur · Gepland · Toekomst / onderzoek.",
+  "navAria": "Categorieën van mogelijkheden",
+  "workflowPrefix": "Werkstroom",
+  "connectedPrefix": "Verbonden",
+  "nav": {
+    "reporting": "Rapportage",
+    "organizations": "Organisaties",
+    "objects": "Objecten",
+    "personnel": "Personeel",
+    "operations": "Operaties",
+    "security": "Beveiliging",
+    "intelligence": "Intelligentie"
+  },
+  "reporting": {
+    "eyebrow": "Rapportage",
+    "title": "Gestructureerde operationele documentatie",
+    "body": "Rapportage en herstel zijn in actieve ontwikkeling. AI-ondersteunde concepten vereisen menselijke beoordeling en nemen geen operationele besluiten.",
+    "lifecycleLabel": "Rapportlevenscyclus",
+    "lifecycle": [
+      "Waarneming",
+      "Concept",
+      "AI-ondersteuning",
+      "Beoordeling door de beveiliger",
+      "Beoordeling door de leidinggevende",
+      "Vastgesteld dossier",
+      "Historie"
+    ],
+    "rows": {
+      "specificReport": {
+        "name": "Specifiek rapport",
+        "purpose": "Gerichte operationele rapporten met gestructureerde velden.",
+        "workflow": "Waarneming → menselijke beoordeling",
+        "connected": "Objecten, personeel"
+      },
+      "aiAssisted": {
+        "name": "AI-ondersteund specifiek rapport",
+        "purpose": "Conceptstructurering vanuit veldinvoer onder verplichte menselijke beoordeling.",
+        "note": "Neemt geen besluit"
+      },
+      "dailyReports": {
+        "name": "Dagrapporten",
+        "purpose": "Dienst- en dagelijkse operationele samenvattingen."
+      },
+      "incidentReports": {
+        "name": "Incidentrapporten",
+        "purpose": "Gecategoriseerde incidentregistratie met context."
+      },
+      "damageReports": {
+        "name": "Schaderapporten",
+        "purpose": "Schaderegistratie met ondersteuning voor bewijs."
+      },
+      "accidentReports": {
+        "name": "Ongevalrapporten",
+        "purpose": "Werkstromen voor ongevaldocumentatie."
+      },
+      "attachments": {
+        "name": "Bijlagen en foto's",
+        "purpose": "Bestanden gekoppeld aan rapporten. Geen onwijzigbaar bewijsbeheer."
+      },
+      "voiceNotes": {
+        "name": "Spraaknotities",
+        "purpose": "Spraaktranscriptie voor latere verwerking."
+      },
+      "signatures": {
+        "name": "Digitale handtekeningen",
+        "purpose": "Ondersteuning voor formele bevestiging."
+      },
+      "review": {
+        "name": "Beoordeling en goedkeuring",
+        "purpose": "Beoordeling door een leidinggevende vóór vaststelling."
+      },
+      "history": {
+        "name": "Rapporthistorie",
+        "purpose": "Zichtbaarheid van versies en wijzigingen."
+      }
+    }
+  },
+  "organizations": {
+    "eyebrow": "Organisaties en opdrachtgevers",
+    "title": "Operationele structuur voor meerdere opdrachtgevers",
+    "body": "Eén beveiligingsbedrijf kan meerdere opdrachtgevers beheren, met behoud van een gescheiden operationele context.",
+    "tree": {
+      "organization": "Organisatie",
+      "customer": "→ Opdrachtgever",
+      "objects": "→ Objecten",
+      "requirements": "→ Eisen",
+      "context": "→ Operationele context"
+    },
+    "rows": {
+      "company": {
+        "name": "Bedrijfsbeheer",
+        "purpose": "Configuratie op organisatieniveau."
+      },
+      "customer": {
+        "name": "Opdrachtgeversbeheer",
+        "purpose": "Beheer van de hiërarchie van opdrachtgevers en objecten."
+      },
+      "multiTenant": {
+        "name": "Multi-tenantstructuur",
+        "purpose": "Bedrijfsafgebakende gegevensgrenzen tussen organisaties."
+      },
+      "clientReporting": {
+        "name": "Rapportage voor opdrachtgevers",
+        "purpose": "Rapportagewerkstromen voor opdrachtgevers. Geen uitgebracht portaalproduct."
+      },
+      "contacts": {
+        "name": "Contactbeheer",
+        "purpose": "Operationele contacten en noodcontacten."
+      },
+      "serviceRequests": {
+        "name": "Serviceverzoeken en contracten",
+        "purpose": "Service-eisen gekoppeld aan locaties."
+      }
+    }
+  },
+  "objects": {
+    "eyebrow": "Objecten en locaties",
+    "title": "Hiërarchisch locatiemodel",
+    "body": "Objecten en locaties zijn in actieve ontwikkeling. De bevoegdheid voor documentpublicatie is in verkenning, geen beschikbare publicatiecontrole.",
+    "tree": {
+      "customer": "Opdrachtgever",
+      "object": "└ Object · instructies · risico's · contacten · documenten",
+      "building": "└ Gebouw / verdieping / zone · toegang · patrouillecontext",
+      "room": "└ Ruimte / post · toewijzingsinstructies",
+      "checkpoint": "└ Controlepunt · verificatie",
+      "asset": "└ Middel · uitrusting"
+    },
+    "rows": {
+      "buildings": {
+        "name": "Objecten en gebouwen",
+        "purpose": "Structuur van locaties en gebouwen."
+      },
+      "floors": {
+        "name": "Verdiepingen, zones, ruimten",
+        "purpose": "Fijnmazige locatiehiërarchie."
+      },
+      "posts": {
+        "name": "Posten en controlepunten",
+        "purpose": "Patrouille- en inspectiepunten."
+      },
+      "assets": {
+        "name": "Middelen",
+        "purpose": "Registratie van uitrusting en middelen."
+      },
+      "emergencyContacts": {
+        "name": "Noodcontacten",
+        "purpose": "Noodcontext op objectniveau."
+      },
+      "documents": {
+        "name": "Documentwerkruimten",
+        "purpose": "Documentatie gekoppeld aan objecten. Publicatiebevoegdheid is in verkenning."
+      },
+      "history": {
+        "name": "Objecthistorie",
+        "purpose": "Historische operationele context per object."
+      },
+      "requirements": {
+        "name": "Eisen en risico's",
+        "purpose": "Locatiespecifieke instructies en risicoaantekeningen."
+      },
+      "escalation": {
+        "name": "Escalatieprocedures",
+        "purpose": "Escalatiepaden gekoppeld aan objecten."
+      },
+      "routes": {
+        "name": "Patrouilleroutes",
+        "purpose": "Routedefinities over controlepunten."
+      },
+      "maps": {
+        "name": "Interactieve locatiekaarten",
+        "purpose": "Locatiecontext op basis van kaarten."
+      }
+    }
+  },
+  "personnel": {
+    "eyebrow": "Personeel",
+    "title": "Mensen gekoppeld aan operationele context",
+    "body": "Plannings- en toewijzingsbevoegdheid zijn aanwezige fundamenten. Personeelsbeheer is in actieve ontwikkeling. Kwalificatiebevoegdheid is in verkenning.",
+    "modelLabel": "Toewijzingsmodel",
+    "model": [
+      "Beveiliger",
+      "Kwalificatie",
+      "Rol",
+      "Toewijzing",
+      "Dienst",
+      "Operationele activiteit",
+      "Auditregistratie"
+    ],
+    "rows": {
+      "users": {
+        "name": "Gebruikersbeheer",
+        "purpose": "Fundamenten voor accounts en identiteit."
+      },
+      "records": {
+        "name": "Personeelsdossiers",
+        "purpose": "Operationele personeelscontext."
+      },
+      "roles": {
+        "name": "Rollen en rechten",
+        "purpose": "Toegangsbereiken volgens het beginsel van minimale rechten."
+      },
+      "qualifications": {
+        "name": "Kwalificaties en certificeringen",
+        "purpose": "Bevoegdheid voor personeelskwalificaties. Geen beschikbaar kwalificatiesysteem."
+      },
+      "attendance": {
+        "name": "Aanwezigheid en gewerkte tijd",
+        "purpose": "Fundamenten voor aanwezigheid en vastgestelde gewerkte tijd."
+      },
+      "scheduling": {
+        "name": "Plannings- en toewijzingsbevoegdheid",
+        "purpose": "Bevoegdheid voor dienstroosters en toewijzing."
+      },
+      "teams": {
+        "name": "Teambeheer",
+        "purpose": "Teamstructuur voor operationele coördinatie."
+      },
+      "assignments": {
+        "name": "Toewijzingen",
+        "purpose": "Koppel personeel aan objecten en diensten."
+      }
+    }
+  },
+  "operations": {
+    "eyebrow": "Operaties",
+    "title": "Dagelijkse operationele regie",
+    "body": "Beveiligingsoperaties, patrouilles en incidentwerkstromen zijn in actieve ontwikkeling. Geselecteerde offline rapportage- en patrouillewerkstromen maken deel uit van het technische fundament. Niet elke module werkt offline. Er wordt geen aanspraak gemaakt op een realtime serviceniveau.",
+    "flowLabel": "Operationele stroom",
+    "flow": [
+      "Toewijzing",
+      "Patrouille",
+      "Controlepunt",
+      "Kwestie",
+      "Escalatie",
+      "Melding",
+      "Handeling van de leidinggevende",
+      "Vastgelegde uitkomst"
+    ],
+    "rows": {
+      "notifications": {
+        "name": "Meldingen",
+        "purpose": "Meldingen voor werkstromen en escalaties."
+      },
+      "tasks": {
+        "name": "Taken",
+        "purpose": "Toewijzing en opvolging van operationele taken."
+      },
+      "patrols": {
+        "name": "Patrouilles",
+        "purpose": "Uitvoering van patrouilles langs routes en objecten."
+      },
+      "checkpoints": {
+        "name": "Controlepuntverificatie",
+        "purpose": "Bevestiging of uitzondering bij controlepunten.",
+        "note": "Niet gepresenteerd als uitgebracht"
+      },
+      "escalations": {
+        "name": "Escalaties",
+        "purpose": "Gestructureerde escalatieafhandeling."
+      },
+      "handovers": {
+        "name": "Dienstjournaal en overdrachten",
+        "purpose": "Registraties van dienstwissels."
+      },
+      "workOrders": {
+        "name": "Werkorders",
+        "purpose": "Afhandeling van werkorders."
+      },
+      "cases": {
+        "name": "Zaakbeheer",
+        "purpose": "Langer lopende operationele zaken."
+      },
+      "realtime": {
+        "name": "Realtime-updates",
+        "purpose": "Live operationele status.",
+        "note": "Geen latentiegarantie"
+      },
+      "offline": {
+        "name": "Geselecteerde offline werkstromen",
+        "purpose": "Geselecteerde offline rapportage- en patrouillewerkstromen. Niet elke module."
+      },
+      "mobile": {
+        "name": "Geselecteerde mobiele werkstromen",
+        "purpose": "Geselecteerde mobiele werkstromen in actieve ontwikkeling."
+      }
+    }
+  },
+  "security": {
+    "eyebrow": "Beveiliging en governance",
+    "title": "Toegang, scheiding en traceerbaarheid",
+    "body": "Ontworpen rond identiteit, rol, tenant en handelingscontext. De architectuur ondersteunt gegevenscontroles op rijniveau waar dat relevant is.",
+    "chain": "Identiteit → Rol → Tenant → Gegevensbereik → Handeling → Audit",
+    "rows": {
+      "rbac": {
+        "name": "Rolgebaseerde toegangscontrole",
+        "purpose": "Rechtenbereiken per operationele rol."
+      },
+      "companyScope": {
+        "name": "Bedrijfsafgebakende gegevens",
+        "purpose": "Bedrijfsafgebakende gegevens en multi-tenantgrenzen."
+      },
+      "audit": {
+        "name": "Audit en gebeurtenissen",
+        "purpose": "Traceerbare kritieke handelingen en goedkeuringen."
+      },
+      "billing": {
+        "name": "Afgebakende facturatie- en salarisgegevens",
+        "purpose": "Afgebakende fundamenten voor financiële gegevens, facturatiegegevens en salarisgegevens. Geen salarisproduct."
+      },
+      "outbox": {
+        "name": "Integratie-outbox",
+        "purpose": "Afgebakende fundamenten voor uitgaande integratie."
+      },
+      "authentication": {
+        "name": "Authenticatie",
+        "purpose": "Toegangsmodel voor geauthenticeerde gebruikers."
+      },
+      "connectors": {
+        "name": "Enterprise-connectoren",
+        "purpose": "Connectoren naar externe systemen."
+      },
+      "alarms": {
+        "name": "Integraties met alarmproviders",
+        "purpose": "Koppelingen met alarmproviders."
+      },
+      "exports": {
+        "name": "Gecentraliseerde export",
+        "purpose": "Gecontroleerde export van operationele registraties."
+      },
+      "custody": {
+        "name": "Onwijzigbaar bewijsbeheer",
+        "purpose": "Beheermodel voor operationeel bewijs."
+      },
+      "publication": {
+        "name": "Bevoegdheid voor documentpublicatie",
+        "purpose": "Wie het definitieve document mag publiceren."
+      },
+      "retention": {
+        "name": "Privacybewaartermijnen en juridische bewaarplicht",
+        "purpose": "Governance voor bewaartermijnen en juridische bewaarplicht."
+      }
+    }
+  },
+  "intelligence": {
+    "eyebrow": "Intelligentie",
+    "title": "Ondersteund inzicht. Menselijke besluiten.",
+    "body": "AI-ondersteunde rapportconcepten zijn in actieve ontwikkeling. Verbonden analyses zijn gepland. Voorspellende AI-risicoanalyse is toekomstig onderzoek. AI neemt geen autonome operationele besluiten.",
+    "chainLabel": "Intelligentieketen",
+    "chain": [
+      "Operationele gegevens",
+      "Gestructureerde context",
+      "Patronen",
+      "Menselijke interpretatie",
+      "Toekomstige aanbevelingslaag"
+    ],
+    "rows": {
+      "aiReporting": {
+        "name": "AI-rapportage",
+        "purpose": "AI-ondersteunde rapportconcepten onder menselijke beoordeling.",
+        "note": "Neemt geen besluit"
+      },
+      "analytics": {
+        "name": "Verbonden analyses",
+        "purpose": "Verbonden weergaven over operationele gegevens."
+      },
+      "predictive": {
+        "name": "Voorspellende AI-risicoanalyse",
+        "purpose": "Onderzoek naar risicoanalyse voor menselijke beoordeling. Geen autonoom beslissysteem."
+      },
+      "wearables": {
+        "name": "Integraties met wearables",
+        "purpose": "Onderzoek naar draagbare apparaten."
+      }
+    }
+  },
+  "statusModel": {
+    "eyebrow": "Statusmodel",
+    "title": "Hoe fasen van mogelijkheden worden gelabeld",
+    "foundation": "Fundament aanwezig — technische fundamenten in het ontwikkelplatform. Geen commerciële beschikbaarheid.",
+    "development": "Actieve ontwikkeling — werk in uitvoering. Niet productie-gevalideerd.",
+    "discovery": "Verkenning / architectuur — vragen over bevoegdheid en ontwerp. Geen beschikbare mogelijkheid.",
+    "planned": "Gepland — beoogde latere mogelijkheid. Geen releasedatum.",
+    "future": "Toekomst / onderzoek — onderzoeksrichting, geen oplevering."
+  },
+  "ctaTitle": "Ontdek hoe deze mogelijkheden aansluiten op uw operatie.",
+  "ctaDemo": "Demo aanvragen",
+  "ctaPlatform": "Bekijk het platform"
+}

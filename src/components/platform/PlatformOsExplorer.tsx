@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useRef, useState, type KeyboardEvent as RKEvent } from "react";
+import { useTranslations } from "next-intl";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { osPanelTransition } from "@/lib/motion";
@@ -14,100 +15,65 @@ type DomainId =
   | "compliance"
   | "intelligence";
 
-const DOMAINS: {
+const DOMAIN_ORDER: {
   id: DomainId;
   index: string;
-  title: string;
-  summary: string;
   connected: DomainId[];
-  concepts: string[];
   status: OsMaturity;
 }[] = [
   {
     id: "operations",
     index: "01",
-    title: "Operations",
-    summary: "Shifts, patrols, tasks and escalations in a shared operational context.",
     connected: ["people", "objects", "reporting", "compliance"],
-    concepts: ["Shift context", "Patrol workflows", "Escalations", "Tasks"],
     status: "development",
   },
   {
     id: "reporting",
     index: "02",
-    title: "Reporting",
-    summary: "Field observation to approved record. Human review remains mandatory.",
     connected: ["operations", "objects", "intelligence", "compliance"],
-    concepts: ["Specific Report", "AI-assisted draft", "Approval", "History"],
     status: "development",
   },
   {
     id: "people",
     index: "03",
-    title: "People",
-    summary: "Roles, qualifications and assignments bound to the same objects and rules.",
     connected: ["operations", "compliance", "objects"],
-    concepts: ["Profiles", "Assignments", "Availability", "Qualifications — discovery"],
     status: "development",
   },
   {
     id: "objects",
     index: "04",
-    title: "Objects",
-    summary: "The physical hierarchy that anchors reports, patrols and instructions.",
     connected: ["operations", "reporting", "compliance"],
-    concepts: ["Customer", "Object", "Zone", "Checkpoint"],
     status: "development",
   },
   {
     id: "compliance",
     index: "05",
-    title: "Compliance",
-    summary: "Role-based access, company-scoped data and audit foundations. Evidence custody and privacy retention are in discovery.",
     connected: ["reporting", "people", "objects"],
-    concepts: ["RBAC", "Company scope", "Audit events", "Evidence custody — discovery"],
     status: "foundation",
   },
   {
     id: "intelligence",
     index: "06",
-    title: "Intelligence",
-    summary: "AI-assisted report drafting is in active development. AI does not make autonomous operational decisions.",
     connected: ["reporting", "operations", "people", "objects"],
-    concepts: [
-      "Report drafting — active development",
-      "Connected analytics — planned",
-      "Predictive risk analysis — future research",
-    ],
     status: "development",
   },
 ];
 
-const CONTEXT = [
-  "Organization",
-  "Customer",
-  "Object / Location",
-  "Personnel",
-  "Roles / Permissions",
-  "Audit context",
-] as const;
-
-const FOUNDATION = [
-  "Authentication and role-based access",
-  "Company-scoped multi-tenant data",
-  "Scheduling and assignment authority",
-  "Attendance and worked time",
-  "Audit and events",
-  "Bounded billing and payroll data",
-  "Integration outbox",
-  "Selected offline reporting and patrol workflows",
-] as const;
-
 export function PlatformOsExplorer() {
+  const t = useTranslations("platform");
   const [active, setActive] = useState<DomainId>("reporting");
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
   const reduce = useReducedMotion();
-  const current = DOMAINS.find((d) => d.id === active)!;
+  const domains = DOMAIN_ORDER.map((d) => ({
+    ...d,
+    title: t(`explorer.domains.${d.id}.title`),
+    summary: t(`explorer.domains.${d.id}.summary`),
+    concepts: t.raw(`explorer.domains.${d.id}.concepts`) as string[],
+  }));
+  const current = domains.find((d) => d.id === active)!;
+  const steps = t.raw("explorer.steps") as string[];
+  const context = t.raw("explorer.context") as string[];
+  const foundation = t.raw("explorer.foundation") as string[];
 
   const select = useCallback((id: DomainId, i: number) => {
     setActive(id);
@@ -118,50 +84,48 @@ export function PlatformOsExplorer() {
     let n = i;
     if (e.key === "ArrowRight" || e.key === "ArrowDown") {
       e.preventDefault();
-      n = (i + 1) % DOMAINS.length;
+      n = (i + 1) % domains.length;
     } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
       e.preventDefault();
-      n = (i - 1 + DOMAINS.length) % DOMAINS.length;
+      n = (i - 1 + domains.length) % domains.length;
     } else if (e.key === "Home") {
       e.preventDefault();
       n = 0;
     } else if (e.key === "End") {
       e.preventDefault();
-      n = DOMAINS.length - 1;
+      n = domains.length - 1;
     } else return;
-    select(DOMAINS[n].id, n);
+    select(domains[n].id, n);
   }
 
   return (
     <div>
       <ol className="mb-6 grid gap-px border border-border bg-border-subtle font-mono text-[11px] text-ink-muted sm:grid-cols-4">
-        {["One foundation", "Shared context", "Operational domains", "Connected workflows"].map(
-          (step, i) => (
-            <li key={step} className="bg-bg px-3 py-2.5">
-              <span className="text-[9px] uppercase tracking-wide text-ink-faint">
-                0{i + 1}
-              </span>
-              <p className="mt-1 text-ink-secondary">{step}</p>
-            </li>
-          )
-        )}
+        {steps.map((step, i) => (
+          <li key={step} className="bg-bg px-3 py-2.5">
+            <span className="text-[9px] uppercase tracking-wide text-ink-faint">
+              0{i + 1}
+            </span>
+            <p className="mt-1 text-ink-secondary">{step}</p>
+          </li>
+        ))}
       </ol>
 
       <div className="border border-border">
         <div className="flex items-center justify-between gap-3 border-b border-border-subtle bg-surface/40 px-4 py-2.5">
           <p className="font-mono text-[10px] uppercase tracking-wider text-ink-faint">
-            Security OS · architecture explorer
+            {t("explorer.chrome")}
           </p>
           <p className="hidden font-mono text-[10px] text-ink-muted sm:block">
-            Modules inherit identity, permissions and audit
+            {t("explorer.inherit")}
           </p>
         </div>
         <div
           className="grid grid-cols-2 gap-px bg-border-subtle sm:grid-cols-3 lg:grid-cols-6"
           role="tablist"
-          aria-label="Platform domains"
+          aria-label={t("explorer.domainsAria")}
         >
-          {DOMAINS.map((d, i) => {
+          {domains.map((d, i) => {
             const selected = active === d.id;
             const related = current.connected.includes(d.id);
             return (
@@ -210,7 +174,7 @@ export function PlatformOsExplorer() {
           <p className="body mt-2 max-w-2xl">{current.summary}</p>
           <div className="mt-5 grid gap-6 lg:grid-cols-2">
             <div>
-              <p className="label mb-3">Representative concepts</p>
+              <p className="label mb-3">{t("explorer.conceptsLabel")}</p>
               <ul className="space-y-1.5">
                 {current.concepts.map((c) => (
                   <li
@@ -223,11 +187,11 @@ export function PlatformOsExplorer() {
               </ul>
             </div>
             <div>
-              <p className="label mb-3">Connected domains</p>
+              <p className="label mb-3">{t("explorer.connectedLabel")}</p>
               <div className="flex flex-wrap gap-2">
                 {current.connected.map((id) => {
-                  const peer = DOMAINS.find((d) => d.id === id)!;
-                  const idx = DOMAINS.findIndex((d) => d.id === id);
+                  const peer = domains.find((d) => d.id === id)!;
+                  const idx = domains.findIndex((d) => d.id === id);
                   return (
                     <button
                       key={id}
@@ -246,9 +210,9 @@ export function PlatformOsExplorer() {
       </AnimatePresence>
 
       <div className="mt-4 border border-border bg-bg-secondary/50 px-4 py-4">
-        <p className="label mb-3">Shared context</p>
+        <p className="label mb-3">{t("explorer.contextLabel")}</p>
         <div className="flex flex-wrap gap-1.5">
-          {CONTEXT.map((c) => (
+          {context.map((c) => (
             <span
               key={c}
               className="border border-border-subtle bg-surface/40 px-2.5 py-1 font-mono text-[10px] text-ink-muted"
@@ -257,9 +221,9 @@ export function PlatformOsExplorer() {
             </span>
           ))}
         </div>
-        <p className="label mb-3 mt-5">Shared foundation</p>
+        <p className="label mb-3 mt-5">{t("explorer.foundationLabel")}</p>
         <div className="flex flex-wrap gap-1.5">
-          {FOUNDATION.map((f) => (
+          {foundation.map((f) => (
             <span
               key={f}
               className="border border-border-subtle bg-surface/40 px-2.5 py-1 font-mono text-[10px] text-ink-muted"
@@ -269,8 +233,7 @@ export function PlatformOsExplorer() {
           ))}
         </div>
         <p className="mt-3 text-[11px] text-ink-faint">
-          Domains do not each recreate identity, permissions and operational context.
-          They inherit them from the Security OS foundation.
+          {t("explorer.footnote")}
         </p>
       </div>
     </div>

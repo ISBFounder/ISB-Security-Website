@@ -1,0 +1,43 @@
+{
+  "metaTitle": "Contact met ISB Security Solutions",
+  "metaDescription": "Neem contact op met ISB Security Solutions voor vragen over het platform, een pilot, samenwerking, beveiliging of algemene vragen. Tilburg, Nederland.",
+  "breadcrumbHome": "Home",
+  "breadcrumbCurrent": "Contact",
+  "eyebrow": "Contact",
+  "title": "Begin het juiste gesprek.",
+  "intro": "Gebruik het onderstaande formulier voor vragen over het platform, een pilot, samenwerking, het bedrijf of algemene vragen. Berichten worden doorgestuurd naar ISB Security Solutions.",
+  "formTitle": "Stuur een bericht",
+  "formIntro": "ISB beoordeelt binnenkomende vragen en reageert wanneer opvolging passend is. Er wordt geen specifieke reactietijd toegezegd.",
+  "loadingForm": "Formulier laden…",
+  "companyLabel": "Bedrijf",
+  "location": "Tilburg, Nederland",
+  "engagementLabel": "Contactroutes",
+  "engagement": {
+    "platform": {
+      "title": "Platform",
+      "copy": "Vraag een demonstratie aan van de huidige ontwikkelrichting.",
+      "label": "Demo aanvragen"
+    },
+    "pilot": {
+      "title": "Pilot",
+      "copy": "Bespreek mogelijkheden voor toekomstige operationele validatie.",
+      "label": "Pilotgesprek"
+    },
+    "partnership": {
+      "title": "Samenwerking",
+      "copy": "Gesprekken over strategische of technologische samenwerking.",
+      "label": "Vraag over samenwerking"
+    },
+    "security": {
+      "title": "Beveiliging",
+      "copy": "Verantwoorde melding van mogelijke beveiligingsproblemen.",
+      "label": "Beveiligingsmelding"
+    }
+  },
+  "privacyBefore": "Gegevens die via dit formulier worden verstuurd, worden gebruikt om op uw vraag te reageren. ",
+  "privacyLink": "Privacyverklaring",
+  "ctaTitle": "Liever een gestructureerde demonstratie?",
+  "ctaBody": "Gebruik de aparte demoaanvraag als u wilt nagaan hoe de huidige platformrichting aansluit op uw operatie.",
+  "requestDemo": "Demo aanvragen",
+  "explorePlatform": "Bekijk het platform"
+}

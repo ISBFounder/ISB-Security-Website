@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useRef, useState, type KeyboardEvent as RKEvent } from "react";
+import { useTranslations } from "next-intl";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { osPanelTransition } from "@/lib/motion";
@@ -14,84 +15,33 @@ type StepId =
   | "approval"
   | "locked";
 
-const STEPS: {
-  id: StepId;
-  actor: "Officer" | "AI" | "Supervisor" | "System";
-  label: string;
-  input: string;
-  action: string;
-  output: string;
-  authority: string;
-  status: OsMaturity;
-}[] = [
-  {
-    id: "observation",
-    actor: "Officer",
-    label: "Officer observation",
-    input: "Mobile field note",
-    action: "Capture raw observation",
-    output: "Unstructured note",
-    authority: "Officer",
-    status: "development",
-  },
-  {
-    id: "extraction",
-    actor: "AI",
-    label: "Structured extraction",
-    input: "Field note",
-    action: "Suggest fields",
-    output: "Candidate structure",
-    authority: "Suggestion only",
-    status: "development",
-  },
-  {
-    id: "draft",
-    actor: "AI",
-    label: "AI-assisted draft",
-    input: "Extracted fields",
-    action: "Propose wording",
-    output: "Draft report",
-    authority: "Not a decision",
-    status: "development",
-  },
-  {
-    id: "review",
-    actor: "Officer",
-    label: "Officer review",
-    input: "AI draft",
-    action: "Correct and accept",
-    output: "Officer version",
-    authority: "Officer",
-    status: "development",
-  },
-  {
-    id: "approval",
-    actor: "Supervisor",
-    label: "Supervisor approval",
-    input: "Officer version",
-    action: "Approve or return",
-    output: "Authorized record",
-    authority: "Supervisor",
-    status: "development",
-  },
-  {
-    id: "locked",
-    actor: "System",
-    label: "Locked / auditable record",
-    input: "Approved version",
-    action: "Retain history",
-    output: "Operational record",
-    authority: "Not immutable custody",
-    status: "discovery",
-  },
+type ActorId = "officer" | "ai" | "supervisor" | "system";
+
+const STEPS: { id: StepId; actor: ActorId; status: OsMaturity }[] = [
+  { id: "observation", actor: "officer", status: "development" },
+  { id: "extraction", actor: "ai", status: "development" },
+  { id: "draft", actor: "ai", status: "development" },
+  { id: "review", actor: "officer", status: "development" },
+  { id: "approval", actor: "supervisor", status: "development" },
+  { id: "locked", actor: "system", status: "discovery" },
 ];
 
+const FIELDS = ["input", "actor", "action", "output", "authority"] as const;
+
 export function AIHumanWorkflow() {
+  const t = useTranslations("ai");
   const [active, setActive] = useState<StepId>("observation");
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
   const reduce = useReducedMotion();
   const i = STEPS.findIndex((s) => s.id === active);
   const current = STEPS[i];
+  const values: Record<(typeof FIELDS)[number], string> = {
+    input: t(`workflow.steps.${current.id}.input`),
+    actor: t(`workflow.actors.${current.actor}`),
+    action: t(`workflow.steps.${current.id}.action`),
+    output: t(`workflow.steps.${current.id}.output`),
+    authority: t(`workflow.steps.${current.id}.authority`),
+  };
 
   const select = useCallback((id: StepId, index: number) => {
     setActive(id);
@@ -113,16 +63,16 @@ export function AIHumanWorkflow() {
   return (
     <div>
       <p className="mb-4 text-center font-mono text-[11px] text-ink-muted">
-        AI supports the report. Not the decision.
+        {t("workflow.lead")}
       </p>
       <div
         role="tablist"
-        aria-label="AI workflow steps"
+        aria-label={t("workflow.aria")}
         className="flex gap-0 overflow-x-auto border border-border"
       >
         {STEPS.map((s, idx) => {
           const selected = s.id === active;
-          const human = s.actor !== "AI";
+          const human = s.actor !== "ai";
           return (
             <button
               key={s.id}
@@ -145,8 +95,12 @@ export function AIHumanWorkflow() {
                   : "border-transparent text-ink-muted hover:text-ink-secondary"
               )}
             >
-              <span className="font-mono text-[9px] text-ink-faint">{s.actor}</span>
-              <span className="text-[12px] font-medium">{s.label}</span>
+              <span className="font-mono text-[9px] text-ink-faint">
+                {t(`workflow.actors.${s.actor}`)}
+              </span>
+              <span className="text-[12px] font-medium">
+                {t(`workflow.steps.${s.id}.label`)}
+              </span>
             </button>
           );
         })}
@@ -167,7 +121,7 @@ export function AIHumanWorkflow() {
               disabled={i === 0}
               onClick={() => select(STEPS[i - 1].id, i - 1)}
             >
-              Previous
+              {t("workflow.previous")}
             </button>
             <button
               type="button"
@@ -175,30 +129,24 @@ export function AIHumanWorkflow() {
               disabled={i === STEPS.length - 1}
               onClick={() => select(STEPS[i + 1].id, i + 1)}
             >
-              Next
+              {t("workflow.next")}
             </button>
           </div>
           <dl className="grid gap-3 sm:grid-cols-2">
-            {[
-              ["Input", current.input],
-              ["Actor", current.actor],
-              ["Action", current.action],
-              ["Output", current.output],
-              ["Authority", current.authority],
-            ].map(([k, v]) => (
+            {FIELDS.map((k) => (
               <div key={k} className="border-b border-border-subtle pb-2">
                 <dt className="font-mono text-[9px] uppercase tracking-wide text-ink-faint">
-                  {k}
+                  {t(`workflow.fields.${k}`)}
                 </dt>
                 <dd
                   className={cn(
                     "mt-1 text-[13px]",
-                    k === "Authority" && current.actor !== "AI"
+                    k === "authority" && current.actor !== "ai"
                       ? "text-gold"
                       : "text-ink-secondary"
                   )}
                 >
-                  {v}
+                  {values[k]}
                 </dd>
               </div>
             ))}

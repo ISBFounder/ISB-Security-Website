@@ -1,0 +1,25 @@
+{
+  "metaTitle": "Een demonstratie van het ISB Security Platform aanvragen",
+  "metaDescription": "Vraag een demonstratie van het ISB Security Platform aan. Deelt u de operationele context, zodat het gesprek zich kan richten op relevante modules en de ontwikkelrichting.",
+  "breadcrumbHome": "Home",
+  "breadcrumbCurrent": "Demo aanvragen",
+  "eyebrow": "Demo aanvragen",
+  "title": "Vraag een demonstratie van het ISB Security Platform aan.",
+  "intro": "Beschrijf uw organisatie, het huidige operationele model en de uitdagingen die u wilt verbeteren. ISB gebruikt deze context om een relevant gesprek over het platform voor te bereiden.",
+  "status": "Platformontwikkeling actief",
+  "coverTitle": "Wat een demonstratie kan omvatten",
+  "cover": {
+    "reporting": "Rapportage- en surveillanceworkflows in actieve ontwikkeling",
+    "objects": "Objecten en locaties in actieve ontwikkeling",
+    "personnel": "Fundamenten voor personeelsplanning en toewijzing",
+    "ai": "AI-ondersteunde rapportage onder menselijke beoordeling",
+    "access": "Rolgebaseerde toegang en gegevens per bedrijf",
+    "roadmap": "Roadmap en ontwikkelstatus"
+  },
+  "coverNote": "Het platform is in actieve ontwikkeling. Er is niet aangekondigd dat het commercieel beschikbaar of productiegevalideerd is. Er is geen openbare releasedatum vastgesteld.",
+  "evalNote": "Voor evaluaties die specifiek gaan over beveiliging, techniek of governance neemt u de relevante context op, zodat het gesprek zich kan richten op het passende onderdeel van het platform.",
+  "preferBefore": "Liever eerst een korte vraag? ",
+  "contactLink": "Contact met ISB",
+  "privacyBefore": "Verstrekte gegevens worden gebruikt om de aanvraag te beoordelen en daarop te reageren. ",
+  "privacyLink": "Privacyverklaring"
+}

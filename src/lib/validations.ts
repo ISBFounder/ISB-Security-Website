@@ -23,24 +23,35 @@ export const enquiryTypeLabels: Record<EnquiryType, string> = {
 };
 
 export const contactSchema = z.object({
-  name: z.string().trim().min(2, "Name is required").max(120),
+  name: z
+    .string({ required_error: "name_required", invalid_type_error: "name_required" })
+    .trim()
+    .min(2, "name_required")
+    .max(120),
   company: z.string().trim().max(160).optional().or(z.literal("")),
   email: z
-    .string()
+    .string({ required_error: "email_invalid", invalid_type_error: "email_invalid" })
     .trim()
-    .email("Valid email required")
+    .email("email_invalid")
     .max(200)
     .transform((v) => v.toLowerCase()),
   phone: z.string().trim().max(40).optional().or(z.literal("")),
-  subject: z.string().trim().min(2, "Subject is required").max(200),
-  message: z
-    .string()
+  subject: z
+    .string({ required_error: "subject_required", invalid_type_error: "subject_required" })
     .trim()
-    .min(20, "Please provide a more complete message")
+    .min(2, "subject_required")
+    .max(200),
+  message: z
+    .string({
+      required_error: "message_incomplete",
+      invalid_type_error: "message_incomplete",
+    })
+    .trim()
+    .min(20, "message_incomplete")
     .max(5000),
   enquiryType: z.enum(enquiryTypes).default("general"),
   privacy: z.literal("on", {
-    errorMap: () => ({ message: "Privacy consent required" }),
+    errorMap: () => ({ message: "privacy_required" }),
   }),
   website: honeypot,
 });
@@ -186,28 +197,43 @@ export const timelineLabels: Record<(typeof timelineOptions)[number], string> = 
 };
 
 export const demoSchema = z.object({
-  company: z.string().trim().min(2, "Company is required").max(160),
-  contactPerson: z.string().trim().min(2, "Contact person is required").max(120),
+  company: z
+    .string({ required_error: "company_required", invalid_type_error: "company_required" })
+    .trim()
+    .min(2, "company_required")
+    .max(160),
+  contactPerson: z
+    .string({ required_error: "contact_required", invalid_type_error: "contact_required" })
+    .trim()
+    .min(2, "contact_required")
+    .max(120),
   jobTitle: z.string().trim().max(120).optional().or(z.literal("")),
   email: z
-    .string()
+    .string({ required_error: "email_business", invalid_type_error: "email_business" })
     .trim()
-    .email("Valid business email required")
+    .email("email_business")
     .max(200)
     .transform((v) => v.toLowerCase()),
   phone: z.string().trim().max(40).optional().or(z.literal("")),
   companySize: z.enum(companySizeOptions, {
-    errorMap: () => ({ message: "Company size is required" }),
+    errorMap: () => ({ message: "company_size_required" }),
   }),
   workforceSize: z.enum(workforceSizeOptions, {
-    errorMap: () => ({ message: "Security workforce size is required" }),
+    errorMap: () => ({ message: "workforce_required" }),
   }),
-  country: z.string().trim().min(2, "Country is required").max(80),
+  country: z
+    .string({ required_error: "country_required", invalid_type_error: "country_required" })
+    .trim()
+    .min(2, "country_required")
+    .max(80),
   website: honeypot,
   websiteUrl: z.string().trim().max(200).optional().or(z.literal("")),
   sectors: z
-    .array(z.enum(sectorOptions))
-    .min(1, "Select at least one operational sector"),
+    .array(z.enum(sectorOptions), {
+      required_error: "sector_required",
+      invalid_type_error: "sector_required",
+    })
+    .min(1, "sector_required"),
   currentSoftware: z.string().trim().max(500).optional().or(z.literal("")),
   reportingMethods: z.array(z.enum(reportingMethodOptions)).optional().default([]),
   activeObjects: z.string().trim().max(80).optional().or(z.literal("")),
@@ -215,17 +241,20 @@ export const demoSchema = z.object({
   centralPlanning: z.enum(["yes", "no", "unknown"]).optional(),
   mobileWorkforce: z.enum(["yes", "no", "unknown"]).optional(),
   challenges: z
-    .array(z.enum(challengeOptions))
-    .min(1, "Select at least one operational challenge"),
+    .array(z.enum(challengeOptions), {
+      required_error: "challenge_required",
+      invalid_type_error: "challenge_required",
+    })
+    .min(1, "challenge_required"),
   conversation: z.enum(conversationOptions, {
-    errorMap: () => ({ message: "Select what you want to discuss" }),
+    errorMap: () => ({ message: "conversation_required" }),
   }),
   timeline: z.enum(timelineOptions, {
-    errorMap: () => ({ message: "Select an evaluation timeline" }),
+    errorMap: () => ({ message: "timeline_required" }),
   }),
   message: z.string().trim().max(5000).optional().or(z.literal("")),
   privacy: z.literal("on", {
-    errorMap: () => ({ message: "Privacy consent required" }),
+    errorMap: () => ({ message: "privacy_required" }),
   }),
 });
 

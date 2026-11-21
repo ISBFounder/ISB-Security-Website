@@ -1,40 +1,41 @@
-export function AIBeforeAfter() {
+import { getTranslations } from "next-intl/server";
+
+export async function AIBeforeAfter() {
+  const t = await getTranslations("ai");
+
   return (
     <div className="grid gap-px border border-border bg-border-subtle sm:grid-cols-2">
       <div className="bg-bg p-5">
         <p className="font-mono text-[9px] uppercase tracking-wide text-ink-faint">
-          Unstructured field input
+          {t("beforeAfter.before")}
         </p>
         <p className="mt-3 text-[14px] leading-relaxed text-ink-secondary">
-          “22:14 north patrol. gate 3 open. secured gate. camera 4 partly blocked
-          by vegetation. supervisor informed.”
+          {t("beforeAfter.note")}
         </p>
       </div>
       <div className="bg-surface/30 p-5">
         <p className="font-mono text-[9px] uppercase tracking-wide text-ink-faint">
-          Structured, reviewable record
+          {t("beforeAfter.after")}
         </p>
         <dl className="mt-3 space-y-1.5 text-[13px] text-ink-secondary">
           <div className="flex gap-2">
-            <dt className="w-24 font-mono text-[10px] text-ink-faint">Time</dt>
-            <dd>22:14</dd>
+            <dt className="w-24 font-mono text-[10px] text-ink-faint">{t("beforeAfter.time")}</dt>
+            <dd>{t("beforeAfter.timeValue")}</dd>
           </div>
           <div className="flex gap-2">
-            <dt className="w-24 font-mono text-[10px] text-ink-faint">Location</dt>
-            <dd>NL-OBJ-042 · Gate 3</dd>
+            <dt className="w-24 font-mono text-[10px] text-ink-faint">{t("beforeAfter.location")}</dt>
+            <dd>{t("beforeAfter.locationValue")}</dd>
           </div>
           <div className="flex gap-2">
-            <dt className="w-24 font-mono text-[10px] text-ink-faint">Action</dt>
-            <dd>Gate secured · supervisor informed</dd>
+            <dt className="w-24 font-mono text-[10px] text-ink-faint">{t("beforeAfter.action")}</dt>
+            <dd>{t("beforeAfter.actionValue")}</dd>
           </div>
           <div className="flex gap-2">
-            <dt className="w-24 font-mono text-[10px] text-ink-faint">State</dt>
-            <dd>Awaiting human review</dd>
+            <dt className="w-24 font-mono text-[10px] text-ink-faint">{t("beforeAfter.state")}</dt>
+            <dd>{t("beforeAfter.stateValue")}</dd>
           </div>
         </dl>
-        <p className="mt-3 text-[11px] text-ink-faint">
-          AI reduces administrative friction. It does not independently validate facts.
-        </p>
+        <p className="mt-3 text-[11px] text-ink-faint">{t("beforeAfter.footer")}</p>
       </div>
     </div>
   );

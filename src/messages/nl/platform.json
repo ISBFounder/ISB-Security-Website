@@ -1,0 +1,188 @@
+{
+  "metaTitle": "Platform voor beveiligingsoperaties",
+  "metaDescription": "Het ISB Security Platform is in actieve ontwikkeling voor beveiligingsoperaties, rapportage, personeelsplanning en locatiebeheer. Niet commercieel beschikbaar.",
+  "breadcrumbHome": "Home",
+  "breadcrumbCurrent": "Platform",
+  "continuity": {
+    "home": "Home",
+    "platform": "Platform",
+    "technology": "Technologie",
+    "security": "Beveiliging"
+  },
+  "eyebrow": "Platform",
+  "title": "ISB Security Platform: actieve ontwikkeling",
+  "intro": [
+    "Het ISB Security Platform is in actieve ontwikkeling.",
+    "ISB Security Solutions bouwt een geïntegreerd platform voor professionele beveiligingsoperaties, rapportage, personeelsplanning en locatiebeheer.",
+    "Het ontwikkelplatform omvat operationele werkruimten, patrouille- en rapportagewerkstromen, personeels- en toewijzingsbeheer, en beheer van de hiërarchie van opdrachtgevers en objecten.",
+    "Rolgebaseerde toegang, omgang met bedrijfsafgebakende gegevens en geselecteerde offline rapportage- en patrouillewerkstromen maken deel uit van het technische fundament.",
+    "AI-ondersteunde rapportage, operationele integratie en bredere validatie van omgevingen blijven in ontwikkeling.",
+    "Het platform is niet aangekondigd als commercieel beschikbaar of productie-gevalideerd. Er is geen openbare releasedatum vastgesteld."
+  ],
+  "osSection": {
+    "eyebrow": "Beveiligings-OS",
+    "title": "Eén fundament. Gedeelde context. Operationele domeinen.",
+    "description": "Domeinen erven identiteit, rechten en audit. Zij bouwen het besturingssysteem niet elk opnieuw."
+  },
+  "architectureSection": {
+    "eyebrow": "Architectuurmodel",
+    "title": "Gestructureerd van organisatie tot controlepunt.",
+    "description": "Ontdek hoe locatiehiërarchie, mensen en toegang, werkstromen en gedeelde motoren één operationeel model vormen."
+  },
+  "ctaTitle": "Ontdek hoe ISB zou kunnen aansluiten op uw operatie.",
+  "ctaDemo": "Demo aanvragen",
+  "ctaTechnology": "Technologie",
+  "ctaSecurity": "Beveiliging",
+  "explorer": {
+    "steps": [
+      "Eén fundament",
+      "Gedeelde context",
+      "Operationele domeinen",
+      "Verbonden werkstromen"
+    ],
+    "chrome": "Beveiligings-OS · architectuurverkenner",
+    "inherit": "Modules erven identiteit, rechten en audit",
+    "domainsAria": "Platformdomeinen",
+    "conceptsLabel": "Representatieve concepten",
+    "connectedLabel": "Verbonden domeinen",
+    "contextLabel": "Gedeelde context",
+    "foundationLabel": "Gedeeld fundament",
+    "footnote": "Domeinen bouwen identiteit, rechten en operationele context niet elk opnieuw. Zij erven die van het fundament van het beveiligings-OS.",
+    "context": [
+      "Organisatie",
+      "Opdrachtgever",
+      "Object / locatie",
+      "Personeel",
+      "Rollen / rechten",
+      "Auditcontext"
+    ],
+    "foundation": [
+      "Authenticatie en rolgebaseerde toegang",
+      "Bedrijfsafgebakende multi-tenantgegevens",
+      "Plannings- en toewijzingsbevoegdheid",
+      "Aanwezigheid en gewerkte tijd",
+      "Audit en gebeurtenissen",
+      "Afgebakende facturatie- en salarisgegevens",
+      "Integratie-outbox",
+      "Geselecteerde offline rapportage- en patrouillewerkstromen"
+    ],
+    "domains": {
+      "operations": {
+        "title": "Operaties",
+        "summary": "Diensten, patrouilles, taken en escalaties in een gedeelde operationele context.",
+        "concepts": ["Dienstcontext", "Patrouillewerkstromen", "Escalaties", "Taken"]
+      },
+      "reporting": {
+        "title": "Rapportage",
+        "summary": "Van waarneming in het veld tot goedgekeurd dossier. Menselijke beoordeling blijft verplicht.",
+        "concepts": ["Specifiek rapport", "AI-ondersteund concept", "Goedkeuring", "Historie"]
+      },
+      "people": {
+        "title": "Mensen",
+        "summary": "Rollen, kwalificaties en toewijzingen, gebonden aan dezelfde objecten en regels.",
+        "concepts": ["Profielen", "Toewijzingen", "Beschikbaarheid", "Kwalificaties — verkenning"]
+      },
+      "objects": {
+        "title": "Objecten",
+        "summary": "De fysieke hiërarchie die rapporten, patrouilles en instructies verankert.",
+        "concepts": ["Opdrachtgever", "Object", "Zone", "Controlepunt"]
+      },
+      "compliance": {
+        "title": "Naleving",
+        "summary": "Rolgebaseerde toegang, bedrijfsafgebakende gegevens en auditfundamenten. Bewijsbeheer en privacybewaartermijnen zijn in verkenning.",
+        "concepts": ["RBAC", "Bedrijfsafbakening", "Auditgebeurtenissen", "Bewijsbeheer — verkenning"]
+      },
+      "intelligence": {
+        "title": "Intelligentie",
+        "summary": "AI-ondersteunde rapportconcepten zijn in actieve ontwikkeling. AI neemt geen autonome operationele besluiten.",
+        "concepts": [
+          "Rapportconcepten — actieve ontwikkeling",
+          "Verbonden analyses — gepland",
+          "Voorspellende risicoanalyse — toekomstig onderzoek"
+        ]
+      }
+    }
+  },
+  "model": {
+    "viewsAria": "Architectuurweergaven",
+    "views": {
+      "organization": "Organisatie",
+      "people": "Mensen",
+      "workflows": "Werkstromen",
+      "engines": "Platformmotoren"
+    },
+    "locationHierarchy": "Locatiehiërarchie",
+    "why": "Waarom deze structuur",
+    "whyBody": "Weerspiegelt hoe beveiligingsorganisaties en hun opdrachtgevers daadwerkelijk werken — van het bedrijf tot het controlepunt dat een beveiliger tijdens een patrouille verifieert.",
+    "whyPoints": [
+      "Object · instructies, risico's, contacten, documenten",
+      "Zone · toegangsregels, patrouillecontext",
+      "Post · toewijzingsinstructies",
+      "Controlepunt · verificatiepunten",
+      "Middel · informatie over uitrusting"
+    ],
+    "orgTree": [
+      "Organisatie",
+      "Opdrachtgevers",
+      "Objecten",
+      "Gebouwen",
+      "Verdiepingen",
+      "Zones",
+      "Ruimten",
+      "Posten",
+      "Controlepunten",
+      "Middelen"
+    ],
+    "accessModel": "Toegangsmodel",
+    "peopleTree": [
+      "Gebruikers",
+      "Rollen",
+      "Rechten",
+      "Teams",
+      "Kwalificaties",
+      "Toewijzingen"
+    ],
+    "roleExamples": "Rolvoorbeelden",
+    "roles": [
+      {
+        "name": "Beveiliger",
+        "scope": "Rapportage in het veld · toegewezen objecten · beperkte zichtbaarheid"
+      },
+      {
+        "name": "Leidinggevende",
+        "scope": "Beoordeling · goedkeuring · escalatie · teamtoezicht"
+      },
+      {
+        "name": "Vertegenwoordiger van de opdrachtgever",
+        "scope": "Afgebakende zichtbaarheid · geplande uitbreiding"
+      },
+      {
+        "name": "Beheerder",
+        "scope": "Organisatieconfiguratie · gebruikersbeheer"
+      }
+    ],
+    "intersection": "Operationeel snijvlak · illustratief",
+    "workflow": [
+      "Beveiliger K. Jansen",
+      "toegewezen aan NL-OBJ-042",
+      "voert patrouilleroute Noord uit",
+      "signaleert een kwestie bij een controlepunt",
+      "maakt een specifiek rapport",
+      "leidinggevende beoordeelt",
+      "auditspoor legt vast"
+    ],
+    "workflowNote": "Mensen en locaties kruisen elkaar via toewijzingen, rapporten, patrouilles, taken, escalaties, goedkeuringen, meldingen en auditgebeurtenissen.",
+    "enginesLabel": "Gedeelde platformmotoren",
+    "engines": [
+      "Rapportagemotor",
+      "Meldingsmotor",
+      "Auditlaag",
+      "Realtime-laag",
+      "Offline-laag",
+      "API-laag",
+      "AI-ondersteuning",
+      "Fundamenten voor veilige opslag"
+    ],
+    "enginesNote": "Operationele domeinen gebruiken gedeelde platformdiensten — geen geïsoleerde functiesilo's."
+  }
+}

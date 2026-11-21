@@ -1,21 +1,18 @@
 "use client";
 
 import { useState, useRef, useEffect, FormEvent } from "react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import {
   companySizeOptions,
   workforceSizeOptions,
   sectorOptions,
-  sectorLabels,
   reportingMethodOptions,
-  reportingMethodLabels,
   challengeOptions,
-  challengeLabels,
   conversationOptions,
-  conversationLabels,
   timelineOptions,
-  timelineLabels,
 } from "@/lib/validations";
 
 type Status =
@@ -60,7 +57,7 @@ const initial: FormData = {
   phone: "",
   companySize: "",
   workforceSize: "",
-  country: "Netherlands",
+  country: "",
   websiteUrl: "",
   sectors: [],
   currentSoftware: "",
@@ -78,10 +75,10 @@ const initial: FormData = {
 };
 
 const STEPS = [
-  { id: 1, label: "Organization" },
-  { id: 2, label: "Operations" },
-  { id: 3, label: "Requirements" },
-  { id: 4, label: "Review" },
+  { id: 1, key: "organization" },
+  { id: 2, key: "operations" },
+  { id: 3, key: "requirements" },
+  { id: 4, key: "review" },
 ] as const;
 
 const field =
@@ -92,14 +89,42 @@ function toggleIn(list: string[], value: string): string[] {
 }
 
 export function DemoRequestForm() {
+  const t = useTranslations("forms");
+  const errors = useTranslations("forms.errors");
   const [step, setStep] = useState(1);
-  const [data, setData] = useState<FormData>(initial);
+  const [data, setData] = useState<FormData>(() => ({
+    ...initial,
+    country: t("demo.defaultCountry"),
+  }));
   const [status, setStatus] = useState<Status>("idle");
-  const [errorMsg, setErrorMsg] = useState("");
+  const [errorKey, setErrorKey] = useState("");
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const headingRef = useRef<HTMLHeadingElement>(null);
   const errorRef = useRef<HTMLDivElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
+
+  function fieldText(code: string) {
+    return errors.has(code) ? errors(code) : t("banners.validationFailed");
+  }
+
+  function bannerText(key: string) {
+    const path = `banners.${key}`;
+    return t.has(path) ? t(path) : t("banners.validationFailed");
+  }
+
+  function optionText(group: string, id: string, blank = "") {
+    if (!id) return blank;
+    const key = `${group}.${id}`;
+    return t.has(key) ? t(key) : t("banners.validationFailed");
+  }
+
+  function yesNoLabel(value: string, single = false) {
+    if (!value) return t("demo.empty");
+    if (value === "yes") return t("demo.yes");
+    if (value === "no") return single ? t("demo.noSingle") : t("demo.no");
+    if (value === "unknown") return t("demo.unknown");
+    return t("banners.validationFailed");
+  }
 
   useEffect(() => {
     headingRef.current?.focus();
@@ -121,36 +146,36 @@ export function DemoRequestForm() {
   function validateStep(s: number): boolean {
     const errs: Record<string, string> = {};
     if (s === 1) {
-      if (data.company.trim().length < 2) errs.company = "Company is required";
+      if (data.company.trim().length < 2) errs.company = "company_required";
       if (data.contactPerson.trim().length < 2)
-        errs.contactPerson = "Contact person is required";
+        errs.contactPerson = "contact_required";
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim()))
-        errs.email = "Valid business email required";
-      if (!data.companySize) errs.companySize = "Company size is required";
+        errs.email = "email_business";
+      if (!data.companySize) errs.companySize = "company_size_required";
       if (!data.workforceSize)
-        errs.workforceSize = "Security workforce size is required";
-      if (data.country.trim().length < 2) errs.country = "Country is required";
+        errs.workforceSize = "workforce_required";
+      if (data.country.trim().length < 2) errs.country = "country_required";
     }
     if (s === 2) {
       if (data.sectors.length < 1)
-        errs.sectors = "Select at least one operational sector";
+        errs.sectors = "sector_required";
     }
     if (s === 3) {
       if (data.challenges.length < 1)
-        errs.challenges = "Select at least one operational challenge";
+        errs.challenges = "challenge_required";
       if (!data.conversation)
-        errs.conversation = "Select what you want to discuss";
-      if (!data.timeline) errs.timeline = "Select an evaluation timeline";
-      if (!data.privacy) errs.privacy = "Privacy consent required";
+        errs.conversation = "conversation_required";
+      if (!data.timeline) errs.timeline = "timeline_required";
+      if (!data.privacy) errs.privacy = "privacy_required";
     }
     setFieldErrors(errs);
     if (Object.keys(errs).length) {
       setStatus("validation");
-      setErrorMsg("Please correct the highlighted fields.");
+      setErrorKey("correctFields");
       return false;
     }
     setStatus("idle");
-    setErrorMsg("");
+    setErrorKey("");
     return true;
   }
 
@@ -161,7 +186,7 @@ export function DemoRequestForm() {
 
   function back() {
     setStatus("idle");
-    setErrorMsg("");
+    setErrorKey("");
     setFieldErrors({});
     setStep((s) => Math.max(1, s - 1));
   }
@@ -188,7 +213,7 @@ export function DemoRequestForm() {
     if (status === "submitting") return;
 
     setStatus("submitting");
-    setErrorMsg("");
+    setErrorKey("");
 
     const payload = {
       company: data.company,
@@ -222,53 +247,53 @@ export function DemoRequestForm() {
         body: JSON.stringify(payload),
       });
       const body = await res.json().catch(() => ({}));
+      const code = typeof body?.code === "string" ? body.code : undefined;
 
-      if (res.status === 429) {
+      if (res.status === 429 || code === "rate_limited") {
         setStatus("rate_limited");
-        setErrorMsg(
-          body.error ||
-            "Too many submissions were received from this connection. Please try again later."
-        );
+        setErrorKey("demoRateLimited");
         return;
       }
-      if (res.status === 503 || body.code === "NO_PROVIDER") {
+      if (res.status === 503 || code === "NO_PROVIDER") {
         setStatus("unavailable");
-        setErrorMsg(
-          body.error ||
-            "Online submission is temporarily unavailable. Please email info@isbsecuritysolutions.nl."
-        );
+        setErrorKey("demoNoProvider");
         return;
       }
-      if (res.status === 400) {
+      if (res.status === 502 || code === "SEND_FAILED") {
+        setStatus("server");
+        setErrorKey("demoSendFailed");
+        return;
+      }
+      if (res.status === 400 || code === "validation_failed") {
         setStatus("validation");
-        const details = body.details?.fieldErrors as
+        const details = body?.details?.fieldErrors as
           | Record<string, string[]>
           | undefined;
         if (details) {
           const mapped: Record<string, string> = {};
           Object.entries(details).forEach(([k, v]) => {
-            if (v?.[0]) mapped[k] = v[0];
+            if (typeof v?.[0] === "string" && v[0]) mapped[k] = v[0];
           });
           setFieldErrors(mapped);
         }
-        setErrorMsg(body.error || "Please correct the highlighted fields.");
+        setErrorKey("validationFailed");
         setStep(1);
         return;
       }
-      if (!res.ok || !body.ok) {
+      if (res.status === 500 || code === "server") {
         setStatus("server");
-        setErrorMsg(
-          body.error ||
-            "Your request could not be delivered. Please try again later or contact ISB directly."
-        );
+        setErrorKey("server");
+        return;
+      }
+      if (!res.ok || !body?.ok) {
+        setStatus("server");
+        setErrorKey("demoNetwork");
         return;
       }
       setStatus("success");
     } catch {
       setStatus("server");
-      setErrorMsg(
-        "Your request could not be delivered. Please try again later or contact ISB directly."
-      );
+      setErrorKey("demoNetwork");
     }
   }
 
@@ -282,12 +307,10 @@ export function DemoRequestForm() {
         aria-live="polite"
       >
         <h2 className="text-lg font-semibold text-ink">
-          Your demonstration request has been received by ISB Security
-          Solutions.
+          {t("demo.successTitle")}
         </h2>
         <p className="mt-3 text-sm text-ink-secondary">
-          The information you provided will be used to prepare the conversation
-          around your operational context.
+          {t("demo.successBody")}
         </p>
       </div>
     );
@@ -298,7 +321,7 @@ export function DemoRequestForm() {
   return (
     <div>
       {/* Progress */}
-      <nav aria-label="Form steps" className="mb-8 border-b border-border">
+      <nav aria-label={t("demo.ariaSteps")} className="mb-8 border-b border-border">
         <ol className="flex flex-wrap gap-0">
           {STEPS.map((s) => {
             const current = step === s.id;
@@ -323,7 +346,7 @@ export function DemoRequestForm() {
                   <span className="font-mono text-[10px] text-ink-faint">
                     0{s.id}
                   </span>{" "}
-                  {s.label}
+                  {t(`demo.steps.${s.key}`)}
                 </button>
               </li>
             );
@@ -342,7 +365,7 @@ export function DemoRequestForm() {
           aria-live="assertive"
           className="mb-6 border border-status-critical/40 bg-status-critical/5 px-4 py-3 text-sm text-ink-secondary"
         >
-          <p className="font-medium text-ink">{errorMsg}</p>
+          <p className="font-medium text-ink">{bannerText(errorKey)}</p>
           {(status === "server" || status === "unavailable") && (
             <p className="mt-2">
               <a
@@ -356,29 +379,29 @@ export function DemoRequestForm() {
           {Object.keys(fieldErrors).length > 0 && (
             <ul className="mt-2 list-inside list-disc text-[13px]">
               {Object.entries(fieldErrors).map(([k, v]) => (
-                <li key={k}>{v}</li>
+                <li key={k}>{fieldText(v)}</li>
               ))}
             </ul>
           )}
         </div>
       )}
 
-      <form onSubmit={onSubmit} noValidate aria-busy={busy}>
+      <form onSubmit={onSubmit} noValidate aria-busy={busy} aria-label={t("demo.ariaForm")}>
         {/* Step 1 */}
         {step === 1 && (
           <fieldset disabled={busy} className="space-y-5">
-            <legend className="sr-only">Organization</legend>
+            <legend className="sr-only">{t("demo.steps.organization")}</legend>
             <h2
               ref={headingRef}
               tabIndex={-1}
               className="heading-md outline-none"
             >
-              Organization
+              {t("demo.headings.organization")}
             </h2>
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label htmlFor="company" className="text-sm text-ink-secondary">
-                  Company *
+                  {t("demo.company")}
                 </label>
                 <input
                   id="company"
@@ -395,7 +418,7 @@ export function DemoRequestForm() {
                   htmlFor="contactPerson"
                   className="text-sm text-ink-secondary"
                 >
-                  Contact person *
+                  {t("demo.contactPerson")}
                 </label>
                 <input
                   id="contactPerson"
@@ -407,13 +430,14 @@ export function DemoRequestForm() {
                   onChange={(e) => set("contactPerson", e.target.value)}
                   maxLength={120}
                   autoComplete="name"
+                  aria-invalid={Boolean(fieldErrors.contactPerson)}
                 />
               </div>
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label htmlFor="jobTitle" className="text-sm text-ink-secondary">
-                  Job title
+                  {t("demo.jobTitle")}
                 </label>
                 <input
                   id="jobTitle"
@@ -426,7 +450,7 @@ export function DemoRequestForm() {
               </div>
               <div>
                 <label htmlFor="email" className="text-sm text-ink-secondary">
-                  Business email *
+                  {t("demo.businessEmail")}
                 </label>
                 <input
                   id="email"
@@ -436,13 +460,14 @@ export function DemoRequestForm() {
                   onChange={(e) => set("email", e.target.value)}
                   maxLength={200}
                   autoComplete="email"
+                  aria-invalid={Boolean(fieldErrors.email)}
                 />
               </div>
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label htmlFor="phone" className="text-sm text-ink-secondary">
-                  Phone
+                  {t("demo.phone")}
                 </label>
                 <input
                   id="phone"
@@ -456,7 +481,7 @@ export function DemoRequestForm() {
               </div>
               <div>
                 <label htmlFor="country" className="text-sm text-ink-secondary">
-                  Country *
+                  {t("demo.country")}
                 </label>
                 <input
                   id="country"
@@ -465,6 +490,7 @@ export function DemoRequestForm() {
                   onChange={(e) => set("country", e.target.value)}
                   maxLength={80}
                   autoComplete="country-name"
+                  aria-invalid={Boolean(fieldErrors.country)}
                 />
               </div>
             </div>
@@ -474,7 +500,7 @@ export function DemoRequestForm() {
                   htmlFor="companySize"
                   className="text-sm text-ink-secondary"
                 >
-                  Company size *
+                  {t("demo.companySize")}
                 </label>
                 <select
                   id="companySize"
@@ -484,11 +510,12 @@ export function DemoRequestForm() {
                   )}
                   value={data.companySize}
                   onChange={(e) => set("companySize", e.target.value)}
+                  aria-invalid={Boolean(fieldErrors.companySize)}
                 >
-                  <option value="">Select…</option>
+                  <option value="">{t("demo.select")}</option>
                   {companySizeOptions.map((o) => (
                     <option key={o} value={o}>
-                      {o === "1000+" ? "1,000+" : o.replace("-", "–")}
+                      {t(`companySizes.${o}`)}
                     </option>
                   ))}
                 </select>
@@ -498,7 +525,7 @@ export function DemoRequestForm() {
                   htmlFor="workforceSize"
                   className="text-sm text-ink-secondary"
                 >
-                  Security workforce size *
+                  {t("demo.workforceSize")}
                 </label>
                 <select
                   id="workforceSize"
@@ -508,15 +535,12 @@ export function DemoRequestForm() {
                   )}
                   value={data.workforceSize}
                   onChange={(e) => set("workforceSize", e.target.value)}
+                  aria-invalid={Boolean(fieldErrors.workforceSize)}
                 >
-                  <option value="">Select…</option>
+                  <option value="">{t("demo.select")}</option>
                   {workforceSizeOptions.map((o) => (
                     <option key={o} value={o}>
-                      {o === "unknown"
-                        ? "Not applicable / Unknown"
-                        : o === "1000+"
-                          ? "1,000+"
-                          : o.replace("-", "–")}
+                      {t(`workforceSizes.${o}`)}
                     </option>
                   ))}
                 </select>
@@ -524,7 +548,7 @@ export function DemoRequestForm() {
             </div>
             <div>
               <label htmlFor="websiteUrl" className="text-sm text-ink-secondary">
-                Website
+                {t("demo.website")}
               </label>
               <input
                 id="websiteUrl"
@@ -532,7 +556,7 @@ export function DemoRequestForm() {
                 value={data.websiteUrl}
                 onChange={(e) => set("websiteUrl", e.target.value)}
                 maxLength={200}
-                placeholder="https://"
+                placeholder={t("demo.websitePlaceholder")}
                 autoComplete="url"
               />
             </div>
@@ -542,21 +566,23 @@ export function DemoRequestForm() {
         {/* Step 2 */}
         {step === 2 && (
           <fieldset disabled={busy} className="space-y-6">
-            <legend className="sr-only">Operations</legend>
+            <legend className="sr-only">{t("demo.steps.operations")}</legend>
             <h2
               ref={headingRef}
               tabIndex={-1}
               className="heading-md outline-none"
             >
-              Operational model
+              {t("demo.headings.operations")}
             </h2>
             <div>
               <p className="text-sm text-ink-secondary" id="sectors-label">
-                Operational sectors *
+                {t("demo.sectors")}
               </p>
               <div
                 role="group"
                 aria-labelledby="sectors-label"
+                aria-invalid={Boolean(fieldErrors.sectors)}
+                aria-describedby={fieldErrors.sectors ? "err-sectors" : undefined}
                 className="mt-2 space-y-1 border border-border-subtle"
               >
                 {sectorOptions.map((s) => (
@@ -570,13 +596,13 @@ export function DemoRequestForm() {
                       onChange={() => set("sectors", toggleIn(data.sectors, s))}
                       className="h-4 w-4"
                     />
-                    {sectorLabels[s]}
+                    {t(`sectors.${s}`)}
                   </label>
                 ))}
               </div>
               {fieldErrors.sectors && (
-                <p className="mt-1 text-[12px] text-status-critical">
-                  {fieldErrors.sectors}
+                <p id="err-sectors" className="mt-1 text-[12px] text-status-critical">
+                  {fieldText(fieldErrors.sectors)}
                 </p>
               )}
             </div>
@@ -585,7 +611,7 @@ export function DemoRequestForm() {
                 htmlFor="currentSoftware"
                 className="text-sm text-ink-secondary"
               >
-                Current operational software
+                {t("demo.currentSoftware")}
               </label>
               <input
                 id="currentSoftware"
@@ -593,12 +619,12 @@ export function DemoRequestForm() {
                 value={data.currentSoftware}
                 onChange={(e) => set("currentSoftware", e.target.value)}
                 maxLength={500}
-                placeholder="e.g. spreadsheets, paper, multiple systems…"
+                placeholder={t("demo.currentSoftwarePlaceholder")}
               />
             </div>
             <div>
               <p className="text-sm text-ink-secondary" id="reporting-label">
-                Current reporting method
+                {t("demo.reporting")}
               </p>
               <div
                 role="group"
@@ -621,7 +647,7 @@ export function DemoRequestForm() {
                       }
                       className="h-4 w-4"
                     />
-                    {reportingMethodLabels[r]}
+                    {t(`reportingMethods.${r}`)}
                   </label>
                 ))}
               </div>
@@ -632,7 +658,7 @@ export function DemoRequestForm() {
                   htmlFor="activeObjects"
                   className="text-sm text-ink-secondary"
                 >
-                  Approximate active objects / locations
+                  {t("demo.activeObjects")}
                 </label>
                 <input
                   id="activeObjects"
@@ -647,7 +673,7 @@ export function DemoRequestForm() {
                   htmlFor="multiCustomer"
                   className="text-sm text-ink-secondary"
                 >
-                  Multiple customers?
+                  {t("demo.multiCustomer")}
                 </label>
                 <select
                   id="multiCustomer"
@@ -655,10 +681,10 @@ export function DemoRequestForm() {
                   value={data.multiCustomer}
                   onChange={(e) => set("multiCustomer", e.target.value)}
                 >
-                  <option value="">Select…</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No — single customer</option>
-                  <option value="unknown">Unknown</option>
+                  <option value="">{t("demo.select")}</option>
+                  <option value="yes">{t("demo.yes")}</option>
+                  <option value="no">{t("demo.noSingle")}</option>
+                  <option value="unknown">{t("demo.unknown")}</option>
                 </select>
               </div>
             </div>
@@ -668,7 +694,7 @@ export function DemoRequestForm() {
                   htmlFor="centralPlanning"
                   className="text-sm text-ink-secondary"
                 >
-                  Central planning present?
+                  {t("demo.centralPlanning")}
                 </label>
                 <select
                   id="centralPlanning"
@@ -676,10 +702,10 @@ export function DemoRequestForm() {
                   value={data.centralPlanning}
                   onChange={(e) => set("centralPlanning", e.target.value)}
                 >
-                  <option value="">Select…</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                  <option value="unknown">Unknown</option>
+                  <option value="">{t("demo.select")}</option>
+                  <option value="yes">{t("demo.yes")}</option>
+                  <option value="no">{t("demo.no")}</option>
+                  <option value="unknown">{t("demo.unknown")}</option>
                 </select>
               </div>
               <div>
@@ -687,7 +713,7 @@ export function DemoRequestForm() {
                   htmlFor="mobileWorkforce"
                   className="text-sm text-ink-secondary"
                 >
-                  Mobile workforce?
+                  {t("demo.mobileWorkforce")}
                 </label>
                 <select
                   id="mobileWorkforce"
@@ -695,10 +721,10 @@ export function DemoRequestForm() {
                   value={data.mobileWorkforce}
                   onChange={(e) => set("mobileWorkforce", e.target.value)}
                 >
-                  <option value="">Select…</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                  <option value="unknown">Unknown</option>
+                  <option value="">{t("demo.select")}</option>
+                  <option value="yes">{t("demo.yes")}</option>
+                  <option value="no">{t("demo.no")}</option>
+                  <option value="unknown">{t("demo.unknown")}</option>
                 </select>
               </div>
             </div>
@@ -708,21 +734,25 @@ export function DemoRequestForm() {
         {/* Step 3 */}
         {step === 3 && (
           <fieldset disabled={busy} className="space-y-6">
-            <legend className="sr-only">Requirements</legend>
+            <legend className="sr-only">{t("demo.steps.requirements")}</legend>
             <h2
               ref={headingRef}
               tabIndex={-1}
               className="heading-md outline-none"
             >
-              Requirements
+              {t("demo.headings.requirements")}
             </h2>
             <div>
               <p className="text-sm text-ink-secondary" id="challenges-label">
-                Main operational challenges *
+                {t("demo.challenges")}
               </p>
               <div
                 role="group"
                 aria-labelledby="challenges-label"
+                aria-invalid={Boolean(fieldErrors.challenges)}
+                aria-describedby={
+                  fieldErrors.challenges ? "err-challenges" : undefined
+                }
                 className="mt-2 grid gap-1 border border-border-subtle sm:grid-cols-2"
               >
                 {challengeOptions.map((c) => (
@@ -738,13 +768,16 @@ export function DemoRequestForm() {
                       }
                       className="h-4 w-4"
                     />
-                    {challengeLabels[c]}
+                    {t(`challenges.${c}`)}
                   </label>
                 ))}
               </div>
               {fieldErrors.challenges && (
-                <p className="mt-1 text-[12px] text-status-critical">
-                  {fieldErrors.challenges}
+                <p
+                  id="err-challenges"
+                  className="mt-1 text-[12px] text-status-critical"
+                >
+                  {fieldText(fieldErrors.challenges)}
                 </p>
               )}
             </div>
@@ -754,7 +787,7 @@ export function DemoRequestForm() {
                   htmlFor="conversation"
                   className="text-sm text-ink-secondary"
                 >
-                  What are you interested in discussing? *
+                  {t("demo.conversation")}
                 </label>
                 <select
                   id="conversation"
@@ -764,11 +797,12 @@ export function DemoRequestForm() {
                   )}
                   value={data.conversation}
                   onChange={(e) => set("conversation", e.target.value)}
+                  aria-invalid={Boolean(fieldErrors.conversation)}
                 >
-                  <option value="">Select…</option>
+                  <option value="">{t("demo.select")}</option>
                   {conversationOptions.map((o) => (
                     <option key={o} value={o}>
-                      {conversationLabels[o]}
+                      {t(`conversations.${o}`)}
                     </option>
                   ))}
                 </select>
@@ -778,7 +812,7 @@ export function DemoRequestForm() {
                   htmlFor="timeline"
                   className="text-sm text-ink-secondary"
                 >
-                  Desired evaluation timeline *
+                  {t("demo.timeline")}
                 </label>
                 <select
                   id="timeline"
@@ -788,11 +822,12 @@ export function DemoRequestForm() {
                   )}
                   value={data.timeline}
                   onChange={(e) => set("timeline", e.target.value)}
+                  aria-invalid={Boolean(fieldErrors.timeline)}
                 >
-                  <option value="">Select…</option>
+                  <option value="">{t("demo.select")}</option>
                   {timelineOptions.map((o) => (
                     <option key={o} value={o}>
-                      {timelineLabels[o]}
+                      {t(`timelines.${o}`)}
                     </option>
                   ))}
                 </select>
@@ -800,7 +835,7 @@ export function DemoRequestForm() {
             </div>
             <div>
               <label htmlFor="message" className="text-sm text-ink-secondary">
-                Anything else we should understand about your operation?
+                {t("demo.message")}
               </label>
               <textarea
                 id="message"
@@ -817,19 +852,20 @@ export function DemoRequestForm() {
                 checked={data.privacy}
                 onChange={(e) => set("privacy", e.target.checked)}
                 className="mt-1 h-4 w-4"
+                aria-invalid={Boolean(fieldErrors.privacy)}
+                aria-describedby={fieldErrors.privacy ? "err-privacy" : undefined}
               />
               <span>
-                I agree that ISB Security Solutions may use the information
-                provided to respond to this demonstration request. See our{" "}
-                <a href="/privacy" className="text-gold hover:underline">
-                  Privacy Policy
-                </a>
-                .
+                {t("demo.privacyBefore")}
+                <Link href="/privacy" className="text-gold hover:underline">
+                  {t("demo.privacyLink")}
+                </Link>
+                {t("demo.privacyAfter")}
               </span>
             </label>
             {fieldErrors.privacy && (
-              <p className="text-[12px] text-status-critical">
-                {fieldErrors.privacy}
+              <p id="err-privacy" className="text-[12px] text-status-critical">
+                {fieldText(fieldErrors.privacy)}
               </p>
             )}
             {/* Honeypot */}
@@ -837,7 +873,7 @@ export function DemoRequestForm() {
               className="absolute -left-[9999px] h-0 w-0 overflow-hidden"
               aria-hidden
             >
-              <label htmlFor="website">Website</label>
+              <label htmlFor="website">{t("demo.honeypot")}</label>
               <input
                 id="website"
                 name="website"
@@ -858,83 +894,119 @@ export function DemoRequestForm() {
               tabIndex={-1}
               className="heading-md outline-none"
             >
-              Review & submit
+              {t("demo.headings.review")}
             </h2>
             <div className="space-y-0 border border-border">
               {[
                 {
-                  title: "Organization",
+                  id: "organization",
+                  title: t("demo.steps.organization"),
                   step: 1,
                   rows: [
-                    ["Company", data.company],
-                    ["Contact", data.contactPerson],
-                    ["Job title", data.jobTitle || "—"],
-                    ["Email", data.email],
-                    ["Phone", data.phone || "—"],
-                    ["Country", data.country],
-                    ["Company size", data.companySize],
-                    ["Security workforce", data.workforceSize],
+                    ["company", t("demo.review.company"), data.company],
+                    ["contact", t("demo.review.contact"), data.contactPerson],
+                    [
+                      "jobTitle",
+                      t("demo.review.jobTitle"),
+                      data.jobTitle || t("demo.empty"),
+                    ],
+                    ["email", t("demo.review.email"), data.email],
+                    ["phone", t("demo.review.phone"), data.phone || t("demo.empty")],
+                    ["country", t("demo.review.country"), data.country],
+                    [
+                      "companySize",
+                      t("demo.review.companySize"),
+                      optionText("companySizes", data.companySize),
+                    ],
+                    [
+                      "workforce",
+                      t("demo.review.workforce"),
+                      optionText("workforceSizes", data.workforceSize),
+                    ],
                   ],
                 },
                 {
-                  title: "Operations",
+                  id: "operations",
+                  title: t("demo.steps.operations"),
                   step: 2,
                   rows: [
                     [
-                      "Sectors",
+                      "sectors",
+                      t("demo.review.sectors"),
                       data.sectors
-                        .map((s) => sectorLabels[s as keyof typeof sectorLabels])
+                        .map((s) => optionText("sectors", s))
                         .join(", "),
                     ],
-                    ["Current software", data.currentSoftware || "—"],
                     [
-                      "Reporting",
-                      data.reportingMethods
-                        .map(
-                          (r) =>
-                            reportingMethodLabels[
-                              r as keyof typeof reportingMethodLabels
-                            ]
-                        )
-                        .join(", ") || "—",
+                      "currentSoftware",
+                      t("demo.review.currentSoftware"),
+                      data.currentSoftware || t("demo.empty"),
                     ],
-                    ["Objects", data.activeObjects || "—"],
-                    ["Multi-customer", data.multiCustomer || "—"],
-                    ["Central planning", data.centralPlanning || "—"],
-                    ["Mobile workforce", data.mobileWorkforce || "—"],
+                    [
+                      "reporting",
+                      t("demo.review.reporting"),
+                      data.reportingMethods
+                        .map((r) => optionText("reportingMethods", r))
+                        .join(", ") || t("demo.empty"),
+                    ],
+                    [
+                      "objects",
+                      t("demo.review.objects"),
+                      data.activeObjects || t("demo.empty"),
+                    ],
+                    [
+                      "multiCustomer",
+                      t("demo.review.multiCustomer"),
+                      yesNoLabel(data.multiCustomer, true),
+                    ],
+                    [
+                      "centralPlanning",
+                      t("demo.review.centralPlanning"),
+                      yesNoLabel(data.centralPlanning),
+                    ],
+                    [
+                      "mobileWorkforce",
+                      t("demo.review.mobileWorkforce"),
+                      yesNoLabel(data.mobileWorkforce),
+                    ],
                   ],
                 },
                 {
-                  title: "Requirements",
+                  id: "requirements",
+                  title: t("demo.steps.requirements"),
                   step: 3,
                   rows: [
                     [
-                      "Challenges",
+                      "challenges",
+                      t("demo.review.challenges"),
                       data.challenges
-                        .map(
-                          (c) =>
-                            challengeLabels[c as keyof typeof challengeLabels]
-                        )
+                        .map((c) => optionText("challenges", c))
                         .join(", "),
                     ],
                     [
-                      "Conversation",
-                      conversationLabels[
-                        data.conversation as keyof typeof conversationLabels
-                      ] || data.conversation,
+                      "conversation",
+                      t("demo.review.conversation"),
+                      optionText(
+                        "conversations",
+                        data.conversation,
+                        t("demo.empty")
+                      ),
                     ],
                     [
-                      "Timeline",
-                      timelineLabels[
-                        data.timeline as keyof typeof timelineLabels
-                      ] || data.timeline,
+                      "timeline",
+                      t("demo.review.timeline"),
+                      optionText("timelines", data.timeline, t("demo.empty")),
                     ],
-                    ["Notes", data.message || "—"],
+                    [
+                      "notes",
+                      t("demo.review.notes"),
+                      data.message || t("demo.empty"),
+                    ],
                   ],
                 },
               ].map((section) => (
                 <div
-                  key={section.title}
+                  key={section.id}
                   className="border-b border-border-subtle p-4 last:border-0"
                 >
                   <div className="flex items-center justify-between">
@@ -946,14 +1018,14 @@ export function DemoRequestForm() {
                       onClick={() => setStep(section.step)}
                       className="text-[12px] text-ink-muted hover:text-gold"
                     >
-                      Edit
+                      {t("demo.edit")}
                     </button>
                   </div>
                   <dl className="mt-2 space-y-1 text-[13px]">
-                    {section.rows.map(([k, v]) => (
-                      <div key={k} className="flex gap-3">
-                        <dt className="w-36 shrink-0 text-ink-faint">{k}</dt>
-                        <dd className="text-ink-secondary">{v}</dd>
+                    {section.rows.map(([key, label, value]) => (
+                      <div key={key} className="flex gap-3">
+                        <dt className="w-36 shrink-0 text-ink-faint">{label}</dt>
+                        <dd className="text-ink-secondary">{value}</dd>
                       </div>
                     ))}
                   </dl>
@@ -967,18 +1039,18 @@ export function DemoRequestForm() {
         <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
           {step > 1 ? (
             <Button type="button" variant="ghost" onClick={back} disabled={busy}>
-              Back
+              {t("demo.back")}
             </Button>
           ) : (
             <span />
           )}
           {step < 4 ? (
             <Button type="button" onClick={next} disabled={busy}>
-              Continue
+              {t("demo.continue")}
             </Button>
           ) : (
             <Button type="submit" disabled={busy}>
-              {busy ? "Submitting…" : "Submit request"}
+              {busy ? t("demo.submitting") : t("demo.submit")}
             </Button>
           )}
         </div>

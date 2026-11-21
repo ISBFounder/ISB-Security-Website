@@ -1,0 +1,115 @@
+{
+  "metaTitle": "Over ISB Security Solutions",
+  "metaDescription": "ISB Security Solutions bouwt het ISB Security Platform. Het platform is in actieve ontwikkeling en is niet commercieel beschikbaar.",
+  "ogDescription": "Het ISB Security Platform is in actieve ontwikkeling. Er is geen publieke releasedatum vastgesteld.",
+  "twitterDescription": "Het ISB Security Platform is in actieve ontwikkeling. Er is geen publieke releasedatum vastgesteld.",
+  "breadcrumbHome": "Home",
+  "breadcrumb": "Over",
+  "eyebrow": "Over ISB",
+  "title": "ISB Security Platform: Actieve ontwikkeling",
+  "intro": "ISB Security Solutions bouwt een geïntegreerd platform voor professionele beveiligingsoperaties, rapportage, personeelsplanning en locatiebeheer. Het platform is niet aangekondigd als commercieel beschikbaar of productiegevalideerd. Er is geen publieke releasedatum vastgesteld.",
+  "whyEyebrow": "Waarom ISB bestaat",
+  "whyTitle": "Operationeel werk is nog afhankelijk van versnipperde hulpmiddelen.",
+  "whyBody": "Rapportage, planning, objectinstructies, eisen van opdrachtgevers, personeelscontext, incidentopvolging, auditinformatie, communicatie, documenten en escalatieprocedures worden vaak in afzonderlijke systemen afgehandeld — of geheel buiten systemen.",
+  "consequenceEyebrow": "Gevolg",
+  "consequences": {
+    "repeated": "Herhaalde administratie",
+    "handover": "Ontbrekende context bij overdrachten",
+    "versions": "Versieconflicten",
+    "traceability": "Lage traceerbaarheid",
+    "friction": "Onnodige operationele wrijving"
+  },
+  "originEyebrow": "Operationele oorsprong",
+  "originTitle": "Ontstaan uit directe ervaring met professionele beveiligingsomgevingen.",
+  "originDescription": "ISB is ontstaan uit directe ervaring met operationele beveiligingsomgevingen waarin beveiligers, leidinggevenden en opdrachtgevers vaak werken met afzonderlijke hulpmiddelen en informatiebronnen. Het productontwerp wordt gevormd door die operationele werkelijkheid — niet door abstracte softwaretrends.",
+  "genericEyebrow": "Waarom generieke software tekortschiet",
+  "genericTitle": "Hulpmiddelen die niet rond beveiligingsoperaties zijn ontworpen, vereisen voortdurende aanpassing.",
+  "genericBody": "Generieke bedrijfshulpmiddelen modelleren niet vanzelf objecthiërarchie, surveillancecontext, incidentwerkstroom, escalatiepaden, rolspecifieke operationele toegang, scheiding van opdrachtgever en object, rapportagelevenscyclus, auditcontext of toewijzing gekoppeld aan kwalificaties. Aanpassing voor beveiligingswerk herschept vaak dezelfde versnippering die deze hulpmiddelen moesten oplossen.",
+  "approachEyebrow": "De aanpak van ISB",
+  "approachTitle": "Eén platform. Gedeelde context. Modulaire uitbreiding.",
+  "approachLines": {
+    "platform": "Eén platform",
+    "domains": "Verschillende operationele domeinen",
+    "org": "Gedeelde organisatiecontext",
+    "object": "Gedeelde objectcontext",
+    "user": "Gedeelde gebruikerscontext",
+    "access": "Gedeeld toegangsmodel",
+    "audit": "Gedeeld auditfundament",
+    "modular": "Modulaire uitbreiding"
+  },
+  "approachNote": "Een architectuurprincipe van het bedrijf: domeinen worden uitgebreid zonder identiteit, bevoegdheden, bedrijfsgebonden gegevens en auditfundamenten opnieuw op te bouwen.",
+  "missionLabel": "Missie",
+  "missionTitle": "De Europese beveiligingssector transformeren via één intelligent operationeel platform.",
+  "missionBody": "Operationeel betekent dit het vervangen van versnipperde rapportage, objectinformatie, personeelscontext en auditsporen door één samenhangend systeem, ontworpen voor de manier waarop beveiligingsorganisaties daadwerkelijk werken.",
+  "visionLabel": "Visie",
+  "visionTitle": "Versnipperde operationele systemen vervangen door een veilig, modulair en AI-ondersteund ecosysteem dat de bredere beveiligingswerkstroom kan ondersteunen.",
+  "visionBody": "Het langetermijndoel is geen hulpmiddel voor één doel, maar een platform dat kan groeien over operationele domeinen zonder gedeelde context te verliezen.",
+  "principlesEyebrow": "Bedrijfsprincipes",
+  "principlesTitle": "Praktische standaarden voor product en bedrijfsgedrag.",
+  "principles": {
+    "innovation": {
+      "name": "Innovatie",
+      "text": "Mogelijkheden groeien via modulaire architectuur, niet via decoratieve functies."
+    },
+    "reliability": {
+      "name": "Betrouwbaarheid",
+      "text": "Operationele software moet voorspelbaar werken in dagelijks gebruik."
+    },
+    "security": {
+      "name": "Beveiliging",
+      "text": "Toegang en verantwoording moeten op architectuurniveau worden meegenomen."
+    },
+    "efficiency": {
+      "name": "Efficiëntie",
+      "text": "Technologie moet herhaald administratief werk verminderen."
+    },
+    "trust": {
+      "name": "Vertrouwen",
+      "text": "Grenzen, toegang en traceerbaarheid scheppen vertrouwen in operationele registraties."
+    },
+    "professionalism": {
+      "name": "Professionaliteit",
+      "text": "Producttaal en ontwerp weerspiegelen de ernst van beveiligingsoperaties."
+    }
+  },
+  "strategyEyebrow": "Modulaire strategie",
+  "strategyTitle": "Fundament aanwezig. Actieve ontwikkeling. Toekomstig onderzoek.",
+  "strategyFoundationLabel": "Fundament aanwezig",
+  "strategyFoundationBody": "Rolgebaseerde toegang · Bedrijfsgebonden gegevens · Plannings- en toewijzingsbevoegdheid · Aanwezigheid en gewerkte tijd · Audit en gebeurtenissen · Beperkte facturatie- en salarisgegevens · Integratie-outbox · Geselecteerde offline rapportage- en surveillancewerkstromen",
+  "strategyDevelopmentLabel": "Actieve ontwikkeling",
+  "strategyDevelopmentBody": "Beveiligingsoperaties · Surveillance · Rapportage en herstel · Personeelsinzet · Objecten en locaties · AI-ondersteunde conceptrapportage · Geselecteerde mobiele werkstromen · Serviceverzoeken en contracten · Documentwerkruimten · Rapportage voor opdrachtgevers",
+  "strategyFutureLabel": "Toekomst / onderzoek",
+  "strategyFutureBody": "Verbonden operationele mogelijkheden, externe integraties en geavanceerd AI-onderzoek komen later. Voorspellende AI-risicoanalyse en integraties met wearables zijn onderzoek, geen autonome besluitvormingssystemen. Er is geen releasedatum vastgesteld.",
+  "philosophyEyebrow": "Filosofie voor productontwikkeling",
+  "philosophyTitle": "Operationeel gebruik vóór decoratieve functies.",
+  "philosophy": {
+    "use": "Operationeel gebruik vóór decoratieve functies",
+    "accountability": "Menselijke verantwoording in AI-ondersteunde werkstromen",
+    "staged": "Gefaseerde ontwikkeling met duidelijke volwassenheidslabels",
+    "validation": "Validatie vóór publieke claims",
+    "modular": "Modulaire architectuur voor uitbreiding zonder herschrijven",
+    "scale": "Enterprise-schaalbaarheid als ontwerprichting",
+    "ai": "Verantwoorde AI onder menselijke regie"
+  },
+  "europeEyebrow": "Europese context",
+  "europeTitle": "Gevestigd in Nederland. Gericht op Europese beveiligingsoperaties.",
+  "europeBody": "ISB Security Solutions is gevestigd in Tilburg, Nederland. De eerste focus is de Europese beveiligingssector. Europese privacy en operationele context beïnvloeden ontwerpbeslissingen. Toekomstige internationale uitbreiding maakt deel uit van de langetermijnrichting.",
+  "europeNote": "Geen claim van Europese marktaanwezigheid, EU-goedkeuring, grensoverschrijdende opdrachtgevers of internationale kantoren, tenzij geverifieerd.",
+  "longTermEyebrow": "Langetermijnrichting",
+  "longTermTitle": "Van platform voor beveiligingsoperaties naar een breder ecosysteem.",
+  "longTermTodayLabel": "Vandaag",
+  "longTermToday": "platform voor beveiligingsoperaties",
+  "longTermLongLabel": "Lange termijn",
+  "longTermLong": "breder modulair operationeel ecosysteem",
+  "longTermFutureLabel": "Toekomst",
+  "longTermFuture": "internationale schaalbaarheid en aangrenzende sectoren",
+  "longTermNote": "Hier worden geen vertrouwelijke roadmapdetails, waardering of overnamedoelen gepubliceerd.",
+  "companyEyebrow": "Bedrijfsinformatie",
+  "location": "Tilburg, Nederland",
+  "website": "isbsecuritysolutions.nl",
+  "tagline": "Software voor beveiligingsoperaties",
+  "ctaTitle": "Beoordeel de platformrichting en de huidige ontwikkelstatus.",
+  "ctaPlatform": "Bekijk het platform",
+  "ctaRoadmap": "Bekijk de roadmap",
+  "ctaContact": "Contact met ISB"
+}

@@ -1,6 +1,26 @@
 "use client";
 
-import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const COPY = {
+  en: {
+    eyebrow: "Error",
+    title: "Something went wrong.",
+    body: "The application could not recover from this error. You can try again or return home.",
+    retry: "Try again",
+    home: "Return Home",
+    reference: "Reference",
+  },
+  nl: {
+    eyebrow: "Fout",
+    title: "Er ging iets mis.",
+    body: "De applicatie kon deze fout niet herstellen. U kunt het opnieuw proberen of naar home gaan.",
+    retry: "Opnieuw proberen",
+    home: "Naar home",
+    reference: "Referentie",
+  },
+} as const;
+
 export default function GlobalError({
   error,
   reset,
@@ -8,15 +28,18 @@ export default function GlobalError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const pathname = usePathname();
+  const lang = pathname?.startsWith("/nl") ? "nl" : "en";
+  const copy = COPY[lang];
+
   return (
-    <html lang="en" className="dark">
+    <html lang={lang} className="dark">
       <body
         style={{
           margin: 0,
           background: "#070809",
           color: "#F5F6F4",
-          fontFamily:
-            "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+          fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
           minHeight: "100vh",
           display: "flex",
           alignItems: "center",
@@ -34,7 +57,7 @@ export default function GlobalError({
               margin: 0,
             }}
           >
-            Error
+            {copy.eyebrow}
           </p>
           <h1
             style={{
@@ -44,11 +67,10 @@ export default function GlobalError({
               letterSpacing: "-0.02em",
             }}
           >
-            Something went wrong.
+            {copy.title}
           </h1>
           <p style={{ color: "#A1A7AF", lineHeight: 1.6, marginTop: 16 }}>
-            The application could not recover from this error. You can try
-            again or return home.
+            {copy.body}
           </p>
           <div style={{ display: "flex", gap: 12, marginTop: 28, flexWrap: "wrap" }}>
             <button
@@ -64,10 +86,10 @@ export default function GlobalError({
                 cursor: "pointer",
               }}
             >
-              Try again
+              {copy.retry}
             </button>
-            <Link 
-              href="/"
+            <a
+              href={lang === "nl" ? "/nl" : "/"}
               style={{
                 border: "1px solid #2A3037",
                 color: "#F5F6F4",
@@ -76,8 +98,8 @@ export default function GlobalError({
                 textDecoration: "none",
               }}
             >
-              Return Home
-            </Link>
+              {copy.home}
+            </a>
           </div>
           {error?.digest ? (
             <p
@@ -88,7 +110,7 @@ export default function GlobalError({
                 fontFamily: "ui-monospace, monospace",
               }}
             >
-              Reference: {error.digest}
+              {copy.reference}: {error.digest}
             </p>
           ) : null}
         </div>

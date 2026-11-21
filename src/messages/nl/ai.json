@@ -1,0 +1,205 @@
+{
+  "metaTitle": "AI-ondersteunde beveiligingsoperaties",
+  "metaDescription": "AI-ondersteunde rapportage voor beveiligingsoperaties, onder menselijke beoordeling en goedkeuring door de leidinggevende. Geen autonome besluiten.",
+  "metaOgDescription": "AI-ondersteunde rapportage voor beveiligingsoperaties — gebouwd op gestructureerde operationele gegevens en beveiligde workflows onder menselijke beoordeling. Geen autonome besluiten.",
+  "metaTwitterDescription": "AI-ondersteunde rapportage voor beveiligingsoperaties — gestructureerde concepten onder menselijke beoordeling. Geen autonome besluiten.",
+  "breadcrumbHome": "Home",
+  "breadcrumb": "AI",
+  "continuityPipeline": "AI-pijplijn op de homepage",
+  "continuityWorkflow": "Volledige AI-workflow",
+  "eyebrow": "AI",
+  "title": "AI die de operatie ondersteunt. Niet de uitvoerder.",
+  "intro": "AI-mogelijkheden zijn gebouwd op gestructureerde operationele gegevens, beveiligde workflows en gevalideerde platformcontext. ISB AI is ontworpen om administratieve frictie te verminderen en de rapportstructuur te verbeteren, terwijl de verantwoordelijkheid bij geautoriseerd personeel blijft — geen autonome besluiten.",
+  "badges": [
+    "Actieve ontwikkeling",
+    "Menselijke beoordeling vereist",
+    "Geplande analyses",
+    "Toekomst / onderzoek"
+  ],
+  "principleEyebrow": "Werkbeginsel voor AI",
+  "principleTitle": "Ondersteuning binnen een gecontroleerde workflow.",
+  "principleBody": "De operationele volgorde is veldnotities, gestructureerde extractie, een AI-concept, beoordeling door de beveiliger, goedkeuring door de leidinggevende en daarna een vergrendelde registratie. De verkenner hieronder is het werkmodel. AI ondersteunt alleen de structuur.",
+  "assistantEyebrow": "Rapportassistent",
+  "assistantTitle": "Assistent voor het specifieke rapport · gebouwd op gestructureerde operationele gegevens.",
+  "assistantDescription": "AI-ondersteunde rapportconcepten zijn in actieve ontwikkeling. Concepten vereisen menselijke beoordeling. AI neemt geen autonome operationele besluiten.",
+  "controlEyebrow": "Menselijke regie",
+  "controlTitle": "AI maakt concepten. Mensen beslissen.",
+  "controlItems": [
+    {
+      "title": "Beoordeling door de beveiliger",
+      "body": "De beveiliger beoordeelt en corrigeert de AI-ondersteunde structuur vóór indiening."
+    },
+    {
+      "title": "Goedkeuring door de leidinggevende",
+      "body": "De uiteindelijke operationele aanvaarding blijft bij geautoriseerde leidinggevenden."
+    },
+    {
+      "title": "Geen autonome besluiten",
+      "body": "AI keurt geen rapporten goed, classificeert geen incidenten autonoom en vervangt geen escalatieprocedures."
+    },
+    {
+      "title": "Traceerbare activiteit",
+      "body": "AI-ondersteuning is bedoeld om zichtbaar te blijven in de operationele registratie en het beoordelingstraject."
+    }
+  ],
+  "maturityEyebrow": "Volwassenheid van de mogelijkheden",
+  "maturityTitle": "Van actieve ontwikkeling tot toekomstig onderzoek.",
+  "maturityItems": [
+    {
+      "stage": "Actieve ontwikkeling",
+      "items": "AI-ondersteunde rapportconcepten · menselijke beoordeling vereist · geen autonome besluiten"
+    },
+    {
+      "stage": "Gepland",
+      "items": "Verbonden analyses · geen autonoom besluitvormingssysteem"
+    },
+    {
+      "stage": "Toekomst / onderzoek",
+      "items": "Voorspellende AI-risicoanalyse · integraties met wearables · geen live besluitvormingssystemen"
+    }
+  ],
+  "ctaTitle": "Beoordeel hoe AI-ondersteunde rapportage kan aansluiten op uw operationele workflow.",
+  "requestDemo": "Demo aanvragen",
+  "exploreSecurity": "Bekijk beveiliging",
+  "explorePlatform": "Bekijk het platform",
+  "beforeAfter": {
+    "before": "Ongestructureerde veldinvoer",
+    "after": "Gestructureerde, beoordeelbare registratie",
+    "note": "“22:14 noordelijke surveillance. poort 3 open. poort beveiligd. camera 4 deels geblokkeerd door begroeiing. leidinggevende geïnformeerd.”",
+    "time": "Tijd",
+    "timeValue": "22:14",
+    "location": "Locatie",
+    "locationValue": "NL-OBJ-042 · Poort 3",
+    "action": "Actie",
+    "actionValue": "Poort beveiligd · leidinggevende geïnformeerd",
+    "state": "Status",
+    "stateValue": "In afwachting van menselijke beoordeling",
+    "footer": "AI vermindert administratieve frictie. Het valideert feiten niet zelfstandig."
+  },
+  "workflow": {
+    "lead": "AI ondersteunt het rapport. Niet het besluit.",
+    "aria": "Stappen van de AI-workflow",
+    "previous": "Vorige",
+    "next": "Volgende",
+    "fields": {
+      "input": "Invoer",
+      "actor": "Actor",
+      "action": "Actie",
+      "output": "Uitvoer",
+      "authority": "Bevoegdheid"
+    },
+    "actors": {
+      "officer": "Beveiliger",
+      "ai": "AI",
+      "supervisor": "Leidinggevende",
+      "system": "Systeem"
+    },
+    "steps": {
+      "observation": {
+        "label": "Waarneming van de beveiliger",
+        "input": "Mobiele veldnotitie",
+        "action": "Ruwe waarneming vastleggen",
+        "output": "Ongestructureerde notitie",
+        "authority": "Beveiliger"
+      },
+      "extraction": {
+        "label": "Gestructureerde extractie",
+        "input": "Veldnotitie",
+        "action": "Velden voorstellen",
+        "output": "Kandidaatstructuur",
+        "authority": "Alleen een suggestie"
+      },
+      "draft": {
+        "label": "AI-ondersteund concept",
+        "input": "Geëxtraheerde velden",
+        "action": "Formulering voorstellen",
+        "output": "Conceptrapport",
+        "authority": "Geen besluit"
+      },
+      "review": {
+        "label": "Beoordeling door de beveiliger",
+        "input": "AI-concept",
+        "action": "Corrigeren en aanvaarden",
+        "output": "Versie van de beveiliger",
+        "authority": "Beveiliger"
+      },
+      "approval": {
+        "label": "Goedkeuring door de leidinggevende",
+        "input": "Versie van de beveiliger",
+        "action": "Goedkeuren of teruggeven",
+        "output": "Geautoriseerde registratie",
+        "authority": "Leidinggevende"
+      },
+      "locked": {
+        "label": "Vergrendelde / auditbare registratie",
+        "input": "Goedgekeurde versie",
+        "action": "Historie bewaren",
+        "output": "Operationele registratie",
+        "authority": "Geen onveranderlijke bewaring"
+      }
+    }
+  },
+  "lifecycle": {
+    "aria": "Levenscyclus van het AI-rapport",
+    "stages": {
+      "input": { "label": "Invoer", "index": "01" },
+      "assist": { "label": "Ondersteuning", "index": "02" },
+      "review": { "label": "Beoordeling", "index": "03" },
+      "approve": { "label": "Goedkeuring", "index": "04" },
+      "audit": { "label": "Audit", "index": "05" }
+    },
+    "input": {
+      "officer": "Beveiliger · K. Jansen",
+      "object": "Object · NL-OBJ-042",
+      "time": "Tijd · 22:14",
+      "fieldNotes": "Veldnotities",
+      "note": "“22:14 noordelijke surveillance. poort 3 open. poort beveiligd. camera 4 deels geblokkeerd door begroeiing. leidinggevende geïnformeerd.”",
+      "demo": "Illustratieve demonstratiegegevens"
+    },
+    "assist": {
+      "lead": "Voorgestelde extractie · beoordeling vereist",
+      "rows": [
+        { "k": "Tijd", "v": "22:14" },
+        { "k": "Locatie", "v": "Noordelijke perimeter · Poort 3" },
+        { "k": "Waarneming", "v": "Poort onbeveiligd aangetroffen" },
+        { "k": "Actie", "v": "Poort ter plaatse beveiligd" },
+        { "k": "Secundair", "v": "Camera 4 deels belemmerd" },
+        { "k": "Escalatie", "v": "Objectleidinggevende geïnformeerd" }
+      ],
+      "completeness": "Volledigheid · ",
+      "identified": "6 / 7 geïdentificeerd",
+      "missing": "Ontbreekt · Eigenaar van de opvolging",
+      "draft": "Om 22:14 uur, tijdens een geplande surveillance van de noordelijke perimeter van object NL-OBJ-042, werd poort 3 onbeveiligd aangetroffen. De poort is ter plaatse beveiligd. Bij camera 4 is eveneens een deels belemmerd zichtveld door begroeiing waargenomen. De objectleidinggevende is geïnformeerd voor opvolging.",
+      "badge": "AI-gegenereerd concept · niet definitief"
+    },
+    "review": {
+      "lead": "… De objectleidinggevende is geïnformeerd voor opvolging.",
+      "added": "Opvolging toegewezen aan de leidinggevende van de wachtdienst.",
+      "warnings": [
+        "Eigenaar van de opvolging niet opgegeven",
+        "Geen foto bijgevoegd",
+        "Verwijzing naar objectinstructie optioneel"
+      ],
+      "status": "Beoordeeld door de beveiliger · In afwachting van beoordeling door de leidinggevende"
+    },
+    "approve": {
+      "version": "v2 · Correctie door de beveiliger",
+      "versionBody": "Eigenaar van de opvolging toegevoegd · gereed waar de workflow goedkeuring vereist.",
+      "supervisor": "Leidinggevende",
+      "comment": "Opmerking: “Verduidelijk de verantwoordelijkheid voor opvolging.”",
+      "revision": "Revisie gevraagd → Herzien → Goedgekeurd",
+      "approved": "Goedgekeurd door de leidinggevende · 22:24 · geautoriseerd menselijk besluit"
+    },
+    "audit": {
+      "lead": "AI-betrokkenheid kan worden vastgelegd als onderdeel van de workflowhistorie.",
+      "events": [
+        "22:16 · AI-concept gegenereerd",
+        "22:19 · Concept bewerkt door de beveiliger",
+        "22:19 · Waarschuwing voor ontbrekende context getoond",
+        "22:21 · Leidinggevende vroeg revisie",
+        "22:24 · Eindrapport goedgekeurd"
+      ],
+      "footer": "Traceerbare workflowhistorie · niet geclaimd als volledige productie-auditdekking of onveranderlijke opslag"
+    }
+  }
+}

@@ -7,6 +7,7 @@ import {
   type KeyboardEvent as RKEvent,
 } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { osPanelTransition } from "@/lib/motion";
 
@@ -18,111 +19,116 @@ type StageId =
   | "approval"
   | "locked";
 
-const STAGES: {
-  id: StageId;
-  label: string;
-  index: string;
-  actor: "Officer" | "AI" | "Supervisor" | "System";
-}[] = [
-  { id: "notes", label: "Field Notes", index: "01", actor: "Officer" },
-  { id: "extraction", label: "Extraction", index: "02", actor: "AI" },
-  { id: "draft", label: "Draft Report", index: "03", actor: "AI" },
-  { id: "review", label: "Human Review", index: "04", actor: "Officer" },
-  { id: "approval", label: "Supervisor", index: "05", actor: "Supervisor" },
-  { id: "locked", label: "Locked Record", index: "06", actor: "System" },
+type ActorId = "officer" | "ai" | "supervisor" | "system";
+
+const STAGES: { id: StageId; index: string; actor: ActorId }[] = [
+  { id: "notes", index: "01", actor: "officer" },
+  { id: "extraction", index: "02", actor: "ai" },
+  { id: "draft", index: "03", actor: "ai" },
+  { id: "review", index: "04", actor: "officer" },
+  { id: "approval", index: "05", actor: "supervisor" },
+  { id: "locked", index: "06", actor: "system" },
 ];
 
+const EXTRACT_IDS = [
+  "time",
+  "location",
+  "observation",
+  "action",
+  "secondary",
+  "escalation",
+] as const;
+
+const DRAFT_IDS = ["time", "location", "observation", "action", "escalation", "evidence"] as const;
+
+const REVIEW_CHECKS = [
+  { id: "owner", tone: "warning" },
+  { id: "photo", tone: "warning" },
+  { id: "instruction", tone: "muted" },
+] as const;
+
+const LOCKED_IDS = ["id", "object", "status", "review", "audit", "evidence"] as const;
+
 function FieldNotesView() {
+  const t = useTranslations("home");
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11px] text-ink-muted">
-        <span>Officer · <span className="text-ink-secondary">K. Jansen</span></span>
-        <span>Object · <span className="text-ink-secondary">NL-OBJ-042</span></span>
-        <span>Time · <span className="text-ink-secondary">22:14</span></span>
-        <span>Input · <span className="text-ink-secondary">Mobile field note</span></span>
+        <span>
+          {t("assistant.notes.officer")}
+          <span className="text-ink-secondary">K. Jansen</span>
+        </span>
+        <span>
+          {t("assistant.notes.object")}
+          <span className="text-ink-secondary">NL-OBJ-042</span>
+        </span>
+        <span>
+          {t("assistant.notes.time")}
+          <span className="text-ink-secondary">22:14</span>
+        </span>
+        <span>
+          {t("assistant.notes.input")}
+          <span className="text-ink-secondary">{t("assistant.notes.mobile")}</span>
+        </span>
       </div>
       <div className="border border-border-subtle bg-bg/50 p-4">
         <p className="font-mono text-[9px] uppercase tracking-wide text-ink-faint">
-          Raw field notes
+          {t("assistant.notes.raw")}
         </p>
         <p className="mt-3 text-[14px] leading-relaxed text-ink-secondary">
-          &ldquo;22:14 north patrol. gate 3 open. secured gate. camera 4 partly
-          blocked by vegetation. supervisor informed.&rdquo;
+          {t("assistant.notes.body")}
         </p>
       </div>
-      <p className="font-mono text-[9px] text-ink-faint">
-        Illustrative demonstration data
-      </p>
+      <p className="font-mono text-[9px] text-ink-faint">{t("cap.illustrative")}</p>
     </div>
   );
 }
 
 function ExtractionView() {
-  const fields = [
-    ["Time", "22:14"],
-    ["Location", "North perimeter"],
-    ["Observation", "Gate 3 found unsecured"],
-    ["Action taken", "Gate secured on location"],
-    ["Secondary observation", "Camera 4 field of view partially obstructed"],
-    ["Escalation", "Object supervisor informed"],
-  ];
+  const t = useTranslations("home");
   return (
     <div className="space-y-4">
-      <p className="text-[12px] text-ink-muted">
-        Suggested extraction · needs review
-      </p>
+      <p className="text-[12px] text-ink-muted">{t("assistant.extraction.kicker")}</p>
       <dl className="divide-y divide-border-subtle border border-border-subtle">
-        {fields.map(([k, v]) => (
-          <div key={k} className="flex gap-4 px-3 py-2.5 text-[13px]">
+        {EXTRACT_IDS.map((id) => (
+          <div key={id} className="flex gap-4 px-3 py-2.5 text-[13px]">
             <dt className="w-40 shrink-0 font-mono text-[10px] text-ink-faint">
-              {k}
+              {t(`assistant.extraction.fields.${id}.label`)}
             </dt>
-            <dd className="text-ink-secondary">{v}</dd>
+            <dd className="text-ink-secondary">{t(`assistant.extraction.fields.${id}.value`)}</dd>
           </div>
         ))}
       </dl>
       <div className="border border-border-subtle bg-bg/40 px-3 py-2.5 text-[12px]">
-        <span className="text-ink-muted">Required context · </span>
-        <span className="text-ink-secondary">6 / 7 identified</span>
+        <span className="text-ink-muted">{t("assistant.extraction.context")}</span>
+        <span className="text-ink-secondary">{t("assistant.extraction.identified")}</span>
         <span className="mx-2 text-ink-faint">·</span>
-        <span className="text-status-warning">Missing · Follow-up responsibility</span>
+        <span className="text-status-warning">{t("assistant.extraction.missing")}</span>
       </div>
     </div>
   );
 }
 
 function DraftReportView() {
+  const t = useTranslations("home");
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <span className="border border-gold/40 px-2 py-0.5 font-mono text-[9px] uppercase tracking-wide text-gold">
-          AI-generated draft
+          {t("assistant.draft.generated")}
         </span>
         <span className="border border-border-subtle px-2 py-0.5 font-mono text-[9px] uppercase tracking-wide text-ink-muted">
-          Not final
+          {t("assistant.draft.notFinal")}
         </span>
       </div>
       <div className="border border-border-subtle bg-bg/50 p-4">
-        <p className="text-[14px] leading-relaxed text-ink-secondary">
-          At 22:14 hours, during a scheduled patrol of the north perimeter of
-          object NL-OBJ-042, Gate 3 was found unsecured. The gate was secured on
-          location. Camera 4 was also observed to have a partially obstructed
-          field of view due to vegetation. The object supervisor was informed for
-          follow-up.
-        </p>
+        <p className="text-[14px] leading-relaxed text-ink-secondary">{t("assistant.draft.body")}</p>
       </div>
       <div className="grid gap-2 sm:grid-cols-2">
-        {[
-          ["Event time", "22:14"],
-          ["Location", "NL-OBJ-042 · North perimeter · Gate 3"],
-          ["Observation", "Gate found unsecured"],
-          ["Action", "Gate secured on location"],
-          ["Escalation", "Object supervisor informed"],
-          ["Evidence", "None attached"],
-        ].map(([k, v]) => (
-          <div key={k} className="border border-border-subtle bg-bg/30 px-3 py-2">
-            <p className="font-mono text-[9px] text-ink-faint">{k}</p>
-            <p className="mt-0.5 text-[12px] text-ink-secondary">{v}</p>
+        {DRAFT_IDS.map((id) => (
+          <div key={id} className="border border-border-subtle bg-bg/30 px-3 py-2">
+            <p className="font-mono text-[9px] text-ink-faint">{t(`assistant.draft.fields.${id}.label`)}</p>
+            <p className="mt-0.5 text-[12px] text-ink-secondary">{t(`assistant.draft.fields.${id}.value`)}</p>
           </div>
         ))}
       </div>
@@ -131,47 +137,38 @@ function DraftReportView() {
 }
 
 function HumanReviewView() {
+  const t = useTranslations("home");
   return (
     <div className="space-y-4">
       <div className="border border-border-subtle bg-bg/50 p-4">
-        <p className="font-mono text-[9px] text-ink-faint">Officer review · editable draft</p>
+        <p className="font-mono text-[9px] text-ink-faint">{t("assistant.review.kicker")}</p>
         <p className="mt-2 text-[13px] leading-relaxed text-ink-secondary">
-          At 22:14 hours, during a scheduled patrol of the north perimeter of
-          object NL-OBJ-042, Gate 3 was found unsecured. The gate was secured on
-          location. Camera 4 was also observed to have a partially obstructed
-          field of view due to vegetation. The object supervisor was informed for
-          follow-up.{" "}
-          <span className="bg-status-warning/15 text-ink">
-            Follow-up assigned to on-call supervisor.
-          </span>
+          {t("assistant.review.body")}{" "}
+          <span className="bg-status-warning/15 text-ink">{t("assistant.review.followUp")}</span>
         </p>
       </div>
       <div className="space-y-1.5">
-        <p className="label">Review checklist</p>
-        {[
-          { t: "Follow-up owner not specified", s: "warning" as const },
-          { t: "No photo attached", s: "warning" as const },
-          { t: "Object instruction reference optional", s: "muted" as const },
-        ].map((w) => (
+        <p className="label">{t("assistant.review.checklist")}</p>
+        {REVIEW_CHECKS.map((w) => (
           <div
-            key={w.t}
+            key={w.id}
             className={cn(
               "border px-3 py-2 text-[12px]",
-              w.s === "warning"
+              w.tone === "warning"
                 ? "border-status-warning/30 bg-status-warning/5 text-ink-secondary"
                 : "border-border-subtle bg-bg/30 text-ink-muted"
             )}
           >
-            {w.t}
+            {t(`assistant.review.checks.${w.id}`)}
           </div>
         ))}
       </div>
       <div className="flex flex-wrap gap-2 font-mono text-[11px]">
         <span className="border border-border-subtle px-2 py-1 text-ink-secondary">
-          Reviewed by officer
+          {t("assistant.review.reviewed")}
         </span>
         <span className="border border-gold/30 bg-gold/5 px-2 py-1 text-gold">
-          Pending supervisor review
+          {t("assistant.review.pending")}
         </span>
       </div>
     </div>
@@ -179,62 +176,51 @@ function HumanReviewView() {
 }
 
 function SupervisorApprovalView() {
+  const t = useTranslations("home");
   return (
     <div className="space-y-4">
       <div className="grid gap-3 sm:grid-cols-2">
         <div className="border border-border-subtle bg-bg/40 p-3">
-          <p className="font-mono text-[9px] text-ink-faint">Officer version · v2</p>
-          <p className="mt-2 text-[12px] text-ink-secondary">
-            Draft revised · follow-up owner added · ready for supervisor.
-          </p>
+          <p className="font-mono text-[9px] text-ink-faint">{t("assistant.approval.officerVersion")}</p>
+          <p className="mt-2 text-[12px] text-ink-secondary">{t("assistant.approval.officerBody")}</p>
         </div>
         <div className="border border-border-subtle bg-bg/40 p-3">
-          <p className="font-mono text-[9px] text-ink-faint">Supervisor</p>
-          <p className="mt-1 text-[12px] text-ink-secondary">Operations Supervisor</p>
-          <p className="mt-2 text-[12px] text-ink-muted">
-            Comment: &ldquo;Clarify who receives follow-up responsibility.&rdquo;
-          </p>
-          <p className="mt-2 font-mono text-[10px] text-status-warning">
-            Status · Revision requested → then approved
-          </p>
+          <p className="font-mono text-[9px] text-ink-faint">{t("assistant.approval.supervisor")}</p>
+          <p className="mt-1 text-[12px] text-ink-secondary">{t("assistant.approval.role")}</p>
+          <p className="mt-2 text-[12px] text-ink-muted">{t("assistant.approval.comment")}</p>
+          <p className="mt-2 font-mono text-[10px] text-status-warning">{t("assistant.approval.status")}</p>
         </div>
       </div>
       <div className="border border-status-success/30 bg-status-success/5 px-3 py-2.5 text-[12px] text-ink-secondary">
-        After correction · supervisor approved · timestamp 22:24
+        {t("assistant.approval.after")}
       </div>
     </div>
   );
 }
 
 function LockedRecordView() {
+  const t = useTranslations("home");
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap gap-2">
         <span className="border border-status-success/40 px-2 py-0.5 font-mono text-[9px] uppercase tracking-wide text-status-success">
-          Approved
+          {t("assistant.locked.approved")}
         </span>
         <span className="border border-border-subtle px-2 py-0.5 font-mono text-[9px] uppercase tracking-wide text-ink-muted">
-          Finalized operational record
+          {t("assistant.locked.finalized")}
         </span>
       </div>
       <dl className="divide-y divide-border-subtle border border-border-subtle text-[13px]">
-        {[
-          ["Report ID", "SR-2026-00482"],
-          ["Object", "NL-OBJ-042"],
-          ["Status", "Approved"],
-          ["Review state", "Complete"],
-          ["Audit", "Officer reviewed · Supervisor approved · Version locked"],
-          ["Evidence", "1 attachment"],
-        ].map(([k, v]) => (
-          <div key={k} className="flex gap-4 px-3 py-2.5">
-            <dt className="w-28 shrink-0 font-mono text-[10px] text-ink-faint">{k}</dt>
-            <dd className="text-ink-secondary">{v}</dd>
+        {LOCKED_IDS.map((id) => (
+          <div key={id} className="flex gap-4 px-3 py-2.5">
+            <dt className="w-28 shrink-0 font-mono text-[10px] text-ink-faint">
+              {t(`assistant.locked.fields.${id}.label`)}
+            </dt>
+            <dd className="text-ink-secondary">{t(`assistant.locked.fields.${id}.value`)}</dd>
           </div>
         ))}
       </dl>
-      <p className="text-[11px] text-ink-faint">
-        Locked in workflow · not a claim of legal immutability
-      </p>
+      <p className="text-[11px] text-ink-faint">{t("assistant.locked.note")}</p>
     </div>
   );
 }
@@ -257,9 +243,13 @@ function StageContent({ id }: { id: StageId }) {
 }
 
 export function AIReportAssistantShowcase() {
+  const t = useTranslations("home");
   const [active, setActive] = useState<StageId>("notes");
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
   const reduce = useReducedMotion();
+  const history = t.raw("assistant.history") as { version: string; time: string; label: string }[];
+  const scope = t.raw("assistant.scope") as string[];
+  const limits = t.raw("assistant.limits") as string[];
 
   const select = useCallback((id: StageId, i: number) => {
     setActive(id);
@@ -286,30 +276,29 @@ export function AIReportAssistantShowcase() {
 
   const currentIndex = STAGES.findIndex((s) => s.id === active);
   const current = STAGES[currentIndex];
+  const suffixKey = current.actor === "ai" ? "ai" : current.actor === "system" ? "system" : "human";
 
   return (
     <div className="space-y-6">
-      {/* Human control rail — persistent */}
       <div className="flex flex-wrap items-center justify-center gap-2 border border-border bg-surface/30 px-4 py-3 font-mono text-[11px] text-ink-muted sm:gap-3">
-        <span className="text-ink-muted">AI assists</span>
+        <span className="text-ink-muted">{t("assistant.assists")}</span>
         <span className="text-ink-faint" aria-hidden>
           →
         </span>
-        <span className="text-ink-secondary">Officer reviews</span>
+        <span className="text-ink-secondary">{t("assistant.reviews")}</span>
         <span className="text-ink-faint" aria-hidden>
           →
         </span>
-        <span className="text-gold">Supervisor approves</span>
+        <span className="text-gold">{t("assistant.approves")}</span>
         <span className="ml-0 w-full text-center text-[10px] text-ink-faint sm:ml-2 sm:w-auto sm:text-left">
-          AI supports the report. Not the decision.
+          {t("assistant.motto")}
         </span>
       </div>
 
       <div className="border border-border">
-        {/* Workflow rail */}
         <div
           role="tablist"
-          aria-label="AI report workflow stages"
+          aria-label={t("assistant.aria")}
           className="flex gap-0 overflow-x-auto border-b border-border"
         >
           {STAGES.map((s, i) => {
@@ -337,16 +326,17 @@ export function AIReportAssistantShowcase() {
                 )}
               >
                 <span className="font-mono text-[9px] text-ink-faint">
-                  {s.index} · {s.actor}
+                  {s.index} · {t(`assistant.actors.${s.actor}`)}
                 </span>
-                <span className="text-[12px] font-medium sm:text-[13px]">{s.label}</span>
+                <span className="text-[12px] font-medium sm:text-[13px]">
+                  {t(`assistant.stages.${s.id}`)}
+                </span>
               </button>
             );
           })}
         </div>
 
         <div className="grid gap-0 lg:grid-cols-[1fr_200px]">
-          {/* Stage workspace */}
           <div
             role="tabpanel"
             id={`ai-panel-${active}`}
@@ -355,15 +345,11 @@ export function AIReportAssistantShowcase() {
           >
             <div className="mb-4 flex items-center justify-between gap-3 text-[12px] text-ink-muted">
               <p>
-                Actor ·{" "}
-                <span className={current.actor === "AI" ? "text-ink-muted" : "text-ink-secondary"}>
-                  {current.actor}
+                {t("assistant.actorPrefix")}
+                <span className={current.actor === "ai" ? "text-ink-muted" : "text-ink-secondary"}>
+                  {t(`assistant.actors.${current.actor}`)}
                 </span>
-                {current.actor === "AI"
-                  ? " · suggestion only"
-                  : current.actor === "System"
-                    ? " · audit state"
-                    : " · decision authority"}
+                {t(`assistant.suffix.${suffixKey}`)}
               </p>
               <div className="flex gap-2 lg:hidden">
                 <button
@@ -372,7 +358,7 @@ export function AIReportAssistantShowcase() {
                   disabled={currentIndex === 0}
                   onClick={() => select(STAGES[currentIndex - 1].id, currentIndex - 1)}
                 >
-                  Previous
+                  {t("assistant.previous")}
                 </button>
                 <button
                   type="button"
@@ -380,7 +366,7 @@ export function AIReportAssistantShowcase() {
                   disabled={currentIndex === STAGES.length - 1}
                   onClick={() => select(STAGES[currentIndex + 1].id, currentIndex + 1)}
                 >
-                  Next
+                  {t("assistant.next")}
                 </button>
               </div>
             </div>
@@ -397,55 +383,43 @@ export function AIReportAssistantShowcase() {
             </AnimatePresence>
           </div>
 
-          {/* Revision history + scope */}
           <aside className="border-t border-border bg-bg/40 p-4 lg:border-l lg:border-t-0">
             <p className="font-mono text-[9px] uppercase tracking-wide text-ink-faint">
-              Revision history
+              {t("assistant.historyLabel")}
             </p>
             <ul className="mt-3 space-y-2 font-mono text-[11px]">
-              {[
-                ["v1", "22:16", "AI draft"],
-                ["v2", "22:19", "Officer revision"],
-                ["v3", "22:24", "Supervisor approved"],
-              ].map(([v, t, s]) => (
-                <li key={v} className="flex flex-col gap-0.5 border-b border-border-subtle pb-2 last:border-0">
+              {history.map((row) => (
+                <li key={row.version} className="flex flex-col gap-0.5 border-b border-border-subtle pb-2 last:border-0">
                   <span className="text-ink-secondary">
-                    {v} · {t}
+                    {row.version} · {row.time}
                   </span>
-                  <span className="text-ink-faint">{s}</span>
+                  <span className="text-ink-faint">{row.label}</span>
                 </li>
               ))}
             </ul>
 
             <p className="mt-5 font-mono text-[9px] uppercase tracking-wide text-ink-faint">
-              Capability scope
+              {t("assistant.scopeLabel")}
             </p>
             <ul className="mt-2 space-y-1 text-[11px] text-ink-muted">
-              <li>Structure · active development</li>
-              <li>Extraction · active development</li>
-              <li>Completeness checks · active development</li>
-              <li>Context suggestions · active development</li>
-              <li>Predictive risk analysis · future research</li>
+              {scope.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
             </ul>
           </aside>
         </div>
       </div>
 
-      {/* Limitations */}
       <div className="border border-border-subtle bg-surface/20 px-4 py-3">
         <p className="font-mono text-[9px] uppercase tracking-wide text-ink-faint">
-          Limitations
+          {t("assistant.limitsLabel")}
         </p>
         <ul className="mt-2 space-y-1 text-[12px] text-ink-muted">
-          <li>AI output may contain errors.</li>
-          <li>AI-generated drafts require human review.</li>
-          <li>Operational decisions remain with authorized personnel.</li>
-          <li>AI does not replace escalation procedures.</li>
+          {limits.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
-        <p className="mt-2 text-[11px] text-ink-faint">
-          AI workflows are being designed around controlled platform access and
-          operational data boundaries.
-        </p>
+        <p className="mt-2 text-[11px] text-ink-faint">{t("assistant.limitsNote")}</p>
       </div>
     </div>
   );

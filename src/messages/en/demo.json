@@ -1,0 +1,25 @@
+{
+  "metaTitle": "Request an ISB Platform Demonstration",
+  "metaDescription": "Request an ISB Security Platform demonstration. Share operational context so the conversation can focus on relevant modules and development direction.",
+  "breadcrumbHome": "Home",
+  "breadcrumbCurrent": "Request Demo",
+  "eyebrow": "Request Demo",
+  "title": "Request an ISB platform demonstration.",
+  "intro": "Tell us about your organization, current operational model and the challenges you want to improve. ISB will use this context to structure a relevant platform conversation.",
+  "status": "Platform development active",
+  "coverTitle": "What a demonstration can cover",
+  "cover": {
+    "reporting": "Reporting and patrol workflows in active development",
+    "objects": "Objects and locations in active development",
+    "personnel": "Personnel planning and assignment foundations",
+    "ai": "AI-assisted reporting under human review",
+    "access": "Role-based access and company-scoped data",
+    "roadmap": "Roadmap and development status"
+  },
+  "coverNote": "The platform is in active development. It has not been announced as commercially available or production-validated. No public release date has been established.",
+  "evalNote": "For security, technical or governance-specific evaluations, include the relevant context so the discussion can focus on the appropriate platform area.",
+  "preferBefore": "Prefer a short enquiry first? ",
+  "contactLink": "Contact ISB",
+  "privacyBefore": "Submitted information is used to evaluate and respond to the request. ",
+  "privacyLink": "Privacy Policy"
+}

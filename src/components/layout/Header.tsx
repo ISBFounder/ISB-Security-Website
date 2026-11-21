@@ -2,12 +2,14 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { createPortal } from "react-dom";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/Button";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import { DesktopNavigation } from "./nav/DesktopNavigation";
 import { MobileNavigation } from "./nav/MobileNavigation";
 import { cn } from "@/lib/utils";
@@ -18,6 +20,7 @@ export function Header() {
   const [mounted, setMounted] = useState(false);
   const menuBtnRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
+  const t = useTranslations("chrome");
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
@@ -85,7 +88,7 @@ export function Header() {
         )}
       >
         <a href="#main-content" className="skip-link">
-          Skip to main content
+          {t("skip")}
         </a>
 
         <div
@@ -98,33 +101,37 @@ export function Header() {
 
           <DesktopNavigation />
 
-          <div className="hidden items-center gap-3 lg:flex">
-            <Link
-              href="/contact"
-              className="px-2.5 py-2 text-[13px] font-medium text-ink-secondary transition-colors hover:text-ink"
-            >
-              Contact
-            </Link>
-            <Button href="/request-demo" size="sm">
-              Request Demo
-            </Button>
-          </div>
+          <div className="flex items-center gap-1 lg:gap-3">
+            <div className="hidden items-center gap-3 lg:flex">
+              <Link
+                href="/contact"
+                className="px-2.5 py-2 text-[13px] font-medium text-ink-secondary transition-colors hover:text-ink"
+              >
+                {t("contact")}
+              </Link>
+              <Button href="/request-demo" size="sm">
+                {t("requestDemo")}
+              </Button>
+            </div>
 
-          <button
-            ref={menuBtnRef}
-            type="button"
-            className="relative z-[60] flex h-11 w-11 items-center justify-center text-ink-secondary hover:text-ink lg:hidden"
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-nav"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            onClick={toggleMobile}
-          >
+            <LanguageSwitcher />
+
+            <button
+              ref={menuBtnRef}
+              type="button"
+              className="relative z-[60] flex h-11 w-11 items-center justify-center text-ink-secondary hover:text-ink lg:hidden"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-nav"
+              aria-label={mobileOpen ? t("closeMenu") : t("openMenu")}
+              onClick={toggleMobile}
+            >
             {mobileOpen ? (
               <X className="h-5 w-5" aria-hidden />
             ) : (
               <Menu className="h-5 w-5" aria-hidden />
             )}
-          </button>
+            </button>
+          </div>
         </div>
       </header>
 

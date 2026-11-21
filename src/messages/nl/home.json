@@ -1,0 +1,1184 @@
+{
+  "metaTitle": "ISB Security Solutions | Enterprise-software voor beveiligingsoperaties",
+  "metaDescription": "Het ISB Security Platform is in actieve ontwikkeling voor beveiligingsoperaties, rapportage, personeelsplanning en locatiebeheer.",
+  "ogDescription": "Het ISB Security Platform is in actieve ontwikkeling. Het is niet aangekondigd als commercieel beschikbaar of productie-gevalideerd.",
+  "twitterDescription": "Het ISB Security Platform is in actieve ontwikkeling. Er is geen publieke releasedatum vastgesteld.",
+  "page": {
+    "fragmentation": {
+      "eyebrow": "Realiteit in de sector",
+      "title": "Beveiligingsoperaties zijn nooit ontworpen om te draaien over losgekoppelde tools.",
+      "description": "Rapporten, planning, berichten, klantvereisten en operationele dossiers zijn vaak verspreid over afzonderlijke systemen. Elke overdracht brengt wrijving, dubbel werk en verloren context met zich mee."
+    },
+    "pillars": {
+      "eyebrow": "Platformkader",
+      "title": "Eén platform. Zes operationele pijlers.",
+      "description": "Elke pijler deelt dezelfde organisatie-, object-, gebruiker- en auditcontext — één verbonden operationeel systeem, geen verzameling losse modules."
+    },
+    "capabilities": {
+      "eyebrow": "Operationele capaciteiten",
+      "title": "Eén platform. Ontworpen voor honderden operationele werkstromen.",
+      "description": "Elke capaciteit deelt dezelfde operationele context, hetzelfde beveiligingsmodel en dezelfde organisatiestructuur. Verschillende werkstromen. Eén platformfundament."
+    },
+    "ai": {
+      "eyebrow": "AI-rapportassistent",
+      "title": "AI die het rapport ondersteunt. Niet de beslissing.",
+      "description": "AI-capaciteiten zijn gebouwd op gestructureerde operationele gegevens, beveiligde werkstromen en gevalideerde platformcontext. ISB AI ondersteunt bij structuur, helderheid en volledigheid, terwijl de beveiliger en de leidinggevende verantwoordelijk blijven voor het definitieve operationele dossier.",
+      "cta": "AI-aanpak"
+    },
+    "trust": {
+      "eyebrow": "Beveiliging en vertrouwen",
+      "title": "Vertrouwen begint bij de architectuur.",
+      "description": "Eén beveiligingsmodel: identiteit, rechten, tenantgrenzen en controleerbaarheid — ontworpen in het besturingssysteem, niet per module toegevoegd.",
+      "cta": "Beveiliging en vertrouwen"
+    },
+    "industries": {
+      "eyebrow": "Sectorspecifieke oplossingen",
+      "title": "Gebouwd rond de manier waarop beveiligingsoperaties daadwerkelijk verschillen.",
+      "description": "Objectbeveiliging, mobiele surveillance, evenementen, zorg en overheidsoperaties delen niet hetzelfde risicoprofiel of dezelfde werkstroom. ISB is ontworpen om zich aan te passen zonder het onderliggende platform te versnipperen.",
+      "solutions": "Oplossingen per sector",
+      "overview": "Overzicht van sectoren"
+    },
+    "roadmap": {
+      "eyebrow": "Roadmap",
+      "title": "Transparante productrichting",
+      "description": "Nu: operationele, rapportage-, personeels-, plannings-, objectbeheer- en geselecteerde offline werkstromen verfijnen en valideren. Er is geen publieke releasedatum vastgesteld."
+    }
+  },
+  "hero": {
+    "badge": "ISB Security Platform: Actieve ontwikkeling",
+    "titleLine1": "Eén operationeel systeem",
+    "titleBefore": "voor de ",
+    "titleEmphasis": "beveiligingssector",
+    "titleAfter": "",
+    "body": "Het ISB Security Platform is in actieve ontwikkeling. ISB Security Solutions bouwt een geïntegreerd platform voor professionele beveiligingsoperaties, rapportage, personeelsplanning en locatiebeheer. Het is niet aangekondigd als commercieel beschikbaar of productie-gevalideerd. Er is geen publieke releasedatum vastgesteld.",
+    "ctaDemo": "Een demonstratie aanvragen",
+    "ctaPlatform": "Verken het platform",
+    "architectureLink": "Bekijk de platformarchitectuur →",
+    "scope": "Institutionele reikwijdte",
+    "credibility": [
+      "Gebouwd voor beveiligingsoperaties met meerdere opdrachtgevers",
+      "Rolgebaseerde toegang en bedrijfsgebonden gegevens",
+      "Geselecteerde offline rapportage- en surveillancewerkstromen",
+      "Ontwikkeld vanuit operationele beveiligingservaring",
+      "Focus op de Europese beveiligingssector"
+    ]
+  },
+  "about": {
+    "eyebrow": "Over ISB",
+    "title": "Gebouwd vanuit beveiligingsoperaties.",
+    "p1": "ISB Security Solutions is opgericht vanuit directe operationele ervaring met beveiligingsomgevingen waarin rapportage, planning, objectinformatie, communicatie en compliance vaak over verschillende tools zijn verspreid.",
+    "p2": "Het doel is niet om nog een geïsoleerde beveiligingsapplicatie te maken. Het doel is om één modulair operationeel platform te maken dat de bredere beveiligingswerkstroom kan ondersteunen.",
+    "themes": {
+      "origin": {
+        "label": "Oorsprong",
+        "text": "Directe operationele ervaring binnen professionele beveiligingsomgevingen."
+      },
+      "problem": {
+        "label": "Probleem",
+        "text": "Versnipperde software, herhaalde administratie en losgekoppelde operationele context."
+      },
+      "direction": {
+        "label": "Richting",
+        "text": "Eén modulair platform dat kan groeien over beveiligingsdisciplines en, later, aangrenzende operationele sectoren."
+      }
+    },
+    "link": "Over ISB",
+    "missionLabel": "Missie",
+    "mission": "De Europese beveiligingssector transformeren via één intelligent operationeel platform.",
+    "visionLabel": "Visie",
+    "vision": "Versnipperde operationele systemen vervangen door een veilig, modulair en AI-ondersteund ecosysteem.",
+    "principlesLabel": "Principes",
+    "principles": [
+      "Innovatie",
+      "Betrouwbaarheid",
+      "Beveiliging",
+      "Efficiëntie",
+      "Vertrouwen",
+      "Professionaliteit"
+    ],
+    "developed": "Ontwikkeld in Nederland",
+    "focus": "Focus op de Europese beveiligingssector",
+    "designed": "Ontworpen met Europese werkomgevingen in gedachten",
+    "ambition": "Toekomstige internationale ambitie",
+    "location": "Tilburg, Nederland",
+    "tagline": "Enterprise-software voor beveiligingsoperaties"
+  },
+  "cta": {
+    "eyebrow": "In gesprek met ISB",
+    "title": "Begin het gesprek over uw operatie.",
+    "body": "ISB is momenteel in actieve ontwikkeling. Wij verwelkomen gesprekken met beveiligingsorganisaties, pilotpartners en strategische sectorpartijen die belangstelling hebben voor het platform.",
+    "paths": {
+      "demo": {
+        "title": "Een demonstratie aanvragen",
+        "copy": "Verken het platform en bespreek hoe de huidige ontwikkelrichting van toepassing is op uw operatie."
+      },
+      "pilot": {
+        "title": "Een pilot bespreken",
+        "copy": "Bespreek vroege operationele validatie en toekomstige pilotmogelijkheden."
+      },
+      "partnership": {
+        "title": "Strategisch partnerschap",
+        "copy": "Voor gesprekken over technologie, de sector en strategische samenwerking."
+      },
+      "contact": {
+        "title": "Algemeen contact",
+        "copy": "Neem contact op met ISB Security Solutions voor algemene vragen over het bedrijf of het platform."
+      }
+    },
+    "location": "Tilburg, Nederland"
+  },
+  "roadmap": {
+    "now": {
+      "index": "Nu",
+      "label": "Verfijnen en valideren",
+      "items": [
+        "Operationele werkstromen",
+        "Rapportagewerkstromen",
+        "Personeel en planning",
+        "Objectbeheer",
+        "Geselecteerde offline werkstromen"
+      ]
+    },
+    "next": {
+      "index": "Daarna",
+      "label": "Integreren en valideren",
+      "items": [
+        "Huidig integratiewerk",
+        "Herstelwerk",
+        "Omgevingsvalidatie",
+        "Validatie van bevoegdheden"
+      ]
+    },
+    "later": {
+      "index": "Later",
+      "label": "Uitbreiden en onderzoeken",
+      "items": [
+        "Verbonden operationele capaciteiten",
+        "Externe integraties",
+        "Geavanceerd AI-onderzoek"
+      ]
+    },
+    "disclaimer": "Het platform is in actieve ontwikkeling. Het is niet aangekondigd als commercieel beschikbaar of productie-gevalideerd. Er is geen publieke releasedatum vastgesteld.",
+    "link": "Bekijk de volledige roadmap"
+  },
+  "places": {
+    "siteA": "Locatie A",
+    "campus03": "Campus 03",
+    "northOps": "Operaties Noordelijke regio",
+    "corporate": "Bedrijfslocatie A",
+    "campusObj": "Campusobject 03",
+    "dcNorth": "Distributiecentrum Noord",
+    "buildingA": "Gebouw A",
+    "floor01": "Verdieping 01",
+    "zoneNorth": "Zone Noord",
+    "northEntrance": "Noordelijke entree"
+  },
+  "frag": {
+    "aria": "Architectuurdiagram: versnipperde operationele bronnen, wrijvingslaag en het geïntegreerde platform van ISB",
+    "summary": "Operationele informatie in beveiligingsorganisaties is gebruikelijk verspreid over papieren rapporten, spreadsheets, berichten, e-mail, klantportalen, gedeelde mappen en handmatige overdrachten. Deze overdrachten veroorzaken operationele wrijving, waaronder dubbele invoer, ontbrekende context, vertraagde escalatie, versieconflicten en beperkte traceerbaarheid. ISB Security Platform biedt een geïntegreerde operationele laag voor rapportage, objecten, mensen, surveillances, compliance en intelligence, met beheerste uitvoer zoals managementtoezicht, beoordeling door de leidinggevende, inzicht voor de opdrachtgever en compliancebewijs.",
+    "today": "Vandaag",
+    "distributed": "Gebruikelijk verspreid",
+    "inputs": "Versnipperde operationele invoer",
+    "frictionKicker": "Wrijvingslaag",
+    "handoff": "Overdracht · Vertraging",
+    "frictionTitle": "Operationele wrijving",
+    "inputStreams": "INVOERSTROMEN",
+    "owners": "↓ · meerdere eigenaren · meerdere versies",
+    "frictionLayer": "WRIJVINGSLAAG",
+    "loss": "↓ · informatieverlies · vertraagde escalatie",
+    "outputDelay": "UITVOERVERTRAGING",
+    "platform": "ISB Security Platform",
+    "unifiedKicker": "Geïntegreerde laag",
+    "unifiedTitle": "Geïntegreerde operationele laag",
+    "shared": "Gedeelde capaciteiten",
+    "outputsTitle": "Beheerste uitvoer",
+    "hint": "Focus of wijs een bron aan om wrijving en platformdomeinen te volgen",
+    "sources": {
+      "paper": {
+        "label": "Papieren rapporten",
+        "tag": "HANDMATIG"
+      },
+      "excel": {
+        "label": "Planning in spreadsheets",
+        "tag": "LOKAAL"
+      },
+      "messaging": {
+        "label": "Berichten",
+        "tag": "EXTERN"
+      },
+      "email": {
+        "label": "E-mail",
+        "tag": "EXTERN"
+      },
+      "portals": {
+        "label": "Klantportalen",
+        "tag": "EXTERN"
+      },
+      "folders": {
+        "label": "Gedeelde mappen",
+        "tag": "LOKAAL"
+      },
+      "handovers": {
+        "label": "Handmatige overdrachten",
+        "tag": "HANDMATIG"
+      },
+      "phone": {
+        "label": "Telefoongesprekken",
+        "tag": "HANDMATIG"
+      },
+      "incident": {
+        "label": "Aparte incidentsystemen",
+        "tag": "BRON"
+      },
+      "reentry": {
+        "label": "Herhaalde gegevensinvoer",
+        "tag": "HANDMATIG"
+      }
+    },
+    "frictions": {
+      "duplicate": "Dubbele invoer",
+      "context": "Ontbrekende context",
+      "delay": "Vertraagde escalatie",
+      "version": "Versieconflicten",
+      "coordination": "Handmatige coördinatie",
+      "traceability": "Beperkte traceerbaarheid",
+      "admin": "Herhaalde administratie",
+      "audit": "Versnipperd auditspoor"
+    },
+    "domains": {
+      "reporting": "Rapportage",
+      "objects": "Objecten",
+      "people": "Mensen",
+      "patrols": "Surveillances",
+      "compliance": "Compliance",
+      "intelligence": "Inlichtingen"
+    },
+    "caps": [
+      "Rolgebaseerde toegang",
+      "Audit en gebeurtenissen",
+      "Bedrijfsgebonden gegevens",
+      "Geselecteerde offline werkstromen",
+      "AI-ondersteuning"
+    ],
+    "outputs": [
+      "Managementtoezicht",
+      "Beoordeling door de leidinggevende",
+      "Inzicht voor de opdrachtgever",
+      "Operationele dossiers",
+      "Auditgebeurtenissen",
+      "Incidentopvolging"
+    ]
+  },
+  "pillars": {
+    "kicker": "Security OS · gedeelde operationele context",
+    "trail": "Org · Klant · Object · Personeel · Rechten · Audit",
+    "domainsAria": "Operationele domeinen",
+    "pillarsAria": "Platformpijlers",
+    "active": "Actief domein",
+    "connected": "Verbonden",
+    "pillar": "Pijler {index}",
+    "core": "Kerncapaciteiten",
+    "hierarchy": "Hiërarchie",
+    "workflow": "Voorbeeldwerkstroom",
+    "connectedDomains": "Verbonden platformdomeinen",
+    "outcome": "Operationeel resultaat",
+    "foundationTitle": "Gedeeld platformfundament",
+    "foundationNote": "Alleen technische fundamenten. Geen commerciële beschikbaarheid, en niet elke module werkt offline.",
+    "foundation": [
+      "Authenticatie en rolgebaseerde toegang",
+      "Bedrijfsgebonden multi-tenantgegevens",
+      "Plannings- en toewijzingsbevoegdheid",
+      "Aanwezigheid en gewerkte tijd",
+      "Audit en gebeurtenissen",
+      "Begrensde facturatie- en salarisgegevens",
+      "Integratie-outbox",
+      "Geselecteerde offline rapportage- en surveillancewerkstromen"
+    ],
+    "items": {
+      "operations": {
+        "title": "Operaties",
+        "summary": "Diensten, surveillances, taken en escalaties coördineren binnen een gedeelde operationele context — niet als losse berichten of spreadsheets.",
+        "capabilities": [
+          "Dienstcontext",
+          "Surveillancewerkstromen",
+          "Taken en openstaande acties",
+          "Meldingen",
+          "Escalaties",
+          "Geselecteerde offline surveillancewerkstromen",
+          "Dienstrapport en overdrachten — gepland"
+        ],
+        "workflow": [
+          "Dienst begint",
+          "Beveiliger ontvangt opdracht",
+          "Surveillance begint",
+          "Controlepunt gemist",
+          "Escalatie gestart",
+          "Leidinggevende beoordeelt",
+          "Actie vastgelegd"
+        ],
+        "outcome": "Gedeelde operationele context voor diensten, surveillances en escalaties. Dienstrapport en overdrachten zijn gepland."
+      },
+      "reporting": {
+        "title": "Rapportage",
+        "summary": "Gestructureerde operationele documentatie — van waarneming in het veld tot goedgekeurd dossier — waarbij menselijke controle verplicht blijft.",
+        "capabilities": [
+          "Specifiek rapport",
+          "Incident- / dag- / schade- / ongevalrapporten",
+          "AI-ondersteunde opstelling",
+          "Bijlagen",
+          "Beoordeling en goedkeuring",
+          "Rapporthistorie",
+          "Digitale handtekeningen — gepland"
+        ],
+        "workflow": [
+          "Waarneming in het veld",
+          "Rapportconcept",
+          "AI-ondersteuning",
+          "Beoordeling door de beveiliger",
+          "Goedkeuring door de leidinggevende",
+          "Vergrendeld operationeel dossier"
+        ],
+        "outcome": "Traceerbare operationele dossiers, geschikt voor intern toezicht en als bewijs voor de opdrachtgever."
+      },
+      "people": {
+        "title": "Mensen",
+        "summary": "Personeel, rollen, kwalificaties en toewijzingen, gebonden aan dezelfde objecten en operationele regels als de rest van het platform.",
+        "capabilities": [
+          "Gebruikersprofielen",
+          "Rollen en rechten",
+          "Kwalificaties — verkenning",
+          "Beschikbaarheid",
+          "Teams",
+          "Toewijzingen — fundament aanwezig",
+          "Plannings- en toewijzingsbevoegdheid"
+        ],
+        "workflow": [
+          "Profiel van de beveiliger",
+          "Rol ingesteld",
+          "Toewijzing",
+          "Dienst",
+          "Operationele activiteit",
+          "Auditregistratie"
+        ],
+        "outcome": "Gekwalificeerd personeel op de juiste plaats, met activiteit die beschikbaar blijft voor beoordeling."
+      },
+      "objects": {
+        "title": "Objecten",
+        "summary": "De fysieke hiërarchie die elk rapport, elke surveillance en elke instructie verankert — van opdrachtgever tot controlepunt en asset.",
+        "capabilities": [
+          "Objectvereisten",
+          "Noodcontacten",
+          "Risico''s",
+          "Instructies",
+          "Surveillanceroutes",
+          "Middelen",
+          "Documenten",
+          "Objecthistorie"
+        ],
+        "workflow": [
+          "Klant",
+          "Object",
+          "Gebouw",
+          "Verdieping",
+          "Zone",
+          "Post / controlepunt",
+          "Asset"
+        ],
+        "outcome": "Eén gedeeld locatiemodel voor elke operationele actie en vereiste."
+      },
+      "compliance": {
+        "title": "Compliance",
+        "summary": "Governance en traceerbaarheid, ontworpen in het platform — toegangsgrenzen, bewijs en wijzigingshistorie.",
+        "capabilities": [
+          "Rolgebaseerde toegang",
+          "Auditlogging",
+          "Goedkeuringssporen",
+          "Kwalificatiebevoegdheid — verkenning",
+          "Wijzigingshistorie",
+          "Bewaarneming van bewijs — verkenning",
+          "Klantvereisten"
+        ],
+        "workflow": [
+          "Vereiste",
+          "Toegewezen beheersmaatregel",
+          "Operationele actie",
+          "Vastgelegd bewijs",
+          "Beoordeling",
+          "Auditspoor"
+        ],
+        "outcome": "Verdedigbaar operationeel bewijs, zonder de claim dat externe certificeringen zijn afgerond."
+      },
+      "intelligence": {
+        "title": "Inlichtingen",
+        "summary": "AI ondersteunt structuur en inzicht. Menselijk oordeel blijft vereist. Capaciteiten zijn ingedeeld naar volwassenheid.",
+        "capabilities": [
+          "AI-ondersteunde rapportopstelling — actieve ontwikkeling",
+          "Verbonden analyse — gepland",
+          "Voorspellende AI-risicoanalyse — toekomstig onderzoek",
+          "Integraties met wearables — toekomstig onderzoek"
+        ],
+        "workflow": [
+          "Operationele gegevens",
+          "Gestructureerde extractie",
+          "Ondersteuning bij analyse",
+          "Menselijke controle",
+          "De beslissing blijft bij de beveiliger of de leidinggevende"
+        ],
+        "outcome": "Ondersteund begrip — nooit autonome operationele beslissingen."
+      }
+    }
+  },
+  "cap": {
+    "aria": "Operationele capaciteiten",
+    "workflow": "Operationele werkstroom",
+    "example": "Voorbeeldinterface",
+    "illustrative": "Illustratieve demonstratiegegevens",
+    "modules": "Modules",
+    "related": "Gerelateerde capaciteiten",
+    "implementation": "Implementatiefase",
+    "stages": {
+      "foundation": "Fundament aanwezig",
+      "development": "Actieve ontwikkeling",
+      "discovery": "Verkenning / architectuur",
+      "planned": "Gepland",
+      "future": "Toekomst / onderzoek"
+    },
+    "items": {
+      "reporting": {
+        "title": "Rapportage",
+        "category": "DOCUMENTATIE",
+        "overview": "Rapportage en herstel zijn in actieve ontwikkeling, van waarneming in het veld tot menselijke controle.",
+        "purpose": "Ad-hocnotities en berichten vervangen door traceerbare rapporten die dezelfde object-, personeels- en auditcontext delen als de rest van het platform.",
+        "workflow": [
+          "Waarneming in het veld vastgelegd",
+          "Gestructureerd concept gemaakt",
+          "Bijlagen gekoppeld",
+          "Beveiliger beoordeelt het concept",
+          "Goedkeuring door de leidinggevende",
+          "Dossier vergrendeld in de historie"
+        ],
+        "modules": [
+          "Specifiek rapport",
+          "Dagrapport",
+          "Incidentrapport",
+          "Schaderapport",
+          "Ongevalrapport",
+          "AI-concept",
+          "Bijlagen",
+          "Goedkeuring",
+          "Historie"
+        ],
+        "related": [
+          "Operaties",
+          "Objecten",
+          "Compliance",
+          "AI-ondersteuning"
+        ],
+        "stageLabel": "Actieve ontwikkeling. AI-ondersteunde opstelling vereist menselijke controle."
+      },
+      "operations": {
+        "title": "Operaties",
+        "category": "REGIE",
+        "overview": "Beveiligingsoperaties, surveillances en incidentwerkstromen zijn in actieve ontwikkeling. Geselecteerde offline rapportage- en surveillancewerkstromen maken deel uit van het technische fundament.",
+        "purpose": "Dagelijkse beveiligingsactiviteit coördineren zonder context te verliezen over tools, diensten of locaties.",
+        "workflow": [
+          "Dienst opent",
+          "Opdrachten uitgegeven",
+          "Surveillance wordt uitgevoerd",
+          "Afwijking bij controlepunt",
+          "Escalatie gemeld",
+          "Leidinggevende handelt",
+          "Resultaat vastgelegd"
+        ],
+        "modules": [
+          "Dienstcontext",
+          "Surveillancetijdlijn",
+          "Taken",
+          "Escalaties",
+          "Meldingen",
+          "Openstaande acties",
+          "Geselecteerde offline werkstromen",
+          "Dienstrapport — gepland"
+        ],
+        "related": [
+          "Personeel",
+          "Objecten",
+          "Rapportage",
+          "Compliance"
+        ],
+        "stageLabel": "Actieve ontwikkeling. Niet elke module werkt offline, en er wordt geen realtime serviceniveau geclaimd."
+      },
+      "objects": {
+        "title": "Objectbeheer",
+        "category": "STRUCTUUR",
+        "overview": "Objecten en locaties, inclusief de klant- en objecthiërarchie, zijn in actieve ontwikkeling.",
+        "purpose": "Elk rapport, elke surveillance en elke instructie verankeren aan een gedeeld locatiemodel, zodat context niet opnieuw hoeft te worden ingevoerd.",
+        "workflow": [
+          "Klant vastgelegd",
+          "Object aangemaakt",
+          "Gebouwen en zones in kaart gebracht",
+          "Posten en controlepunten ingesteld",
+          "Vereisten gekoppeld",
+          "Routes en risico''s bijgehouden"
+        ],
+        "modules": [
+          "Gebouwen",
+          "Verdiepingen",
+          "Zones",
+          "Ruimten",
+          "Posten",
+          "Controlepunten",
+          "Assets",
+          "Noodcontacten",
+          "Routes",
+          "Vereisten",
+          "Risico''s"
+        ],
+        "related": [
+          "Operaties",
+          "Rapportage",
+          "Compliance",
+          "Klanten"
+        ],
+        "stageLabel": "Actieve ontwikkeling. Geen voltooide productiehiërarchie."
+      },
+      "personnel": {
+        "title": "Personeel",
+        "category": "MENSEN",
+        "overview": "Personeelsbeheer en inzetbeheer zijn in actieve ontwikkeling. Plannings- en toewijzingsbevoegdheid zijn vastgelegde fundamenten.",
+        "purpose": "Toewijzingen gekoppeld houden aan operationele objecten. Kwalificatiebevoegdheid is in verkenning, niet een beschikbaar kwalificatiesysteem.",
+        "workflow": [
+          "Profiel en rol ingesteld",
+          "Kwalificatie — verkenning",
+          "Toewijzing aan object",
+          "Dienst actief",
+          "Operationele activiteit",
+          "Audit bewaard"
+        ],
+        "modules": [
+          "Gebruikers",
+          "Rollen",
+          "Kwalificaties — verkenning",
+          "Beschikbaarheid",
+          "Plannings- en toewijzingsbevoegdheid",
+          "Toewijzingen",
+          "Teamstructuur"
+        ],
+        "related": [
+          "Operaties",
+          "Compliance",
+          "Objecten"
+        ],
+        "stageLabel": "Actieve ontwikkeling. Plannings- en toewijzingsbevoegdheid zijn vastgelegd. Kwalificatiebevoegdheid is in verkenning."
+      },
+      "customers": {
+        "title": "Klantbeheer",
+        "category": "COMMERCIEEL",
+        "overview": "Klantcontext over objecten, contacten en contractuele vereisten.",
+        "purpose": "Operaties voor meerdere klanten samenhangend houden zonder afzonderlijke spreadsheets per opdrachtgever.",
+        "workflow": [
+          "Onboarding van de klant",
+          "Objecten gekoppeld",
+          "Contacten geregistreerd",
+          "Vereisten vastgelegd",
+          "Operationele levering",
+          "Bewijs beschikbaar"
+        ],
+        "modules": [
+          "Klanten",
+          "Gekoppelde objecten",
+          "Contacten",
+          "Contractuele notities",
+          "Vereisten",
+          "Zichtbaarheidsbereiken"
+        ],
+        "related": [
+          "Objecten",
+          "Rapportage",
+          "Compliance"
+        ],
+        "stageLabel": "Actieve ontwikkeling"
+      },
+      "compliance": {
+        "title": "Compliance",
+        "category": "BESTUUR",
+        "overview": "Rolgebaseerde toegang, bedrijfsgebonden gegevens en auditfundamenten zijn aanwezig. Bewaarneming van bewijs en kwalificatiebevoegdheid zijn in verkenning.",
+        "purpose": "Toezicht en klantvereisten ondersteunen zonder externe certificeringen te claimen die het product niet heeft.",
+        "workflow": [
+          "Vereiste vastgelegd",
+          "Beheersmaatregel toegewezen",
+          "Operationele actie",
+          "Bewijs vastgelegd",
+          "Beoordeling afgerond",
+          "Auditspoor bewaard"
+        ],
+        "modules": [
+          "Rolgebaseerde toegang",
+          "Auditlogging",
+          "Goedkeuringssporen",
+          "Kwalificatiebevoegdheid — verkenning",
+          "Wijzigingshistorie",
+          "Bewaarneming van bewijs — verkenning",
+          "Klantvereisten"
+        ],
+        "related": [
+          "Rapportage",
+          "Personeel",
+          "Objecten"
+        ],
+        "stageLabel": "Fundamenten voor toegang en audit zijn aanwezig. Bewaarneming van bewijs en bewaartermijnen in het kader van privacy zijn in verkenning. Er wordt geen certificering geclaimd."
+      },
+      "ai": {
+        "title": "AI-ondersteuning",
+        "category": "ONDERSTEUNING",
+        "overview": "AI structureert veldnotities tot conceptrapporten. Menselijke controle blijft verplicht voordat er een officieel dossier is.",
+        "purpose": "De administratieve last verminderen en operationele beslissingen bij beveiligers en leidinggevenden houden.",
+        "workflow": [
+          "Veldnotities ingevoerd",
+          "AI structureert het concept",
+          "Ontbrekende velden gemarkeerd",
+          "Beveiliger beoordeelt",
+          "Leidinggevende keurt goed",
+          "Dossier afgerond"
+        ],
+        "modules": [
+          "Invoer van veldnotities",
+          "Gestructureerde extractie",
+          "Conceptgeneratie",
+          "Signalering van ontbrekende velden",
+          "Poort voor menselijke controle",
+          "Koppeling naar goedkeuring"
+        ],
+        "related": [
+          "Rapportage",
+          "Operaties",
+          "Compliance"
+        ],
+        "stageLabel": "Actieve ontwikkeling. Concepten vereisen menselijke controle. AI neemt geen autonome operationele beslissingen."
+      },
+      "intelligence": {
+        "title": "Inlichtingen",
+        "category": "INZICHT",
+        "overview": "Verbonden analyse is gepland. Voorspellende AI-risicoanalyse is toekomstig onderzoek en neemt geen operationele beslissingen.",
+        "purpose": "Leidinggevenden helpen patronen in de tijd te begrijpen — zonder autonome besluitvorming.",
+        "workflow": [
+          "Operationele gegevens stapelen zich op",
+          "Gestructureerde signalen afgeleid",
+          "Ondersteuning bij patronen gepresenteerd",
+          "Menselijke interpretatie",
+          "Actie beslist door de operatie"
+        ],
+        "modules": [
+          "Verbonden analyse — gepland",
+          "Voorspellende AI-risicoanalyse — toekomstig onderzoek",
+          "Integraties met wearables — toekomstig onderzoek"
+        ],
+        "related": [
+          "Rapportage",
+          "Operaties",
+          "Personeel",
+          "Objecten"
+        ],
+        "stageLabel": "Verbonden analyse is gepland. Voorspellende AI-risicoanalyse is toekomstig onderzoek."
+      }
+    }
+  },
+  "capUi": {
+    "reporting": {
+      "id": "ID",
+      "type": "Type",
+      "object": "Object",
+      "status": "Status",
+      "specific": "Specifiek",
+      "incident": "Incident",
+      "damage": "Schade",
+      "awaiting": "In afwachting van beoordeling",
+      "escalated": "Geëscaleerd",
+      "draft": "Concept"
+    },
+    "operations": {
+      "kicker": "Surveillancetijdlijn · illustratief",
+      "shift": "Dienst open · Noordelijke regio",
+      "patrol": "Surveillance NL-OBJ-042 gestart",
+      "checkpoint": "Controlepunt CP-04 gemist · escalatie",
+      "supervisor": "Leidinggevende toegewezen",
+      "action": "Actie vastgelegd · deur beveiligd"
+    },
+    "objects": {
+      "building": "├ Gebouw A · Verdieping 01 · Zone Noord",
+      "entrance": "· Noordelijke entree · CP-04",
+      "requirements": "└ Vereisten · Risico''s · Routes",
+      "corporate": "└ Bedrijfslocatie A"
+    },
+    "personnel": {
+      "officer": "Beveiliger",
+      "assignment": "Toewijzing",
+      "qualification": "Kwalificatie",
+      "status": "Status",
+      "qualified": "Gekwalificeerd",
+      "onDuty": "In dienst",
+      "renewal": "Vernieuwing vereist"
+    },
+    "customers": {
+      "customer": "Klant",
+      "linked": "Gekoppelde objecten",
+      "linkedValue": "3 actief",
+      "contact": "Primair contact",
+      "contactValue": "Operatiedesk · bereikbaarheidsdienst",
+      "requirements": "Vereisten",
+      "requirementsValue": "12 bijgehouden"
+    },
+    "compliance": {
+      "steps": [
+        "Vereiste · perimetercontrole elke 60 min",
+        "Beheersmaatregel toegewezen · surveillanceroute Zone Noord",
+        "Operationele actie · CP-04 geregistreerd",
+        "Bewijs · rapport SR-2026-00482",
+        "Beoordeling · ondertekend door de leidinggevende",
+        "Auditspoor · onveranderbare registratie bewaard"
+      ]
+    },
+    "ai": {
+      "notes": "Veldnotities",
+      "quote": "“22:14 noordelijke surveillance. poort 3 open. beveiligd. cam 4 geblokkeerd door begroeiing.”",
+      "time": "Tijd · 22:14",
+      "location": "Locatie · Poort 3",
+      "action": "Actie · Beveiligd",
+      "secondary": "Secundair · Camera belemmerd",
+      "review": "Controle vereist — het concept is pas een officieel dossier na goedkeuring."
+    },
+    "intelligence": {
+      "kicker": "Gefaseerde capaciteit",
+      "items": [
+        "Inzichtweergaven — gepland",
+        "Patroonanalyse — gepland",
+        "Risicosignalen — gepland",
+        "Aanbevelingen — toekomstige richting"
+      ],
+      "note": "Menselijke interpretatie vereist. Geen autonome beslissingen."
+    }
+  },
+  "trust": {
+    "summary": "De vertrouwensarchitectuur van ISB loopt van identiteit via rollen en rechten, tenantgrenzen, gegevenstoegang, operationele acties en het auditspoor naar opslag en infrastructuur. Ontworpen rond toegang met de minste rechten, tenantbewuste grenzen en traceerbare operationele acties. Productiecontroles blijven onderworpen aan validatie van de uitrol. Er worden geen certificeringen geclaimd.",
+    "intro": "ISB wordt ontworpen rond identiteit, rolgebaseerde toegang, tenantgrenzen, traceerbaarheid en beheerste operationele gegevensstromen. Productiecontroles blijven onderworpen aan validatie van de uitrol en de infrastructuur.",
+    "maturityLabel": "Volwassenheidsmodel",
+    "architecture": "Vertrouwensarchitectuur",
+    "tenantKicker": "Tenantbewuste grenzen · illustratief",
+    "inactive": "Context inactief",
+    "noPath": "Geen pad over de tenantgrens",
+    "principlesLabel": "Vertrouwensprincipes",
+    "complianceLabel": "Compliancerichting",
+    "directionOnly": "Alleen richting · geen datums · geen gegarandeerde certificering",
+    "disclosureLabel": "Verantwoorde melding",
+    "disclosure": "Beveiligingsonderzoekers en organisaties kunnen mogelijke beveiligingsproblemen rechtstreeks melden bij ISB Security Solutions.",
+    "principles": [
+      "Toegang met de minste rechten",
+      "Tenantbewuste grenzen",
+      "Traceerbare acties",
+      "Beheerste operationele context",
+      "Privacybewust ontwerp",
+      "Veilige ontwikkelpraktijken"
+    ],
+    "maturity": {
+      "design": {
+        "stage": "Ontwerpbasis",
+        "items": "RBAC-model · Multi-tenantstructuur · Auditarchitectuur · Model voor gegevensscheiding"
+      },
+      "development": {
+        "stage": "Actieve ontwikkeling",
+        "items": "Productieverharding · Beveiligingsmonitoring · Herstelprocedures · Operationele controles"
+      },
+      "validation": {
+        "stage": "Geplande validatie",
+        "items": "Externe beveiligingstests · Compliancebeoordeling · Testen van back-up en herstel · Validatie van productiecontroles"
+      },
+      "future": {
+        "stage": "Toekomstige compliancerichting",
+        "items": "Richting voor ISO 27001-gereedheid · Beoordeling van Europese beveiligings- en privacynormen"
+      }
+    },
+    "layers": {
+      "identity": {
+        "label": "Identiteit",
+        "purpose": "Identiteit en organisatiecontext vormen de eerste toegangsgrens.",
+        "controls": "Geauthenticeerde gebruikers · organisatiecontext · rol · toewijzingscontext",
+        "maturity": "Ontwerpbasis"
+      },
+      "roles": {
+        "label": "Rollen en rechten",
+        "purpose": "Ontworpen rond toegang met de minste rechten — wat een gebruiker mag inzien, aanmaken, goedkeuren of beheren.",
+        "controls": "Rolbereiken · leidinggevende versus beveiliger versus klantcontext · functiespecifieke toegang",
+        "maturity": "Ontwerpbasis"
+      },
+      "tenant": {
+        "label": "Tenantgrenzen",
+        "purpose": "Tenantbewuste gegevensgrenzen scheiden organisaties, klanten en objecten.",
+        "controls": "Bedrijfsscheiding · klantscheiding · objectscheiding · alleen geautoriseerde context",
+        "maturity": "Ontwerpbasis"
+      },
+      "data": {
+        "label": "Gegevenstoegang",
+        "purpose": "De architectuur ondersteunt contextbewuste gegevenstoegang en gegevenscontroles op rijniveau.",
+        "controls": "Rol + tenant + objectcontext · API-grenzen · fundamenten voor veilige opslag",
+        "maturity": "Ontwerpbasis · dekking wordt uitgebreid"
+      },
+      "actions": {
+        "label": "Operationele acties",
+        "purpose": "Gevoelige acties vinden alleen plaats na controles van identiteit, rechten en context.",
+        "controls": "Rapport aanmaken/goedkeuren · instructie bijwerken · beveiliger toewijzen · escalatie sluiten · context wijzigen",
+        "maturity": "Ontwerpbasis"
+      },
+      "audit": {
+        "label": "Auditspoor",
+        "purpose": "Traceerbare operationele acties — kritieke wijzigingen en goedkeuringen gekoppeld aan gebruikers.",
+        "controls": "Actielogging · wijzigingshistorie · koppeling van goedkeuring · dossierhistorie",
+        "maturity": "Ontwerpbasis"
+      },
+      "storage": {
+        "label": "Opslag en infrastructuur",
+        "purpose": "Controles op de productie-infrastructuur blijven onderworpen aan validatie van de uitrol.",
+        "controls": "Beheerste opslag · scheiding van omgevingen · toegangscontroles · richting voor back-up · richting voor monitoring",
+        "maturity": "Actieve ontwikkeling"
+      }
+    },
+    "tenants": {
+      "A": {
+        "org": "Organisatie A",
+        "path": "Klant A1 → Gebouw A → NL-OBJ-042"
+      },
+      "B": {
+        "org": "Organisatie B",
+        "path": "Klant B1 → Campus 03"
+      }
+    },
+    "steps": {
+      "architecture": "Architectuur",
+      "hardening": "Aanscherping",
+      "validation": "Validatie",
+      "assessment": "Externe beoordeling",
+      "maturity": "Compliancematuriteit"
+    }
+  },
+  "product": {
+    "aria": "Illustratieve interface van het ISB Security Platform. Alleen demonstratiegegevens.",
+    "env": "Operationele omgeving",
+    "host": "app.isbsecuritysolutions.nl",
+    "orgLabel": "Org",
+    "orgValue": "ISB-demo-omgeving",
+    "customerLabel": "Klant",
+    "objectLabel": "Object",
+    "roleLabel": "Rol",
+    "roleValue": "Operationeel leidinggevende",
+    "normalOps": "Normale operatie",
+    "view": "Weergave · {context}",
+    "modulesAria": "Security OS-modules",
+    "modules": "Modules",
+    "viewsAria": "Operationele weergaven",
+    "nav": {
+      "command": "Commando",
+      "reports": "Rapporten",
+      "objects": "Objecten",
+      "personnel": "Personeel",
+      "patrols": "Surveillances",
+      "incidents": "Incidenten",
+      "compliance": "Compliance",
+      "intelligence": "Inlichtingen",
+      "administration": "Beheer"
+    },
+    "tabs": {
+      "command": "Commando",
+      "reporting": "Rapportage",
+      "objects": "Objecten",
+      "personnel": "Personeel"
+    },
+    "command": {
+      "activeIncidents": "Actieve incidenten",
+      "officers": "Beveiligers in dienst",
+      "patrols": "Surveillances in uitvoering",
+      "missed": "Gemiste controlepunten",
+      "attention": "Aandacht",
+      "activity": "Activiteitenstroom",
+      "high": "Hoog",
+      "medium": "Middel",
+      "watch": "Aandacht",
+      "esc184": "Poort 3 niet beveiligd · NL-OBJ-042",
+      "esc181": "Camera 4 belemmerd · Distributiecentrum Noord",
+      "cert": "2 kwalificaties toe aan vernieuwing · 30 dagen",
+      "submitted": "Incidentrapport ingediend",
+      "submittedDetail": "NL-OBJ-042 · In afwachting van beoordeling door de leidinggevende",
+      "missedEvent": "Controlepunt gemist",
+      "missedDetail": "Distributiecentrum Noord · Escalatie gestart",
+      "shiftStarted": "Dienst van de beveiliger gestart",
+      "shiftDetail": "Bedrijfslocatie A · Post noordelijke entree",
+      "instruction": "Objectinstructie bijgewerkt",
+      "instructionDetail": "Campusobject 03 · Versie 7 goedgekeurd"
+    },
+    "reporting": {
+      "queue": "Rapportwachtrij",
+      "awaitingCount": "3 in afwachting van beoordeling",
+      "reportId": "Rapport-ID",
+      "time": "Tijd",
+      "specific": "Specifiek rapport",
+      "incident": "Incidentrapport",
+      "damage": "Schaderapport",
+      "awaiting": "In afwachting van beoordeling",
+      "escalated": "Geëscaleerd",
+      "draft": "Concept",
+      "selected": "Geselecteerd · SR-2026-00482 · Illustratief",
+      "eventTime": "Tijdstip gebeurtenis",
+      "location": "Locatie",
+      "locationValue": "NL-OBJ-042 · Zone Noord · Poort 3",
+      "observation": "Waarneming",
+      "observationValue": "Toegangsdeur onbeveiligd aangetroffen",
+      "action": "Genomen actie",
+      "actionValue": "Deur beveiligd · Controle geïnformeerd",
+      "escalation": "Escalatie",
+      "escalationValue": "Objectleidinggevende geïnformeerd",
+      "evidence": "Bewijs",
+      "evidenceValue": "Fotobijlage · 1 bestand",
+      "reviewer": "Beoordelaar",
+      "reviewerValue": "Toewijzing in afwachting",
+      "state": "Status",
+      "stateValue": "Ingediend · In afwachting van beoordeling"
+    },
+    "objects": {
+      "detail": "Objectdetail · NL-OBJ-042",
+      "normal": "Normale operatie",
+      "shift": "Huidige dienst",
+      "officer": "Actieve beveiliger",
+      "instructions": "Openstaande instructies",
+      "instructionsValue": "2 goedgekeurd",
+      "risk": "Risiconotitie",
+      "riskValue": "Begroeiing belemmert perimetercamera 4",
+      "emergency": "Noodcontact",
+      "emergencyValue": "Controlekamer · bereikbare leidinggevende",
+      "nextPatrol": "Volgende surveillance",
+      "nextPatrolValue": "15:00 · route Zone Noord",
+      "recent": "Recent incident",
+      "recentValue": "SR-2026-00482 · in afwachting van beoordeling",
+      "completion": "Voltooiing controlepunten",
+      "completionValue": "10 / 12 deze dienst",
+      "checkpoint": "Controlepunt CP-04"
+    },
+    "personnel": {
+      "roster": "Dienstrooster",
+      "fictional": "Illustratief · fictieve namen",
+      "shift": "Dienst",
+      "availability": "Beschikbaarheid",
+      "checkIn": "Laatste check-in"
+    }
+  },
+  "assistant": {
+    "assists": "AI ondersteunt",
+    "reviews": "Beveiliger beoordeelt",
+    "approves": "Leidinggevende keurt goed",
+    "motto": "AI ondersteunt het rapport. Niet de beslissing.",
+    "aria": "Werkstroomfasen van het AI-rapport",
+    "actorPrefix": "Uitvoerder · ",
+    "previous": "Vorige",
+    "next": "Volgende",
+    "historyLabel": "Revisiehistorie",
+    "scopeLabel": "Reikwijdte van de capaciteit",
+    "limitsLabel": "Beperkingen",
+    "limitsNote": "AI-werkstromen worden ontworpen rond beheerste platformtoegang en grenzen van operationele gegevens.",
+    "actors": {
+      "officer": "Beveiliger",
+      "ai": "AI",
+      "supervisor": "Leidinggevende",
+      "system": "Systeem"
+    },
+    "suffix": {
+      "ai": " · alleen een suggestie",
+      "system": " · auditstatus",
+      "human": " · beslissingsbevoegdheid"
+    },
+    "stages": {
+      "notes": "Veldnotities",
+      "extraction": "Extractie",
+      "draft": "Conceptrapport",
+      "review": "Menselijke controle",
+      "approval": "Leidinggevende",
+      "locked": "Vergrendeld dossier"
+    },
+    "notes": {
+      "officer": "Beveiliger · ",
+      "object": "Object · ",
+      "time": "Tijd · ",
+      "input": "Invoer · ",
+      "mobile": "Veldnotitie op mobiel",
+      "raw": "Ruwe veldnotities",
+      "body": "“22:14 noordelijke surveillance. poort 3 open. poort beveiligd. camera 4 deels geblokkeerd door begroeiing. leidinggevende geïnformeerd.”"
+    },
+    "extraction": {
+      "kicker": "Voorgestelde extractie · controle nodig",
+      "context": "Vereiste context · ",
+      "identified": "6 / 7 vastgesteld",
+      "missing": "Ontbreekt · Opvolgingsverantwoordelijkheid",
+      "fields": {
+        "time": {
+          "label": "Tijd",
+          "value": "22:14"
+        },
+        "location": {
+          "label": "Locatie",
+          "value": "Noordelijke perimeter"
+        },
+        "observation": {
+          "label": "Waarneming",
+          "value": "Poort 3 onbeveiligd aangetroffen"
+        },
+        "action": {
+          "label": "Genomen actie",
+          "value": "Poort ter plaatse beveiligd"
+        },
+        "secondary": {
+          "label": "Secundaire waarneming",
+          "value": "Gezichtsveld van camera 4 deels belemmerd"
+        },
+        "escalation": {
+          "label": "Escalatie",
+          "value": "Objectleidinggevende geïnformeerd"
+        }
+      }
+    },
+    "draft": {
+      "generated": "AI-gegenereerd concept",
+      "notFinal": "Niet definitief",
+      "body": "Om 22:14 uur, tijdens een geplande surveillance van de noordelijke perimeter van object NL-OBJ-042, werd poort 3 onbeveiligd aangetroffen. De poort is ter plaatse beveiligd. Bij camera 4 is ook een deels belemmerd gezichtsveld door begroeiing waargenomen. De objectleidinggevende is geïnformeerd voor opvolging.",
+      "fields": {
+        "time": {
+          "label": "Tijdstip gebeurtenis",
+          "value": "22:14"
+        },
+        "location": {
+          "label": "Locatie",
+          "value": "NL-OBJ-042 · Noordelijke perimeter · Poort 3"
+        },
+        "observation": {
+          "label": "Waarneming",
+          "value": "Poort onbeveiligd aangetroffen"
+        },
+        "action": {
+          "label": "Actie",
+          "value": "Poort ter plaatse beveiligd"
+        },
+        "escalation": {
+          "label": "Escalatie",
+          "value": "Objectleidinggevende geïnformeerd"
+        },
+        "evidence": {
+          "label": "Bewijs",
+          "value": "Geen bijlage"
+        }
+      }
+    },
+    "review": {
+      "kicker": "Beoordeling door de beveiliger · bewerkbaar concept",
+      "body": "Om 22:14 uur, tijdens een geplande surveillance van de noordelijke perimeter van object NL-OBJ-042, werd poort 3 onbeveiligd aangetroffen. De poort is ter plaatse beveiligd. Bij camera 4 is ook een deels belemmerd gezichtsveld door begroeiing waargenomen. De objectleidinggevende is geïnformeerd voor opvolging.",
+      "followUp": "Opvolging toegewezen aan de dienstdoende leidinggevende.",
+      "checklist": "Controlelijst voor beoordeling",
+      "checks": {
+        "owner": "Eigenaar van de opvolging niet vermeld",
+        "photo": "Geen foto bijgevoegd",
+        "instruction": "Verwijzing naar objectinstructie optioneel"
+      },
+      "reviewed": "Beoordeeld door de beveiliger",
+      "pending": "In afwachting van beoordeling door de leidinggevende"
+    },
+    "approval": {
+      "officerVersion": "Versie van de beveiliger · v2",
+      "officerBody": "Concept herzien · eigenaar van de opvolging toegevoegd · gereed voor de leidinggevende.",
+      "supervisor": "Leidinggevende",
+      "role": "Operationeel leidinggevende",
+      "comment": "Opmerking: “Verduidelijk wie de opvolgingsverantwoordelijkheid krijgt.”",
+      "status": "Status · Herziening gevraagd → daarna goedgekeurd",
+      "after": "Na correctie · goedgekeurd door de leidinggevende · tijdstip 22:24"
+    },
+    "locked": {
+      "approved": "Goedgekeurd",
+      "finalized": "Afgerond operationeel dossier",
+      "note": "Vergrendeld in de werkstroom · geen claim van juridische onveranderbaarheid",
+      "fields": {
+        "id": {
+          "label": "Rapport-ID",
+          "value": "SR-2026-00482"
+        },
+        "object": {
+          "label": "Object",
+          "value": "NL-OBJ-042"
+        },
+        "status": {
+          "label": "Status",
+          "value": "Goedgekeurd"
+        },
+        "review": {
+          "label": "Beoordelingsstatus",
+          "value": "Voltooid"
+        },
+        "audit": {
+          "label": "Audit",
+          "value": "Beoordeeld door de beveiliger · Goedgekeurd door de leidinggevende · Versie vergrendeld"
+        },
+        "evidence": {
+          "label": "Bewijs",
+          "value": "1 bijlage"
+        }
+      }
+    },
+    "history": [
+      {
+        "version": "v1",
+        "time": "22:16",
+        "label": "AI-concept"
+      },
+      {
+        "version": "v2",
+        "time": "22:19",
+        "label": "Herziening door de beveiliger"
+      },
+      {
+        "version": "v3",
+        "time": "22:24",
+        "label": "Goedgekeurd door de leidinggevende"
+      }
+    ],
+    "scope": [
+      "Structuur · actieve ontwikkeling",
+      "Extractie · actieve ontwikkeling",
+      "Volledigheidscontroles · actieve ontwikkeling",
+      "Contextsuggesties · actieve ontwikkeling",
+      "Voorspellende risicoanalyse · toekomstig onderzoek"
+    ],
+    "limits": [
+      "AI-uitvoer kan fouten bevatten.",
+      "AI-gegenereerde concepten vereisen menselijke controle.",
+      "Operationele beslissingen blijven bij bevoegd personeel.",
+      "AI vervangt escalatieprocedures niet."
+    ]
+  },
+  "diagram": {
+    "operational": "Operationele hiërarchie",
+    "org": "ORGANISATIE",
+    "customers": "↓ Klanten",
+    "objects": "↓ Objecten",
+    "buildings": "↓ Gebouwen → Verdiepingen → Zones → Ruimten",
+    "posts": "↓ Posten · Controlepunten · Assets",
+    "identity": "Identiteitshiërarchie",
+    "users": "GEBRUIKERS",
+    "roles": "↓ Rollen",
+    "permissions": "↓ Rechten",
+    "teams": "↓ Teams",
+    "qualifications": "↓ Kwalificaties → Toewijzingen",
+    "enginesLabel": "Platformengines",
+    "engines": [
+      "Rapportagemotor",
+      "Meldingenmotor",
+      "Auditlaag",
+      "Realtimelaag",
+      "Offlinelaag",
+      "API-laag",
+      "AI-ondersteuning"
+    ],
+    "note": "Beide hiërarchieën kruisen elkaar via operationele werkstromen — rapporten, surveillances, escalaties en toewijzingen dragen altijd organisatie-, object- en gebruikerscontext."
+  }
+}

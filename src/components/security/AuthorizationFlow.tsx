@@ -1,37 +1,27 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 type RouteId = "allowed" | "rejected";
 
-const ALLOWED = [
-  { label: "Officer", note: "Authenticated identity" },
-  { label: "Assigned role", note: "Operations officer" },
-  { label: "Tenant context", note: "Organization A" },
-  { label: "Object context", note: "NL-OBJ-042" },
-  { label: "Allowed action", note: "Submit report" },
-  { label: "Audit event", note: "Action recorded" },
-];
-
-const REJECTED = [
-  { label: "Officer", note: "Authenticated identity" },
-  { label: "Assigned role", note: "Operations officer" },
-  { label: "Different tenant", note: "Organization B" },
-  { label: "No authorized path", note: "Boundary holds" },
-];
+type Step = { id: string; label: string; note: string };
 
 export function AuthorizationFlow() {
+  const t = useTranslations("security");
   const [route, setRoute] = useState<RouteId>("allowed");
-  const steps = route === "allowed" ? ALLOWED : REJECTED;
+  const steps = (
+    route === "allowed" ? t.raw("flow.allowedSteps") : t.raw("flow.rejectedSteps")
+  ) as Step[];
 
   return (
     <div>
       <div className="mb-4 flex flex-wrap gap-2">
         {(
           [
-            ["allowed", "Authorized path"],
-            ["rejected", "Rejected path"],
+            ["allowed", t("flow.allowed")],
+            ["rejected", t("flow.rejected")],
           ] as const
         ).map(([id, label]) => (
           <button
@@ -53,10 +43,10 @@ export function AuthorizationFlow() {
       </div>
       <ol className="border border-border">
         {steps.map((s, i) => {
-          const blocked = route === "rejected" && s.label.startsWith("No authorized");
+          const blocked = s.id === "blocked";
           return (
           <li
-            key={s.label}
+            key={s.id}
             className={cn(
               "flex items-start justify-between gap-3 px-4 py-3",
               i < steps.length - 1 && "border-b border-border-subtle",
@@ -76,7 +66,7 @@ export function AuthorizationFlow() {
             )}
             {blocked && (
               <span className="font-mono text-[10px] uppercase tracking-wide text-ink-faint">
-                Closed
+                {t("flow.closed")}
               </span>
             )}
           </li>
@@ -84,9 +74,7 @@ export function AuthorizationFlow() {
         })}
       </ol>
       <p className="mt-3 text-[12px] text-ink-muted">
-        {route === "allowed"
-          ? "Who can perform what, inside which organizational context, with what traceability."
-          : "No path across tenant boundary."}
+        {route === "allowed" ? t("flow.allowedNote") : t("flow.rejectedNote")}
       </p>
     </div>
   );

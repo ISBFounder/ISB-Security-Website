@@ -1,0 +1,131 @@
+{
+  "metaTitle": "Security & Trust",
+  "metaDescription": "Authorization, tenant boundaries and auditability for ISB Security Platform: who may act, in which context, and what is recorded.",
+  "breadcrumbHome": "Home",
+  "breadcrumb": "Security",
+  "continuityHome": "Home",
+  "continuityPlatform": "Platform",
+  "continuityTechnology": "Technology",
+  "continuitySecurity": "Security",
+  "eyebrow": "Security & Trust",
+  "title": "Who may perform what, in which context, with what record.",
+  "intro": "Role-based access, company-scoped data and audit foundations are established. Privacy retention and legal-hold governance are in discovery. Conceptual paths only — no certification is claimed, and no production policy logic is exposed.",
+  "authEyebrow": "Authorization model",
+  "authTitle": "Authorized path versus rejected path.",
+  "authDescription": "Same officer identity. Different tenant context. The boundary holds.",
+  "trustEyebrow": "Trust architecture",
+  "trustTitle": "How access narrows through context.",
+  "trustDescription": "Each layer constrains the next. Deeper than the homepage overview.",
+  "ctaTitle": "Review the control model with ISB.",
+  "requestDemo": "Request Demo",
+  "aiApproach": "AI approach",
+  "flow": {
+    "allowed": "Authorized path",
+    "rejected": "Rejected path",
+    "closed": "Closed",
+    "allowedNote": "Who can perform what, inside which organizational context, with what traceability.",
+    "rejectedNote": "No path across tenant boundary.",
+    "allowedSteps": [
+      { "id": "officer", "label": "Officer", "note": "Authenticated identity" },
+      { "id": "role", "label": "Assigned role", "note": "Operations officer" },
+      { "id": "tenant", "label": "Tenant context", "note": "Organization A" },
+      { "id": "object", "label": "Object context", "note": "NL-OBJ-042" },
+      { "id": "action", "label": "Allowed action", "note": "Submit report" },
+      { "id": "audit", "label": "Audit event", "note": "Action recorded" }
+    ],
+    "rejectedSteps": [
+      { "id": "officer", "label": "Officer", "note": "Authenticated identity" },
+      { "id": "role", "label": "Assigned role", "note": "Operations officer" },
+      { "id": "tenant", "label": "Different tenant", "note": "Organization B" },
+      { "id": "blocked", "label": "No authorized path", "note": "Boundary holds" }
+    ]
+  },
+  "tenant": {
+    "aria": "Tenant organizations",
+    "organization": "Organization {id}",
+    "selected": "Selected tenant",
+    "other": "Other tenant · receded",
+    "customerA": "Customer A1",
+    "customerB": "Customer B1",
+    "objectA": "Object A",
+    "objectB": "Object B",
+    "hidden": "Hierarchy not visible from {org}.",
+    "boundary": "No path across tenant boundary."
+  },
+  "audit": {
+    "title": "Conceptual audit trail · illustrative",
+    "footer": "Operational actions leave traceable records. Not a claim of legal immutability.",
+    "actors": {
+      "officer": "Officer",
+      "ai": "AI",
+      "supervisor": "Supervisor"
+    },
+    "events": [
+      { "time": "22:14", "actor": "officer", "action": "Field note captured", "ctx": "NL-OBJ-042" },
+      { "time": "22:16", "actor": "ai", "action": "Draft suggested", "ctx": "Suggestion only" },
+      { "time": "22:19", "actor": "officer", "action": "Draft reviewed", "ctx": "Authorized" },
+      { "time": "22:24", "actor": "supervisor", "action": "Record approved", "ctx": "Locked" }
+    ]
+  },
+  "trust": {
+    "sr": "Trust architecture layers: Identity, Role and Permission, Tenant Context, Object and Customer Context, Data Access, Operational Action, Audit Event, Storage and Infrastructure. Designed around least-privilege access and tenant-aware separation. No certifications claimed.",
+    "layers": [
+      {
+        "id": "identity",
+        "label": "Identity",
+        "purpose": "Authenticated user and organization context form the first access boundary.",
+        "control": "User identity · organization context · assignment context",
+        "maturity": "Design foundation"
+      },
+      {
+        "id": "role",
+        "label": "Role & Permission",
+        "purpose": "Designed around least-privilege access — what a user may view, create, approve or manage.",
+        "control": "Role scopes · officer / supervisor / customer / administrator",
+        "maturity": "Design foundation"
+      },
+      {
+        "id": "tenant",
+        "label": "Tenant Context",
+        "purpose": "Tenant-aware data separation between organizations and their customers.",
+        "control": "Organization · customer · authorized context only",
+        "maturity": "Design foundation"
+      },
+      {
+        "id": "object",
+        "label": "Object / Customer Context",
+        "purpose": "Operational data scoped to the objects and customers a role may access.",
+        "control": "Object hierarchy · customer scope · assignment linkage",
+        "maturity": "Design foundation"
+      },
+      {
+        "id": "data",
+        "label": "Data Access",
+        "purpose": "Architecture supports row-level security controls and server-side validation.",
+        "control": "Role + tenant + object context · API boundaries · coverage expanding",
+        "maturity": "Design foundation"
+      },
+      {
+        "id": "action",
+        "label": "Operational Action",
+        "purpose": "Sensitive actions occur only after identity, permission and context checks.",
+        "control": "Create/approve report · update instruction · assign · escalate",
+        "maturity": "Design foundation"
+      },
+      {
+        "id": "audit",
+        "label": "Audit Event",
+        "purpose": "Traceable operational actions — critical changes and approvals associated with users.",
+        "control": "Action logging · change history · approval association",
+        "maturity": "Design foundation"
+      },
+      {
+        "id": "storage",
+        "label": "Storage & Infrastructure",
+        "purpose": "Production infrastructure controls remain subject to deployment validation.",
+        "control": "Controlled storage · environment separation · access discipline",
+        "maturity": "Active hardening"
+      }
+    ]
+  }
+}

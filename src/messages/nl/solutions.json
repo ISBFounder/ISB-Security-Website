@@ -1,0 +1,210 @@
+{
+  "metaTitle": "Oplossingen voor beveiligingsoperaties",
+  "metaDescription": "Operationele workflows en oplossingsscenario’s voor objectbeveiliging, mobiele surveillance, evenementen, winkels, bedrijven, zorg en publieke omgevingen.",
+  "breadcrumbHome": "Home",
+  "breadcrumb": "Oplossingen",
+  "continuityHome": "Home",
+  "continuitySolutions": "Oplossingen",
+  "continuityPlatform": "Platform",
+  "eyebrow": "Oplossingen",
+  "title": "Oplossingen ontworpen rond echte beveiligingsoperaties.",
+  "intro": "Elke operationele omgeving heeft andere eisen, risico’s en belanghebbenden. Workflows voor rapportage, objecten en personeel zijn in actieve ontwikkeling op gedeelde fundamenten voor toegang en audit.",
+  "requestDemo": "Demo aanvragen",
+  "explorePlatform": "Bekijk het platform",
+  "contextEyebrow": "Operationele context",
+  "contextTitle": "Eén Security OS. Andere configuratie.",
+  "contextDescription": "Selecteer een operationele context. Toekomstig onderzoek blijft afzonderlijk gelabeld. Dit zijn ontwikkelingsscenario’s, geen uitgebrachte producten.",
+  "envEyebrow": "Operationele omgevingen",
+  "envTitle": "Selecteer een omgeving om het operationele model te verkennen.",
+  "envDescription": "Elke werkruimte toont context, risico’s, belanghebbenden, workflow, controles en hoe ISB de werkwijze verandert — geen lijst met functies.",
+  "ctaTitle": "Bespreek hoe ISB aansluit op uw operatie.",
+  "contactIsb": "Contact met ISB",
+  "switcher": {
+    "lead": "Zelfde Security OS · andere operationele configuratie",
+    "aria": "Operationele contexten",
+    "priorities": "Prioriteiten",
+    "modules": "Modules in deze context",
+    "workflow": "Representatieve workflow",
+    "futureEyebrow": "Domeinen voor toekomst / onderzoek",
+    "future": [
+      "Integraties met wearables",
+      "Voorspellende AI-risicoanalyse"
+    ]
+  },
+  "contexts": {
+    "object": {
+      "title": "Objectbeveiliging",
+      "priorities": ["Objecten", "Rapportage", "Personeel", "Incidenten"],
+      "modules": ["Objecten", "Rapportage", "Personeel", "Operaties"],
+      "workflow": ["Posttoewijzing", "Surveillance / controle", "Incident", "Goedgekeurde registratie"]
+    },
+    "event": {
+      "title": "Evenementenbeveiliging",
+      "priorities": ["Personeel", "Operaties", "Incidenten", "Rapportage"],
+      "modules": ["Personeel", "Operaties", "Rapportage", "Objecten"],
+      "workflow": ["Briefing", "Inzet", "Incident", "Registratie van de nabespreking"]
+    },
+    "patrol": {
+      "title": "Mobiel / surveillance",
+      "priorities": ["Operaties", "Objecten", "Rapportage", "Personeel"],
+      "modules": ["Operaties", "Objecten", "Rapportage", "Personeel"],
+      "workflow": ["Route", "Controlepunt", "Uitzondering", "Overdracht"]
+    },
+    "retail": {
+      "title": "Winkel",
+      "priorities": ["Objecten", "Incidenten", "Rapportage", "Personeel"],
+      "modules": ["Objecten", "Rapportage", "Personeel", "Naleving"],
+      "workflow": ["Waarneming op de vloer", "Incident", "Beoordeling", "Bewijs voor de opdrachtgever"]
+    },
+    "education": {
+      "title": "Onderwijs",
+      "priorities": ["Objecten", "Personeel", "Rapportage", "Naleving"],
+      "modules": ["Objecten", "Personeel", "Rapportage", "Naleving"],
+      "workflow": ["Locatie-instructie", "Dienst", "Rapport", "Audittrail"]
+    }
+  },
+  "explorer": {
+    "aria": "Operationele omgevingen",
+    "kicker": "Operationele omgeving",
+    "stakeholders": "Gebruikelijke belanghebbenden",
+    "risks": "Primaire operationele risico’s",
+    "workflow": "Illustratieve operationele workflow",
+    "reports": "Gebruikelijke rapporten",
+    "controls": "Operationele controles",
+    "capabilities": "Relevante ISB-mogelijkheden",
+    "domains": "Platformdomeinen",
+    "decisions": "Menselijke beslispunten",
+    "challenges": "Versnipperde werkelijkheid",
+    "change": "Hoe ISB de werkwijze verandert"
+  },
+  "envs": {
+    "object": {
+      "title": "Objectbeveiliging",
+      "context": "Langdurige vaste beveiligingsopdrachten op commerciële, industriële, institutionele of publieke locaties. Beveiligers werken binnen een vastgelegde locatiehiërarchie met terugkerende surveillances, instructies en overdrachten.",
+      "stakeholders": ["Beveiligers", "Leidinggevenden", "Objectbeheerders", "Vertegenwoordigers van de opdrachtgever", "Facilitair beheer"],
+      "reports": ["Dagrapport", "Specifiek rapport", "Incidentrapport", "Schaderapport"],
+      "risks": ["Ongeautoriseerde toegang", "Alarmmeldingen", "Gemiste controlepunten", "Onvolledige overdrachten", "Activiteit van aannemers of bezoekers"],
+      "capabilities": ["Objectbeheer", "Rapportage", "Surveillances", "Controlepunten", "Instructies", "Risico’s", "Escalaties", "Personeel", "Audit"],
+      "workflow": ["Beveiliger", "Toewijzing", "Surveillance", "Waarneming", "Specifiek rapport", "Beoordeling door de leidinggevende", "Zichtbaarheid voor de opdrachtgever (gepland)", "Audithistorie"],
+      "domains": ["Operaties", "Objecten", "Rapportage", "Naleving"],
+      "controls": ["Ingeroosterde surveillances", "Verificatie van controlepunten", "Escalatieprocedures", "Overdrachtregistraties"],
+      "decisions": ["Escaleren of beheersen", "Goedkeuring van het rapport door de leidinggevende", "Objectinstructie bijwerken"],
+      "challenges": ["Surveillance-aantekeningen op papier of via berichten", "Overdrachten verliezen context tussen diensten", "Instructies van de opdrachtgever staan los van rapporten", "Herhaalde gegevensinvoer in meerdere hulpmiddelen"],
+      "change": "Objecthiërarchie, instructies en rapporten zijn in actieve ontwikkeling, zodat beoordelingen operationele context kunnen delen. Het dienstjournaal en overdrachten zijn gepland."
+    },
+    "mobile": {
+      "title": "Mobiele surveillance",
+      "context": "Beveiligers bewegen zich tijdens een dienst tussen meerdere opdrachtgevers en objecten. Continuïteit van de route, objectcontext en snelle rapportage wegen zwaarder dan één vaste post.",
+      "stakeholders": ["Mobiele beveiligers", "Meldkamer / centrale", "Leidinggevenden", "Meerdere opdrachtgevers"],
+      "reports": ["Specifiek rapport", "Incidentrapport", "Bezoekbevestiging"],
+      "risks": ["Gemiste bezoeken", "Afwijking van de route", "Vertraging bij alarmopvolging", "Onvolledige objectcontext", "Versnipperde instructies van opdrachtgevers"],
+      "capabilities": ["Mobiele workflow", "Objectcontext", "Surveillanceroutes", "Controlepunten", "Meldingen", "Taken", "Rapportage", "Geselecteerde offline rapportage- en surveillanceworkflows"],
+      "workflow": ["Dienst begint", "Toegewezen route", "Aankomst bij object", "Bevestiging van controlepunt", "Afwijking vastgesteld", "Rapport aangemaakt", "Volgende toewijzing gaat verder"],
+      "domains": ["Operaties", "Objecten", "Rapportage", "Personeel"],
+      "controls": ["Routetoewijzing", "Aankomst bij object", "Bevestiging van controlepunt", "Continuïteit naar de volgende toewijzing"],
+      "decisions": ["Alarm voorrang geven boven een gepland bezoek", "Gemist controlepunt escaleren", "Resterende route aanpassen"],
+      "stage": "Surveillances in actieve ontwikkeling · alleen geselecteerde offline workflows",
+      "challenges": ["Objectinstructies verspreid over telefoons en mappen", "Gemiste bezoeken moeilijk aantoonbaar", "Overdracht tussen mobiele beveiligers onvolledig", "Eisen van de opdrachtgever niet op het apparaat"],
+      "change": "ISB is ontworpen zodat route, objectcontext en rapportage één workflow delen — minder herhaalde invoer bij verplaatsing tussen locaties."
+    },
+    "event": {
+      "title": "Evenementenbeveiliging",
+      "context": "Tijdelijke operaties met hoge dichtheid, met wisselende teams, zones en escalatiestructuren. Het vastleggen van incidenten en het overzicht voor de leiding zijn van belang onder tijdsdruk.",
+      "stakeholders": ["Beveiligers", "Teamleiders", "Evenementenorganisatie", "Hulpdiensten", "Locatiebeheer"],
+      "reports": ["Incidentrapport", "Specifiek rapport", "Dienstsamenvatting"],
+      "risks": ["Incidenten in de menigte", "Toegangsschendingen", "Medische gebeurtenissen", "Agressief gedrag", "Complexiteit van tijdelijke bezetting"],
+      "capabilities": ["Tijdelijke objecten/zones", "Teamtoewijzingen", "Incidentrapportage", "Escalatie", "Taken", "Personeel", "Operationeel overzicht"],
+      "workflow": ["Incident in zone C", "Beveiliger legt de gebeurtenis vast", "Teamleider geïnformeerd", "Respons toegewezen", "Actie gedocumenteerd", "Overzicht voor de evenementenleiding"],
+      "domains": ["Operaties", "Personeel", "Rapportage"],
+      "controls": ["Zonerespons", "Escalatie naar de teamleider", "Overzicht voor de leiding"],
+      "decisions": ["Escaleren naar hulpdiensten", "Teamcapaciteit herverdelen", "Incident sluiten of escaleren"],
+      "challenges": ["Porto- en papieraantekeningen verliezen structuur na het evenement", "Zonecontext niet gekoppeld aan schriftelijke rapporten", "Tijdelijk personeel mist een gedeelde object-/zonekaart", "Rapportage na het evenement is traag en onvolledig"],
+      "change": "ISB ondersteunt gestructureerde incidentvastlegging en escalatie binnen tijdelijke zonecontext. Het vervangt geen portofoon of hulpdiensten."
+    },
+    "retail": {
+      "title": "Winkelbeveiliging",
+      "context": "Klantgerichte beveiliging in winkels, winkelparken en ketens. Omgaan met bewijs en winkelspecifieke instructies staat centraal.",
+      "stakeholders": ["Winkelbeveiliging", "Leidinggevenden", "Winkelmanagement", "Regionale operaties"],
+      "reports": ["Incidentrapport", "Specifiek rapport", "Schaderapport"],
+      "risks": ["Diefstal", "Agressie", "Toegangsincidenten", "Herhaalde patronen", "Omgaan met bewijs"],
+      "capabilities": ["Incidentrapporten", "Winkel-/objecthiërarchie", "Personeel", "Bijlagen", "Bewijscontext", "Zichtbaarheid voor de opdrachtgever", "Escalatie"],
+      "workflow": ["Winkelincident", "Gestructureerd rapport", "Bewijs bijgevoegd", "Beoordeling door de leidinggevende", "Registratie voor de opdrachtgever", "Toekomstige patrooncontext"],
+      "domains": ["Rapportage", "Objecten", "Naleving", "Inlichtingen"],
+      "controls": ["Bewijs bijvoegen", "Beoordeling door de leidinggevende", "Registratie voor de opdrachtgever"],
+      "decisions": ["Politie of winkelmanagement betrekken", "Bewijs bewaren voor opvolging", "Herhaald patroon escaleren"],
+      "stage": "Patroonanalyse · toekomstige richting",
+      "challenges": ["Bewijs opgeslagen buiten het rapport", "Winkelinstructies niet zichtbaar voor tijdelijk personeel", "Herhaalde incidenten moeilijk te verbinden", "Rapportage aan de opdrachtgever vertraagd"],
+      "change": "ISB koppelt incident, bewijs en winkelobjectcontext, zodat beoordeling en registraties voor de opdrachtgever vanuit één gestructureerde bron starten."
+    },
+    "corporate": {
+      "title": "Bedrijfsbeveiliging",
+      "context": "Kantoren, hoofdkantoren, campussen en bedrijfsfaciliteiten van organisaties. Toegangsincidenten, aannemers en facilitaire kwesties bepalen het operationele beeld.",
+      "stakeholders": ["Bedrijfsbeveiliging", "Facilitair beheer", "Receptie", "Ondersteuning van de leiding"],
+      "reports": ["Incidentrapport", "Dagrapport", "Specifiek rapport"],
+      "risks": ["Ongeautoriseerde toegang", "Bezoekersincidenten", "Vertrouwelijke ruimtes", "Aannemers", "Gebouwproblemen"],
+      "capabilities": ["Objecthiërarchie", "Context van bezoeker/incident", "Surveillances", "Risicoaantekeningen", "Escalaties", "Rapportage", "Toegangsrollen", "Eisen van de opdrachtgever"],
+      "workflow": ["Waarneming in de faciliteit", "Risicoaantekening of incident vastgelegd", "Leidinggevende geïnformeerd", "Actie toegewezen", "Registratie bewaard voor toezicht"],
+      "domains": ["Objecten", "Operaties", "Rapportage", "Naleving"],
+      "controls": ["Facilitaire surveillances", "Escalatielijn", "Opvolging van eisen"],
+      "decisions": ["Toegang tot een zone beperken", "Escaleren naar facilitair beheer of de leiding", "Risicoaantekening bijwerken"],
+      "challenges": ["Incidenten met bezoekers en aannemers inconsistent vastgelegd", "Instructies voor vertrouwelijke ruimtes afgezonderd", "Facilitaire kwesties niet gekoppeld aan beveiligingsregistraties"],
+      "change": "ISB is ontworpen zodat facilitaire hiërarchie, risicoaantekeningen en incidentrapporten dezelfde objectcontext delen voor leidinggevenden en toezicht."
+    },
+    "healthcare": {
+      "title": "Zorgbeveiliging",
+      "context": "Ziekenhuizen, klinieken en zorglocaties waar beveiliging samenwerkt met personeel, patiënten en bezoekers. Zonecontext en snelle escalatie zijn van belang.",
+      "stakeholders": ["Beveiliging", "Ziekenhuisoperaties", "Klinisch management", "Facilitair beheer", "Coördinatie van noodhulp"],
+      "reports": ["Incidentrapport", "Specifiek rapport", "Schaderapport"],
+      "risks": ["Agressie", "Toegangsproblemen in medische zones", "Kwetsbare personen", "Incidenten op de spoedeisende hulp", "Conflicten met bezoekers"],
+      "capabilities": ["Incidentrapportage", "Escalatie", "Object-/zonecontext", "Personeel", "Bewijs", "Contacten voor noodgevallen", "Risicocontext"],
+      "workflow": ["Incident in een klinische zone", "Gestructureerd rapport geopend", "Escalatie naar de leidinggevende", "Bewijs bijgevoegd", "Operationele opvolging vastgelegd"],
+      "domains": ["Rapportage", "Operaties", "Objecten", "Naleving"],
+      "controls": ["Zonecontext", "Snelle escalatie", "Bewaring van bewijs"],
+      "decisions": ["Escaleren naar klinische coördinatie of noodhulp", "Zone beveiligen", "Documenteren zonder toegang tot medische dossiers"],
+      "challenges": ["Zonecontext ontbreekt in schriftelijke rapporten", "Escalatieroutes verschillen per afdeling", "Bewijs en opvolging afzonderlijk bijgehouden"],
+      "change": "ISB ondersteunt gestructureerde workflows voor incidenten en escalatie met zonecontext. Het verwerkt geen medische gegevens of patiëntendossiers."
+    },
+    "education": {
+      "title": "Onderwijsbeveiliging",
+      "context": "Scholen, hogescholen, universiteiten en campussen. Campusstructuur, surveillances en incidentrapportage vormen de operationele kern.",
+      "stakeholders": ["Campusbeveiliging", "Facilitair beheer", "School- of hogeschooladministratie"],
+      "reports": ["Incidentrapport", "Specifiek rapport", "Dagrapport"],
+      "risks": ["Ongeautoriseerde toegang", "Agressie", "Incidenten met studenten of bezoekers", "Vandalisme", "Problemen bij campussurveillance"],
+      "capabilities": ["Objectstructuur van de campus", "Zones", "Surveillances", "Incidentrapporten", "Escalaties", "Personeel", "Objectinstructies"],
+      "workflow": ["Campuswaarneming", "Rapport op zoneniveau", "Beoordeling door de leidinggevende", "Opvolginstructie bijgewerkt"],
+      "domains": ["Objecten", "Operaties", "Rapportage"],
+      "controls": ["Campushiërarchie", "Zone-surveillances", "Escalatie naar de administratie"],
+      "decisions": ["Administratie betrekken", "Surveillance-dekking aanpassen", "Campusinstructie bijwerken"],
+      "challenges": ["Campuskaarten en instructies niet synchroon met rapporten", "Tijdelijke evenementenbeveiliging mist een gedeelde structuur", "Opvolging van incidenten traag tussen afdelingen"],
+      "change": "ISB koppelt campushiërarchie, surveillances en incidentregistraties, zodat opvolging start vanuit een gedeelde operationele context."
+    },
+    "municipal": {
+      "title": "Gemeentelijke beveiliging",
+      "context": "Gemeentelijke gebouwen en publieksgerichte overheidslocaties. Structuur over meerdere locaties, auditbaarheid en rolgebonden toegang staan centraal.",
+      "stakeholders": ["Gemeentelijke beveiliging", "Facilitair beheerders", "Openbaar bestuur"],
+      "reports": ["Incidentrapport", "Specifiek rapport", "Dagrapport"],
+      "risks": ["Agressie", "Problemen met toegangscontrole", "Vertrouwelijke bijeenkomsten", "Facilitaire incidenten", "Druk vanuit het publiek"],
+      "capabilities": ["Meerdere gemeentelijke objecten", "Rapportage", "Escalatie", "Objectinstructies", "Personeel", "Audit", "Rolgebaseerde toegang"],
+      "workflow": ["Incident bij een gemeentelijke faciliteit", "Rapport ingediend met objectcontext", "Escalatieroute gevolgd", "Auditbare registratie bewaard"],
+      "domains": ["Rapportage", "Objecten", "Naleving", "Operaties"],
+      "controls": ["Structuur over meerdere locaties", "Audittrail", "Rolgebonden toegang"],
+      "decisions": ["Escaleren binnen de gemeentelijke hiërarchie", "Toegang tot de faciliteit beperken", "Bewijs bewaren voor toezicht"],
+      "challenges": ["Meerdere gebouwen, inconsistente rapportagevormen", "Auditverzoeken moeilijk te vervullen vanuit verspreide aantekeningen", "Rolzichtbaarheid niet afgestemd op locatieverantwoordelijkheid"],
+      "change": "ISB is ontworpen voor een gemeentelijke structuur met meerdere locaties, met gedeelde context voor rapportage en audit. Het impliceert geen politiebevoegdheden."
+    },
+    "government": {
+      "title": "Overheidsopdrachtnemers",
+      "context": "Beveiligingsorganisaties die gecontracteerde diensten leveren aan publieke organisaties. Documentatiekwaliteit, kwalificaties en auditbaarheid bepalen de contractuele verwachtingen.",
+      "stakeholders": ["Gecontracteerde beveiligingsorganisatie", "Publieke opdrachtgever", "Leidinggevenden", "Functionarissen voor naleving"],
+      "reports": ["Incidentrapport", "Specifiek rapport", "Bewijspakketten voor naleving"],
+      "risks": ["Strikte contractuele eisen", "Kwaliteit van documentatie", "Meerdere locaties", "Kwalificatie-eisen", "Auditbaarheid"],
+      "capabilities": ["Structuur voor meerdere opdrachtgevers", "Objecthiërarchie", "Personeelskwalificaties", "Rapporten", "Audit", "Eisen", "Bewijs", "Rolgebaseerde toegang"],
+      "workflow": ["Contracteis", "Objectinstructie", "Toewijzing van de beveiliger", "Operationele actie", "Bewijs vastgelegd", "Beoordeling door de leidinggevende", "Audittrail"],
+      "domains": ["Naleving", "Objecten", "Personeel", "Rapportage"],
+      "controls": ["Opvolging van eisen", "Kwalificatiecontroles", "Bewijs → auditketen"],
+      "decisions": ["Contractuele afwijking aanvaarden of escaleren", "Gekwalificeerd personeel toewijzen", "Bewijspakket vrijgeven aan de opdrachtgever"],
+      "challenges": ["Eisen staan in contracten, niet in veldhulpmiddelen", "Bewijs achteraf handmatig samengesteld", "Kwalificatiecontroles los van toewijzingen"],
+      "change": "ISB is ontworpen zodat eis, toewijzing, actie en bewijs één auditgerichte keten kunnen delen. Er wordt geen overheidsaccreditatie geclaimd."
+    }
+  }
+}

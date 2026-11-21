@@ -1,0 +1,129 @@
+{
+  "metaTitle": "Freelance beveiligingsprofessional",
+  "metaDescription": "Freelance beveiligingsdiensten voor horeca, evenementen en operationele opdrachten via gevestigde beveiligingsorganisaties.",
+  "breadcrumbHome": "Home",
+  "breadcrumb": "Freelance beveiliging",
+  "heroEyebrow": "Freelance beveiliging",
+  "heroTitle": "Freelance beveiligingsprofessional",
+  "heroIntro": "Professionele freelance beveiligingsdiensten voor horeca, evenementen en operationele beveiligingsopdrachten via gevestigde beveiligingsorganisaties.",
+  "discussCollaboration": "Samenwerking bespreken",
+  "contactIsb": "Contact met ISB",
+  "heroNote": "Deze pagina beschrijft zelfstandig freelance beveiligingswerk dat persoonlijk wordt uitgevoerd. Dit staat los van ISB Security Platform, het softwareproduct dat ISB Security Solutions ontwikkelt.",
+  "profileEyebrow": "Professioneel profiel",
+  "profileTitle": "Operationeel werk naast platformontwikkeling.",
+  "profileP1": "De oprichter van ISB Security Solutions werkt als zelfstandig freelance beveiliger terwijl ISB Security Platform wordt ontwikkeld. Opdrachten worden persoonlijk uitgevoerd voor en via gevestigde beveiligingsbedrijven — niet als uitzendbureau, wervingsdienst of personeelsleverancier onder het merk ISB.",
+  "profileP2": "ISB Security Solutions blijft een softwarebedrijf. Freelance beveiligingswerk is een afzonderlijke professionele activiteit: projectmatige operationele ondersteuning, geïntegreerd in de structuur, procedures en rapportagelijnen van de opdrachtgevende organisatie.",
+  "profileP3": "Het werk wordt benaderd met een professionele operationele instelling: duidelijke communicatie met leidinggevenden en collega’s, gestructureerde rapportage, en respect voor locatiespecifieke instructies en escalatiepaden. Een technologiegerichte werkwijze ondersteunt nauwkeurige digitale rapportage en efficiënt gebruik van hulpmiddelen die het opdrachtgevende beveiligingsbedrijf al gebruikt.",
+  "specializationsEyebrow": "Freelance specialisaties",
+  "specializationsTitle": "Primaire focus: horeca en evenementen.",
+  "specializationsDescription": "Verwante operationele omgevingen kunnen relevant zijn, afhankelijk van de opdrachtvereisten en de opdrachtgevende organisatie.",
+  "primaryFocus": "Primaire focus",
+  "primary": {
+    "hospitality": {
+      "title": "Horecabeveiliging",
+      "text": "Gastgerichte omgevingen waarin aanwezigheid, communicatie en kalme incidentafhandeling even zwaar wegen als de procedure. Typisch werk omvat toegangscontrole, gastgerichte beveiliging, de-escalatie van conflicten, huisregels, afstemming met het locatiemanagement en nauwkeurige incidentrapportage — binnen de bevoegdheid van een beveiliger en de instructies van het opdrachtgevende bedrijf."
+    },
+    "event": {
+      "title": "Evenementenbeveiliging",
+      "text": "Tijdelijke, drukke operaties met een duidelijke briefing, zonebewustzijn en gestructureerde incidentvastlegging. Typisch werk omvat toegangscontrole bij evenementen, observatie van publiek, incidentrespons, teamafstemming, communicatie met bezoekers, escalatie en rapportage — binnen de operationele instructies van de evenementenbeveiligingsorganisatie. Er wordt geen verantwoordelijkheid voor evenementenmanagement geclaimd."
+    }
+  },
+  "related": {
+    "object": {
+      "title": "Objectbeveiliging",
+      "text": "Vaste objectopdrachten die objectkennis, naleving van instructies, patrouillediscipline en een betrouwbare dienstoverdracht vereisen."
+    },
+    "reception": {
+      "title": "Receptie en toegangscontrole",
+      "text": "Receptie en toegangspunten waar identiteitscontrole, bezoekersafhandeling en duidelijke communicatie deel uitmaken van de operationele rol."
+    },
+    "municipal": {
+      "title": "Gemeentelijke / publieke omgevingen",
+      "text": "Publieksgerichte locaties waar professionaliteit, documentatie en escalatiediscipline essentieel zijn."
+    },
+    "support": {
+      "title": "Operationele ondersteuning",
+      "text": "Tijdelijke versterking bij pieken, afwezigheid of projectperioden — geïntegreerd in de bestaande procedures en rapportagelijnen van het opdrachtgevende bedrijf."
+    }
+  },
+  "styleEyebrow": "Professionele werkwijze",
+  "styleTitle": "Wat opdrachtgevende bedrijven kunnen verwachten.",
+  "style": {
+    "professionalism": {
+      "title": "Professionaliteit",
+      "text": "Opdrachten worden benaderd met een duidelijke briefing, rolhelderheid en respect voor de procedures van het opdrachtgevende bedrijf."
+    },
+    "reliability": {
+      "title": "Betrouwbaarheid",
+      "text": "Afgesproken diensten en communicatiekanalen worden behandeld als operationele verplichtingen."
+    },
+    "communication": {
+      "title": "Duidelijke communicatie",
+      "text": "Leidinggevenden, collega’s en contactpersonen van de locatie ontvangen tijdige, feitelijke updates zonder onnodige ruis."
+    },
+    "reporting": {
+      "title": "Sterke rapportage",
+      "text": "Waarnemingen en incidenten worden gestructureerd en bruikbaar vastgelegd voor leidinggevenden en opdrachtgevers van het beveiligingsbedrijf."
+    },
+    "awareness": {
+      "title": "Operationeel bewustzijn",
+      "text": "Het werk blijft verankerd in de locatiecontext, risicoaandachtspunten en escalatiepaden die de opdrachtgevende organisatie vaststelt."
+    },
+    "development": {
+      "title": "Doorlopende ontwikkeling",
+      "text": "Professionele standaarden en operationele kennis worden onderhouden naast het werk aan platformontwikkeling."
+    },
+    "technology": {
+      "title": "Technologiegerichte instelling",
+      "text": "Vertrouwd met digitale werkstromen en operationele hulpmiddelen die moderne beveiligingsorganisaties gebruiken."
+    }
+  },
+  "collaborationEyebrow": "Hoe samenwerking werkt",
+  "collaborationTitle": "Opdrachten via beveiligingsbedrijven.",
+  "collaborationBody": "Freelance opdrachten worden persoonlijk uitgevoerd. Zij worden aangenomen via gevestigde beveiligingsbedrijven of operationele partners. De zelfstandige professional werkt onder de contracten, procedures en klantrelaties van de opdrachtgevende organisatie.",
+  "collaborationItems": {
+    "project": "Projectmatige of dienstmatige samenwerking waar dat passend is",
+    "scope": "Omvang, planning, tarief en opdrachtvereisten worden afgestemd met de contracterende organisatie",
+    "integration": "Integratie in bestaande briefings, rapportage en escalatielijnen",
+    "communication": "Professionele communicatie met planners en leidinggevenden"
+  },
+  "collaborationNote": "Deze pagina is geen wervings- of uitzenddienst. ISB Security Solutions levert geen aanvullend beveiligingspersoneel. Via deze pagina worden geen arbeidsaanbiedingen gedaan.",
+  "platformEyebrow": "Relatie met ISB Security Platform",
+  "platformTitle": "Operationele ervaring voedt het productdenken.",
+  "platformInsight": "Praktisch beveiligingswerk geeft direct inzicht in rapportagewerkstromen, objectinstructies, overdrachten, incidenten, personeelswerkstromen, bruikbaarheid in het veld, communicatie en operationele wrijving. Dat inzicht draagt bij aan het langetermijnontwerp van <platform>ISB Security Platform</platform>.",
+  "platformSeparation": "Operationele ervaring voedt het productdenken op het niveau van werkstromen. Opdrachtgeverspecifieke en vertrouwelijke operationele informatie blijft gescheiden en wordt niet overgebracht naar softwareontwikkeling.",
+  "platformDistinct": "De twee activiteiten blijven gescheiden: freelance opdrachten zijn operationele diensten die via beveiligingsbedrijven worden geleverd; het platform is software in actieve ontwikkeling door ISB Security Solutions.",
+  "diagramTitle": "Twee activiteiten · één professionele achtergrond",
+  "diagramCompany": "ISB Security Solutions",
+  "diagramProduct": "└ ISB Security Platform (softwareproduct)",
+  "diagramFreelance": "Zelfstandig freelance beveiligingswerk",
+  "diagramAssignments": "└ Opdrachten via gevestigde beveiligingsbedrijven",
+  "qualificationsEyebrow": "Kwalificaties",
+  "qualificationsTitle": "Formele kwalificaties in bezit.",
+  "qualificationsDescription": "Er worden geen aanvullende certificeringen geclaimd buiten de genoemde.",
+  "qualifications": {
+    "svpb": {
+      "code": "SVPB",
+      "name": "Beveiliger",
+      "note": "Nederlandse kwalificatie voor particuliere beveiliging"
+    },
+    "bhv": {
+      "code": "BHV",
+      "name": "Bedrijfshulpverlening",
+      "note": "Gecertificeerd voor bedrijfshulpverlening"
+    },
+    "vca": {
+      "code": "VCA",
+      "name": "VOL",
+      "note": "Veiligheid voor operationeel leidinggevenden"
+    }
+  },
+  "qualificationsNote": "Waar de opdracht dit vereist, wordt een geldig Nederlands legitimatiebewijs voor particuliere beveiliging gebruikt volgens de toepasselijke regels. Er wordt geen ND-nummer, vuurwapenopleiding, politiekwalificatie of ISO-certificering geclaimd.",
+  "availabilityEyebrow": "Beschikbaarheid",
+  "availabilityTitle": "Wordt per samenwerking besproken.",
+  "availabilityBody": "Beschikbaarheid hangt af van bestaande verplichtingen, opdrachtvereisten en locatie. Capaciteit wordt niet vooraf gegarandeerd, en er wordt geen reactietijd of acceptatie-SLA toegezegd. Beveiligingsbedrijven die samenwerking overwegen, kunnen contact opnemen om aansluiting en timing te bespreken.",
+  "discussAvailability": "Beschikbaarheid bespreken",
+  "ctaTitle": "Bespreek een freelance beveiligingsopdracht.",
+  "ctaBody": "Beveiligingsbedrijven en operationele partners kunnen contact opnemen met ISB Security Solutions om passende freelance opdrachten in horeca, evenementen en verwante beveiligingsomgevingen te bespreken.",
+  "ctaDemo": "Voor platformdemonstraties gebruikt u <demo>Demo aanvragen</demo>."
+}

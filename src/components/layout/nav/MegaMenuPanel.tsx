@@ -1,15 +1,22 @@
 "use client";
 
-import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { NavigationLink } from "./NavigationLink";
-import type { NavLink } from "@/lib/constants";
+
+export type MegaItem = {
+  id: string;
+  href: string;
+  label: string;
+  description?: string;
+};
 
 type Props = {
   id: string;
   title: string;
   summary: string;
-  items: readonly NavLink[];
+  items: readonly MegaItem[];
   onNavigate: () => void;
   featured?: { title: string; description: string; href: string };
 };
@@ -23,6 +30,7 @@ export function MegaMenuPanel({
   featured,
 }: Props) {
   const reduce = useReducedMotion();
+  const t = useTranslations("chrome");
 
   return (
     <motion.div
@@ -53,7 +61,7 @@ export function MegaMenuPanel({
           >
             {items.map((item) => (
               <NavigationLink
-                key={item.href + item.label}
+                key={item.id}
                 href={item.href}
                 variant="mega"
                 description={item.description}
@@ -67,7 +75,7 @@ export function MegaMenuPanel({
           {featured ? (
             <div className="border border-border bg-surface/60 p-4">
               <p className="font-mono text-[10px] uppercase tracking-wider text-ink-muted">
-                Featured
+                {t("featured")}
               </p>
               <p className="mt-2 text-[13px] font-medium text-ink">
                 {featured.title}
@@ -80,7 +88,7 @@ export function MegaMenuPanel({
                 onClick={onNavigate}
                 className="mt-3 inline-block text-[12px] font-medium text-gold hover:text-gold-light"
               >
-                {featured.href === "/roadmap" ? "View roadmap" : "Learn more"} →
+                {featured.href === "/roadmap" ? t("viewRoadmap") : t("learnMore")} →
               </Link>
             </div>
           ) : null}

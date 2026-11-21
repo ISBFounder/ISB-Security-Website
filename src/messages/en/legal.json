@@ -1,0 +1,257 @@
+{
+  "privacy": {
+    "metaTitle": "Privacy Policy",
+    "metaDescription": "Privacy Policy of ISB Security Solutions — how personal information submitted through the corporate website is handled.",
+    "title": "Privacy Policy",
+    "intro": "ISB Security Solutions values controlled and transparent handling of information submitted through its corporate website. This policy describes how personal information may be processed when you use <site>{url}</site>, including the contact and demonstration request forms.",
+    "sections": {
+      "about": {
+        "title": "About this policy",
+        "body": "This policy applies to the public corporate website of ISB Security Solutions. It does not govern a customer portal, SaaS product login, or offline operational services, which are not provided through this public website."
+      },
+      "controller": {
+        "title": "Who is responsible",
+        "intro": "The organisation responsible for processing personal information submitted through this website is:",
+        "location": "Tilburg, The Netherlands",
+        "kvk": "Chamber of Commerce (KVK): {kvk}",
+        "emailLabel": "Email:"
+      },
+      "collect": {
+        "title": "Information we may collect",
+        "body": "We process information that you choose to submit through website forms, and limited technical information necessary to operate and protect the website."
+      },
+      "contactForm": {
+        "title": "Contact form information",
+        "intro": "When you use the contact form, we may process:",
+        "items": {
+          "name": "Name",
+          "company": "Company",
+          "email": "Email address",
+          "phone": "Phone number",
+          "subject": "Subject",
+          "message": "Message content",
+          "enquiryType": "Enquiry type"
+        }
+      },
+      "demoForm": {
+        "title": "Demonstration request information",
+        "intro": "When you submit a demonstration request, we may process:",
+        "items": {
+          "companyName": "Company name",
+          "contactPerson": "Contact person and job title",
+          "businessEmail": "Business email and phone number",
+          "companySize": "Company size and security workforce size",
+          "country": "Country and optional website",
+          "sectors": "Operational sectors",
+          "software": "Current software and reporting methods",
+          "context": "Operational context (objects, customers, planning, mobile workforce)",
+          "challenges": "Operational challenges",
+          "timeline": "Conversation interest and evaluation timeline",
+          "message": "Optional free-text message"
+        }
+      },
+      "technical": {
+        "title": "Technical and anti-abuse data",
+        "p1": "Limited technical request information may be processed to protect forms against abuse and excessive submissions. This may include measures used for rate limiting and spam prevention (including a honeypot field that is not intended for human users).",
+        "p2": "We do not intentionally perform behavioural profiling or broad device fingerprinting through this corporate website. Raw IP addresses are used where necessary for rate-limiting and security of form endpoints and are not presented as a marketing data source."
+      },
+      "purposes": {
+        "title": "Purposes of processing",
+        "intro": "Personal information submitted through the website may be used to:",
+        "items": {
+          "respond": "Respond to enquiries",
+          "evaluate": "Evaluate demonstration requests",
+          "prepare": "Prepare relevant platform conversations",
+          "pilot": "Process pilot or partnership enquiries",
+          "disclosure": "Respond to responsible-disclosure messages",
+          "protect": "Protect the website and forms against abuse",
+          "maintain": "Maintain operational security of the website"
+        },
+        "closing": "We do not use form submissions for advertising campaigns or unsolicited marketing unless a separate, explicit basis exists."
+      },
+      "legalBasis": {
+        "title": "Legal basis",
+        "p1": "Depending on the context, processing may rely on legitimate interests in responding to professional enquiries and securing the website; steps taken at your request prior to a potential business relationship; and, where applicable, consent indicated through form consent wording.",
+        "p2": "The exact legal basis may vary by enquiry type and applicable law. If you have questions about the basis for a specific processing activity, contact us using the details below."
+      },
+      "providers": {
+        "title": "Service providers",
+        "intro": "To operate the website forms, ISB may use service providers that process limited data necessary to deliver their service:",
+        "resend": "<strong>Resend</strong> — email delivery of form submissions to ISB",
+        "upstash": "<strong>Upstash</strong> — rate limiting / abuse prevention when configured in the production environment",
+        "closing": "Hosting and infrastructure providers used to publish the website may process technical request data as part of normal web hosting operations."
+      },
+      "international": {
+        "title": "International data processing considerations",
+        "body": "Service providers may process data in more than one jurisdiction. Appropriate safeguards for cross-border processing should be evaluated based on the final production configuration. This policy does not claim that all processing is limited to the European Union, nor that specific transfer mechanisms are already configured, unless separately verified."
+      },
+      "retention": {
+        "title": "Retention",
+        "body": "Information is retained only as long as reasonably necessary for the purpose for which it was submitted, for applicable legal obligations, for security needs, or for legitimate business records related to the enquiry. Exact retention periods may be defined in internal schedules as the organisation matures its processes."
+      },
+      "security": {
+        "title": "Data security",
+        "body": "ISB applies security measures appropriate to a public corporate website, including server-side validation of forms, controlled email delivery, abuse prevention, and access discipline around production configuration. Production security controls for related systems remain under ongoing development. No website can guarantee absolute security."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "body": "Information about cookies and similar technologies is described in the <policy>Cookie Policy</policy>."
+      },
+      "rights": {
+        "title": "Your rights",
+        "p1": "Depending on applicable law (including the GDPR where it applies), you may have rights to access, correct, delete, or restrict processing of your personal data; to object to certain processing; to data portability where applicable; to withdraw consent where processing is based on consent; and to lodge a complaint with a competent supervisory authority.",
+        "p2": "Not every right applies in every circumstance. To exercise rights in relation to this website, contact <mail>{email}</mail>."
+      },
+      "children": {
+        "title": "Children",
+        "body": "This corporate website is aimed at professional and business users. It is not intentionally directed at children."
+      },
+      "links": {
+        "title": "External links",
+        "body": "The website may link to external sites. ISB is not responsible for the privacy practices of third-party websites."
+      },
+      "changes": {
+        "title": "Changes to this policy",
+        "body": "We may update this policy when the website, forms, or processing activities change. The “Last updated” date at the top of this page will be revised when material changes are published."
+      },
+      "contact": {
+        "title": "Contact",
+        "intro": "For privacy questions related to this website, contact:"
+      }
+    }
+  },
+  "terms": {
+    "metaTitle": "Website Terms of Use",
+    "metaDescription": "Website Terms of Use for the public corporate website of ISB Security Solutions. These terms do not constitute a SaaS subscription agreement.",
+    "title": "Website Terms of Use",
+    "intro": "These Website Terms of Use govern access to and use of the public corporate website of {name} at <site>{url}</site>.",
+    "notice": "<strong>These terms apply to the public website only.</strong> They are not the SaaS customer agreement for ISB Security Platform, not a subscription contract, and not an operational services or contractor agreement.",
+    "sections": {
+      "about": {
+        "title": "About these terms",
+        "body": "By using this website you agree to these terms. If you do not agree, do not use the website. Additional terms may apply to separate commercial arrangements, if and when those are entered into in writing."
+      },
+      "purpose": {
+        "title": "Website purpose",
+        "body": "This website provides information about {name}, the ISB Security Platform product direction, and ways to contact the company for demonstrations, pilot discussions, partnerships, and general enquiries."
+      },
+      "development": {
+        "title": "Development-stage information",
+        "body": "ISB Security Platform is in active development. It has not been announced as commercially available or production-validated, and no public release date has been established. Website descriptions may use these development categories: “Foundation established”, “Active development”, “Discovery / architecture”, “Planned”, and “Future / research”. The labels communicate maturity. They do not create delivery deadlines or commercial availability."
+      },
+      "nonBinding": {
+        "title": "No contractual product commitment",
+        "body": "Roadmap items, feature descriptions, architecture diagrams, and industry examples describe product direction and intended fit. They are not binding delivery commitments, warranties of commercial availability, or guarantees that any particular capability will be released on a given date."
+      },
+      "acceptable": {
+        "title": "Acceptable use",
+        "intro": "You may not use this website to:",
+        "items": {
+          "access": "Attempt unauthorised access to systems or data",
+          "damage": "Damage, disrupt, or overload the website or related services",
+          "automation": "Use malicious automation or abuse forms",
+          "malware": "Introduce malware or harmful code",
+          "unlawful": "Use the site for unlawful purposes",
+          "extract": "Extract protected content at unreasonable scale without permission"
+        },
+        "closing": "Normal browsing and legitimate form submissions are permitted."
+      },
+      "ip": {
+        "title": "Intellectual property",
+        "p1": "Unless otherwise indicated, {name} owns or controls the rights in the ISB name and branding, original website design and copy, platform concepts as presented, interface designs, software, and documentation made available on this site. You may not copy, modify, or redistribute protected materials without prior written permission, except as allowed by mandatory law.",
+        "p2": "These terms do not claim ownership of generic security industry concepts or third-party trademarks."
+      },
+      "content": {
+        "title": "Website content",
+        "body": "Content is provided for general information. While we aim for accuracy, information may change as the product and company evolve. Content is not professional advice (legal, security, technical, or otherwise)."
+      },
+      "demos": {
+        "title": "Demonstrations and pilot discussions",
+        "body": "Submitting a demonstration or contact request does not guarantee acceptance, scheduling, commercial availability, pilot participation, or a future contract. A demonstration or discussion does not itself create a binding commercial agreement."
+      },
+      "links": {
+        "title": "Third-party links",
+        "body": "Links to third-party websites are provided for convenience. ISB is not responsible for third-party content or practices."
+      },
+      "security": {
+        "title": "Security",
+        "body": "Users must not attempt to compromise the security of the website. Security issues may be reported to <mail>{email}</mail>. No bug bounty or response SLA is claimed solely by these terms."
+      },
+      "availability": {
+        "title": "Availability",
+        "body": "The public website is provided on an “as available” basis. ISB does not guarantee uninterrupted or error-free availability and does not offer an uptime service level for this corporate site."
+      },
+      "liability": {
+        "title": "Liability limitations",
+        "body": "To the extent permitted by applicable law, {name} is not liable for indirect, incidental, or consequential damages arising from use of this website or reliance on its content. Nothing in these terms excludes or limits liability that cannot be excluded or limited under mandatory law."
+      },
+      "changes": {
+        "title": "Changes",
+        "body": "We may update these terms when the website or company practices change. The “Last updated” date will be revised when material changes are published. Continued use after publication constitutes acceptance of the updated terms where permitted by law."
+      },
+      "governing": {
+        "title": "Governing context",
+        "body": "{name} is established in the Netherlands. These terms are intended to operate within applicable Dutch law, subject to mandatory provisions of law that cannot be waived. Specific court jurisdiction clauses may be defined in a future legal review."
+      },
+      "contact": {
+        "title": "Contact",
+        "location": "Tilburg, The Netherlands",
+        "kvk": "KVK {kvk}"
+      }
+    }
+  },
+  "cookies": {
+    "metaTitle": "Cookie Policy",
+    "metaDescription": "Cookie Policy for the ISB Security Solutions corporate website — essential technology, no advertising or marketing cookies.",
+    "title": "Cookie Policy",
+    "intro": "This Cookie Policy explains how the public corporate website of {name} approaches cookies and similar technologies.",
+    "sections": {
+      "what": {
+        "title": "What cookies are",
+        "body": "Cookies are small text files that a website may store on your device. Similar technologies can include local storage or session mechanisms used by browsers and hosting platforms."
+      },
+      "approach": {
+        "title": "Current ISB website approach",
+        "p1": "The corporate website is designed to operate without advertising or marketing cookies. At the time reflected by this policy, the website does not intentionally deploy non-essential analytics or advertising cookies.",
+        "p2": "This policy does not claim that the site uses “zero cookies” in all technical circumstances, because hosting platforms and browsers may use strictly necessary mechanisms for security or session integrity."
+      },
+      "necessary": {
+        "title": "Strictly necessary technology",
+        "body": "Strictly necessary technology may be used to operate the website securely and reliably — for example, infrastructure required by the hosting environment or protections related to form submission integrity."
+      },
+      "language": {
+        "title": "Language preference",
+        "p1": "Language preference (isb_locale). Set only when you choose a language. Remembers Nederlands or English for about six months. Functional cookie. SameSite=Lax. Not used for advertising.",
+        "p2": "Language suggestion dismissal (isb_locale_suggest). Session cookie set if you dismiss the language suggestion. It is not set if you do not dismiss the suggestion."
+      },
+      "forms": {
+        "title": "Form security",
+        "body": "Contact and demonstration forms use server-side validation, honeypot fields (not intended for human users), and rate limiting when configured. These measures are intended to reduce abuse. They are not advertising technologies."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "body": "At the time reflected by this policy, the website does not intentionally deploy non-essential analytics cookies. If analytics technology is introduced in the future, this policy will be reviewed and updated, and consent requirements will be reassessed before deployment."
+      },
+      "marketing": {
+        "title": "Marketing",
+        "body": "No advertising or behavioural marketing cookies are intentionally used on the current corporate website."
+      },
+      "thirdParty": {
+        "title": "Third-party services",
+        "body": "Form delivery and rate-limiting services (such as Resend and Upstash, when configured) primarily process server-side form and request data. They are not used to place advertising cookies on this site."
+      },
+      "browser": {
+        "title": "Browser controls",
+        "body": "You can control cookies and site data through your browser settings, including blocking or deleting cookies. Restricting strictly necessary technology may affect website functionality."
+      },
+      "changes": {
+        "title": "Future changes",
+        "body": "If the website later introduces analytics, marketing, or other non-essential technologies, ISB will update this policy and reassess whether a consent mechanism is required under applicable law before those technologies are used."
+      },
+      "contact": {
+        "title": "Contact",
+        "body": "Questions about this Cookie Policy may be sent to <mail>{email}</mail>."
+      }
+    }
+  }
+}

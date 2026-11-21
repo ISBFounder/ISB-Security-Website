@@ -1,0 +1,188 @@
+{
+  "metaTitle": "Security Operations Platform",
+  "metaDescription": "The ISB Security Platform is in active development for security operations, reporting, personnel planning and site management. Not commercially available.",
+  "breadcrumbHome": "Home",
+  "breadcrumbCurrent": "Platform",
+  "continuity": {
+    "home": "Home",
+    "platform": "Platform",
+    "technology": "Technology",
+    "security": "Security"
+  },
+  "eyebrow": "Platform",
+  "title": "ISB Security Platform: Active Development",
+  "intro": [
+    "The ISB Security Platform is in active development.",
+    "ISB Security Solutions is building a unified platform for professional security operations, reporting, personnel planning and site management.",
+    "The development platform includes operational workspaces, patrol and reporting workflows, personnel and assignment management, and customer and object hierarchy management.",
+    "Role-based access, company-scoped data handling and selected offline reporting and patrol workflows form part of the technical foundation.",
+    "AI-assisted reporting, operational integration and broader environment validation remain under development.",
+    "The platform has not been announced as commercially available or production-validated. No public release date has been established."
+  ],
+  "osSection": {
+    "eyebrow": "Security OS",
+    "title": "One foundation. Shared context. Operational domains.",
+    "description": "Domains inherit identity, permissions and audit. They do not each recreate the operating system."
+  },
+  "architectureSection": {
+    "eyebrow": "Architecture model",
+    "title": "Structured from organization to checkpoint.",
+    "description": "Explore how location hierarchy, people and access, workflows and shared engines form one operating model."
+  },
+  "ctaTitle": "Explore how ISB could map to your operation.",
+  "ctaDemo": "Request Demo",
+  "ctaTechnology": "Technology",
+  "ctaSecurity": "Security",
+  "explorer": {
+    "steps": [
+      "One foundation",
+      "Shared context",
+      "Operational domains",
+      "Connected workflows"
+    ],
+    "chrome": "Security OS · architecture explorer",
+    "inherit": "Modules inherit identity, permissions and audit",
+    "domainsAria": "Platform domains",
+    "conceptsLabel": "Representative concepts",
+    "connectedLabel": "Connected domains",
+    "contextLabel": "Shared context",
+    "foundationLabel": "Shared foundation",
+    "footnote": "Domains do not each recreate identity, permissions and operational context. They inherit them from the Security OS foundation.",
+    "context": [
+      "Organization",
+      "Customer",
+      "Object / Location",
+      "Personnel",
+      "Roles / Permissions",
+      "Audit context"
+    ],
+    "foundation": [
+      "Authentication and role-based access",
+      "Company-scoped multi-tenant data",
+      "Scheduling and assignment authority",
+      "Attendance and worked time",
+      "Audit and events",
+      "Bounded billing and payroll data",
+      "Integration outbox",
+      "Selected offline reporting and patrol workflows"
+    ],
+    "domains": {
+      "operations": {
+        "title": "Operations",
+        "summary": "Shifts, patrols, tasks and escalations in a shared operational context.",
+        "concepts": ["Shift context", "Patrol workflows", "Escalations", "Tasks"]
+      },
+      "reporting": {
+        "title": "Reporting",
+        "summary": "Field observation to approved record. Human review remains mandatory.",
+        "concepts": ["Specific Report", "AI-assisted draft", "Approval", "History"]
+      },
+      "people": {
+        "title": "People",
+        "summary": "Roles, qualifications and assignments bound to the same objects and rules.",
+        "concepts": ["Profiles", "Assignments", "Availability", "Qualifications — discovery"]
+      },
+      "objects": {
+        "title": "Objects",
+        "summary": "The physical hierarchy that anchors reports, patrols and instructions.",
+        "concepts": ["Customer", "Object", "Zone", "Checkpoint"]
+      },
+      "compliance": {
+        "title": "Compliance",
+        "summary": "Role-based access, company-scoped data and audit foundations. Evidence custody and privacy retention are in discovery.",
+        "concepts": ["RBAC", "Company scope", "Audit events", "Evidence custody — discovery"]
+      },
+      "intelligence": {
+        "title": "Intelligence",
+        "summary": "AI-assisted report drafting is in active development. AI does not make autonomous operational decisions.",
+        "concepts": [
+          "Report drafting — active development",
+          "Connected analytics — planned",
+          "Predictive risk analysis — future research"
+        ]
+      }
+    }
+  },
+  "model": {
+    "viewsAria": "Architecture views",
+    "views": {
+      "organization": "Organization",
+      "people": "People",
+      "workflows": "Workflows",
+      "engines": "Platform Engines"
+    },
+    "locationHierarchy": "Location hierarchy",
+    "why": "Why this structure",
+    "whyBody": "Mirrors how security organizations and their clients actually work — from the company down to the checkpoint an officer verifies on patrol.",
+    "whyPoints": [
+      "Object · instructions, risks, contacts, documents",
+      "Zone · access rules, patrol context",
+      "Post · assignment instructions",
+      "Checkpoint · verification points",
+      "Asset · equipment information"
+    ],
+    "orgTree": [
+      "Organization",
+      "Customers",
+      "Objects",
+      "Buildings",
+      "Floors",
+      "Zones",
+      "Rooms",
+      "Posts",
+      "Checkpoints",
+      "Assets"
+    ],
+    "accessModel": "Access model",
+    "peopleTree": [
+      "Users",
+      "Roles",
+      "Permissions",
+      "Teams",
+      "Qualifications",
+      "Assignments"
+    ],
+    "roleExamples": "Role examples",
+    "roles": [
+      {
+        "name": "Officer",
+        "scope": "Field reporting · assigned objects · limited visibility"
+      },
+      {
+        "name": "Supervisor",
+        "scope": "Review · approval · escalation · team oversight"
+      },
+      {
+        "name": "Customer representative",
+        "scope": "Scoped visibility · planned expansion"
+      },
+      {
+        "name": "Administrator",
+        "scope": "Organization configuration · user management"
+      }
+    ],
+    "intersection": "Operational intersection · illustrative",
+    "workflow": [
+      "Officer K. Jansen",
+      "assigned to NL-OBJ-042",
+      "performs Patrol Route North",
+      "detects Checkpoint issue",
+      "creates Specific Report",
+      "supervisor reviews",
+      "audit trail records"
+    ],
+    "workflowNote": "People and locations intersect through assignments, reports, patrols, tasks, escalations, approvals, notifications and audit events.",
+    "enginesLabel": "Shared platform engines",
+    "engines": [
+      "Reporting Engine",
+      "Notification Engine",
+      "Audit Layer",
+      "Realtime Layer",
+      "Offline Layer",
+      "API Layer",
+      "AI Assistance",
+      "Secure Storage Foundations"
+    ],
+    "enginesNote": "Operational domains consume shared platform services — not isolated feature silos."
+  }
+}

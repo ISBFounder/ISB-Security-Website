@@ -1,53 +1,36 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
-const STAGES = [
-  {
-    index: "Now",
-    label: "Refine and validate",
-    emphasis: "active" as const,
-    items: [
-      "Operational workflows",
-      "Reporting workflows",
-      "Workforce and planning",
-      "Object management",
-      "Selected offline workflows",
-    ],
-  },
-  {
-    index: "Next",
-    label: "Integrate and validate",
-    emphasis: "planned" as const,
-    items: [
-      "Current integration work",
-      "Recovery work",
-      "Environment validation",
-      "Authority validation",
-    ],
-  },
-  {
-    index: "Later",
-    label: "Expand and research",
-    emphasis: "planned" as const,
-    items: [
-      "Connected operational capabilities",
-      "External integrations",
-      "Advanced AI research",
-    ],
-  },
-] as const;
+const STAGE_IDS = ["now", "next", "later"] as const;
 
-export function HomeRoadmap() {
+const EMPHASIS = {
+  now: "active",
+  next: "planned",
+  later: "planned",
+} as const;
+
+export async function HomeRoadmap() {
+  const t = await getTranslations("home");
+
+  const stages = STAGE_IDS.map((id) => ({
+    id,
+    index: t(`roadmap.${id}.index`),
+    label: t(`roadmap.${id}.label`),
+    emphasis: EMPHASIS[id],
+    items: t.raw(`roadmap.${id}.items`) as string[],
+  }));
+
   return (
     <div>
       <div className="grid gap-0 border border-border md:grid-cols-3">
-        {STAGES.map((stage, i) => (
+        {stages.map((stage, i) => (
           <div
-            key={stage.index}
+            key={stage.id}
             className={cn(
               "relative p-5",
-              i < STAGES.length - 1 && "border-b border-border md:border-b-0 md:border-r"
+              i < stages.length - 1 && "border-b border-border md:border-b-0 md:border-r"
             )}
           >
             <div className="flex items-baseline gap-2">
@@ -81,16 +64,14 @@ export function HomeRoadmap() {
         ))}
       </div>
 
-      <p className="mt-5 text-[12px] text-ink-muted">
-        The platform is in active development. It has not been announced as commercially available or production-validated. No public release date has been established.
-      </p>
+      <p className="mt-5 text-[12px] text-ink-muted">{t("roadmap.disclaimer")}</p>
 
       <div className="mt-6">
         <Link
           href="/roadmap"
           className="inline-flex items-center gap-2 text-[13px] font-medium text-ink-secondary transition-colors hover:text-gold"
         >
-          View full roadmap
+          {t("roadmap.link")}
           <ArrowRight className="h-4 w-4" aria-hidden />
         </Link>
       </div>

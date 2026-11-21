@@ -1,73 +1,32 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 type LayerId = "clients" | "platform" | "data";
 
-const LAYERS: {
-  id: LayerId;
-  label: string;
-  items: string[];
-  detail: string;
-}[] = [
-  {
-    id: "clients",
-    label: "Client experience",
-    items: [
-      "Web application",
-      "Mobile interfaces",
-      "Client-facing reporting workflows",
-      "Administrative interfaces",
-    ],
-    detail:
-      "Interfaces for officers, supervisors and administrators. Client-facing reporting is in active development. Interface layer only — business logic lives in platform services.",
-  },
-  {
-    id: "platform",
-    label: "Platform services",
-    items: [
-      "Authentication foundations",
-      "Role and permission layer",
-      "Reporting services",
-      "Object services",
-      "Personnel services",
-      "Notification services",
-      "Audit services",
-      "AI assistance",
-      "API layer",
-    ],
-    detail:
-      "Shared operational services consumed by every domain. Permissions and tenant context apply before data access.",
-  },
-  {
-    id: "data",
-    label: "Data & infrastructure",
-    items: [
-      "Company-scoped data",
-      "Audit and events",
-      "Integration outbox",
-      "Selected offline reporting and patrol workflows",
-      "Environment separation",
-      "Logging / observability foundations",
-    ],
-    detail:
-      "Operational data and infrastructure controls. Tenant and role context constrain what each client and service may read or write.",
-  },
-];
+const LAYER_IDS: LayerId[] = ["clients", "platform", "data"];
 
 export function TechnologyArchitecture() {
+  const t = useTranslations("technology");
   const [active, setActive] = useState<LayerId>("platform");
-  const current = LAYERS.find((l) => l.id === active)!;
+  const layers = LAYER_IDS.map((id) => ({
+    id,
+    label: t(`layers.${id}.label`),
+    detail: t(`layers.${id}.detail`),
+    items: t.raw(`layers.${id}.items`) as string[],
+  }));
+  const current = layers.find((l) => l.id === active)!;
 
   return (
     <div className="border border-border">
       <div
         role="tablist"
-        aria-label="Architecture layers"
+        aria-label={t("layers.aria")}
         className="flex border-b border-border"
       >
-        {LAYERS.map((l) => (
+        {layers.map((l) => (
           <button
             key={l.id}
             type="button"
@@ -99,7 +58,7 @@ export function TechnologyArchitecture() {
           ))}
         </div>
         <div className="mt-6 space-y-0 font-mono text-[11px] text-ink-faint" aria-hidden>
-          {LAYERS.map((l, i) => (
+          {layers.map((l, i) => (
             <div key={l.id}>
               <div
                 className={cn(
@@ -111,7 +70,7 @@ export function TechnologyArchitecture() {
               >
                 {l.label}
               </div>
-              {i < LAYERS.length - 1 && (
+              {i < layers.length - 1 && (
                 <div className="flex justify-center py-0.5">↓</div>
               )}
             </div>

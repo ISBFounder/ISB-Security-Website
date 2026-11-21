@@ -1,22 +1,17 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/Button";
 import { ProductInterface } from "@/components/visuals/ProductInterface";
 import { HeroProductStage } from "@/components/visuals/HeroProductStage";
 
-const CREDIBILITY = [
-  "Built for multi-customer security operations",
-  "Role-based access and company-scoped data",
-  "Selected offline reporting and patrol workflows",
-  "Developed from operational security experience",
-  "European security industry focus",
-] as const;
-
 export function HomeHero() {
+  const t = useTranslations("home");
   const reduce = useReducedMotion();
+  const credibility = t.raw("hero.credibility") as string[];
 
   const fade = (delay: number) =>
     reduce
@@ -48,31 +43,29 @@ export function HomeHero() {
           <motion.div className="lg:col-span-7" {...fade(0)}>
             <div className="mb-5 inline-flex items-center gap-2 border border-border bg-surface/60 px-3 py-1 font-mono text-[11px] text-ink-secondary">
               <span className="h-1.5 w-1.5 bg-gold" aria-hidden />
-              ISB Security Platform: Active Development
+              {t("hero.badge")}
             </div>
 
             <h1 className="display-xl">
-              One operational system
+              {t("hero.titleLine1")}
               <span className="mt-1 block text-ink">
-                for the <span className="text-gold">security industry</span>
+                {t("hero.titleBefore")}
+                <span className="text-gold">{t("hero.titleEmphasis")}</span>
+                {t("hero.titleAfter")}
               </span>
             </h1>
 
             <p className="body-lg mt-6 max-w-xl">
-              The ISB Security Platform is in active development. ISB Security
-              Solutions is building a unified platform for professional security
-              operations, reporting, personnel planning and site management. It has
-              not been announced as commercially available or production-validated.
-              No public release date has been established.
+              {t("hero.body")}
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button href="/request-demo" size="lg">
-                Request a Demonstration
+                {t("hero.ctaDemo")}
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Button>
               <Button href="/platform" variant="secondary" size="lg">
-                Explore the Platform
+                {t("hero.ctaPlatform")}
               </Button>
             </div>
             <p className="mt-4">
@@ -80,7 +73,7 @@ export function HomeHero() {
                 href="/platform"
                 className="text-[13px] font-medium text-ink-muted transition-colors hover:text-gold"
               >
-                View platform architecture →
+                {t("hero.architectureLink")}
               </Link>
             </p>
           </motion.div>
@@ -90,9 +83,9 @@ export function HomeHero() {
             {...fade(0.08)}
           >
             <div className="surface-3 p-5 lg:ml-auto lg:max-w-sm">
-              <p className="label mb-4">Institutional scope</p>
+              <p className="label mb-4">{t("hero.scope")}</p>
               <ul className="space-y-2.5 font-mono text-[11px] leading-relaxed text-ink-muted">
-                {CREDIBILITY.map((line) => (
+                {credibility.map((line) => (
                   <li key={line} className="flex gap-2 border-b border-border-subtle pb-2.5 last:border-0 last:pb-0">
                     <span className="mt-1.5 h-1 w-1 shrink-0 bg-gold/70" aria-hidden />
                     {line}

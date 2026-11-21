@@ -1,0 +1,186 @@
+{
+  "metaTitle": "Productroadmap",
+  "metaDescription": "Roadmap van ISB Security Platform: nu, daarna en later. Geen releasedatum. Het platform is in actieve ontwikkeling en is niet commercieel beschikbaar.",
+  "twitterDescription": "Roadmap van ISB Security Platform: nu, daarna en later. Geen releasedatum. Niet commercieel beschikbaar.",
+  "breadcrumbHome": "Home",
+  "breadcrumb": "Roadmap",
+  "eyebrow": "Roadmap",
+  "title": "ISB Security Platform: Actieve ontwikkeling",
+  "intro": "Nu: operationele, rapportage-, personeels-, plannings-, objectbeheer- en geselecteerde offline werkstromen verfijnen en valideren. Daarna: het lopende integratie- en herstelwerk afronden, en de vereiste omgevings- en bevoegdheidsvalidatie. Later: verbonden operationele mogelijkheden, externe integraties en geavanceerd AI-onderzoek uitbreiden.",
+  "disclaimer": "Het platform is niet aangekondigd als commercieel beschikbaar of productiegevalideerd. Er is geen publieke releasedatum vastgesteld. Prioriteiten kunnen wijzigen. Plaatsing in een fase is geen leveringsverplichting.",
+  "progressionEyebrow": "Architectuurverloop",
+  "horizons": {
+    "now": "Nu",
+    "next": "Daarna",
+    "later": "Later"
+  },
+  "foundationsNote": "Technische fundamenten omvatten al rolgebaseerde toegang, bedrijfsgebonden gegevens, plannings- en toewijzingsbevoegdheid, aanwezigheid en gewerkte tijd, audit en gebeurtenissen, beperkte facturatie- en salarisgegevens, een integratie-outbox, en geselecteerde offline rapportage- en surveillancewerkstromen. Die fundamenten zijn geen commerciële beschikbaarheid.",
+  "stagesEyebrow": "Productroadmap",
+  "stagesTitle": "Operationele lagen. Eén verbonden richting.",
+  "stages": {
+    "now": {
+      "index": "Nu",
+      "label": "Verfijnen en valideren",
+      "layer": "Actieve ontwikkeling",
+      "groups": {
+        "focus": {
+          "title": "Huidige focus",
+          "items": {
+            "workflows": "Operationele werkstromen",
+            "reporting": "Rapportage en herstel",
+            "workforce": "Personeelsinzet en personeelsplanning",
+            "objects": "Objectbeheer",
+            "offline": "Geselecteerde offline werkstromen"
+          }
+        },
+        "active": {
+          "title": "In actieve ontwikkeling",
+          "items": {
+            "operations": "Beveiligingsoperaties",
+            "patrols": "Surveillance",
+            "incidents": "Incidentwerkstromen",
+            "personnel": "Personeels- en inzetbeheer",
+            "objects": "Objecten en locaties",
+            "ai": "AI-ondersteunde conceptrapportage",
+            "mobile": "Geselecteerde mobiele en offline werkstromen",
+            "service": "Serviceverzoeken en contracten",
+            "documents": "Documentwerkruimten",
+            "client": "Rapportagewerkstromen voor opdrachtgevers"
+          }
+        }
+      }
+    },
+    "next": {
+      "index": "Daarna",
+      "label": "Integreren en valideren",
+      "layer": "Geen releasedatum",
+      "groups": {
+        "required": {
+          "title": "Vereist vervolgwerk",
+          "items": {
+            "integration": "Lopend integratiewerk",
+            "recovery": "Herstelwerk",
+            "environment": "Omgevingsvalidatie",
+            "authority": "Bevoegdheidsvalidatie"
+          }
+        },
+        "discovery": {
+          "title": "Verkenning / architectuur",
+          "items": {
+            "evidence": "Onveranderlijke bewijsbewaring",
+            "documents": "Definitieve bevoegdheid voor documentpublicatie",
+            "qualifications": "Bevoegdheid voor personeelskwalificaties",
+            "privacy": "Governance van privacybewaartermijnen en legal hold"
+          }
+        }
+      }
+    },
+    "later": {
+      "index": "Later",
+      "label": "Uitbreiden en onderzoeken",
+      "layer": "Geen toegezegde levering",
+      "groups": {
+        "planned": {
+          "title": "Gepland",
+          "items": {
+            "analytics": "Gekoppelde analyses",
+            "visitors": "Bezoekersbeheer",
+            "journal": "Dienstrapport en overdrachten",
+            "alarms": "Integraties met alarmproviders",
+            "maps": "Interactieve locatieplattegronden",
+            "cases": "Dossierbeheer",
+            "orders": "Werkorders",
+            "voice": "Spraaktranscriptie",
+            "exports": "Centrale exports",
+            "connectors": "Enterpriseconnectoren"
+          }
+        },
+        "future": {
+          "title": "Toekomst / onderzoek",
+          "items": {
+            "wearables": "Integraties met wearables",
+            "predictive": "Voorspellende AI-risicoanalyse"
+          }
+        }
+      }
+    }
+  },
+  "statusEyebrow": "Statusdefinities",
+  "statusTitle": "Hoe volwassenheidslabels worden gebruikt.",
+  "status": {
+    "foundation": {
+      "label": "Fundament aanwezig",
+      "text": "Technische fundamenten bestaan in het ontwikkelplatform. Dit is geen commerciële beschikbaarheid of productievalidering."
+    },
+    "development": {
+      "label": "Actieve ontwikkeling",
+      "text": "Het werk vordert actief en is niet productiegevalideerd. De voortgang is niet gelijk voor alle onderdelen."
+    },
+    "discovery": {
+      "label": "Verkenning / architectuur",
+      "text": "Vragen over bevoegdheid en ontwerp zijn in onderzoek. Het zijn geen beschikbare mogelijkheden."
+    },
+    "planned": {
+      "label": "Gepland",
+      "text": "Onderdeel van de beoogde platformrichting. Er is geen releasedatum geautoriseerd."
+    },
+    "future": {
+      "label": "Toekomst / onderzoek",
+      "text": "Onderzoeksrichting, onder voorbehoud van validatie en prioritering. Geen toegezegde levering."
+    }
+  },
+  "dependenciesEyebrow": "Afhankelijkheden tussen mogelijkheden",
+  "dependenciesTitle": "Latere mogelijkheden bouwen voort op eerdere fundamenten.",
+  "dependenciesDescription": "Bewuste architectuur — geen willekeurige functieontwikkeling.",
+  "dependsOn": "afhankelijk van",
+  "dependencies": {
+    "ai": {
+      "capability": "AI-ondersteunde rapportage",
+      "depends": "Rapportagewerkstromen in actieve ontwikkeling"
+    },
+    "analytics": {
+      "capability": "Gekoppelde analyses",
+      "depends": "Consistente operationele gegevens"
+    },
+    "predictive": {
+      "capability": "Voorspellend AI-onderzoek",
+      "depends": "Gevalideerde gegevens en menselijke beoordeling"
+    },
+    "connectors": {
+      "capability": "Enterpriseconnectoren",
+      "depends": "Fundamenten voor de integratie-outbox"
+    },
+    "client": {
+      "capability": "Rapportage voor opdrachtgevers",
+      "depends": "Bedrijfsgebonden toegangsgrenzen"
+    }
+  },
+  "boundariesEyebrow": "Grenzen",
+  "boundariesTitle": "Wat deze roadmap niet claimt.",
+  "boundariesDescription": "Ontwikkelcategorieën zijn geen labels voor commerciële beschikbaarheid. AI neemt geen autonome operationele besluiten.",
+  "boundaries": {
+    "date": "Geen releasedatum",
+    "commercial": "Niet commercieel beschikbaar",
+    "production": "Niet productiegevalideerd",
+    "certification": "Geen certificering geclaimd",
+    "offline": "Niet elke module werkt offline",
+    "ai": "AI neemt geen besluiten"
+  },
+  "prioritiesEyebrow": "Hoe roadmap-prioriteiten worden beoordeeld",
+  "prioritiesTitle": "Operationele en technische criteria.",
+  "priorities": {
+    "value": "Operationele waarde",
+    "security": "Beveiligingsimpact",
+    "dependency": "Platformafhankelijkheid",
+    "workflow": "Gebruikerswerkstroom",
+    "maturity": "Technische volwassenheid",
+    "validation": "Validatie-eisen",
+    "scale": "Schaalbaarheid"
+  },
+  "policyEyebrow": "Roadmapbeleid",
+  "policyBody": "De roadmap geeft de huidige ontwikkelrichting weer en geen contractuele leveringsplanning. Plaatsing in een fase impliceert geen releasedatums, leveringsverplichtingen of claims van commerciële beschikbaarheid.",
+  "ctaTitle": "Bespreek hoe de platformrichting aansluit op uw operationele eisen.",
+  "ctaDemo": "Demo aanvragen",
+  "ctaPlatform": "Bekijk het platform",
+  "ctaContact": "Contact met ISB"
+}

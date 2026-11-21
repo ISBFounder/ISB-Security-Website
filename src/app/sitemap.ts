@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { SITE } from "@/lib/constants";
+import { absoluteLocaleUrl } from "@/i18n/paths";
+import { routing, type Locale } from "@/i18n/routing";
 
 const routes: { path: string; priority: number }[] = [
   { path: "/", priority: 1.0 },
@@ -22,12 +23,27 @@ const routes: { path: string; priority: number }[] = [
 ];
 
 /** Public content revision reflected by this sitemap. Not regenerated per request. */
-const LAST_MODIFIED = new Date("2026-11-20T00:00:00.000Z");
+const LAST_MODIFIED = new Date("2026-11-21T00:00:00.000Z");
+
+function languages(path: string): Record<string, string> {
+  return {
+    en: absoluteLocaleUrl("en", path),
+    nl: absoluteLocaleUrl("nl", path),
+    "x-default": absoluteLocaleUrl("en", path),
+  };
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map(({ path, priority }) => ({
-    url: path === "/" ? SITE.url : `${SITE.url}${path}`,
-    lastModified: LAST_MODIFIED,
-    priority,
-  }));
+  const entries: MetadataRoute.Sitemap = [];
+  for (const locale of routing.locales) {
+    for (const route of routes) {
+      entries.push({
+        url: absoluteLocaleUrl(locale as Locale, route.path),
+        lastModified: LAST_MODIFIED,
+        priority: route.priority,
+        alternates: { languages: languages(route.path) },
+      });
+    }
+  }
+  return entries;
 }

@@ -1,0 +1,105 @@
+{
+  "metaTitle": "Technologiearchitectuur",
+  "metaDescription": "Technische architectuur van het ISB Security Platform in actieve ontwikkeling — bedrijfsafgebakende gegevens, gedeelde diensten en tenantbewuste grenzen.",
+  "breadcrumbHome": "Home",
+  "breadcrumbCurrent": "Technologie",
+  "continuity": {
+    "home": "Home",
+    "platform": "Platform",
+    "technology": "Technologie",
+    "security": "Beveiliging"
+  },
+  "eyebrow": "Technologie",
+  "title": "Technologie ontworpen rond operationele continuïteit.",
+  "intro": "ISB is één platform in actieve ontwikkeling, met gedeelde diensten in plaats van losse applicaties. Geselecteerde offline rapportage- en patrouillewerkstromen maken deel uit van het technische fundament. Niet elke module werkt offline. Enterprise-connectoren blijven gepland.",
+  "engineSection": {
+    "eyebrow": "Gedeelde motor",
+    "title": "Ervaring, domeinen, diensten en fundament.",
+    "description": "Veel operationele oppervlakken. Eén motor daaronder. Domeinen bouwen identiteit, audit of opslag niet opnieuw."
+  },
+  "architectureSection": {
+    "eyebrow": "Architectuur op hoofdlijnen",
+    "title": "Clientapplicaties, platformdiensten, gegevens en infrastructuur.",
+    "description": "Drie lagen. Duidelijke grenzen. Gedeelde diensten boven tenantbewuste gegevens."
+  },
+  "trustNote": "Vertrouwensarchitectuur — identiteit, rollen, tenantgrenzen en audit — gaat verder bij Beveiliging.",
+  "trustLink": "Bekijk beveiliging en vertrouwen",
+  "stack": {
+    "chain": "Ervaring steunt op het domein · het domein steunt op diensten · diensten rusten op het fundament",
+    "footnote": "Veel domeinen. Eén motor. Domeinen bouwen de lagen daaronder niet opnieuw.",
+    "layers": {
+      "experience": {
+        "title": "Ervaringslaag",
+        "purpose": "Operationele werkruimten die beveiligers en leidinggevenden daadwerkelijk gebruiken.",
+        "items": ["Regie", "Rapportage", "Objecten", "Personeel", "Mobiele veldnotities"]
+      },
+      "domain": {
+        "title": "Domeinlaag",
+        "purpose": "Operationele domeinen op één gedeelde context — geen afzonderlijke producten.",
+        "items": ["Operaties", "Rapportage", "Mensen", "Objecten", "Naleving", "Intelligentie"]
+      },
+      "services": {
+        "title": "Platformdiensten",
+        "purpose": "Gedeelde diensten die elk domein erft.",
+        "items": [
+          "Identiteit",
+          "Autorisatie",
+          "Audit",
+          "Meldingen",
+          "Integratie-outbox",
+          "Geselecteerde offline werkstromen"
+        ]
+      },
+      "foundation": {
+        "title": "Gegevens- en beveiligingsfundament",
+        "purpose": "Concepten voor tenantisolatie, gecontroleerde toegang en integriteit.",
+        "items": [
+          "Tenantbewuste grenzen",
+          "Richting voor toegang op rijniveau",
+          "Scheiding van omgevingen",
+          "Afgebakende facturatie- en salarisgegevens"
+        ]
+      }
+    }
+  },
+  "layers": {
+    "aria": "Architectuurlagen",
+    "clients": {
+      "label": "Clientervaring",
+      "detail": "Interfaces voor beveiligers, leidinggevenden en beheerders. Rapportage voor opdrachtgevers is in actieve ontwikkeling. Alleen de interfacelaag — bedrijfslogica staat in de platformdiensten.",
+      "items": [
+        "Webapplicatie",
+        "Mobiele interfaces",
+        "Rapportagewerkstromen voor opdrachtgevers",
+        "Beheerinterfaces"
+      ]
+    },
+    "platform": {
+      "label": "Platformdiensten",
+      "detail": "Gedeelde operationele diensten die elk domein gebruikt. Rechten en tenantcontext gelden vóór gegevenstoegang.",
+      "items": [
+        "Authenticatiefundamenten",
+        "Laag voor rollen en rechten",
+        "Rapportagediensten",
+        "Objectdiensten",
+        "Personeelsdiensten",
+        "Meldingsdiensten",
+        "Auditdiensten",
+        "AI-ondersteuning",
+        "API-laag"
+      ]
+    },
+    "data": {
+      "label": "Gegevens en infrastructuur",
+      "detail": "Operationele gegevens en infrastructuurcontroles. Tenant- en rolcontext beperken wat elke clientapplicatie en dienst mag lezen of schrijven.",
+      "items": [
+        "Bedrijfsafgebakende gegevens",
+        "Audit en gebeurtenissen",
+        "Integratie-outbox",
+        "Geselecteerde offline rapportage- en patrouillewerkstromen",
+        "Scheiding van omgevingen",
+        "Fundamenten voor logging en observeerbaarheid"
+      ]
+    }
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "metaTitle": "Veelgestelde vragen over het platform",
+  "metaDescription": "Antwoorden over ISB Security Platform, ontwikkelstatus, architectuur, AI-ondersteunde rapportage, beveiliging, operationeel gebruik en toekomstige beschikbaarheid.",
+  "breadcrumbHome": "Home",
+  "breadcrumb": "Veelgestelde vragen",
+  "eyebrow": "Veelgestelde vragen",
+  "title": "Vragen over het platform.",
+  "intro": "Duidelijke antwoorden over wat ISB Security Platform is, hoe het wordt ontwikkeld en hoe het bedoeld is om professionele beveiligingsoperaties te ondersteunen.",
+  "status": "Actieve ontwikkeling · niet commercieel beschikbaar",
+  "categoriesLabel": "Categorieën",
+  "categoriesAria": "Categorieën van veelgestelde vragen",
+  "searchLabel": "Zoeken",
+  "searchPlaceholder": "Zoek vragen…",
+  "clear": "Wissen",
+  "resultCount": "{count, plural, one {# vraag} other {# vragen}}",
+  "noMatches": "Geen vragen komen overeen met dit filter.",
+  "ctaTitle": "Beoordeelt u nog of ISB past bij uw operatie?",
+  "ctaDemo": "Demo aanvragen",
+  "ctaContact": "Contact met ISB",
+  "ctaPlatform": "Bekijk het platform",
+  "categories": {
+    "all": "Alle",
+    "platform": "Platform",
+    "availability": "Beschikbaarheid en ontwikkeling",
+    "operations": "Operaties",
+    "ai": "AI",
+    "security": "Beveiliging en gegevens",
+    "technology": "Technologie",
+    "commercial": "Commercieel en samenwerking"
+  },
+  "items": {
+    "what-is-platform": {
+      "question": "Wat is ISB Security Platform?",
+      "answer": "ISB Security Platform is in actieve ontwikkeling. ISB Security Solutions bouwt een geïntegreerd platform voor professionele beveiligingsoperaties, rapportage, personeelsplanning en locatiebeheer. Het is niet aangekondigd als commercieel beschikbaar of productiegevalideerd, en er is geen publieke releasedatum vastgesteld."
+    },
+    "who-designed-for": {
+      "question": "Voor wie is het platform ontworpen?",
+      "answer": "Particuliere beveiligingsbedrijven, aanbieders van mobiele surveillance, object- en evenementenbeveiliging, en beveiligingsoperaties in retail, bedrijfsomgevingen, zorg, onderwijs, gemeenten en bij overheidsopdrachtnemers. Tot de beoogde kopers behoren operationeel managers, beveiligingscoördinatoren, IT-betrokkenen en inkoopteams die operationele software beoordelen."
+    },
+    "problems-solved": {
+      "question": "Welke problemen moet ISB oplossen?",
+      "answer": "Versnipperde beveiligingsoperaties waarin rapportage, objectinstructies, planning, berichten, personeelscontext en auditinformatie in afzonderlijke hulpmiddelen of buiten systemen staan. Het resultaat is herhaalde administratie, zwakke overdrachten, ontbrekende context en lage traceerbaarheid. ISB is ontworpen om dit samen te brengen in één gecontroleerde operationele context."
+    },
+    "one-app-or-modules": {
+      "question": "Is ISB één applicatie of een verzameling afzonderlijke modules?",
+      "answer": "ISB is één platform met modulaire capaciteitsdomeinen. Rapportage, objecten, personeel en operaties zijn in actieve ontwikkeling op gedeelde fundamenten voor identiteit, bevoegdheden en audit. Modules zijn geen afzonderlijke producten, en niet elke module is beschikbaar."
+    },
+    "multi-customer-objects": {
+      "question": "Kan ISB meerdere opdrachtgevers en objecten ondersteunen?",
+      "answer": "Ja. De architectuur is multi-tenant en tenantbewust. Een organisatie kan meerdere opdrachtgevers en objecten beheren, terwijl operationele context en toegang begrensd blijven. Gegevenstoegang tussen tenants zonder geautoriseerde context maakt geen deel uit van het ontwerpmodel."
+    },
+    "org-customer-object": {
+      "question": "Hoe is het platform gestructureerd rond organisaties, opdrachtgevers en objecten?",
+      "answer": "Het ontwikkelplatform omvat beheer van de hiërarchie van opdrachtgevers en objecten. Objecten en locaties zijn in actieve ontwikkeling. De beoogde structuur loopt van organisatie en opdrachtgever naar object en fijnere locaties. Dit wordt niet gepresenteerd als een voltooide productiehiërarchie."
+    },
+    "company-vs-platform": {
+      "question": "Wat is het verschil tussen ISB Security Solutions en ISB Security Platform?",
+      "answer": "ISB Security Solutions is het bedrijf. ISB Security Platform is het product — het operationele softwaresysteem dat het bedrijf bouwt voor professionele beveiligingsorganisaties."
+    },
+    "commercially-available": {
+      "question": "Is ISB Security Platform commercieel beschikbaar?",
+      "answer": "Nee. Het platform is niet aangekondigd als commercieel beschikbaar of productiegevalideerd. Er is geen publieke releasedatum vastgesteld. Organisaties kunnen een demonstratie aanvragen. Een demonstratie is geen productierelease."
+    },
+    "what-exists": {
+      "question": "Welke delen van het platform bestaan op dit moment?",
+      "answer": "Fundament aanwezig: authenticatie en rolgebaseerde toegang, bedrijfsgebonden multi-tenantgegevens, plannings- en toewijzingsbevoegdheid, aanwezigheid en definitief vastgestelde gewerkte tijd, audit en gebeurtenissen, beperkte fundamenten voor financiële gegevens, facturatie en salarisgegevens, een integratie-outbox, en geselecteerde offline rapportage- en surveillancewerkstromen. Dit zijn technische fundamenten, geen commerciële beschikbaarheid. Beveiligingsoperaties, surveillance, rapportage en herstel, incidenten, personeels- en inzetbeheer, objecten en locaties, AI-ondersteunde conceptrapportage, geselecteerde mobiele werkstromen, serviceverzoeken en contracten, documentwerkruimten en rapportage voor opdrachtgevers zijn in actieve ontwikkeling."
+    },
+    "active-development": {
+      "question": "Wat is op dit moment in actieve ontwikkeling?",
+      "answer": "Beveiligingsoperaties, surveillance, rapportage en herstel, incidentwerkstromen, personeels- en inzetbeheer, objecten en locaties, AI-ondersteunde conceptrapportage, geselecteerde mobiele en offline werkstromen, serviceverzoeken en contracten, documentwerkruimten en rapportagewerkstromen voor opdrachtgevers. Salarisadministratie is geen uitgebracht product. Er bestaan beperkte fundamenten voor financiële gegevens, facturatie en salarisgegevens. Die maken van ISB geen salarisadministratiesysteem."
+    },
+    "implemented-foundation": {
+      "question": "Wat betekent \"Fundament aanwezig\"?",
+      "answer": "Er bestaat een technisch fundament in het ontwikkelplatform. Dit is geen claim van commerciële beschikbaarheid, productievalidering of volledigheid voor elke inzet."
+    },
+    "discovery-architecture": {
+      "question": "Wat betekent \"Verkenning / architectuur\"?",
+      "answer": "Een vraag over bevoegdheid of ontwerp is in onderzoek en is geen beschikbare mogelijkheid. Deze categorie omvat onveranderlijke bewijsbewaring, definitieve bevoegdheid voor documentpublicatie, bevoegdheid voor personeelskwalificaties, en governance van privacybewaartermijnen en legal hold."
+    },
+    "planned-meaning": {
+      "question": "Wat betekent \"Gepland\"?",
+      "answer": "De mogelijkheid maakt deel uit van de beoogde platformrichting. Er is geen publieke releasedatum vastgesteld. Plaatsing op de roadmap is geen contractuele leveringsbelofte."
+    },
+    "future-direction": {
+      "question": "Wat betekent \"Toekomst / onderzoek\"?",
+      "answer": "Onderzoeksrichting, onder voorbehoud van validatie en prioritering. Integraties met wearables en voorspellende AI-risicoanalyse vallen in deze categorie. Zij zijn geen toegezegde levering en geen beschikbaarheid op korte termijn."
+    },
+    "roadmap-dates": {
+      "question": "Bevat de roadmap releasedatums?",
+      "answer": "Nee. Er is geen publieke releasedatum vastgesteld. De publieke horizonten zijn Nu, Daarna en Later. Zij beschrijven richting, geen leveringskalender."
+    },
+    "roadmap-change": {
+      "question": "Kunnen roadmap-prioriteiten wijzigen?",
+      "answer": "Ja. Prioriteiten kunnen wijzigen op basis van technische afhankelijkheden, validatieresultaten, operationele eisen en beveiligingsoverwegingen. De roadmap is de huidige ontwikkelrichting, geen vaste planning."
+    },
+    "multiple-disciplines": {
+      "question": "Kan ISB meerdere beveiligingsdisciplines ondersteunen?",
+      "answer": "Ja. Het platform is ontworpen rond gedeelde fundamenten met omgevingsspecifieke werkstromen — waaronder objectbeveiliging, mobiele surveillance, evenementen, retail, bedrijfsomgevingen, zorg, onderwijs, gemeenten en overheidsopdrachtnemers."
+    },
+    "location-hierarchy": {
+      "question": "Kan het platform gebouwen, verdiepingen, zones en controlepunten modelleren?",
+      "answer": "Objecten en locaties zijn in actieve ontwikkeling, inclusief de hiërarchie van opdrachtgevers en objecten. Het model is bedoeld voor gebouwen, verdiepingen, zones, ruimten, posten en controlepunten. Het is geen voltooide productiehiërarchie. Interactieve locatieplattegronden zijn gepland."
+    },
+    "field-use": {
+      "question": "Kunnen beveiligers ISB in het veld gebruiken?",
+      "answer": "Geselecteerde mobiele werkstromen zijn in actieve ontwikkeling. Native mobiele apps worden niet geclaimd."
+    },
+    "mobile-patrol": {
+      "question": "Ondersteunt ISB mobiele surveillance?",
+      "answer": "Surveillance is in actieve ontwikkeling. Geselecteerde offline rapportage- en surveillancewerkstromen maken deel uit van het technische fundament. Niet elke surveillancemogelijkheid, en niet elke module, werkt offline."
+    },
+    "offline": {
+      "question": "Ondersteunt ISB offline gebruik?",
+      "answer": "Geselecteerde offline rapportage- en surveillancewerkstromen maken deel uit van het technische fundament. Geselecteerde mobiele en offline werkstromen blijven in actieve ontwikkeling. Niet elke module werkt offline."
+    },
+    "realtime": {
+      "question": "Ondersteunt ISB realtime updates?",
+      "answer": "Er wordt geen realtime serviceniveau geclaimd. Gesynchroniseerde operationele status wordt niet gepresenteerd als een gegarandeerde live dienst."
+    },
+    "customer-access": {
+      "question": "Kunnen opdrachtgevers toegang krijgen tot hun eigen operationele informatie?",
+      "answer": "Rapportagewerkstromen voor opdrachtgevers zijn in actieve ontwikkeling. Zij zijn geen uitgebracht opdrachtgeversportaal. Toegang blijft bedrijfsgebonden."
+    },
+    "qualifications-assignments": {
+      "question": "Kan ISB personeelskwalificaties en toewijzingen ondersteunen?",
+      "answer": "Plannings- en toewijzingsbevoegdheid zijn aanwezige fundamenten. Personeels- en inzetbeheer is in actieve ontwikkeling. Bevoegdheid voor personeelskwalificaties is in verkenning en is geen beschikbaar kwalificatiesysteem. Salarisadministratie is geen uitgebracht product."
+    },
+    "payroll-discovery": {
+      "question": "Omvat ISB salarisadministratie?",
+      "answer": "Nee. Salarisadministratie is geen uitgebracht ISB-product. In het ontwikkelplatform bestaan beperkte fundamenten voor financiële gegevens, facturatie en salarisgegevens. Die maken van ISB geen salarisadministratiesysteem, en er is geen integratie voor salarisadministratie aangekondigd als beschikbaar."
+    },
+    "ai-reporting-how": {
+      "question": "Hoe werkt AI-ondersteunde rapportage?",
+      "answer": "AI-ondersteunde conceptrapportage is in actieve ontwikkeling. Een concept is geen officieel dossier. Een mens moet het beoordelen, en een leidinggevende bepaalt waar goedkeuring vereist is. AI maakt dossiers niet definitief en neemt geen autonome operationele besluiten."
+    },
+    "ai-automatic": {
+      "question": "Schrijft AI rapporten automatisch?",
+      "answer": "AI-ondersteunde conceptvorming kan een concept voorstellen op basis van veldinvoer zolang die werkstroom in ontwikkeling is. Het concept is pas een officieel operationeel dossier na menselijke beoordeling, en goedkeuring waar die vereist is. AI neemt geen autonome operationele besluiten."
+    },
+    "ai-replace-officer": {
+      "question": "Vervangt AI de beveiliger?",
+      "answer": "Nee. AI ondersteunt bij structuur, duidelijkheid en extractie. Het operationele oordeel blijft bij bevoegd personeel."
+    },
+    "ai-approve": {
+      "question": "Kan AI een rapport goedkeuren?",
+      "answer": "Nee. Goedkeuring is een menselijke verantwoordelijkheid waar de werkstroom dit vereist. AI kan rapporten niet zelfstandig goedkeuren of definitief maken."
+    },
+    "ai-responsibility": {
+      "question": "Wie blijft verantwoordelijk voor het definitieve rapport?",
+      "answer": "Bevoegde gebruikers — doorgaans de beoordelende beveiliger en, waar vereist, de leidinggevende. Menselijke verantwoording staat centraal in het AI-werkmodel."
+    },
+    "ai-decisions": {
+      "question": "Neemt AI operationele besluiten?",
+      "answer": "Nee. AI neemt geen definitieve operationele besluiten, vervangt geen escalatieprocedures, vervangt geen leidinggevenden en stelt geen wettelijke naleving vast."
+    },
+    "ai-today": {
+      "question": "Welke AI-mogelijkheid bestaat er vandaag?",
+      "answer": "AI-ondersteunde conceptrapportage is nog in ontwikkeling. Het is geen voltooide assistent. Menselijke beoordeling is vereist, en AI neemt het operationele besluit niet."
+    },
+    "ai-future": {
+      "question": "Welke AI-mogelijkheden zijn toekomstig onderzoek?",
+      "answer": "Voorspellende AI-risicoanalyse is toekomstig onderzoek. Gekoppelde analyses zijn gepland. Geen van beide is een autonoom beslissysteem, en geen van beide is nu beschikbaar."
+    },
+    "toi-tce": {
+      "question": "Wat zijn Talent & Operations Intelligence en de Team Compatibility Engine?",
+      "answer": "Die namen maken geen deel uit van de huidige gepubliceerde platformrichting. Voorspellende AI-risicoanalyse is toekomstig onderzoek onder menselijke regie. Het is geen geautomatiseerd wervingssysteem en het neemt geen arbeids- of operationele besluiten."
+    },
+    "data-separation": {
+      "question": "Hoe worden gegevens gescheiden tussen organisaties?",
+      "answer": "Via tenantbewuste gegevensgrenzen en toegang binnen de context. Gedeelde platformdiensten staan boven de organisatiescheiding. Dit is geen claim van volledige cryptografische isolatie die in elk scenario is gegarandeerd."
+    },
+    "rbac": {
+      "question": "Ondersteunt ISB rolgebaseerde toegang?",
+      "answer": "Ja. Fundamenten voor authenticatie en rolgebaseerde toegang bestaan, en gegevensverwerking is bedrijfsgebonden. Rapportagewerkstromen voor opdrachtgevers zijn in actieve ontwikkeling. Dit is geen claim dat elke rol productiegevalideerd is."
+    },
+    "audit": {
+      "question": "Hoe worden handelingen geaudit?",
+      "answer": "Fundamenten voor audit en gebeurtenissen bestaan voor kritieke handelingen. Onveranderlijke bewijsbewaring is in verkenning en wordt niet geclaimd als juridisch onveranderlijke opslag."
+    },
+    "iso": {
+      "question": "Is ISB gecertificeerd voor ISO 27001?",
+      "answer": "Nee. Gereedheid voor ISO 27001 is een toekomstige richting voor naleving. Er wordt op dit moment geen certificering geclaimd of toegezegd."
+    },
+    "pentest": {
+      "question": "Heeft ISB externe penetratietests afgerond?",
+      "answer": "Externe beveiligingstests maken deel uit van geplande validatie. Dit wordt op deze site niet gepresenteerd als een afgeronde claim."
+    },
+    "privacy": {
+      "question": "Hoe benadert ISB privacy?",
+      "answer": "Het product wordt ontworpen met Europese privacy-eisen in gedachten. Governance van privacybewaartermijnen en legal hold is in verkenning. Er wordt geen AVG-certificering geclaimd."
+    },
+    "backups": {
+      "question": "Hoe worden back-ups en herstel aangepakt?",
+      "answer": "Back-ups, herstelprocedures en hersteltests zijn geplande validatiepunten. Specifieke RPO/RTO-cijfers en back-upfrequenties worden niet gepubliceerd als geteste claims."
+    },
+    "disclosure": {
+      "question": "Waar kunnen beveiligingsproblemen worden gemeld?",
+      "answer": "Beveiligingsonderzoekers, opdrachtgevers en organisaties kunnen mogelijke problemen melden bij info@isbsecuritysolutions.nl. Er wordt geen afzonderlijk bugbountyprogramma of reactie-SLA geclaimd, buiten direct contact."
+    },
+    "saas": {
+      "question": "Is ISB een multi-tenant SaaS-platform?",
+      "answer": "Ja. ISB is ontworpen als multi-tenant SaaS-model met tenantbewuste gegevensgrenzen en gedeelde platformdiensten."
+    },
+    "api": {
+      "question": "Heeft ISB API-mogelijkheden?",
+      "answer": "Een integratie-outbox maakt deel uit van het technische fundament. Enterpriseconnectoren zijn gepland. Specifieke integraties met derden worden niet als beschikbaar geclaimd."
+    },
+    "integrations": {
+      "question": "Kan ISB integreren met andere systemen?",
+      "answer": "Enterpriseconnectoren en integraties met alarmproviders zijn gepland. Er bestaat een fundament voor een integratie-outbox. Er wordt geen overzicht van live integraties met derden geclaimd."
+    },
+    "offline-arch": {
+      "question": "Hoe past offline synchronisatie in de architectuur?",
+      "answer": "Geselecteerde offline rapportage- en surveillancewerkstromen maken deel uit van het technische fundament. Bredere offline synchronisatie wordt niet geclaimd, en niet elke module werkt offline."
+    },
+    "mobile-first": {
+      "question": "Is ISB mobile-first?",
+      "answer": "Geselecteerde mobiele en offline werkstromen zijn in actieve ontwikkeling. Native apps worden niet geclaimd."
+    },
+    "realtime-tech": {
+      "question": "Hoe benadert ISB realtime gegevens?",
+      "answer": "Er wordt geen latentie- of realtime serviceniveau geclaimd. Gesynchroniseerde operationele status wordt niet gepresenteerd als een gegarandeerde live dienst."
+    },
+    "modular": {
+      "question": "Gebruikt het platform modulaire architectuur?",
+      "answer": "Ja. Capaciteitsdomeinen gebruiken gedeelde fundamentdiensten (identiteit, bevoegdheden, audit, meldingen, gegevenscontext, API, opslag). Nieuwe modules zijn niet bedoeld om de kern opnieuw te moeten bouwen. Microservices worden niet geclaimd, tenzij dat de daadwerkelijke implementatiestijl is."
+    },
+    "request-demo": {
+      "question": "Hoe kan een organisatie een demonstratie aanvragen?",
+      "answer": "Gebruik het formulier Demo aanvragen op de website. Geef operationele context, zodat het gesprek zich kan richten op relevante omgevingen en de huidige platformvolwassenheid."
+    },
+    "pilot": {
+      "question": "Kan een organisatie een toekomstige pilot bespreken?",
+      "answer": "Ja. Gesprekken over een pilot zijn welkom. Acceptatie van een pilot is niet gegarandeerd; aansluiting, gereedheid en capaciteit bepalen of een pilot doorgaat."
+    },
+    "partners": {
+      "question": "Kan ISB samenwerken met strategische partners?",
+      "answer": "Gesprekken over technologische, sector- en strategische samenwerking kunnen worden gestart via Contact. Op deze site wordt geen formeel partnerprogramma geclaimd."
+    },
+    "who-contact": {
+      "question": "Wie kan contact opnemen met ISB?",
+      "answer": "Beveiligingsorganisaties die het platform beoordelen, pilotpartners, strategische belanghebbenden en partijen met algemene vragen over het bedrijf of het platform. Contact: info@isbsecuritysolutions.nl."
+    },
+    "dutch-only": {
+      "question": "Is ISB alleen bedoeld voor Nederlandse organisaties?",
+      "answer": "ISB is gevestigd in Tilburg, Nederland, met een eerste focus op de Europese beveiligingssector. Het is niet uitsluitend beperkt tot Nederlandse organisaties."
+    },
+    "international": {
+      "question": "Is internationale uitbreiding gepland?",
+      "answer": "Internationale schaalbaarheid maakt deel uit van de langetermijnrichting. De huidige focus blijft Europese beveiligingsoperaties. Internationale kantoren of marktaanwezigheid worden niet geclaimd."
+    }
+  }
+}

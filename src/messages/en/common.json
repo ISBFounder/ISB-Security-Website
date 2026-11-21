@@ -1,0 +1,35 @@
+{
+  "status": {
+    "foundation": "Foundation established",
+    "development": "Active development",
+    "discovery": "Discovery / architecture",
+    "planned": "Planned",
+    "future": "Future / research"
+  },
+  "statusShort": {
+    "foundation": "Foundation",
+    "development": "Active development",
+    "discovery": "Discovery / architecture",
+    "planned": "Planned",
+    "future": "Future / research"
+  },
+  "tryAgain": "Try again",
+  "returnHome": "Return Home",
+  "contactIsb": "Contact ISB",
+  "explorePlatform": "Explore Platform",
+  "errorEyebrow": "Error",
+  "errorTitle": "Something prevented this page from loading correctly.",
+  "errorBody": "You can try again, return to the homepage, or contact ISB if the problem continues.",
+  "notFoundEyebrow": "Error 404",
+  "notFoundMeta": "Page not found",
+  "notFoundTitle": "Page not found.",
+  "notFoundBody": "The requested page could not be found or may have moved.",
+  "helpfulLinks": "Helpful links",
+  "solutions": "Solutions",
+  "faq": "FAQ",
+  "requestDemo": "Request Demo",
+  "globalEyebrow": "Error",
+  "globalTitle": "Something went wrong.",
+  "globalBody": "The application could not recover from this error. You can try again or return home.",
+  "reference": "Reference"
+}

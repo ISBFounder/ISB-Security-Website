@@ -10,61 +10,20 @@ import {
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { NAV } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { NavigationLink } from "./NavigationLink";
-import { MegaMenuPanel } from "./MegaMenuPanel";
+import { MegaMenuPanel, type MegaItem } from "./MegaMenuPanel";
 
 type MenuId = "platform" | "solutions" | "company" | null;
 
-const MENUS: {
-  id: NonNullable<MenuId>;
-  label: string;
-  summary: string;
-  items: typeof NAV.platform | typeof NAV.solutions | typeof NAV.company;
-  featured?: { title: string; description: string; href: string };
-}[] = [
-  {
-    id: "platform",
-    label: "Platform",
-    summary:
-      "Architecture, capabilities and product direction for operational control.",
-    items: NAV.platform,
-    featured: {
-      title: "ISB Security Platform",
-      description: "Platform development active. Explore the operational model.",
-      href: "/platform",
-    },
-  },
-  {
-    id: "solutions",
-    label: "Solutions",
-    summary: "How the platform maps to professional security environments.",
-    items: NAV.solutions,
-    featured: {
-      title: "Sector fit",
-      description:
-        "Modular relevance across private, institutional and public-sector operations.",
-      href: "/solutions",
-    },
-  },
-  {
-    id: "company",
-    label: "Company",
-    summary: "About ISB, product direction and how to get in touch.",
-    items: NAV.company,
-    featured: {
-      title: "Product direction",
-      description:
-        "Roadmap horizons are now, next and later. No release date.",
-      href: "/roadmap",
-    },
-  },
-];
+const MENU_IDS = ["platform", "solutions", "company"] as const;
 
 export function DesktopNavigation() {
   const [open, setOpen] = useState<MenuId>(null);
   const pathname = usePathname();
+  const t = useTranslations("chrome");
   const navRef = useRef<HTMLElement>(null);
   const triggers = useRef<Partial<Record<NonNullable<MenuId>, HTMLButtonElement | null>>>({});
 
@@ -77,9 +36,9 @@ export function DesktopNavigation() {
   useEffect(() => {
     if (!open) return;
     function onPointer(e: MouseEvent) {
-      const t = e.target as Node;
-      const inNav = navRef.current?.contains(t);
-      const inPanel = (t as Element).closest?.("[data-mega-panel]");
+      const target = e.target as Node;
+      const inNav = navRef.current?.contains(target);
+      const inPanel = (target as Element).closest?.("[data-mega-panel]");
       if (!inNav && !inPanel) close();
     }
     document.addEventListener("mousedown", onPointer);
@@ -113,17 +72,26 @@ export function DesktopNavigation() {
     }
   }
 
+  function itemsFor(menu: (typeof MENU_IDS)[number]): MegaItem[] {
+    return NAV[menu].map((item) => ({
+      id: item.id,
+      href: item.href,
+      label: t(`nav.${menu}.${item.id}`),
+      description: t(`nav.${menu}.${item.id}Desc`),
+    }));
+  }
+
   return (
     <>
-      <nav ref={navRef} className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
-        {MENUS.map((menu) => {
-          const isOpen = open === menu.id;
-          const panelId = `mega-${menu.id}`;
+      <nav ref={navRef} className="hidden items-center gap-0.5 lg:flex" aria-label={t("primaryNav")}>
+        {MENU_IDS.map((id) => {
+          const isOpen = open === id;
+          const panelId = `mega-${id}`;
           return (
             <button
-              key={menu.id}
+              key={id}
               ref={(el) => {
-                triggers.current[menu.id] = el;
+                triggers.current[id] = el;
               }}
               type="button"
               className={cn(
@@ -133,10 +101,10 @@ export function DesktopNavigation() {
               aria-expanded={isOpen}
               aria-haspopup="true"
               aria-controls={panelId}
-              onClick={() => toggle(menu.id)}
-              onKeyDown={(e) => onTriggerKey(e, menu.id)}
+              onClick={() => toggle(id)}
+              onKeyDown={(e) => onTriggerKey(e, id)}
             >
-              {menu.label}
+              {t(`nav.${id}.label`)}
               <ChevronDown
                 className={cn(
                   "h-3.5 w-3.5 opacity-50 transition-transform duration-150",
@@ -149,23 +117,27 @@ export function DesktopNavigation() {
         })}
 
         {NAV.direct.map((item) => (
-          <NavigationLink key={item.href} href={item.href}>
-            {item.label}
+          <NavigationLink key={item.id} href={item.href}>
+            {t(`nav.direct.${item.id}`)}
           </NavigationLink>
         ))}
       </nav>
 
       <AnimatePresence>
-        {MENUS.map(
-          (menu) =>
-            open === menu.id && (
-              <div key={menu.id} data-mega-panel>
+        {MENU_IDS.map(
+          (id) =>
+            open === id && (
+              <div key={id} data-mega-panel>
                 <MegaMenuPanel
-                  id={`mega-${menu.id}`}
-                  title={menu.label}
-                  summary={menu.summary}
-                  items={menu.items}
-                  featured={menu.featured}
+                  id={`mega-${id}`}
+                  title={t(`nav.${id}.label`)}
+                  summary={t(`nav.${id}.summary`)}
+                  items={itemsFor(id)}
+                  featured={{
+                    title: t(`nav.${id}.featuredTitle`),
+                    description: t(`nav.${id}.featuredBody`),
+                    href: id === "company" ? "/roadmap" : `/${id === "platform" ? "platform" : "solutions"}`,
+                  }}
                   onNavigate={close}
                 />
               </div>

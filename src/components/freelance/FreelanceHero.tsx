@@ -1,31 +1,28 @@
 import { ArrowRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/Button";
 
-export function FreelanceHero() {
+export async function FreelanceHero() {
+  const t = await getTranslations("freelance");
+
   return (
     <section className="section !pb-10">
       <div className="container-site">
         <div className="max-w-3xl">
-          <p className="label">Freelance security</p>
-          <h1 className="heading-xl mt-3">Freelance Security Professional</h1>
-          <p className="body-lg mt-6 max-w-2xl">
-            Professional freelance security services for hospitality, events and
-            operational security assignments through established security
-            organizations.
-          </p>
+          <p className="label">{t("heroEyebrow")}</p>
+          <h1 className="heading-xl mt-3">{t("heroTitle")}</h1>
+          <p className="body-lg mt-6 max-w-2xl">{t("heroIntro")}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="/contact?intent=general">
-              Discuss Collaboration
+              {t("discussCollaboration")}
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Button>
             <Button href="/contact" variant="secondary">
-              Contact ISB
+              {t("contactIsb")}
             </Button>
           </div>
           <p className="mt-6 max-w-2xl text-[13px] text-ink-muted">
-            This page describes independent freelance security work performed
-            personally. It is separate from ISB Security Platform, the software
-            product developed by ISB Security Solutions.
+            {t("heroNote")}
           </p>
         </div>
       </div>

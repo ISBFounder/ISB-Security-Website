@@ -1,56 +1,40 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
-const SOURCES = [
-  { id: "paper", label: "Paper reports", tag: "MANUAL" },
-  { id: "excel", label: "Spreadsheet planning", tag: "LOCAL" },
-  { id: "messaging", label: "Messaging", tag: "EXTERNAL" },
-  { id: "email", label: "Email", tag: "EXTERNAL" },
-  { id: "portals", label: "Customer portals", tag: "EXTERNAL" },
-  { id: "folders", label: "Shared folders", tag: "LOCAL" },
-  { id: "handovers", label: "Manual handovers", tag: "MANUAL" },
-  { id: "phone", label: "Phone calls", tag: "MANUAL" },
-  { id: "incident", label: "Separate incident systems", tag: "SOURCE" },
-  { id: "reentry", label: "Repeated data entry", tag: "MANUAL" },
+const SOURCE_IDS = [
+  "paper",
+  "excel",
+  "messaging",
+  "email",
+  "portals",
+  "folders",
+  "handovers",
+  "phone",
+  "incident",
+  "reentry",
 ] as const;
 
-const FRICTIONS = [
-  { id: "duplicate", label: "Duplicate entry" },
-  { id: "context", label: "Missing context" },
-  { id: "delay", label: "Delayed escalation" },
-  { id: "version", label: "Version conflicts" },
-  { id: "coordination", label: "Manual coordination" },
-  { id: "traceability", label: "Weak traceability" },
-  { id: "admin", label: "Repeated administration" },
-  { id: "audit", label: "Fragmented audit trail" },
+const FRICTION_IDS = [
+  "duplicate",
+  "context",
+  "delay",
+  "version",
+  "coordination",
+  "traceability",
+  "admin",
+  "audit",
 ] as const;
 
-const DOMAINS = [
-  { id: "reporting", label: "Reporting" },
-  { id: "objects", label: "Objects" },
-  { id: "people", label: "People" },
-  { id: "patrols", label: "Patrols" },
-  { id: "compliance", label: "Compliance" },
-  { id: "intelligence", label: "Intelligence" },
-] as const;
-
-const PLATFORM_CAPS = [
-  "Role-based access",
-  "Audit and events",
-  "Company-scoped data",
-  "Selected offline workflows",
-  "AI assistance",
-] as const;
-
-const OUTPUTS = [
-  "Management oversight",
-  "Supervisor review",
-  "Client visibility",
-  "Operational records",
-  "Audit events",
-  "Incident follow-up",
+const DOMAIN_IDS = [
+  "reporting",
+  "objects",
+  "people",
+  "patrols",
+  "compliance",
+  "intelligence",
 ] as const;
 
 /** Source → friction points → platform domains */
@@ -137,7 +121,10 @@ function FlowConnector({ direction = "h", active }: { direction?: "h" | "v"; act
 }
 
 export function FragmentationArchitecture() {
+  const t = useTranslations("home");
   const [activeSource, setActiveSource] = useState<string | null>(null);
+  const caps = t.raw("frag.caps") as string[];
+  const outputs = t.raw("frag.outputs") as string[];
 
   const mapping = activeSource ? MAPPINGS[activeSource] : null;
   const activeFriction = new Set(mapping?.friction ?? []);
@@ -147,47 +134,29 @@ export function FragmentationArchitecture() {
   const deactivate = useCallback(() => setActiveSource(null), []);
 
   return (
-    <div
-      role="region"
-      aria-label="Architecture diagram: fragmented operational sources, friction layer, and ISB unified platform"
-    >
-      {/* Non-visual summary */}
-      <p className="sr-only">
-        Operational information in security organizations is commonly distributed
-        across paper reports, spreadsheets, messaging, email, customer portals,
-        shared folders and manual handovers. These handoffs create operational
-        friction including duplicate entry, missing context, delayed escalation,
-        version conflicts and weak traceability. ISB Security Platform provides a
-        unified operational layer for reporting, objects, people, patrols,
-        compliance and intelligence, producing controlled outputs such as
-        management oversight, supervisor review, client visibility and compliance
-        evidence.
-      </p>
+    <div role="region" aria-label={t("frag.aria")}>
+      <p className="sr-only">{t("frag.summary")}</p>
 
-      {/* Desktop: 3-zone LTR · Mobile: stacked TTB */}
       <div className="grid items-stretch gap-0 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1.1fr)_auto_minmax(0,1.2fr)]">
-        {/* ── LEFT: Fragmented sources ── */}
         <div className="border border-border bg-surface/15 p-4 md:p-5">
           <div className="mb-1 flex items-baseline justify-between gap-2">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-secondary">
-              Today
+              {t("frag.today")}
             </p>
             <p className="font-mono text-[9px] uppercase tracking-wide text-ink-faint">
-              Commonly distributed
+              {t("frag.distributed")}
             </p>
           </div>
-          <p className="mb-4 text-[13px] font-medium text-ink">
-            Fragmented operational inputs
-          </p>
+          <p className="mb-4 text-[13px] font-medium text-ink">{t("frag.inputs")}</p>
           <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2 lg:grid-cols-1">
-            {SOURCES.map((s) => (
+            {SOURCE_IDS.map((id) => (
               <SourceNode
-                key={s.id}
-                id={s.id}
-                label={s.label}
-                tag={s.tag}
-                active={activeSource === s.id}
-                dimmed={activeSource !== null && activeSource !== s.id}
+                key={id}
+                id={id}
+                label={t(`frag.sources.${id}.label`)}
+                tag={t(`frag.sources.${id}.tag`)}
+                active={activeSource === id}
+                dimmed={activeSource !== null && activeSource !== id}
                 onActivate={activate}
                 onDeactivate={deactivate}
               />
@@ -200,43 +169,39 @@ export function FragmentationArchitecture() {
           <FlowConnector direction="v" />
         </div>
 
-        {/* ── CENTER: Friction layer ── */}
         <div className="border border-border border-t-0 bg-surface/30 p-4 md:p-5 lg:border-t">
           <div className="mb-1 flex items-baseline justify-between gap-2">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-secondary">
-              Friction layer
+              {t("frag.frictionKicker")}
             </p>
             <p className="font-mono text-[9px] uppercase tracking-wide text-ink-faint">
-              Handoff · Delay
+              {t("frag.handoff")}
             </p>
           </div>
-          <p className="mb-3 text-[13px] font-medium text-ink">
-            Operational friction
-          </p>
+          <p className="mb-3 text-[13px] font-medium text-ink">{t("frag.frictionTitle")}</p>
 
-          {/* Architectural bottleneck indicator */}
           <div className="mb-4 border border-border-subtle bg-bg/50 px-3 py-2.5 font-mono text-[10px] leading-relaxed text-ink-muted">
-            <p>INPUT STREAMS</p>
-            <p className="text-ink-faint">↓ · multiple owners · multiple versions</p>
+            <p>{t("frag.inputStreams")}</p>
+            <p className="text-ink-faint">{t("frag.owners")}</p>
             <p
               className={cn(
                 "transition-colors duration-150",
                 activeSource ? "text-status-warning" : "text-ink-secondary"
               )}
             >
-              FRICTION LAYER
+              {t("frag.frictionLayer")}
             </p>
-            <p className="text-ink-faint">↓ · information loss · delayed escalation</p>
-            <p>OUTPUT DELAY</p>
+            <p className="text-ink-faint">{t("frag.loss")}</p>
+            <p>{t("frag.outputDelay")}</p>
           </div>
 
           <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2 lg:grid-cols-1">
-            {FRICTIONS.map((f) => {
-              const on = activeFriction.has(f.id);
+            {FRICTION_IDS.map((id) => {
+              const on = activeFriction.has(id);
               const dimmed = activeSource !== null && !on;
               return (
                 <div
-                  key={f.id}
+                  key={id}
                   className={cn(
                     "border px-2.5 py-2 text-[12px] transition-colors duration-150",
                     on
@@ -246,7 +211,7 @@ export function FragmentationArchitecture() {
                         : "border-border-subtle bg-bg/40 text-ink-muted"
                   )}
                 >
-                  {f.label}
+                  {t(`frag.frictions.${id}`)}
                 </div>
               );
             })}
@@ -258,7 +223,6 @@ export function FragmentationArchitecture() {
           <FlowConnector direction="v" />
         </div>
 
-        {/* ── RIGHT: ISB platform + outputs ── */}
         <div className="flex flex-col gap-0 border border-border border-t-0 lg:border-t">
           <div
             className={cn(
@@ -268,24 +232,21 @@ export function FragmentationArchitecture() {
           >
             <div className="mb-1 flex items-baseline justify-between gap-2">
               <p className="font-mono text-[10px] font-semibold uppercase tracking-wider text-gold">
-                ISB Security Platform
+                {t("frag.platform")}
               </p>
               <p className="font-mono text-[9px] uppercase tracking-wide text-ink-faint">
-                Unified layer
+                {t("frag.unifiedKicker")}
               </p>
             </div>
-            <p className="mb-4 text-[13px] font-medium text-ink">
-              Unified operational layer
-            </p>
+            <p className="mb-4 text-[13px] font-medium text-ink">{t("frag.unifiedTitle")}</p>
 
-            {/* Domains — single platform block */}
             <div className="mb-4 grid grid-cols-2 gap-1 border border-border-subtle bg-bg/40 p-1.5 sm:grid-cols-3">
-              {DOMAINS.map((d) => {
-                const on = activeDomains.has(d.id);
+              {DOMAIN_IDS.map((id) => {
+                const on = activeDomains.has(id);
                 const dimmed = activeSource !== null && !on;
                 return (
                   <div
-                    key={d.id}
+                    key={id}
                     className={cn(
                       "px-2 py-2 text-center text-[11px] font-medium transition-colors duration-150",
                       on
@@ -295,17 +256,17 @@ export function FragmentationArchitecture() {
                           : "text-ink-secondary"
                     )}
                   >
-                    {d.label}
+                    {t(`frag.domains.${id}`)}
                   </div>
                 );
               })}
             </div>
 
             <p className="mb-2 font-mono text-[9px] uppercase tracking-wide text-ink-faint">
-              Shared capabilities
+              {t("frag.shared")}
             </p>
             <div className="flex flex-wrap gap-1">
-              {PLATFORM_CAPS.map((c) => (
+              {caps.map((c) => (
                 <span
                   key={c}
                   className="border border-border-subtle bg-bg/50 px-2 py-1 font-mono text-[10px] text-ink-muted"
@@ -316,13 +277,12 @@ export function FragmentationArchitecture() {
             </div>
           </div>
 
-          {/* Controlled outputs */}
           <div className="bg-surface/15 p-4 md:p-5">
             <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-secondary">
-              Controlled outputs
+              {t("frag.outputsTitle")}
             </p>
             <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2 lg:grid-cols-1">
-              {OUTPUTS.map((o) => (
+              {outputs.map((o) => (
                 <div
                   key={o}
                   className="border border-border-subtle bg-bg/40 px-2.5 py-2 text-[12px] text-ink-muted"
@@ -335,10 +295,7 @@ export function FragmentationArchitecture() {
         </div>
       </div>
 
-      {/* Interaction hint */}
-      <p className="mt-4 text-center font-mono text-[10px] text-ink-faint">
-        Focus or hover a source to trace friction and platform domains
-      </p>
+      <p className="mt-4 text-center font-mono text-[10px] text-ink-faint">{t("frag.hint")}</p>
     </div>
   );
 }

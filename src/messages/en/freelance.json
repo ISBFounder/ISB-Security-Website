@@ -1,0 +1,129 @@
+{
+  "metaTitle": "Freelance Security Professional",
+  "metaDescription": "Freelance security services for hospitality, events and operational assignments through established security organizations.",
+  "breadcrumbHome": "Home",
+  "breadcrumb": "Freelance Security",
+  "heroEyebrow": "Freelance security",
+  "heroTitle": "Freelance Security Professional",
+  "heroIntro": "Professional freelance security services for hospitality, events and operational security assignments through established security organizations.",
+  "discussCollaboration": "Discuss Collaboration",
+  "contactIsb": "Contact ISB",
+  "heroNote": "This page describes independent freelance security work performed personally. It is separate from ISB Security Platform, the software product developed by ISB Security Solutions.",
+  "profileEyebrow": "Professional profile",
+  "profileTitle": "Operational work alongside platform development.",
+  "profileP1": "The founder of ISB Security Solutions works as an independent freelance security officer while developing ISB Security Platform. Assignments are carried out personally for and through established security companies — not as a staffing agency, recruitment service or personnel supplier under the ISB brand.",
+  "profileP2": "ISB Security Solutions remains a software company. Freelance security work is a separate professional activity: project-based operational support integrated into the commissioning organization’s structure, procedures and reporting lines.",
+  "profileP3": "Work is approached with a professional operational mindset: clear communication with supervisors and colleagues, structured reporting, and respect for site-specific instructions and escalation paths. A technology-oriented method supports accurate digital reporting and efficient use of tools already used by the commissioning security company.",
+  "specializationsEyebrow": "Freelance specializations",
+  "specializationsTitle": "Primary focus: hospitality and events.",
+  "specializationsDescription": "Related operational environments may be relevant depending on assignment requirements and the commissioning organization.",
+  "primaryFocus": "Primary focus",
+  "primary": {
+    "hospitality": {
+      "title": "Hospitality Security",
+      "text": "Guest-facing environments where presence, communication and calm incident handling matter as much as procedure. Typical work includes access control, guest-facing security, conflict de-escalation, venue rules, coordination with venue management and accurate incident reporting — within the authority of a security officer and the commissioning company’s instructions."
+    },
+    "event": {
+      "title": "Event Security",
+      "text": "Temporary, high-density operations with clear briefing, zone awareness and structured incident capture. Typical work includes event access control, crowd observation, incident response, team coordination, visitor communication, escalation and reporting — working within operational instructions set by the event security organization. Event management responsibility is not claimed."
+    }
+  },
+  "related": {
+    "object": {
+      "title": "Object Security",
+      "text": "Fixed-site assignments requiring object knowledge, instruction adherence, patrol discipline and reliable shift handover."
+    },
+    "reception": {
+      "title": "Reception & Access Control",
+      "text": "Front-of-house and access points where identification checks, visitor handling and clear communication form part of the operational role."
+    },
+    "municipal": {
+      "title": "Municipal / public environments",
+      "text": "Public-facing locations where professionalism, documentation and escalation discipline are essential."
+    },
+    "support": {
+      "title": "Operational Support",
+      "text": "Temporary reinforcement for peaks, absences or project periods — integrated into the commissioning company’s existing procedures and reporting lines."
+    }
+  },
+  "styleEyebrow": "Professional working style",
+  "styleTitle": "What commissioning companies can expect.",
+  "style": {
+    "professionalism": {
+      "title": "Professionalism",
+      "text": "Assignments are approached with clear briefing, role clarity and respect for the commissioning company’s procedures."
+    },
+    "reliability": {
+      "title": "Reliability",
+      "text": "Agreed shifts and communication channels are treated as operational commitments."
+    },
+    "communication": {
+      "title": "Clear communication",
+      "text": "Supervisors, colleagues and venue contacts receive timely, factual updates without unnecessary noise."
+    },
+    "reporting": {
+      "title": "Strong reporting",
+      "text": "Observations and incidents are recorded in a structured, usable form for supervisors and clients of the security company."
+    },
+    "awareness": {
+      "title": "Operational awareness",
+      "text": "Work stays grounded in site context, risk notes and escalation paths defined by the commissioning organization."
+    },
+    "development": {
+      "title": "Continuous development",
+      "text": "Professional standards and operational knowledge are maintained alongside platform development work."
+    },
+    "technology": {
+      "title": "Technology mindset",
+      "text": "Comfortable with digital workflows and operational tools used by modern security organizations."
+    }
+  },
+  "collaborationEyebrow": "How collaboration works",
+  "collaborationTitle": "Assignments through security companies.",
+  "collaborationBody": "Freelance assignments are performed personally. They are accepted through established security companies or operational partners. The independent professional works under the commissioning organization’s contracts, procedures and client relationships.",
+  "collaborationItems": {
+    "project": "Project-based or shift-based collaboration where appropriate",
+    "scope": "Scope, planning, tariff and assignment requirements agreed with the contracting organization",
+    "integration": "Integration into existing briefings, reporting and escalation lines",
+    "communication": "Professional communication with planners and supervisors"
+  },
+  "collaborationNote": "This page is not a recruitment or staffing service. ISB Security Solutions does not supply additional security personnel. No employment offers are made through this page.",
+  "platformEyebrow": "Relationship with ISB Security Platform",
+  "platformTitle": "Operational experience informs product thinking.",
+  "platformInsight": "Practical security work provides direct insight into reporting workflows, object instructions, handovers, incidents, personnel workflows, field usability, communication and operational friction. That insight contributes to the long-term design of <platform>ISB Security Platform</platform>.",
+  "platformSeparation": "Operational experience informs product thinking at a workflow level. Client-specific and confidential operational information remains separate and is not transferred into software development.",
+  "platformDistinct": "The two activities remain distinct: freelance assignments are operational services delivered through security companies; the platform is software under active development by ISB Security Solutions.",
+  "diagramTitle": "Two activities · one professional background",
+  "diagramCompany": "ISB Security Solutions",
+  "diagramProduct": "└ ISB Security Platform (software product)",
+  "diagramFreelance": "Independent freelance security work",
+  "diagramAssignments": "└ Assignments via established security companies",
+  "qualificationsEyebrow": "Qualifications",
+  "qualificationsTitle": "Formal credentials held.",
+  "qualificationsDescription": "No additional certifications beyond those listed are claimed.",
+  "qualifications": {
+    "svpb": {
+      "code": "SVPB",
+      "name": "Security Officer",
+      "note": "Dutch private security officer qualification"
+    },
+    "bhv": {
+      "code": "BHV",
+      "name": "Emergency response",
+      "note": "Company emergency response certified"
+    },
+    "vca": {
+      "code": "VCA",
+      "name": "VOL",
+      "note": "Safety for operational supervisors"
+    }
+  },
+  "qualificationsNote": "Where required for assignment, a valid Dutch private security identification/pass is used in accordance with applicable rules. No ND number, firearms training, police qualification or ISO certification is claimed.",
+  "availabilityEyebrow": "Availability",
+  "availabilityTitle": "Discussed per collaboration.",
+  "availabilityBody": "Availability depends on existing commitments, assignment requirements and location. Capacity is not guaranteed in advance, and no response time or acceptance SLA is promised. Security companies interested in collaboration can make contact to discuss fit and timing.",
+  "discussAvailability": "Discuss Availability",
+  "ctaTitle": "Discuss a freelance security assignment.",
+  "ctaBody": "Security companies and operational partners can contact ISB Security Solutions to discuss suitable freelance assignments in hospitality, events and related security environments.",
+  "ctaDemo": "For platform demonstrations, use <demo>Request Demo</demo>."
+}

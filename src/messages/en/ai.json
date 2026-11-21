@@ -1,0 +1,205 @@
+{
+  "metaTitle": "AI-Assisted Security Operations",
+  "metaDescription": "AI-assisted reporting for security operations, under human review and supervisor approval. No autonomous decisions.",
+  "metaOgDescription": "AI-assisted reporting for security operations — built on structured operational data and secure workflows under human review. No autonomous decisions.",
+  "metaTwitterDescription": "AI-assisted reporting for security operations — structured drafts under human review. No autonomous decisions.",
+  "breadcrumbHome": "Home",
+  "breadcrumb": "AI",
+  "continuityPipeline": "Homepage AI pipeline",
+  "continuityWorkflow": "Full AI workflow",
+  "eyebrow": "AI",
+  "title": "AI that assists the operation. Not the operator.",
+  "intro": "AI capabilities are built on top of structured operational data, secure workflows and validated platform context. ISB AI is designed to reduce administrative friction and improve report structure while keeping responsibility with authorized personnel — not autonomous decisions.",
+  "badges": [
+    "Active development",
+    "Human review required",
+    "Planned analytics",
+    "Future / research"
+  ],
+  "principleEyebrow": "AI operating principle",
+  "principleTitle": "Assistance inside a controlled workflow.",
+  "principleBody": "The operational sequence is field notes, structured extraction, an AI draft, officer review, supervisor approval, then a locked record. The explorer below is the working model. AI assists with structure only.",
+  "assistantEyebrow": "Report assistant",
+  "assistantTitle": "Specific Report assistant · built on structured operational data.",
+  "assistantDescription": "AI-assisted report drafting is in active development. Drafts require human review. AI does not make autonomous operational decisions.",
+  "controlEyebrow": "Human control",
+  "controlTitle": "AI drafts. Humans decide.",
+  "controlItems": [
+    {
+      "title": "Officer review",
+      "body": "The officer reviews and corrects AI-assisted structure before submission."
+    },
+    {
+      "title": "Supervisor approval",
+      "body": "Final operational acceptance remains with authorized supervisors."
+    },
+    {
+      "title": "No autonomous decisions",
+      "body": "AI does not approve reports, classify incidents autonomously or replace escalation procedures."
+    },
+    {
+      "title": "Traceable activity",
+      "body": "AI assistance is intended to remain visible within the operational record and review path."
+    }
+  ],
+  "maturityEyebrow": "Capability maturity",
+  "maturityTitle": "Active development through future research.",
+  "maturityItems": [
+    {
+      "stage": "Active development",
+      "items": "AI-assisted report drafting · human review required · no autonomous decisions"
+    },
+    {
+      "stage": "Planned",
+      "items": "Connected analytics · not an autonomous decision system"
+    },
+    {
+      "stage": "Future / research",
+      "items": "Predictive AI risk analysis · wearable integrations · not live decision systems"
+    }
+  ],
+  "ctaTitle": "Evaluate how AI-assisted reporting could fit your operational workflow.",
+  "requestDemo": "Request Demo",
+  "exploreSecurity": "Explore Security",
+  "explorePlatform": "Explore Platform",
+  "beforeAfter": {
+    "before": "Unstructured field input",
+    "after": "Structured, reviewable record",
+    "note": "“22:14 north patrol. gate 3 open. secured gate. camera 4 partly blocked by vegetation. supervisor informed.”",
+    "time": "Time",
+    "timeValue": "22:14",
+    "location": "Location",
+    "locationValue": "NL-OBJ-042 · Gate 3",
+    "action": "Action",
+    "actionValue": "Gate secured · supervisor informed",
+    "state": "State",
+    "stateValue": "Awaiting human review",
+    "footer": "AI reduces administrative friction. It does not independently validate facts."
+  },
+  "workflow": {
+    "lead": "AI supports the report. Not the decision.",
+    "aria": "AI workflow steps",
+    "previous": "Previous",
+    "next": "Next",
+    "fields": {
+      "input": "Input",
+      "actor": "Actor",
+      "action": "Action",
+      "output": "Output",
+      "authority": "Authority"
+    },
+    "actors": {
+      "officer": "Officer",
+      "ai": "AI",
+      "supervisor": "Supervisor",
+      "system": "System"
+    },
+    "steps": {
+      "observation": {
+        "label": "Officer observation",
+        "input": "Mobile field note",
+        "action": "Capture raw observation",
+        "output": "Unstructured note",
+        "authority": "Officer"
+      },
+      "extraction": {
+        "label": "Structured extraction",
+        "input": "Field note",
+        "action": "Suggest fields",
+        "output": "Candidate structure",
+        "authority": "Suggestion only"
+      },
+      "draft": {
+        "label": "AI-assisted draft",
+        "input": "Extracted fields",
+        "action": "Propose wording",
+        "output": "Draft report",
+        "authority": "Not a decision"
+      },
+      "review": {
+        "label": "Officer review",
+        "input": "AI draft",
+        "action": "Correct and accept",
+        "output": "Officer version",
+        "authority": "Officer"
+      },
+      "approval": {
+        "label": "Supervisor approval",
+        "input": "Officer version",
+        "action": "Approve or return",
+        "output": "Authorized record",
+        "authority": "Supervisor"
+      },
+      "locked": {
+        "label": "Locked / auditable record",
+        "input": "Approved version",
+        "action": "Retain history",
+        "output": "Operational record",
+        "authority": "Not immutable custody"
+      }
+    }
+  },
+  "lifecycle": {
+    "aria": "AI report lifecycle",
+    "stages": {
+      "input": { "label": "Input", "index": "01" },
+      "assist": { "label": "Assist", "index": "02" },
+      "review": { "label": "Review", "index": "03" },
+      "approve": { "label": "Approve", "index": "04" },
+      "audit": { "label": "Audit", "index": "05" }
+    },
+    "input": {
+      "officer": "Officer · K. Jansen",
+      "object": "Object · NL-OBJ-042",
+      "time": "Time · 22:14",
+      "fieldNotes": "Field notes",
+      "note": "“22:14 north patrol. gate 3 open. secured gate. camera 4 partly blocked by vegetation. supervisor informed.”",
+      "demo": "Illustrative demonstration data"
+    },
+    "assist": {
+      "lead": "Suggested extraction · requires review",
+      "rows": [
+        { "k": "Time", "v": "22:14" },
+        { "k": "Location", "v": "North perimeter · Gate 3" },
+        { "k": "Observation", "v": "Gate found unsecured" },
+        { "k": "Action", "v": "Gate secured on location" },
+        { "k": "Secondary", "v": "Camera 4 partially obstructed" },
+        { "k": "Escalation", "v": "Object supervisor informed" }
+      ],
+      "completeness": "Completeness · ",
+      "identified": "6 / 7 identified",
+      "missing": "Missing · Follow-up owner",
+      "draft": "At 22:14 hours, during a scheduled patrol of the north perimeter of object NL-OBJ-042, Gate 3 was found unsecured. The gate was secured on location. Camera 4 was also observed to have a partially obstructed field of view due to vegetation. The object supervisor was informed for follow-up.",
+      "badge": "AI-generated draft · not final"
+    },
+    "review": {
+      "lead": "… The object supervisor was informed for follow-up.",
+      "added": "Follow-up assigned to on-call supervisor.",
+      "warnings": [
+        "Follow-up owner not specified",
+        "No photo attached",
+        "Object instruction reference optional"
+      ],
+      "status": "Reviewed by officer · Pending supervisor review"
+    },
+    "approve": {
+      "version": "v2 · Officer correction",
+      "versionBody": "Follow-up owner added · ready where workflow requires approval.",
+      "supervisor": "Supervisor",
+      "comment": "Comment: “Clarify follow-up responsibility.”",
+      "revision": "Revision requested → Revised → Approved",
+      "approved": "Supervisor approved · 22:24 · authorized human decision"
+    },
+    "audit": {
+      "lead": "AI involvement can be recorded as part of workflow history.",
+      "events": [
+        "22:16 · AI draft generated",
+        "22:19 · Officer edited draft",
+        "22:19 · Missing-context warning shown",
+        "22:21 · Supervisor requested revision",
+        "22:24 · Final report approved"
+      ],
+      "footer": "Traceable workflow history · not claimed as full production audit coverage or immutable storage"
+    }
+  }
+}

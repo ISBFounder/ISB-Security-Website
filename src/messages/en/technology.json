@@ -1,0 +1,105 @@
+{
+  "metaTitle": "Technology Architecture",
+  "metaDescription": "Technical architecture of the ISB Security Platform in active development — company-scoped data, shared services and tenant-aware boundaries.",
+  "breadcrumbHome": "Home",
+  "breadcrumbCurrent": "Technology",
+  "continuity": {
+    "home": "Home",
+    "platform": "Platform",
+    "technology": "Technology",
+    "security": "Security"
+  },
+  "eyebrow": "Technology",
+  "title": "Technology designed around operational continuity.",
+  "intro": "ISB is one platform in active development, with shared services rather than separate applications. Selected offline reporting and patrol workflows are part of the technical foundation. Not every module works offline. Enterprise connectors remain planned.",
+  "engineSection": {
+    "eyebrow": "Shared engine",
+    "title": "Experience, domains, services and foundation.",
+    "description": "Many operational surfaces. One engine underneath. Domains do not recreate identity, audit or storage."
+  },
+  "architectureSection": {
+    "eyebrow": "High-level architecture",
+    "title": "Clients, platform services, data and infrastructure.",
+    "description": "Three layers. Clear boundaries. Shared services above tenant-aware data."
+  },
+  "trustNote": "Trust architecture — identity, roles, tenant boundaries and audit — continues on Security.",
+  "trustLink": "Explore Security & Trust",
+  "stack": {
+    "chain": "Experience depends on domain · domain depends on services · services rest on foundation",
+    "footnote": "Many domains. One engine. Domains do not recreate the stack beneath them.",
+    "layers": {
+      "experience": {
+        "title": "Experience layer",
+        "purpose": "Operational workspaces officers and supervisors actually use.",
+        "items": ["Command", "Reporting", "Objects", "Personnel", "Mobile field notes"]
+      },
+      "domain": {
+        "title": "Domain layer",
+        "purpose": "Operational domains over one shared context — not separate products.",
+        "items": ["Operations", "Reporting", "People", "Objects", "Compliance", "Intelligence"]
+      },
+      "services": {
+        "title": "Platform services",
+        "purpose": "Shared services every domain inherits.",
+        "items": [
+          "Identity",
+          "Authorization",
+          "Audit",
+          "Notifications",
+          "Integration outbox",
+          "Selected offline workflows"
+        ]
+      },
+      "foundation": {
+        "title": "Data / security foundation",
+        "purpose": "Tenant isolation, controlled access and integrity concepts.",
+        "items": [
+          "Tenant-aware boundaries",
+          "Row-level access direction",
+          "Environment separation",
+          "Bounded billing and payroll data"
+        ]
+      }
+    }
+  },
+  "layers": {
+    "aria": "Architecture layers",
+    "clients": {
+      "label": "Client experience",
+      "detail": "Interfaces for officers, supervisors and administrators. Client-facing reporting is in active development. Interface layer only — business logic lives in platform services.",
+      "items": [
+        "Web application",
+        "Mobile interfaces",
+        "Client-facing reporting workflows",
+        "Administrative interfaces"
+      ]
+    },
+    "platform": {
+      "label": "Platform services",
+      "detail": "Shared operational services consumed by every domain. Permissions and tenant context apply before data access.",
+      "items": [
+        "Authentication foundations",
+        "Role and permission layer",
+        "Reporting services",
+        "Object services",
+        "Personnel services",
+        "Notification services",
+        "Audit services",
+        "AI assistance",
+        "API layer"
+      ]
+    },
+    "data": {
+      "label": "Data & infrastructure",
+      "detail": "Operational data and infrastructure controls. Tenant and role context constrain what each client and service may read or write.",
+      "items": [
+        "Company-scoped data",
+        "Audit and events",
+        "Integration outbox",
+        "Selected offline reporting and patrol workflows",
+        "Environment separation",
+        "Logging / observability foundations"
+      ]
+    }
+  }
+}

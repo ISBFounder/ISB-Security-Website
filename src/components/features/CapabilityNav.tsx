@@ -1,19 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 const CATS = [
-  { id: "reporting", label: "Reporting" },
-  { id: "organizations", label: "Organizations" },
-  { id: "objects", label: "Objects" },
-  { id: "personnel", label: "Personnel" },
-  { id: "operations", label: "Operations" },
-  { id: "security", label: "Security" },
-  { id: "intelligence", label: "Intelligence" },
+  { id: "reporting", labelKey: "nav.reporting" },
+  { id: "organizations", labelKey: "nav.organizations" },
+  { id: "objects", labelKey: "nav.objects" },
+  { id: "personnel", labelKey: "nav.personnel" },
+  { id: "operations", labelKey: "nav.operations" },
+  { id: "security", labelKey: "nav.security" },
+  { id: "intelligence", labelKey: "nav.intelligence" },
 ] as const;
 
 export function CapabilityNav() {
+  const t = useTranslations("features");
   const [active, setActive] = useState("reporting");
 
   useEffect(() => {
@@ -35,7 +37,7 @@ export function CapabilityNav() {
 
   return (
     <nav
-      aria-label="Capability categories"
+      aria-label={t("navAria")}
       className="sticky top-16 z-20 -mx-5 border-b border-border bg-bg/95 px-5 backdrop-blur-sm sm:-mx-6 sm:px-6 lg:top-16"
     >
       <div className="container-site flex gap-0 overflow-x-auto">
@@ -51,7 +53,7 @@ export function CapabilityNav() {
                 : "border-transparent text-ink-muted hover:text-ink-secondary"
             )}
           >
-            {c.label}
+            {t(c.labelKey)}
           </a>
         ))}
       </div>

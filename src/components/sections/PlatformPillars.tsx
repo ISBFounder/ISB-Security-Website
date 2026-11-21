@@ -7,6 +7,7 @@ import {
   type KeyboardEvent as RKEvent,
 } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { osPanelTransition } from "@/lib/motion";
 
@@ -18,191 +19,42 @@ type PillarId =
   | "compliance"
   | "intelligence";
 
-type Pillar = {
-  id: PillarId;
-  index: string;
-  title: string;
-  summary: string;
-  capabilities: string[];
-  workflow: string[];
-  connected: PillarId[];
-  outcome: string;
-};
-
-const PILLARS: Pillar[] = [
-  {
-    id: "operations",
-    index: "01",
-    title: "Operations",
-    summary:
-      "Coordinate shifts, patrols, tasks and escalations within a shared operational context — not as isolated messages or spreadsheets.",
-    capabilities: [
-      "Shift context",
-      "Patrol workflows",
-      "Tasks & open actions",
-      "Notifications",
-      "Escalations",
-      "Selected offline patrol workflows",
-      "Duty journal and handovers — planned",
-    ],
-    workflow: [
-      "Shift starts",
-      "Officer receives assignment",
-      "Patrol begins",
-      "Checkpoint missed",
-      "Escalation triggered",
-      "Supervisor reviews",
-      "Action recorded",
-    ],
-    connected: ["people", "objects", "reporting", "compliance"],
-    outcome: "Shared operational context for shifts, patrols and escalations. Duty journal and handovers are planned.",
-  },
-  {
-    id: "reporting",
-    index: "02",
-    title: "Reporting",
-    summary:
-      "Structured operational documentation — from field observation to approved record — with human review remaining mandatory.",
-    capabilities: [
-      "Specific Report",
-      "Incident / Daily / Damage / Accident reports",
-      "AI-assisted drafting",
-      "Attachments",
-      "Review and approval",
-      "Report history",
-      "Digital signatures — planned",
-    ],
-    workflow: [
-      "Field observation",
-      "Report draft",
-      "AI assistance",
-      "Officer review",
-      "Supervisor approval",
-      "Locked operational record",
-    ],
-    connected: ["operations", "objects", "intelligence", "compliance"],
-    outcome: "Traceable operational records suitable for internal oversight and client evidence.",
-  },
-  {
-    id: "people",
-    index: "03",
-    title: "People",
-    summary:
-      "Personnel, roles, qualifications and assignments bound to the same objects and operational rules as the rest of the platform.",
-    capabilities: [
-      "User profiles",
-      "Roles & permissions",
-      "Qualifications — discovery",
-      "Availability",
-      "Teams",
-      "Assignments — foundation established",
-      "Scheduling and assignment authority",
-    ],
-    workflow: [
-      "Officer profile",
-      "Role set",
-      "Assignment",
-      "Shift",
-      "Operational activity",
-      "Audit record",
-    ],
-    connected: ["operations", "compliance", "objects"],
-    outcome: "Qualified personnel in the right place, with activity retained for review.",
-  },
-  {
-    id: "objects",
-    index: "04",
-    title: "Objects",
-    summary:
-      "The physical hierarchy that anchors every report, patrol and instruction — from customer to checkpoint and asset.",
-    capabilities: [
-      "Object requirements",
-      "Emergency contacts",
-      "Risks",
-      "Instructions",
-      "Patrol routes",
-      "Resources",
-      "Documents",
-      "Object history",
-    ],
-    workflow: [
-      "Customer",
-      "Object",
-      "Building",
-      "Floor",
-      "Zone",
-      "Post / Checkpoint",
-      "Asset",
-    ],
-    connected: ["operations", "reporting", "compliance"],
-    outcome: "One shared site model for every operational action and requirement.",
-  },
-  {
-    id: "compliance",
-    index: "05",
-    title: "Compliance",
-    summary:
-      "Governance and traceability designed into the platform — access boundaries, evidence and change history.",
-    capabilities: [
-      "Role-based access",
-      "Audit logging",
-      "Approval trails",
-      "Qualification authority — discovery",
-      "Change history",
-      "Evidence custody — discovery",
-      "Customer requirements",
-    ],
-    workflow: [
-      "Requirement",
-      "Assigned control",
-      "Operational action",
-      "Recorded evidence",
-      "Review",
-      "Audit trail",
-    ],
-    connected: ["reporting", "people", "objects"],
-    outcome: "Defensible operational evidence without claiming completed external certifications.",
-  },
-  {
-    id: "intelligence",
-    index: "06",
-    title: "Intelligence",
-    summary:
-      "AI assists structure and insight. Human judgment remains required. Capabilities are staged by maturity.",
-    capabilities: [
-      "AI-assisted report drafting — active development",
-      "Connected analytics — planned",
-      "Predictive AI risk analysis — future research",
-      "Wearable integrations — future research",
-    ],
-    workflow: [
-      "Operational data",
-      "Structured extraction",
-      "Analysis support",
-      "Human review",
-      "Decision remains with officer / supervisor",
-    ],
-    connected: ["reporting", "operations", "people", "objects"],
-    outcome: "Assisted understanding — never autonomous operational decisions.",
-  },
+const PILLAR_IDS: PillarId[] = [
+  "operations",
+  "reporting",
+  "people",
+  "objects",
+  "compliance",
+  "intelligence",
 ];
 
-const FOUNDATION = [
-  "Authentication and role-based access",
-  "Company-scoped multi-tenant data",
-  "Scheduling and assignment authority",
-  "Attendance and worked time",
-  "Audit and events",
-  "Bounded billing and payroll data",
-  "Integration outbox",
-  "Selected offline reporting and patrol workflows",
-] as const;
+const CONNECTED: Record<PillarId, PillarId[]> = {
+  operations: ["people", "objects", "reporting", "compliance"],
+  reporting: ["operations", "objects", "intelligence", "compliance"],
+  people: ["operations", "compliance", "objects"],
+  objects: ["operations", "reporting", "compliance"],
+  compliance: ["reporting", "people", "objects"],
+  intelligence: ["reporting", "operations", "people", "objects"],
+};
 
 export function PlatformPillars() {
+  const t = useTranslations("home");
   const [active, setActive] = useState<PillarId>("operations");
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const reduce = useReducedMotion();
-  const current = PILLARS.find((p) => p.id === active)!;
+
+  const pillars = PILLAR_IDS.map((id, i) => ({
+    id,
+    index: String(i + 1).padStart(2, "0"),
+    title: t(`pillars.items.${id}.title`),
+    summary: t(`pillars.items.${id}.summary`),
+    capabilities: t.raw(`pillars.items.${id}.capabilities`) as string[],
+    workflow: t.raw(`pillars.items.${id}.workflow`) as string[],
+    connected: CONNECTED[id],
+    outcome: t(`pillars.items.${id}.outcome`),
+  }));
+  const foundation = t.raw("pillars.foundation") as string[];
+  const current = pillars.find((p) => p.id === active)!;
 
   const select = useCallback((id: PillarId, index: number) => {
     setActive(id);
@@ -213,20 +65,20 @@ export function PlatformPillars() {
     let next = index;
     if (e.key === "ArrowDown" || e.key === "ArrowRight") {
       e.preventDefault();
-      next = (index + 1) % PILLARS.length;
+      next = (index + 1) % pillars.length;
     } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
       e.preventDefault();
-      next = (index - 1 + PILLARS.length) % PILLARS.length;
+      next = (index - 1 + pillars.length) % pillars.length;
     } else if (e.key === "Home") {
       e.preventDefault();
       next = 0;
     } else if (e.key === "End") {
       e.preventDefault();
-      next = PILLARS.length - 1;
+      next = pillars.length - 1;
     } else {
       return;
     }
-    select(PILLARS[next].id, next);
+    select(pillars[next].id, next);
   }
 
   return (
@@ -234,18 +86,18 @@ export function PlatformPillars() {
       <div className="mb-4 overflow-hidden border border-border">
         <div className="flex items-center justify-between gap-3 border-b border-border-subtle bg-surface/40 px-4 py-2.5">
           <p className="font-mono text-[10px] uppercase tracking-wider text-ink-faint">
-            Security OS · shared operational context
+            {t("pillars.kicker")}
           </p>
           <p className="hidden font-mono text-[10px] text-ink-muted sm:block">
-            Org · Customer · Object · Personnel · Permissions · Audit
+            {t("pillars.trail")}
           </p>
         </div>
         <div
           className="grid grid-cols-2 gap-px bg-border-subtle sm:grid-cols-3 lg:grid-cols-6"
           role="group"
-          aria-label="Operational domains"
+          aria-label={t("pillars.domainsAria")}
         >
-          {PILLARS.map((p, i) => {
+          {pillars.map((p, i) => {
             const selected = active === p.id;
             const related = current.connected.includes(p.id);
             return (
@@ -267,10 +119,10 @@ export function PlatformPillars() {
                 <span className="block font-mono text-[9px] text-ink-faint">{p.index}</span>
                 <span className="mt-1 block text-[12px] font-medium">{p.title}</span>
                 {selected && (
-                  <span className="mt-1 block font-mono text-[9px] text-gold">Active domain</span>
+                  <span className="mt-1 block font-mono text-[9px] text-gold">{t("pillars.active")}</span>
                 )}
                 {!selected && related && (
-                  <span className="mt-1 block font-mono text-[9px] text-ink-faint">Connected</span>
+                  <span className="mt-1 block font-mono text-[9px] text-ink-faint">{t("pillars.connected")}</span>
                 )}
               </button>
             );
@@ -282,10 +134,10 @@ export function PlatformPillars() {
         <div
           role="tablist"
           aria-orientation="vertical"
-          aria-label="Platform pillars"
+          aria-label={t("pillars.pillarsAria")}
           className="flex gap-0 overflow-x-auto border-b border-border lg:flex-col lg:overflow-visible lg:border-b-0 lg:border-r"
         >
-          {PILLARS.map((p, i) => {
+          {pillars.map((p, i) => {
             const selected = active === p.id;
             return (
               <button
@@ -333,14 +185,14 @@ export function PlatformPillars() {
             >
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-wider text-gold">
-                  Pillar {current.index}
+                  {t("pillars.pillar", { index: current.index })}
                 </p>
                 <h3 className="heading-md mt-1">{current.title}</h3>
                 <p className="body mt-3 max-w-2xl">{current.summary}</p>
               </div>
               <div className="grid gap-6 lg:grid-cols-2">
                 <div>
-                  <p className="label mb-3">Core capabilities</p>
+                  <p className="label mb-3">{t("pillars.core")}</p>
                   <ul className="space-y-1.5">
                     {current.capabilities.map((c) => (
                       <li key={c} className="flex gap-2 border-b border-border-subtle py-1.5 text-[13px] text-ink-secondary last:border-0">
@@ -351,7 +203,7 @@ export function PlatformPillars() {
                   </ul>
                 </div>
                 <div>
-                  <p className="label mb-3">{current.id === "objects" ? "Hierarchy" : "Example workflow"}</p>
+                  <p className="label mb-3">{current.id === "objects" ? t("pillars.hierarchy") : t("pillars.workflow")}</p>
                   <div className="border border-border-subtle bg-bg/40 p-3">
                     <ol className="space-y-0">
                       {current.workflow.map((step, i) => (
@@ -368,12 +220,12 @@ export function PlatformPillars() {
                 </div>
               </div>
               <div>
-                <p className="label mb-3">Connected platform domains</p>
+                <p className="label mb-3">{t("pillars.connectedDomains")}</p>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="border border-gold/30 bg-gold/10 px-2.5 py-1.5 text-[12px] font-medium text-ink">{current.title}</span>
                   {current.connected.map((id) => {
-                    const peer = PILLARS.find((p) => p.id === id)!;
-                    const idx = PILLARS.findIndex((p) => p.id === id);
+                    const peer = pillars.find((p) => p.id === id)!;
+                    const idx = pillars.findIndex((p) => p.id === id);
                     return (
                       <span key={id} className="flex items-center gap-2">
                         <span className="font-mono text-[10px] text-ink-faint" aria-hidden>↔</span>
@@ -384,7 +236,7 @@ export function PlatformPillars() {
                 </div>
               </div>
               <div className="border-t border-border-subtle pt-4">
-                <p className="font-mono text-[10px] uppercase tracking-wide text-ink-faint">Operational outcome</p>
+                <p className="font-mono text-[10px] uppercase tracking-wide text-ink-faint">{t("pillars.outcome")}</p>
                 <p className="mt-1 text-[13px] text-ink-secondary">{current.outcome}</p>
               </div>
             </motion.div>
@@ -392,13 +244,13 @@ export function PlatformPillars() {
         </div>
       </div>
       <div className="border border-t-0 border-border bg-bg-secondary/60 px-4 py-4 md:px-5">
-        <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-muted">Shared platform foundation</p>
+        <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-muted">{t("pillars.foundationTitle")}</p>
         <div className="flex flex-wrap gap-1.5">
-          {FOUNDATION.map((f) => (
+          {foundation.map((f) => (
             <span key={f} className="border border-border-subtle bg-surface/40 px-2.5 py-1 font-mono text-[10px] text-ink-muted">{f}</span>
           ))}
         </div>
-        <p className="mt-3 text-[11px] text-ink-faint">Technical foundations only. Not commercial availability, and not every module works offline.</p>
+        <p className="mt-3 text-[11px] text-ink-faint">{t("pillars.foundationNote")}</p>
       </div>
     </div>
   );

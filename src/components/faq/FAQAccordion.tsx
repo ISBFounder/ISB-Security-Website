@@ -8,9 +8,10 @@ import {
   type KeyboardEvent as RKEvent,
 } from "react";
 import { ChevronDown } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import {
-  FAQ_CATEGORIES,
+  FAQ_CATEGORY_IDS,
   type FAQItem,
   type FAQCategoryId,
 } from "@/data/faq";
@@ -20,14 +21,21 @@ type Props = {
 };
 
 export function FAQAccordion({ items }: Props) {
+  const t = useTranslations("faq");
   const [category, setCategory] = useState<FAQCategoryId | "all">("all");
   const [openId, setOpenId] = useState<string | null>(null);
   const [query, setQuery] = useState("");
   const catRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const categories = useMemo(
-    () => [{ id: "all" as const, label: "All" }, ...FAQ_CATEGORIES],
-    []
+    () => [
+      { id: "all" as const, label: t("categories.all") },
+      ...FAQ_CATEGORY_IDS.map((id) => ({
+        id,
+        label: t(`categories.${id}`),
+      })),
+    ],
+    [t]
   );
 
   const filtered = useMemo(() => {
@@ -73,12 +81,11 @@ export function FAQAccordion({ items }: Props) {
 
   return (
     <div className="grid gap-8 lg:grid-cols-[minmax(0,0.28fr)_minmax(0,0.72fr)]">
-      {/* Category rail */}
       <div>
-        <p className="label mb-3">Categories</p>
+        <p className="label mb-3">{t("categoriesLabel")}</p>
         <div
           role="tablist"
-          aria-label="FAQ categories"
+          aria-label={t("categoriesAria")}
           aria-orientation="vertical"
           className="flex gap-0 overflow-x-auto border border-border lg:flex-col lg:overflow-visible"
         >
@@ -110,10 +117,9 @@ export function FAQAccordion({ items }: Props) {
           })}
         </div>
 
-        {/* Search */}
         <div className="mt-4">
           <label htmlFor="faq-search" className="label">
-            Search
+            {t("searchLabel")}
           </label>
           <div className="relative mt-2">
             <input
@@ -121,7 +127,7 @@ export function FAQAccordion({ items }: Props) {
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search questions…"
+              placeholder={t("searchPlaceholder")}
               className="w-full border border-border bg-bg/50 px-3 py-2 text-[13px] text-ink placeholder:text-ink-faint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-gold"
               autoComplete="off"
             />
@@ -131,21 +137,20 @@ export function FAQAccordion({ items }: Props) {
                 onClick={() => setQuery("")}
                 className="absolute right-2 top-1/2 -translate-y-1/2 font-mono text-[10px] uppercase tracking-wide text-ink-muted hover:text-ink"
               >
-                Clear
+                {t("clear")}
               </button>
             )}
           </div>
         </div>
       </div>
 
-      {/* Accordion */}
       <div>
         <p className="mb-3 font-mono text-[11px] text-ink-faint">
-          {filtered.length} question{filtered.length === 1 ? "" : "s"}
+          {t("resultCount", { count: filtered.length })}
         </p>
         {filtered.length === 0 ? (
           <p className="border border-border-subtle bg-bg/40 px-4 py-6 text-[13px] text-ink-muted">
-            No questions match this filter.
+            {t("noMatches")}
           </p>
         ) : (
           <div className="border-t border-border">

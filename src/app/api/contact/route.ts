@@ -11,24 +11,57 @@ export async function POST(request: Request) {
       request.headers.get("x-real-ip") ||
       "unknown";
 
-    const limited = await limitFormRequest(`contact:${ip}`);
-    if (!limited.success) {
+    let limited: Awaited<ReturnType<typeof limitFormRequest>> | null = null;
+    try {
+      limited = await limitFormRequest(`contact:${ip}`);
+    } catch {
+      console.error("[contact] rate limit unavailable");
+      limited = null;
+    }
+
+    if (limited && !limited.success) {
       return NextResponse.json(
         {
           error:
             "Too many submissions were received from this connection. Please try again later.",
+          code: "rate_limited",
         },
         { status: 429 }
       );
     }
 
-    const body = await request.json();
+    let body: unknown;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json(
+        { error: "Validation failed", code: "validation_failed" },
+        { status: 400 }
+      );
+    }
+
     const parsed = contactSchema.safeParse(body);
 
     if (!parsed.success) {
       return NextResponse.json(
-        { error: "Validation failed", details: parsed.error.flatten() },
+        {
+          error: "Validation failed",
+          code: "validation_failed",
+          details: parsed.error.flatten(),
+        },
         { status: 400 }
+      );
+    }
+
+    // Do not send mail when the rate limiter cannot be reached.
+    if (!limited) {
+      return NextResponse.json(
+        {
+          error:
+            "Message delivery is temporarily unavailable. Please email info@isbsecuritysolutions.nl directly.",
+          code: "server",
+        },
+        { status: 503 }
       );
     }
 
@@ -56,6 +89,9 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true, id: result.id });
   } catch {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Server error", code: "server" },
+      { status: 500 }
+    );
   }
 }

@@ -1,84 +1,39 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { osPanelTransition } from "@/lib/motion";
 
 type LayerId = "experience" | "domain" | "services" | "foundation";
 
-const LAYERS: {
-  id: LayerId;
-  index: string;
-  title: string;
-  purpose: string;
-  items: string[];
-}[] = [
-  {
-    id: "experience",
-    index: "01",
-    title: "Experience layer",
-    purpose: "Operational workspaces officers and supervisors actually use.",
-    items: ["Command", "Reporting", "Objects", "Personnel", "Mobile field notes"],
-  },
-  {
-    id: "domain",
-    index: "02",
-    title: "Domain layer",
-    purpose: "Operational domains over one shared context — not separate products.",
-    items: [
-      "Operations",
-      "Reporting",
-      "People",
-      "Objects",
-      "Compliance",
-      "Intelligence",
-    ],
-  },
-  {
-    id: "services",
-    index: "03",
-    title: "Platform services",
-    purpose: "Shared services every domain inherits.",
-    items: [
-      "Identity",
-      "Authorization",
-      "Audit",
-      "Notifications",
-      "Integration outbox",
-      "Selected offline workflows",
-    ],
-  },
-  {
-    id: "foundation",
-    index: "04",
-    title: "Data / security foundation",
-    purpose: "Tenant isolation, controlled access and integrity concepts.",
-    items: [
-      "Tenant-aware boundaries",
-      "Row-level access direction",
-      "Environment separation",
-      "Bounded billing and payroll data",
-    ],
-  },
-];
+const LAYER_IDS: LayerId[] = ["experience", "domain", "services", "foundation"];
 
 export function TechnologyStackExplorer() {
+  const t = useTranslations("technology");
   const [active, setActive] = useState<LayerId>("domain");
   const reduce = useReducedMotion();
-  const current = LAYERS.find((l) => l.id === active)!;
+  const layers = LAYER_IDS.map((id, index) => ({
+    id,
+    index: String(index + 1).padStart(2, "0"),
+    title: t(`stack.layers.${id}.title`),
+    purpose: t(`stack.layers.${id}.purpose`),
+    items: t.raw(`stack.layers.${id}.items`) as string[],
+  }));
+  const current = layers.find((l) => l.id === active)!;
 
   return (
     <div>
       <p className="mb-3 font-mono text-[10px] uppercase tracking-wider text-ink-faint">
-        Experience depends on domain · domain depends on services · services rest on foundation
+        {t("stack.chain")}
       </p>
       <div className="relative space-y-0">
         <span
           aria-hidden
           className="pointer-events-none absolute bottom-3 left-[7px] top-3 w-px bg-border"
         />
-        {LAYERS.map((layer, idx) => {
+        {layers.map((layer, idx) => {
           const selected = active === layer.id;
           const isFoundation = layer.id === "foundation";
           return (
@@ -128,7 +83,7 @@ export function TechnologyStackExplorer() {
           ))}
         </div>
         <p className="mt-3 text-[11px] text-ink-faint">
-          Many domains. One engine. Domains do not recreate the stack beneath them.
+          {t("stack.footnote")}
         </p>
       </motion.div>
     </div>

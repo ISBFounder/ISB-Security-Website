@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { FeatureStatus, type FeatureStage } from "./FeatureStatus";
 
 type Props = {
@@ -17,6 +20,7 @@ export function FeatureRow({
   connected,
   note,
 }: Props) {
+  const t = useTranslations("features");
   return (
     <div className="grid gap-2 border-b border-border-subtle py-3 last:border-0 sm:grid-cols-[1fr_auto] sm:items-start">
       <div>
@@ -27,7 +31,7 @@ export function FeatureRow({
         <p className="mt-1 text-[13px] text-ink-secondary">{purpose}</p>
         {(workflow || connected || note) && (
           <p className="mt-1.5 font-mono text-[11px] text-ink-faint">
-            {[workflow && `Workflow · ${workflow}`, connected && `Connected · ${connected}`, note]
+            {[workflow && `${t("workflowPrefix")} · ${workflow}`, connected && `${t("connectedPrefix")} · ${connected}`, note]
               .filter(Boolean)
               .join(" · ")}
           </p>

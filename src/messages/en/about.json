@@ -1,0 +1,115 @@
+{
+  "metaTitle": "About ISB Security Solutions",
+  "metaDescription": "ISB Security Solutions is building the ISB Security Platform. The platform is in active development and is not commercially available.",
+  "ogDescription": "The ISB Security Platform is in active development. No public release date has been established.",
+  "twitterDescription": "The ISB Security Platform is in active development. No public release date has been established.",
+  "breadcrumbHome": "Home",
+  "breadcrumb": "About",
+  "eyebrow": "About ISB",
+  "title": "ISB Security Platform: Active Development",
+  "intro": "ISB Security Solutions is building a unified platform for professional security operations, reporting, personnel planning and site management. The platform has not been announced as commercially available or production-validated. No public release date has been established.",
+  "whyEyebrow": "Why ISB exists",
+  "whyTitle": "Operational work still depends on fragmented tools.",
+  "whyBody": "Reporting, planning, object instructions, customer requirements, personnel context, incident follow-up, audit information, communication, documents and escalation procedures are frequently handled in separate systems — or outside systems entirely.",
+  "consequenceEyebrow": "Consequence",
+  "consequences": {
+    "repeated": "Repeated administration",
+    "handover": "Missing context at handovers",
+    "versions": "Version conflicts",
+    "traceability": "Low traceability",
+    "friction": "Unnecessary operational friction"
+  },
+  "originEyebrow": "Operational origin",
+  "originTitle": "Conceived from direct exposure to professional security environments.",
+  "originDescription": "ISB was conceived from direct exposure to operational security environments where officers, supervisors and customers often work across separate tools and information sources. Product design is shaped by that operational reality — not abstract software trends.",
+  "genericEyebrow": "Why generic software falls short",
+  "genericTitle": "Tools not designed around security operations require constant adaptation.",
+  "genericBody": "Generic business tools do not inherently model object hierarchy, patrol context, incident workflow, escalation paths, role-specific operational access, customer and object separation, reporting lifecycle, audit context or qualification-linked assignment. Adapting them for security work often recreates the same fragmentation they were meant to solve.",
+  "approachEyebrow": "The ISB approach",
+  "approachTitle": "One platform. Shared context. Modular expansion.",
+  "approachLines": {
+    "platform": "One platform",
+    "domains": "Different operational domains",
+    "org": "Shared organizational context",
+    "object": "Shared object context",
+    "user": "Shared user context",
+    "access": "Shared access model",
+    "audit": "Shared audit foundation",
+    "modular": "Modular expansion"
+  },
+  "approachNote": "An architectural company principle: domains expand without rebuilding identity, permissions, company-scoped data and audit foundations.",
+  "missionLabel": "Mission",
+  "missionTitle": "Transform the European security industry through one intelligent operational platform.",
+  "missionBody": "Operationally, that means replacing fragmented reporting, object information, personnel context and audit trails with one coherent system designed for how security organizations actually work.",
+  "visionLabel": "Vision",
+  "visionTitle": "Replace fragmented operational systems with a secure, modular and AI-assisted ecosystem capable of supporting the broader security workflow.",
+  "visionBody": "The long-term goal is not a single-purpose tool, but a platform that can grow across operational domains without losing shared context.",
+  "principlesEyebrow": "Company principles",
+  "principlesTitle": "Practical standards for product and company behaviour.",
+  "principles": {
+    "innovation": {
+      "name": "Innovation",
+      "text": "Capability expands through modular architecture, not decorative features."
+    },
+    "reliability": {
+      "name": "Reliability",
+      "text": "Operational software must behave predictably under daily use."
+    },
+    "security": {
+      "name": "Security",
+      "text": "Access and accountability must be considered at architecture level."
+    },
+    "efficiency": {
+      "name": "Efficiency",
+      "text": "Technology should reduce repeated administrative work."
+    },
+    "trust": {
+      "name": "Trust",
+      "text": "Boundaries, access and traceability create confidence in operational records."
+    },
+    "professionalism": {
+      "name": "Professionalism",
+      "text": "Product language and design reflect the seriousness of security operations."
+    }
+  },
+  "strategyEyebrow": "Modular strategy",
+  "strategyTitle": "Foundation established. Active development. Future research.",
+  "strategyFoundationLabel": "Foundation established",
+  "strategyFoundationBody": "Role-based access · Company-scoped data · Scheduling and assignment authority · Attendance and worked time · Audit and events · Bounded billing and payroll data · Integration outbox · Selected offline reporting and patrol workflows",
+  "strategyDevelopmentLabel": "Active development",
+  "strategyDevelopmentBody": "Security operations · Patrols · Reporting and recovery · Workforce · Objects and locations · AI-assisted report drafting · Selected mobile workflows · Service requests and contracts · Document workspaces · Client-facing reporting",
+  "strategyFutureLabel": "Future / research",
+  "strategyFutureBody": "Connected operational capabilities, external integrations and advanced AI research come later. Predictive AI risk analysis and wearable integrations are research, not autonomous decision systems. No release date is established.",
+  "philosophyEyebrow": "Product development philosophy",
+  "philosophyTitle": "Operational use before decorative features.",
+  "philosophy": {
+    "use": "Operational use before decorative features",
+    "accountability": "Human accountability in AI-assisted workflows",
+    "staged": "Staged development with clear maturity labels",
+    "validation": "Validation before public claims",
+    "modular": "Modular architecture for expansion without rewrite",
+    "scale": "Enterprise scalability as a design direction",
+    "ai": "Responsible AI under human control"
+  },
+  "europeEyebrow": "European context",
+  "europeTitle": "Based in the Netherlands. Focused on European security operations.",
+  "europeBody": "ISB Security Solutions is based in Tilburg, The Netherlands. The initial focus is the European security industry. European privacy and operational context influence design decisions. Future international expansion is part of the long-term direction.",
+  "europeNote": "No claim of European market presence, EU approval, cross-border customers or international offices unless verified.",
+  "longTermEyebrow": "Long-term direction",
+  "longTermTitle": "From security operations platform to broader ecosystem.",
+  "longTermTodayLabel": "Today",
+  "longTermToday": "security operations platform",
+  "longTermLongLabel": "Long term",
+  "longTermLong": "broader modular operational ecosystem",
+  "longTermFutureLabel": "Future",
+  "longTermFuture": "international scalability and adjacent sectors",
+  "longTermNote": "No confidential roadmap details, valuation or acquisition goals published here.",
+  "companyEyebrow": "Company information",
+  "location": "Tilburg, The Netherlands",
+  "website": "isbsecuritysolutions.nl",
+  "tagline": "Enterprise Security Operations Software",
+  "ctaTitle": "Review the platform direction and current development status.",
+  "ctaPlatform": "Explore Platform",
+  "ctaRoadmap": "View Roadmap",
+  "ctaContact": "Contact ISB"
+}

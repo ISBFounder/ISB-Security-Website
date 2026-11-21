@@ -1,0 +1,131 @@
+{
+  "metaTitle": "Beveiliging en vertrouwen",
+  "metaDescription": "Autorisatie, tenantgrenzen en auditbaarheid voor het ISB Security Platform: wie mag handelen, in welke context, en wat wordt vastgelegd.",
+  "breadcrumbHome": "Home",
+  "breadcrumb": "Beveiliging",
+  "continuityHome": "Home",
+  "continuityPlatform": "Platform",
+  "continuityTechnology": "Technologie",
+  "continuitySecurity": "Beveiliging",
+  "eyebrow": "Beveiliging en vertrouwen",
+  "title": "Wie wat mag doen, in welke context, met welke registratie.",
+  "intro": "Rolgebaseerde toegang, bedrijfsgebonden gegevens en auditfundamenten zijn aanwezig. Bewaartermijnen voor privacy en governance voor legal hold zijn in verkenning. Alleen conceptuele paden — er wordt geen certificering geclaimd en er wordt geen productie-beleidslogica getoond.",
+  "authEyebrow": "Autorisatiemodel",
+  "authTitle": "Geautoriseerd pad tegenover geweigerd pad.",
+  "authDescription": "Dezelfde identiteit van de beveiliger. Andere tenantcontext. De grens blijft gelden.",
+  "trustEyebrow": "Vertrouwensarchitectuur",
+  "trustTitle": "Hoe toegang smaller wordt door context.",
+  "trustDescription": "Elke laag begrenst de volgende. Dieper dan het overzicht op de homepage.",
+  "ctaTitle": "Beoordeel het controlmodel met ISB.",
+  "requestDemo": "Demo aanvragen",
+  "aiApproach": "AI-aanpak",
+  "flow": {
+    "allowed": "Geautoriseerd pad",
+    "rejected": "Geweigerd pad",
+    "closed": "Gesloten",
+    "allowedNote": "Wie wat mag doen, binnen welke organisatorische context, met welke traceerbaarheid.",
+    "rejectedNote": "Geen pad over de tenantgrens.",
+    "allowedSteps": [
+      { "id": "officer", "label": "Beveiliger", "note": "Geauthenticeerde identiteit" },
+      { "id": "role", "label": "Toegewezen rol", "note": "Operationeel beveiliger" },
+      { "id": "tenant", "label": "Tenantcontext", "note": "Organisatie A" },
+      { "id": "object", "label": "Objectcontext", "note": "NL-OBJ-042" },
+      { "id": "action", "label": "Toegestane actie", "note": "Rapport indienen" },
+      { "id": "audit", "label": "Auditgebeurtenis", "note": "Actie vastgelegd" }
+    ],
+    "rejectedSteps": [
+      { "id": "officer", "label": "Beveiliger", "note": "Geauthenticeerde identiteit" },
+      { "id": "role", "label": "Toegewezen rol", "note": "Operationeel beveiliger" },
+      { "id": "tenant", "label": "Andere tenant", "note": "Organisatie B" },
+      { "id": "blocked", "label": "Geen geautoriseerd pad", "note": "Grens blijft gelden" }
+    ]
+  },
+  "tenant": {
+    "aria": "Tenantorganisaties",
+    "organization": "Organisatie {id}",
+    "selected": "Geselecteerde tenant",
+    "other": "Andere tenant · teruggetrokken",
+    "customerA": "Opdrachtgever A1",
+    "customerB": "Opdrachtgever B1",
+    "objectA": "Object A",
+    "objectB": "Object B",
+    "hidden": "Hiërarchie niet zichtbaar vanuit {org}.",
+    "boundary": "Geen pad over de tenantgrens."
+  },
+  "audit": {
+    "title": "Conceptuele audittrail · illustratief",
+    "footer": "Operationele acties laten traceerbare registraties achter. Geen claim van juridische onveranderlijkheid.",
+    "actors": {
+      "officer": "Beveiliger",
+      "ai": "AI",
+      "supervisor": "Leidinggevende"
+    },
+    "events": [
+      { "time": "22:14", "actor": "officer", "action": "Veldnotitie vastgelegd", "ctx": "NL-OBJ-042" },
+      { "time": "22:16", "actor": "ai", "action": "Concept voorgesteld", "ctx": "Alleen een suggestie" },
+      { "time": "22:19", "actor": "officer", "action": "Concept beoordeeld", "ctx": "Geautoriseerd" },
+      { "time": "22:24", "actor": "supervisor", "action": "Registratie goedgekeurd", "ctx": "Vergrendeld" }
+    ]
+  },
+  "trust": {
+    "sr": "Lagen van de vertrouwensarchitectuur: Identiteit, Rol en bevoegdheid, Tenantcontext, Object- en opdrachtgevercontext, Gegevenstoegang, Operationele actie, Auditgebeurtenis, Opslag en infrastructuur. Ontworpen rond toegang volgens minimale bevoegdheden en tenantbewuste scheiding. Er worden geen certificeringen geclaimd.",
+    "layers": [
+      {
+        "id": "identity",
+        "label": "Identiteit",
+        "purpose": "Geauthenticeerde gebruiker en organisatiecontext vormen de eerste toegangsgrens.",
+        "control": "Gebruikersidentiteit · organisatiecontext · toewijzingscontext",
+        "maturity": "Ontwerpfundament"
+      },
+      {
+        "id": "role",
+        "label": "Rol en bevoegdheid",
+        "purpose": "Ontworpen rond toegang volgens minimale bevoegdheden — wat een gebruiker mag inzien, aanmaken, goedkeuren of beheren.",
+        "control": "Rolomvang · beveiliger / leidinggevende / opdrachtgever / beheerder",
+        "maturity": "Ontwerpfundament"
+      },
+      {
+        "id": "tenant",
+        "label": "Tenantcontext",
+        "purpose": "Tenantbewuste gegevensscheiding tussen organisaties en hun opdrachtgevers.",
+        "control": "Organisatie · opdrachtgever · alleen geautoriseerde context",
+        "maturity": "Ontwerpfundament"
+      },
+      {
+        "id": "object",
+        "label": "Object- / opdrachtgevercontext",
+        "purpose": "Operationele gegevens beperkt tot de objecten en opdrachtgevers waartoe een rol toegang heeft.",
+        "control": "Objecthiërarchie · opdrachtgeveromvang · koppeling aan toewijzing",
+        "maturity": "Ontwerpfundament"
+      },
+      {
+        "id": "data",
+        "label": "Gegevenstoegang",
+        "purpose": "De architectuur ondersteunt beveiligingscontroles op rijniveau en validatie aan de serverzijde.",
+        "control": "Rol + tenant + objectcontext · API-grenzen · dekking in uitbreiding",
+        "maturity": "Ontwerpfundament"
+      },
+      {
+        "id": "action",
+        "label": "Operationele actie",
+        "purpose": "Gevoelige acties vinden alleen plaats na controles op identiteit, bevoegdheid en context.",
+        "control": "Rapport aanmaken/goedkeuren · instructie bijwerken · toewijzen · escaleren",
+        "maturity": "Ontwerpfundament"
+      },
+      {
+        "id": "audit",
+        "label": "Auditgebeurtenis",
+        "purpose": "Traceerbare operationele acties — kritieke wijzigingen en goedkeuringen gekoppeld aan gebruikers.",
+        "control": "Actieregistratie · wijzigingshistorie · koppeling aan goedkeuring",
+        "maturity": "Ontwerpfundament"
+      },
+      {
+        "id": "storage",
+        "label": "Opslag en infrastructuur",
+        "purpose": "Controles op de productie-infrastructuur blijven onderworpen aan validatie van de uitrol.",
+        "control": "Gecontroleerde opslag · scheiding van omgevingen · toegangsdiscipline",
+        "maturity": "Actieve hardening"
+      }
+    ]
+  }
+}

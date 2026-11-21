@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 export type FeatureStage =
@@ -6,14 +9,6 @@ export type FeatureStage =
   | "discovery"
   | "planned"
   | "future";
-
-const LABELS: Record<FeatureStage, string> = {
-  foundation: "Foundation established",
-  development: "Active development",
-  discovery: "Discovery / architecture",
-  planned: "Planned",
-  future: "Future / research",
-};
 
 const STYLES: Record<FeatureStage, string> = {
   foundation: "border-border-subtle text-ink-secondary",
@@ -24,6 +19,7 @@ const STYLES: Record<FeatureStage, string> = {
 };
 
 export function FeatureStatus({ stage }: { stage: FeatureStage }) {
+  const t = useTranslations("common");
   return (
     <span
       className={cn(
@@ -31,7 +27,7 @@ export function FeatureStatus({ stage }: { stage: FeatureStage }) {
         STYLES[stage]
       )}
     >
-      {LABELS[stage]}
+      {t(`status.${stage}`)}
     </span>
   );
 }

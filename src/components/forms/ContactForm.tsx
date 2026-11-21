@@ -8,10 +8,11 @@ import {
   useMemo,
 } from "react";
 import { useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
+import { Link } from "@/i18n/navigation";
 import {
   enquiryTypes,
-  enquiryTypeLabels,
   type EnquiryType,
 } from "@/lib/validations";
 import { cn } from "@/lib/utils";
@@ -38,6 +39,8 @@ const INTENT_MAP: Record<string, EnquiryType> = {
 };
 
 export function ContactForm() {
+  const t = useTranslations("forms");
+  const errors = useTranslations("forms.errors");
   const searchParams = useSearchParams();
   const intent = searchParams.get("intent");
   const initialType = useMemo<EnquiryType>(() => {
@@ -46,11 +49,20 @@ export function ContactForm() {
   }, [intent]);
 
   const [status, setStatus] = useState<Status>("idle");
-  const [errorMsg, setErrorMsg] = useState("");
+  const [errorKey, setErrorKey] = useState("");
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [enquiryType, setEnquiryType] = useState<EnquiryType>(initialType);
   const errorRef = useRef<HTMLDivElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
+
+  function fieldText(code: string) {
+    return errors.has(code) ? errors(code) : t("banners.validationFailed");
+  }
+
+  function bannerText(key: string) {
+    const path = `banners.${key}`;
+    return t.has(path) ? t(path) : t("banners.validationFailed");
+  }
 
   useEffect(() => {
     setEnquiryType(initialType);
@@ -74,7 +86,7 @@ export function ContactForm() {
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
-    setErrorMsg("");
+    setErrorKey("");
     setFieldErrors({});
 
     const form = e.currentTarget;
@@ -99,47 +111,51 @@ export function ContactForm() {
       });
 
       const data = await res.json().catch(() => ({}));
+      const code = typeof data?.code === "string" ? data.code : undefined;
 
-      if (res.status === 429) {
+      if (res.status === 429 || code === "rate_limited") {
         setStatus("rate_limited");
-        setErrorMsg(
-          data.error ||
-            "Too many submissions were received from this connection. Please try again later."
-        );
+        setErrorKey("contactRateLimited");
         return;
       }
 
-      if (res.status === 503 || data.code === "NO_PROVIDER") {
+      if (res.status === 503 || code === "NO_PROVIDER") {
         setStatus("unavailable");
-        setErrorMsg(
-          data.error ||
-            "Your message could not be delivered. Please try again later or contact ISB directly by email."
-        );
+        setErrorKey("contactNoProvider");
         return;
       }
 
-      if (res.status === 400) {
+      if (res.status === 502 || code === "SEND_FAILED") {
+        setStatus("server");
+        setErrorKey("contactSendFailed");
+        return;
+      }
+
+      if (res.status === 400 || code === "validation_failed") {
         setStatus("validation");
-        const details = data.details?.fieldErrors as
+        const details = data?.details?.fieldErrors as
           | Record<string, string[]>
           | undefined;
         if (details) {
           const mapped: Record<string, string> = {};
           Object.entries(details).forEach(([k, v]) => {
-            if (v?.[0]) mapped[k] = v[0];
+            if (typeof v?.[0] === "string" && v[0]) mapped[k] = v[0];
           });
           setFieldErrors(mapped);
         }
-        setErrorMsg(data.error || "Please correct the highlighted fields.");
+        setErrorKey("validationFailed");
         return;
       }
 
-      if (!res.ok || !data.ok) {
+      if (res.status === 500 || code === "server") {
         setStatus("server");
-        setErrorMsg(
-          data.error ||
-            "Your message could not be delivered. Please try again later or contact ISB directly by email."
-        );
+        setErrorKey("server");
+        return;
+      }
+
+      if (!res.ok || !data?.ok) {
+        setStatus("server");
+        setErrorKey("contactNetwork");
         return;
       }
 
@@ -148,9 +164,7 @@ export function ContactForm() {
       setEnquiryType(initialType);
     } catch {
       setStatus("server");
-      setErrorMsg(
-        "Your message could not be delivered. Please try again later or contact ISB directly by email."
-      );
+      setErrorKey("contactNetwork");
     }
   }
 
@@ -164,18 +178,17 @@ export function ContactForm() {
         aria-live="polite"
       >
         <h3 className="text-lg font-semibold text-ink">
-          Your message has been received by ISB Security Solutions.
+          {t("contact.successTitle")}
         </h3>
         <p className="mt-2 text-sm text-ink-secondary">
-          ISB reviews incoming enquiries and responds where follow-up is
-          appropriate.
+          {t("contact.successBody")}
         </p>
         <button
           type="button"
           className="mt-6 text-[13px] font-medium text-gold hover:text-gold-light"
           onClick={() => setStatus("idle")}
         >
-          Send another message
+          {t("contact.sendAnother")}
         </button>
       </div>
     );
@@ -189,6 +202,7 @@ export function ContactForm() {
       className="space-y-5"
       noValidate
       aria-busy={busy}
+      aria-label={t("contact.ariaForm")}
     >
       {(status === "validation" ||
         status === "server" ||
@@ -201,10 +215,10 @@ export function ContactForm() {
           aria-live="assertive"
           className="border border-status-critical/40 bg-status-critical/5 px-4 py-3 text-sm text-ink-secondary"
         >
-          <p className="font-medium text-ink">{errorMsg}</p>
+          <p className="font-medium text-ink">{bannerText(errorKey)}</p>
           {(status === "server" || status === "unavailable") && (
             <p className="mt-2">
-              Direct email:{" "}
+              {t("contact.directEmail")}{" "}
               <a
                 href="mailto:info@isbsecuritysolutions.nl"
                 className="text-gold hover:text-gold-light"
@@ -216,7 +230,7 @@ export function ContactForm() {
           {Object.keys(fieldErrors).length > 0 && (
             <ul className="mt-2 list-inside list-disc text-[13px]">
               {Object.entries(fieldErrors).map(([k, v]) => (
-                <li key={k}>{v}</li>
+                <li key={k}>{fieldText(v)}</li>
               ))}
             </ul>
           )}
@@ -225,7 +239,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="enquiryType" className="text-sm text-ink-secondary">
-          Enquiry type
+          {t("contact.enquiryType")}
         </label>
         <select
           id="enquiryType"
@@ -235,9 +249,9 @@ export function ContactForm() {
           disabled={busy}
           className={fieldClass}
         >
-          {enquiryTypes.map((t) => (
-            <option key={t} value={t}>
-              {enquiryTypeLabels[t]}
+          {enquiryTypes.map((id) => (
+            <option key={id} value={id}>
+              {t(`enquiryTypes.${id}`)}
             </option>
           ))}
         </select>
@@ -246,7 +260,7 @@ export function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="text-sm text-ink-secondary">
-            Name *
+            {t("contact.name")}
           </label>
           <input
             id="name"
@@ -261,13 +275,13 @@ export function ContactForm() {
           />
           {fieldErrors.name && (
             <p id="err-name" className="mt-1 text-[12px] text-status-critical">
-              {fieldErrors.name}
+              {fieldText(fieldErrors.name)}
             </p>
           )}
         </div>
         <div>
           <label htmlFor="email" className="text-sm text-ink-secondary">
-            Email *
+            {t("contact.email")}
           </label>
           <input
             id="email"
@@ -279,10 +293,11 @@ export function ContactForm() {
             className={cn(fieldClass, fieldErrors.email && "border-status-critical")}
             autoComplete="email"
             aria-invalid={Boolean(fieldErrors.email)}
+            aria-describedby={fieldErrors.email ? "err-email" : undefined}
           />
           {fieldErrors.email && (
-            <p className="mt-1 text-[12px] text-status-critical">
-              {fieldErrors.email}
+            <p id="err-email" className="mt-1 text-[12px] text-status-critical">
+              {fieldText(fieldErrors.email)}
             </p>
           )}
         </div>
@@ -291,7 +306,7 @@ export function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="company" className="text-sm text-ink-secondary">
-            Company
+            {t("contact.company")}
           </label>
           <input
             id="company"
@@ -304,7 +319,7 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="phone" className="text-sm text-ink-secondary">
-            Phone
+            {t("contact.phone")}
           </label>
           <input
             id="phone"
@@ -320,7 +335,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="subject" className="text-sm text-ink-secondary">
-          Subject *
+          {t("contact.subject")}
         </label>
         <input
           id="subject"
@@ -330,17 +345,18 @@ export function ContactForm() {
           disabled={busy}
           className={cn(fieldClass, fieldErrors.subject && "border-status-critical")}
           aria-invalid={Boolean(fieldErrors.subject)}
+          aria-describedby={fieldErrors.subject ? "err-subject" : undefined}
         />
         {fieldErrors.subject && (
-          <p className="mt-1 text-[12px] text-status-critical">
-            {fieldErrors.subject}
+          <p id="err-subject" className="mt-1 text-[12px] text-status-critical">
+            {fieldText(fieldErrors.subject)}
           </p>
         )}
       </div>
 
       <div>
         <label htmlFor="message" className="text-sm text-ink-secondary">
-          Message *
+          {t("contact.message")}
         </label>
         <textarea
           id="message"
@@ -351,17 +367,18 @@ export function ContactForm() {
           disabled={busy}
           className={cn(fieldClass, fieldErrors.message && "border-status-critical")}
           aria-invalid={Boolean(fieldErrors.message)}
+          aria-describedby={fieldErrors.message ? "err-message" : undefined}
         />
         {fieldErrors.message && (
-          <p className="mt-1 text-[12px] text-status-critical">
-            {fieldErrors.message}
+          <p id="err-message" className="mt-1 text-[12px] text-status-critical">
+            {fieldText(fieldErrors.message)}
           </p>
         )}
       </div>
 
       {/* Honeypot */}
       <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden>
-        <label htmlFor="website">Website</label>
+        <label htmlFor="website">{t("contact.honeypot")}</label>
         <input
           id="website"
           type="text"
@@ -379,33 +396,32 @@ export function ContactForm() {
           required
           disabled={busy}
           className="mt-1"
+          aria-invalid={Boolean(fieldErrors.privacy)}
         />
         <span>
-          Information submitted through this form is used to respond to your
-          enquiry. See our{" "}
-          <a href="/privacy" className="text-gold hover:underline">
-            Privacy Policy
-          </a>
-          .
+          {t("contact.privacyBefore")}
+          <Link href="/privacy" className="text-gold hover:underline">
+            {t("contact.privacyLink")}
+          </Link>
+          {t("contact.privacyAfter")}
         </span>
       </label>
 
       {enquiryType === "security" && (
         <p className="text-[12px] text-ink-muted">
-          Potential security issues may be reported through this form or
-          directly to{" "}
+          {t("contact.securityBefore")}{" "}
           <a
             href="mailto:info@isbsecuritysolutions.nl"
             className="text-gold hover:text-gold-light"
           >
             info@isbsecuritysolutions.nl
           </a>
-          . No bug bounty or response SLA is claimed.
+          {t("contact.securityAfter")}
         </p>
       )}
 
       <Button type="submit" disabled={busy}>
-        {busy ? "Sending…" : "Send message"}
+        {busy ? t("contact.sending") : t("contact.send")}
       </Button>
     </form>
   );

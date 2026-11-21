@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 export type OsMaturity =
@@ -7,14 +10,6 @@ export type OsMaturity =
   | "planned"
   | "future";
 
-const LABEL: Record<OsMaturity, string> = {
-  foundation: "Foundation established",
-  development: "Active development",
-  discovery: "Discovery / architecture",
-  planned: "Planned",
-  future: "Future / research",
-};
-
 export function OsStatus({
   status,
   className,
@@ -22,6 +17,7 @@ export function OsStatus({
   status: OsMaturity;
   className?: string;
 }) {
+  const t = useTranslations("common");
   return (
     <span
       className={cn(
@@ -29,7 +25,7 @@ export function OsStatus({
         className
       )}
     >
-      {LABEL[status]}
+      {t(`status.${status}`)}
     </span>
   );
 }

@@ -1,0 +1,1184 @@
+{
+  "metaTitle": "ISB Security Solutions | Enterprise Security Operations Software",
+  "metaDescription": "The ISB Security Platform is in active development for security operations, reporting, personnel planning and site management.",
+  "ogDescription": "The ISB Security Platform is in active development. It has not been announced as commercially available or production-validated.",
+  "twitterDescription": "The ISB Security Platform is in active development. No public release date has been established.",
+  "page": {
+    "fragmentation": {
+      "eyebrow": "Industry reality",
+      "title": "Security operations were never designed to run across disconnected tools.",
+      "description": "Reports, planning, messaging, customer requirements and operational records are often spread across separate systems. Every handover introduces friction, duplication and lost context."
+    },
+    "pillars": {
+      "eyebrow": "Platform framework",
+      "title": "One platform. Six operational pillars.",
+      "description": "Every pillar shares the same organizational, object, user and audit context — one connected operational system, not a collection of unrelated modules."
+    },
+    "capabilities": {
+      "eyebrow": "Operational capabilities",
+      "title": "One platform. Designed for hundreds of operational workflows.",
+      "description": "Every capability shares the same operational context, security model and organizational structure. Different workflows. One platform foundation."
+    },
+    "ai": {
+      "eyebrow": "AI Report Assistant",
+      "title": "AI that supports the report. Not the decision.",
+      "description": "AI capabilities are built on top of structured operational data, secure workflows and validated platform context. ISB AI assists with structure, clarity and completeness while keeping the officer and supervisor responsible for the final operational record.",
+      "cta": "AI approach"
+    },
+    "trust": {
+      "eyebrow": "Security & trust",
+      "title": "Trust starts with architecture.",
+      "description": "One security model: identity, permissions, tenant boundaries and auditability — designed into the operating system, not added per module.",
+      "cta": "Security & trust"
+    },
+    "industries": {
+      "eyebrow": "Industry solutions",
+      "title": "Built around the way security operations actually differ.",
+      "description": "Object security, mobile patrol, events, healthcare and government operations do not share the same risk profile or workflow. ISB is designed to adapt without fragmenting the underlying platform.",
+      "solutions": "Solutions by sector",
+      "overview": "Industries overview"
+    },
+    "roadmap": {
+      "eyebrow": "Roadmap",
+      "title": "Transparent product direction",
+      "description": "Now: refine and validate operational, reporting, workforce, planning, object-management and selected offline workflows. No public release date has been established."
+    }
+  },
+  "hero": {
+    "badge": "ISB Security Platform: Active Development",
+    "titleLine1": "One operational system",
+    "titleBefore": "for the ",
+    "titleEmphasis": "security industry",
+    "titleAfter": "",
+    "body": "The ISB Security Platform is in active development. ISB Security Solutions is building a unified platform for professional security operations, reporting, personnel planning and site management. It has not been announced as commercially available or production-validated. No public release date has been established.",
+    "ctaDemo": "Request a Demonstration",
+    "ctaPlatform": "Explore the Platform",
+    "architectureLink": "View platform architecture →",
+    "scope": "Institutional scope",
+    "credibility": [
+      "Built for multi-customer security operations",
+      "Role-based access and company-scoped data",
+      "Selected offline reporting and patrol workflows",
+      "Developed from operational security experience",
+      "European security industry focus"
+    ]
+  },
+  "about": {
+    "eyebrow": "About ISB",
+    "title": "Built from inside security operations.",
+    "p1": "ISB Security Solutions was founded from direct operational experience with security environments where reporting, planning, object information, communication and compliance are frequently spread across different tools.",
+    "p2": "The goal is not to create another isolated security application. The goal is to create one modular operational platform capable of supporting the broader security workflow.",
+    "themes": {
+      "origin": {
+        "label": "Origin",
+        "text": "Direct operational experience inside professional security environments."
+      },
+      "problem": {
+        "label": "Problem",
+        "text": "Fragmented software, repeated administration and disconnected operational context."
+      },
+      "direction": {
+        "label": "Direction",
+        "text": "One modular platform capable of growing across security disciplines and, later, adjacent operational sectors."
+      }
+    },
+    "link": "About ISB",
+    "missionLabel": "Mission",
+    "mission": "Transform the European security industry through one intelligent operational platform.",
+    "visionLabel": "Vision",
+    "vision": "Replace fragmented operational systems with a secure, modular and AI-assisted ecosystem.",
+    "principlesLabel": "Principles",
+    "principles": [
+      "Innovation",
+      "Reliability",
+      "Security",
+      "Efficiency",
+      "Trust",
+      "Professionalism"
+    ],
+    "developed": "Developed in the Netherlands",
+    "focus": "European security industry focus",
+    "designed": "Designed with European operating environments in mind",
+    "ambition": "Future international ambition",
+    "location": "Tilburg, The Netherlands",
+    "tagline": "Enterprise Security Operations Software"
+  },
+  "cta": {
+    "eyebrow": "Engage with ISB",
+    "title": "Start the conversation around your operation.",
+    "body": "ISB is currently in active development. We welcome conversations with security organizations, pilot partners and strategic industry stakeholders interested in the platform.",
+    "paths": {
+      "demo": {
+        "title": "Request a Demonstration",
+        "copy": "Explore the platform and discuss how the current development direction applies to your operation."
+      },
+      "pilot": {
+        "title": "Discuss a Pilot",
+        "copy": "Discuss early operational validation and future pilot opportunities."
+      },
+      "partnership": {
+        "title": "Strategic Partnership",
+        "copy": "For technology, industry and strategic collaboration conversations."
+      },
+      "contact": {
+        "title": "General Contact",
+        "copy": "Contact ISB Security Solutions for general company or platform enquiries."
+      }
+    },
+    "location": "Tilburg, The Netherlands"
+  },
+  "roadmap": {
+    "now": {
+      "index": "Now",
+      "label": "Refine and validate",
+      "items": [
+        "Operational workflows",
+        "Reporting workflows",
+        "Workforce and planning",
+        "Object management",
+        "Selected offline workflows"
+      ]
+    },
+    "next": {
+      "index": "Next",
+      "label": "Integrate and validate",
+      "items": [
+        "Current integration work",
+        "Recovery work",
+        "Environment validation",
+        "Authority validation"
+      ]
+    },
+    "later": {
+      "index": "Later",
+      "label": "Expand and research",
+      "items": [
+        "Connected operational capabilities",
+        "External integrations",
+        "Advanced AI research"
+      ]
+    },
+    "disclaimer": "The platform is in active development. It has not been announced as commercially available or production-validated. No public release date has been established.",
+    "link": "View full roadmap"
+  },
+  "places": {
+    "siteA": "Site A",
+    "campus03": "Campus 03",
+    "northOps": "North Region Operations",
+    "corporate": "Corporate Site A",
+    "campusObj": "Campus Object 03",
+    "dcNorth": "Distribution Centre North",
+    "buildingA": "Building A",
+    "floor01": "Floor 01",
+    "zoneNorth": "Zone North",
+    "northEntrance": "North Entrance"
+  },
+  "frag": {
+    "aria": "Architecture diagram: fragmented operational sources, friction layer, and ISB unified platform",
+    "summary": "Operational information in security organizations is commonly distributed across paper reports, spreadsheets, messaging, email, customer portals, shared folders and manual handovers. These handoffs create operational friction including duplicate entry, missing context, delayed escalation, version conflicts and weak traceability. ISB Security Platform provides a unified operational layer for reporting, objects, people, patrols, compliance and intelligence, producing controlled outputs such as management oversight, supervisor review, client visibility and compliance evidence.",
+    "today": "Today",
+    "distributed": "Commonly distributed",
+    "inputs": "Fragmented operational inputs",
+    "frictionKicker": "Friction layer",
+    "handoff": "Handoff · Delay",
+    "frictionTitle": "Operational friction",
+    "inputStreams": "INPUT STREAMS",
+    "owners": "↓ · multiple owners · multiple versions",
+    "frictionLayer": "FRICTION LAYER",
+    "loss": "↓ · information loss · delayed escalation",
+    "outputDelay": "OUTPUT DELAY",
+    "platform": "ISB Security Platform",
+    "unifiedKicker": "Unified layer",
+    "unifiedTitle": "Unified operational layer",
+    "shared": "Shared capabilities",
+    "outputsTitle": "Controlled outputs",
+    "hint": "Focus or hover a source to trace friction and platform domains",
+    "sources": {
+      "paper": {
+        "label": "Paper reports",
+        "tag": "MANUAL"
+      },
+      "excel": {
+        "label": "Spreadsheet planning",
+        "tag": "LOCAL"
+      },
+      "messaging": {
+        "label": "Messaging",
+        "tag": "EXTERNAL"
+      },
+      "email": {
+        "label": "Email",
+        "tag": "EXTERNAL"
+      },
+      "portals": {
+        "label": "Customer portals",
+        "tag": "EXTERNAL"
+      },
+      "folders": {
+        "label": "Shared folders",
+        "tag": "LOCAL"
+      },
+      "handovers": {
+        "label": "Manual handovers",
+        "tag": "MANUAL"
+      },
+      "phone": {
+        "label": "Phone calls",
+        "tag": "MANUAL"
+      },
+      "incident": {
+        "label": "Separate incident systems",
+        "tag": "SOURCE"
+      },
+      "reentry": {
+        "label": "Repeated data entry",
+        "tag": "MANUAL"
+      }
+    },
+    "frictions": {
+      "duplicate": "Duplicate entry",
+      "context": "Missing context",
+      "delay": "Delayed escalation",
+      "version": "Version conflicts",
+      "coordination": "Manual coordination",
+      "traceability": "Weak traceability",
+      "admin": "Repeated administration",
+      "audit": "Fragmented audit trail"
+    },
+    "domains": {
+      "reporting": "Reporting",
+      "objects": "Objects",
+      "people": "People",
+      "patrols": "Patrols",
+      "compliance": "Compliance",
+      "intelligence": "Intelligence"
+    },
+    "caps": [
+      "Role-based access",
+      "Audit and events",
+      "Company-scoped data",
+      "Selected offline workflows",
+      "AI assistance"
+    ],
+    "outputs": [
+      "Management oversight",
+      "Supervisor review",
+      "Client visibility",
+      "Operational records",
+      "Audit events",
+      "Incident follow-up"
+    ]
+  },
+  "pillars": {
+    "kicker": "Security OS · shared operational context",
+    "trail": "Org · Customer · Object · Personnel · Permissions · Audit",
+    "domainsAria": "Operational domains",
+    "pillarsAria": "Platform pillars",
+    "active": "Active domain",
+    "connected": "Connected",
+    "pillar": "Pillar {index}",
+    "core": "Core capabilities",
+    "hierarchy": "Hierarchy",
+    "workflow": "Example workflow",
+    "connectedDomains": "Connected platform domains",
+    "outcome": "Operational outcome",
+    "foundationTitle": "Shared platform foundation",
+    "foundationNote": "Technical foundations only. Not commercial availability, and not every module works offline.",
+    "foundation": [
+      "Authentication and role-based access",
+      "Company-scoped multi-tenant data",
+      "Scheduling and assignment authority",
+      "Attendance and worked time",
+      "Audit and events",
+      "Bounded billing and payroll data",
+      "Integration outbox",
+      "Selected offline reporting and patrol workflows"
+    ],
+    "items": {
+      "operations": {
+        "title": "Operations",
+        "summary": "Coordinate shifts, patrols, tasks and escalations within a shared operational context — not as isolated messages or spreadsheets.",
+        "capabilities": [
+          "Shift context",
+          "Patrol workflows",
+          "Tasks & open actions",
+          "Notifications",
+          "Escalations",
+          "Selected offline patrol workflows",
+          "Duty journal and handovers — planned"
+        ],
+        "workflow": [
+          "Shift starts",
+          "Officer receives assignment",
+          "Patrol begins",
+          "Checkpoint missed",
+          "Escalation triggered",
+          "Supervisor reviews",
+          "Action recorded"
+        ],
+        "outcome": "Shared operational context for shifts, patrols and escalations. Duty journal and handovers are planned."
+      },
+      "reporting": {
+        "title": "Reporting",
+        "summary": "Structured operational documentation — from field observation to approved record — with human review remaining mandatory.",
+        "capabilities": [
+          "Specific Report",
+          "Incident / Daily / Damage / Accident reports",
+          "AI-assisted drafting",
+          "Attachments",
+          "Review and approval",
+          "Report history",
+          "Digital signatures — planned"
+        ],
+        "workflow": [
+          "Field observation",
+          "Report draft",
+          "AI assistance",
+          "Officer review",
+          "Supervisor approval",
+          "Locked operational record"
+        ],
+        "outcome": "Traceable operational records suitable for internal oversight and client evidence."
+      },
+      "people": {
+        "title": "People",
+        "summary": "Personnel, roles, qualifications and assignments bound to the same objects and operational rules as the rest of the platform.",
+        "capabilities": [
+          "User profiles",
+          "Roles & permissions",
+          "Qualifications — discovery",
+          "Availability",
+          "Teams",
+          "Assignments — foundation established",
+          "Scheduling and assignment authority"
+        ],
+        "workflow": [
+          "Officer profile",
+          "Role set",
+          "Assignment",
+          "Shift",
+          "Operational activity",
+          "Audit record"
+        ],
+        "outcome": "Qualified personnel in the right place, with activity retained for review."
+      },
+      "objects": {
+        "title": "Objects",
+        "summary": "The physical hierarchy that anchors every report, patrol and instruction — from customer to checkpoint and asset.",
+        "capabilities": [
+          "Object requirements",
+          "Emergency contacts",
+          "Risks",
+          "Instructions",
+          "Patrol routes",
+          "Resources",
+          "Documents",
+          "Object history"
+        ],
+        "workflow": [
+          "Customer",
+          "Object",
+          "Building",
+          "Floor",
+          "Zone",
+          "Post / Checkpoint",
+          "Asset"
+        ],
+        "outcome": "One shared site model for every operational action and requirement."
+      },
+      "compliance": {
+        "title": "Compliance",
+        "summary": "Governance and traceability designed into the platform — access boundaries, evidence and change history.",
+        "capabilities": [
+          "Role-based access",
+          "Audit logging",
+          "Approval trails",
+          "Qualification authority — discovery",
+          "Change history",
+          "Evidence custody — discovery",
+          "Customer requirements"
+        ],
+        "workflow": [
+          "Requirement",
+          "Assigned control",
+          "Operational action",
+          "Recorded evidence",
+          "Review",
+          "Audit trail"
+        ],
+        "outcome": "Defensible operational evidence without claiming completed external certifications."
+      },
+      "intelligence": {
+        "title": "Intelligence",
+        "summary": "AI assists structure and insight. Human judgment remains required. Capabilities are staged by maturity.",
+        "capabilities": [
+          "AI-assisted report drafting — active development",
+          "Connected analytics — planned",
+          "Predictive AI risk analysis — future research",
+          "Wearable integrations — future research"
+        ],
+        "workflow": [
+          "Operational data",
+          "Structured extraction",
+          "Analysis support",
+          "Human review",
+          "Decision remains with officer / supervisor"
+        ],
+        "outcome": "Assisted understanding — never autonomous operational decisions."
+      }
+    }
+  },
+  "cap": {
+    "aria": "Operational capabilities",
+    "workflow": "Operational workflow",
+    "example": "Example interface",
+    "illustrative": "Illustrative demonstration data",
+    "modules": "Modules",
+    "related": "Related capabilities",
+    "implementation": "Implementation stage",
+    "stages": {
+      "foundation": "Foundation established",
+      "development": "Active development",
+      "discovery": "Discovery / architecture",
+      "planned": "Planned",
+      "future": "Future / research"
+    },
+    "items": {
+      "reporting": {
+        "title": "Reporting",
+        "category": "DOCUMENTATION",
+        "overview": "Reporting and recovery are in active development, from field observation through human review.",
+        "purpose": "Replace ad-hoc notes and messaging with traceable reports that share the same object, personnel and audit context as the rest of the platform.",
+        "workflow": [
+          "Field observation captured",
+          "Structured draft created",
+          "Attachments linked",
+          "Officer reviews draft",
+          "Supervisor approval",
+          "Record locked in history"
+        ],
+        "modules": [
+          "Specific Report",
+          "Daily Report",
+          "Incident Report",
+          "Damage Report",
+          "Accident Report",
+          "AI Draft",
+          "Attachments",
+          "Approval",
+          "History"
+        ],
+        "related": [
+          "Operations",
+          "Objects",
+          "Compliance",
+          "AI Assistance"
+        ],
+        "stageLabel": "Active development. AI-assisted drafting requires human review."
+      },
+      "operations": {
+        "title": "Operations",
+        "category": "CONTROL",
+        "overview": "Security operations, patrols and incident workflows are in active development. Selected offline reporting and patrol workflows are part of the technical foundation.",
+        "purpose": "Coordinate day-to-day security activity without losing context across tools, shifts or sites.",
+        "workflow": [
+          "Shift opens",
+          "Assignments issued",
+          "Patrol executes",
+          "Checkpoint exception",
+          "Escalation raised",
+          "Supervisor acts",
+          "Outcome recorded"
+        ],
+        "modules": [
+          "Shift context",
+          "Patrol timeline",
+          "Tasks",
+          "Escalations",
+          "Notifications",
+          "Open actions",
+          "Selected offline workflows",
+          "Duty journal — planned"
+        ],
+        "related": [
+          "Personnel",
+          "Objects",
+          "Reporting",
+          "Compliance"
+        ],
+        "stageLabel": "Active development. Not every module works offline, and no realtime service level is claimed."
+      },
+      "objects": {
+        "title": "Object Management",
+        "category": "STRUCTURE",
+        "overview": "Objects and locations, including customer and object hierarchy, are in active development.",
+        "purpose": "Anchor every report, patrol and instruction to a shared site model so context is never re-entered.",
+        "workflow": [
+          "Customer defined",
+          "Object created",
+          "Buildings & zones mapped",
+          "Posts & checkpoints set",
+          "Requirements attached",
+          "Routes & risks maintained"
+        ],
+        "modules": [
+          "Buildings",
+          "Floors",
+          "Zones",
+          "Rooms",
+          "Posts",
+          "Checkpoints",
+          "Assets",
+          "Emergency contacts",
+          "Routes",
+          "Requirements",
+          "Risks"
+        ],
+        "related": [
+          "Operations",
+          "Reporting",
+          "Compliance",
+          "Customers"
+        ],
+        "stageLabel": "Active development. Not a completed production hierarchy."
+      },
+      "personnel": {
+        "title": "Personnel",
+        "category": "PEOPLE",
+        "overview": "Personnel and workforce management are in active development. Scheduling and assignment authority are established foundations.",
+        "purpose": "Keep assignments tied to operational objects. Qualification authority is in discovery, not an available qualification system.",
+        "workflow": [
+          "Profile & role set",
+          "Qualification — discovery",
+          "Assignment to object",
+          "Shift active",
+          "Operational activity",
+          "Audit retained"
+        ],
+        "modules": [
+          "Users",
+          "Roles",
+          "Qualifications — discovery",
+          "Availability",
+          "Scheduling and assignment authority",
+          "Assignments",
+          "Team structure"
+        ],
+        "related": [
+          "Operations",
+          "Compliance",
+          "Objects"
+        ],
+        "stageLabel": "Active development. Scheduling and assignment authority are established. Qualification authority is in discovery."
+      },
+      "customers": {
+        "title": "Customer Management",
+        "category": "COMMERCIAL",
+        "overview": "Customer context spanning objects, contacts and contractual requirements.",
+        "purpose": "Keep multi-customer operations coherent without separate spreadsheets per client.",
+        "workflow": [
+          "Customer onboarding",
+          "Objects linked",
+          "Contacts registered",
+          "Requirements captured",
+          "Operational delivery",
+          "Evidence available"
+        ],
+        "modules": [
+          "Customers",
+          "Linked objects",
+          "Contacts",
+          "Contractual notes",
+          "Requirements",
+          "Visibility scopes"
+        ],
+        "related": [
+          "Objects",
+          "Reporting",
+          "Compliance"
+        ],
+        "stageLabel": "Active development"
+      },
+      "compliance": {
+        "title": "Compliance",
+        "category": "GOVERNANCE",
+        "overview": "Role-based access, company-scoped data and audit foundations are established. Evidence custody and qualification authority are in discovery.",
+        "purpose": "Support oversight and customer requirements without claiming external certifications the product does not hold.",
+        "workflow": [
+          "Requirement defined",
+          "Control assigned",
+          "Operational action",
+          "Evidence recorded",
+          "Review completed",
+          "Audit trail retained"
+        ],
+        "modules": [
+          "Role-based access",
+          "Audit logging",
+          "Approval trails",
+          "Qualification authority — discovery",
+          "Change history",
+          "Evidence custody — discovery",
+          "Customer requirements"
+        ],
+        "related": [
+          "Reporting",
+          "Personnel",
+          "Objects"
+        ],
+        "stageLabel": "Access and audit foundations established. Evidence custody and privacy retention are in discovery. No certification is claimed."
+      },
+      "ai": {
+        "title": "AI Assistance",
+        "category": "ASSIST",
+        "overview": "AI structures field notes into draft reports. Human review remains mandatory before any official record.",
+        "purpose": "Reduce administrative load while keeping operational decisions with officers and supervisors.",
+        "workflow": [
+          "Field notes entered",
+          "AI structures draft",
+          "Missing fields flagged",
+          "Officer reviews",
+          "Supervisor approves",
+          "Record finalized"
+        ],
+        "modules": [
+          "Field note input",
+          "Structured extraction",
+          "Draft generation",
+          "Missing-field prompts",
+          "Human review gate",
+          "Approval link"
+        ],
+        "related": [
+          "Reporting",
+          "Operations",
+          "Compliance"
+        ],
+        "stageLabel": "Active development. Drafts require human review. AI does not make autonomous operational decisions."
+      },
+      "intelligence": {
+        "title": "Intelligence",
+        "category": "INSIGHT",
+        "overview": "Connected analytics is planned. Predictive AI risk analysis is future research and does not make operational decisions.",
+        "purpose": "Help supervisors understand patterns over time — without autonomous decision-making.",
+        "workflow": [
+          "Operational data accumulates",
+          "Structured signals derived",
+          "Pattern support presented",
+          "Human interpretation",
+          "Action decided by operations"
+        ],
+        "modules": [
+          "Connected analytics — planned",
+          "Predictive AI risk analysis — future research",
+          "Wearable integrations — future research"
+        ],
+        "related": [
+          "Reporting",
+          "Operations",
+          "Personnel",
+          "Objects"
+        ],
+        "stageLabel": "Connected analytics is planned. Predictive AI risk analysis is future research."
+      }
+    }
+  },
+  "capUi": {
+    "reporting": {
+      "id": "ID",
+      "type": "Type",
+      "object": "Object",
+      "status": "Status",
+      "specific": "Specific",
+      "incident": "Incident",
+      "damage": "Damage",
+      "awaiting": "Awaiting review",
+      "escalated": "Escalated",
+      "draft": "Draft"
+    },
+    "operations": {
+      "kicker": "Patrol timeline · illustrative",
+      "shift": "Shift open · North Region",
+      "patrol": "Patrol NL-OBJ-042 started",
+      "checkpoint": "Checkpoint CP-04 missed · escalation",
+      "supervisor": "Supervisor assigned",
+      "action": "Action recorded · door secured"
+    },
+    "objects": {
+      "building": "├ Building A · Floor 01 · Zone North",
+      "entrance": "· North Entrance · CP-04",
+      "requirements": "└ Requirements · Risks · Routes",
+      "corporate": "└ Corporate Site A"
+    },
+    "personnel": {
+      "officer": "Officer",
+      "assignment": "Assignment",
+      "qualification": "Qualification",
+      "status": "Status",
+      "qualified": "Qualified",
+      "onDuty": "On duty",
+      "renewal": "Renewal due"
+    },
+    "customers": {
+      "customer": "Customer",
+      "linked": "Linked objects",
+      "linkedValue": "3 active",
+      "contact": "Primary contact",
+      "contactValue": "Ops desk · on-call",
+      "requirements": "Requirements",
+      "requirementsValue": "12 tracked"
+    },
+    "compliance": {
+      "steps": [
+        "Requirement · perimeter check every 60 min",
+        "Control assigned · patrol route Zone North",
+        "Operational action · CP-04 logged",
+        "Evidence · report SR-2026-00482",
+        "Review · supervisor signed",
+        "Audit trail · immutable entry retained"
+      ]
+    },
+    "ai": {
+      "notes": "Field notes",
+      "quote": "“22:14 north patrol. gate 3 open. secured. cam 4 blocked vegetation.”",
+      "time": "Time · 22:14",
+      "location": "Location · Gate 3",
+      "action": "Action · Secured",
+      "secondary": "Secondary · Camera obstructed",
+      "review": "Review required — draft is not an official record until approved."
+    },
+    "intelligence": {
+      "kicker": "Staged capability",
+      "items": [
+        "Insight views — planned",
+        "Pattern analysis — planned",
+        "Risk signals — planned",
+        "Recommendations — future direction"
+      ],
+      "note": "Human interpretation required. No autonomous decisions."
+    }
+  },
+  "trust": {
+    "summary": "ISB trust architecture layers from identity through roles and permissions, tenant boundaries, data access, operational actions, audit trail, to storage and infrastructure. Designed around least-privilege access, tenant-aware boundaries and traceable operational actions. Production controls remain subject to deployment validation. No certifications claimed.",
+    "intro": "ISB is being designed around identity, role-based access, tenant boundaries, traceability and controlled operational data flows. Production controls remain subject to deployment and infrastructure validation.",
+    "maturityLabel": "Maturity model",
+    "architecture": "Trust architecture",
+    "tenantKicker": "Tenant-aware boundaries · illustrative",
+    "inactive": "Context inactive",
+    "noPath": "No path across tenant boundary",
+    "principlesLabel": "Trust principles",
+    "complianceLabel": "Compliance direction",
+    "directionOnly": "Direction only · no dates · no guaranteed certification",
+    "disclosureLabel": "Responsible disclosure",
+    "disclosure": "Security researchers and organizations can report potential security issues directly to ISB Security Solutions.",
+    "principles": [
+      "Least-privilege access",
+      "Tenant-aware boundaries",
+      "Traceable actions",
+      "Controlled operational context",
+      "Privacy-conscious design",
+      "Secure development practices"
+    ],
+    "maturity": {
+      "design": {
+        "stage": "Design foundation",
+        "items": "RBAC model · Multi-tenant structure · Audit architecture · Data separation model"
+      },
+      "development": {
+        "stage": "Active development",
+        "items": "Production hardening · Security monitoring · Recovery procedures · Operational controls"
+      },
+      "validation": {
+        "stage": "Planned validation",
+        "items": "External security testing · Compliance assessment · Backup/recovery testing · Production control validation"
+      },
+      "future": {
+        "stage": "Future compliance direction",
+        "items": "ISO 27001 readiness direction · European security/privacy standards assessment"
+      }
+    },
+    "layers": {
+      "identity": {
+        "label": "Identity",
+        "purpose": "Identity and organization context form the first access boundary.",
+        "controls": "Authenticated users · organization context · role · assignment context",
+        "maturity": "Design foundation"
+      },
+      "roles": {
+        "label": "Roles & Permissions",
+        "purpose": "Designed around least-privilege access — what a user may view, create, approve or manage.",
+        "controls": "Role scopes · supervisor vs officer vs customer context · function-specific access",
+        "maturity": "Design foundation"
+      },
+      "tenant": {
+        "label": "Tenant Boundaries",
+        "purpose": "Tenant-aware data boundaries separate organizations, customers and objects.",
+        "controls": "Company separation · customer separation · object separation · authorized context only",
+        "maturity": "Design foundation"
+      },
+      "data": {
+        "label": "Data Access",
+        "purpose": "Architecture supports context-aware data access and row-level data controls.",
+        "controls": "Role + tenant + object context · API boundaries · secure storage foundations",
+        "maturity": "Design foundation · coverage expanding"
+      },
+      "actions": {
+        "label": "Operational Actions",
+        "purpose": "Sensitive actions occur only after identity, permission and context checks.",
+        "controls": "Create/approve report · update instruction · assign officer · close escalation · change context",
+        "maturity": "Design foundation"
+      },
+      "audit": {
+        "label": "Audit Trail",
+        "purpose": "Traceable operational actions — critical changes and approvals associated with users.",
+        "controls": "Action logging · change history · approval association · record history",
+        "maturity": "Design foundation"
+      },
+      "storage": {
+        "label": "Storage & Infrastructure",
+        "purpose": "Production infrastructure controls remain subject to deployment validation.",
+        "controls": "Controlled storage · environment separation · access controls · backup direction · monitoring direction",
+        "maturity": "Active development"
+      }
+    },
+    "tenants": {
+      "A": {
+        "org": "Organization A",
+        "path": "Customer A1 → Building A → NL-OBJ-042"
+      },
+      "B": {
+        "org": "Organization B",
+        "path": "Customer B1 → Campus 03"
+      }
+    },
+    "steps": {
+      "architecture": "Architecture",
+      "hardening": "Hardening",
+      "validation": "Validation",
+      "assessment": "External assessment",
+      "maturity": "Compliance maturity"
+    }
+  },
+  "product": {
+    "aria": "Illustrative ISB Security Platform interface. Demonstration data only.",
+    "env": "Operations environment",
+    "host": "app.isbsecuritysolutions.nl",
+    "orgLabel": "Org",
+    "orgValue": "ISB Demo Environment",
+    "customerLabel": "Customer",
+    "objectLabel": "Object",
+    "roleLabel": "Role",
+    "roleValue": "Operations Supervisor",
+    "normalOps": "Normal Operations",
+    "view": "View · {context}",
+    "modulesAria": "Security OS modules",
+    "modules": "Modules",
+    "viewsAria": "Operational views",
+    "nav": {
+      "command": "Command",
+      "reports": "Reports",
+      "objects": "Objects",
+      "personnel": "Personnel",
+      "patrols": "Patrols",
+      "incidents": "Incidents",
+      "compliance": "Compliance",
+      "intelligence": "Intelligence",
+      "administration": "Administration"
+    },
+    "tabs": {
+      "command": "Command",
+      "reporting": "Reporting",
+      "objects": "Objects",
+      "personnel": "Personnel"
+    },
+    "command": {
+      "activeIncidents": "Active incidents",
+      "officers": "Officers on duty",
+      "patrols": "Patrols in progress",
+      "missed": "Missed checkpoints",
+      "attention": "Attention",
+      "activity": "Activity stream",
+      "high": "High",
+      "medium": "Medium",
+      "watch": "Watch",
+      "esc184": "Gate 3 unsecured · NL-OBJ-042",
+      "esc181": "Camera 4 obstructed · Distribution Centre North",
+      "cert": "2 qualifications renewal due · 30 days",
+      "submitted": "Incident report submitted",
+      "submittedDetail": "NL-OBJ-042 · Awaiting supervisor review",
+      "missedEvent": "Checkpoint missed",
+      "missedDetail": "Distribution Centre North · Escalation triggered",
+      "shiftStarted": "Officer shift started",
+      "shiftDetail": "Corporate Site A · Post North Entrance",
+      "instruction": "Object instruction updated",
+      "instructionDetail": "Campus Object 03 · Version 7 approved"
+    },
+    "reporting": {
+      "queue": "Report queue",
+      "awaitingCount": "3 awaiting review",
+      "reportId": "Report ID",
+      "time": "Time",
+      "specific": "Specific Report",
+      "incident": "Incident Report",
+      "damage": "Damage Report",
+      "awaiting": "Awaiting review",
+      "escalated": "Escalated",
+      "draft": "Draft",
+      "selected": "Selected · SR-2026-00482 · Illustrative",
+      "eventTime": "Event time",
+      "location": "Location",
+      "locationValue": "NL-OBJ-042 · Zone North · Gate 3",
+      "observation": "Observation",
+      "observationValue": "Access door found unsecured",
+      "action": "Action taken",
+      "actionValue": "Door secured · Control notified",
+      "escalation": "Escalation",
+      "escalationValue": "Object supervisor informed",
+      "evidence": "Evidence",
+      "evidenceValue": "Photo attachment · 1 file",
+      "reviewer": "Reviewer",
+      "reviewerValue": "Pending assignment",
+      "state": "State",
+      "stateValue": "Submitted · Awaiting review"
+    },
+    "objects": {
+      "detail": "Object detail · NL-OBJ-042",
+      "normal": "Normal operations",
+      "shift": "Current shift",
+      "officer": "Active officer",
+      "instructions": "Open instructions",
+      "instructionsValue": "2 approved",
+      "risk": "Risk note",
+      "riskValue": "Perimeter camera 4 vegetation obstruction",
+      "emergency": "Emergency contact",
+      "emergencyValue": "Control room · on-call supervisor",
+      "nextPatrol": "Next patrol",
+      "nextPatrolValue": "15:00 · Zone North route",
+      "recent": "Recent incident",
+      "recentValue": "SR-2026-00482 · awaiting review",
+      "completion": "Checkpoint completion",
+      "completionValue": "10 / 12 this shift",
+      "checkpoint": "Checkpoint CP-04"
+    },
+    "personnel": {
+      "roster": "Duty roster",
+      "fictional": "Illustrative · fictional names",
+      "shift": "Shift",
+      "availability": "Availability",
+      "checkIn": "Last check-in"
+    }
+  },
+  "assistant": {
+    "assists": "AI assists",
+    "reviews": "Officer reviews",
+    "approves": "Supervisor approves",
+    "motto": "AI supports the report. Not the decision.",
+    "aria": "AI report workflow stages",
+    "actorPrefix": "Actor · ",
+    "previous": "Previous",
+    "next": "Next",
+    "historyLabel": "Revision history",
+    "scopeLabel": "Capability scope",
+    "limitsLabel": "Limitations",
+    "limitsNote": "AI workflows are being designed around controlled platform access and operational data boundaries.",
+    "actors": {
+      "officer": "Officer",
+      "ai": "AI",
+      "supervisor": "Supervisor",
+      "system": "System"
+    },
+    "suffix": {
+      "ai": " · suggestion only",
+      "system": " · audit state",
+      "human": " · decision authority"
+    },
+    "stages": {
+      "notes": "Field Notes",
+      "extraction": "Extraction",
+      "draft": "Draft Report",
+      "review": "Human Review",
+      "approval": "Supervisor",
+      "locked": "Locked Record"
+    },
+    "notes": {
+      "officer": "Officer · ",
+      "object": "Object · ",
+      "time": "Time · ",
+      "input": "Input · ",
+      "mobile": "Mobile field note",
+      "raw": "Raw field notes",
+      "body": "“22:14 north patrol. gate 3 open. secured gate. camera 4 partly blocked by vegetation. supervisor informed.”"
+    },
+    "extraction": {
+      "kicker": "Suggested extraction · needs review",
+      "context": "Required context · ",
+      "identified": "6 / 7 identified",
+      "missing": "Missing · Follow-up responsibility",
+      "fields": {
+        "time": {
+          "label": "Time",
+          "value": "22:14"
+        },
+        "location": {
+          "label": "Location",
+          "value": "North perimeter"
+        },
+        "observation": {
+          "label": "Observation",
+          "value": "Gate 3 found unsecured"
+        },
+        "action": {
+          "label": "Action taken",
+          "value": "Gate secured on location"
+        },
+        "secondary": {
+          "label": "Secondary observation",
+          "value": "Camera 4 field of view partially obstructed"
+        },
+        "escalation": {
+          "label": "Escalation",
+          "value": "Object supervisor informed"
+        }
+      }
+    },
+    "draft": {
+      "generated": "AI-generated draft",
+      "notFinal": "Not final",
+      "body": "At 22:14 hours, during a scheduled patrol of the north perimeter of object NL-OBJ-042, Gate 3 was found unsecured. The gate was secured on location. Camera 4 was also observed to have a partially obstructed field of view due to vegetation. The object supervisor was informed for follow-up.",
+      "fields": {
+        "time": {
+          "label": "Event time",
+          "value": "22:14"
+        },
+        "location": {
+          "label": "Location",
+          "value": "NL-OBJ-042 · North perimeter · Gate 3"
+        },
+        "observation": {
+          "label": "Observation",
+          "value": "Gate found unsecured"
+        },
+        "action": {
+          "label": "Action",
+          "value": "Gate secured on location"
+        },
+        "escalation": {
+          "label": "Escalation",
+          "value": "Object supervisor informed"
+        },
+        "evidence": {
+          "label": "Evidence",
+          "value": "None attached"
+        }
+      }
+    },
+    "review": {
+      "kicker": "Officer review · editable draft",
+      "body": "At 22:14 hours, during a scheduled patrol of the north perimeter of object NL-OBJ-042, Gate 3 was found unsecured. The gate was secured on location. Camera 4 was also observed to have a partially obstructed field of view due to vegetation. The object supervisor was informed for follow-up.",
+      "followUp": "Follow-up assigned to on-call supervisor.",
+      "checklist": "Review checklist",
+      "checks": {
+        "owner": "Follow-up owner not specified",
+        "photo": "No photo attached",
+        "instruction": "Object instruction reference optional"
+      },
+      "reviewed": "Reviewed by officer",
+      "pending": "Pending supervisor review"
+    },
+    "approval": {
+      "officerVersion": "Officer version · v2",
+      "officerBody": "Draft revised · follow-up owner added · ready for supervisor.",
+      "supervisor": "Supervisor",
+      "role": "Operations Supervisor",
+      "comment": "Comment: “Clarify who receives follow-up responsibility.”",
+      "status": "Status · Revision requested → then approved",
+      "after": "After correction · supervisor approved · timestamp 22:24"
+    },
+    "locked": {
+      "approved": "Approved",
+      "finalized": "Finalized operational record",
+      "note": "Locked in workflow · not a claim of legal immutability",
+      "fields": {
+        "id": {
+          "label": "Report ID",
+          "value": "SR-2026-00482"
+        },
+        "object": {
+          "label": "Object",
+          "value": "NL-OBJ-042"
+        },
+        "status": {
+          "label": "Status",
+          "value": "Approved"
+        },
+        "review": {
+          "label": "Review state",
+          "value": "Complete"
+        },
+        "audit": {
+          "label": "Audit",
+          "value": "Officer reviewed · Supervisor approved · Version locked"
+        },
+        "evidence": {
+          "label": "Evidence",
+          "value": "1 attachment"
+        }
+      }
+    },
+    "history": [
+      {
+        "version": "v1",
+        "time": "22:16",
+        "label": "AI draft"
+      },
+      {
+        "version": "v2",
+        "time": "22:19",
+        "label": "Officer revision"
+      },
+      {
+        "version": "v3",
+        "time": "22:24",
+        "label": "Supervisor approved"
+      }
+    ],
+    "scope": [
+      "Structure · active development",
+      "Extraction · active development",
+      "Completeness checks · active development",
+      "Context suggestions · active development",
+      "Predictive risk analysis · future research"
+    ],
+    "limits": [
+      "AI output may contain errors.",
+      "AI-generated drafts require human review.",
+      "Operational decisions remain with authorized personnel.",
+      "AI does not replace escalation procedures."
+    ]
+  },
+  "diagram": {
+    "operational": "Operational hierarchy",
+    "org": "ORGANIZATION",
+    "customers": "↓ Customers",
+    "objects": "↓ Objects",
+    "buildings": "↓ Buildings → Floors → Zones → Rooms",
+    "posts": "↓ Posts · Checkpoints · Assets",
+    "identity": "Identity hierarchy",
+    "users": "USERS",
+    "roles": "↓ Roles",
+    "permissions": "↓ Permissions",
+    "teams": "↓ Teams",
+    "qualifications": "↓ Qualifications → Assignments",
+    "enginesLabel": "Platform engines",
+    "engines": [
+      "Reporting Engine",
+      "Notification Engine",
+      "Audit Layer",
+      "Realtime Layer",
+      "Offline Layer",
+      "API Layer",
+      "AI Assistance"
+    ],
+    "note": "Both hierarchies intersect through operational workflows — reports, patrols, escalations and assignments always carry organization, object and user context."
+  }
+}

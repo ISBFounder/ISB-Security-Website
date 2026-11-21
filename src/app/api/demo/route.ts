@@ -18,24 +18,57 @@ export async function POST(request: Request) {
       request.headers.get("x-real-ip") ||
       "unknown";
 
-    const limited = await limitFormRequest(`demo:${ip}`);
-    if (!limited.success) {
+    let limited: Awaited<ReturnType<typeof limitFormRequest>> | null = null;
+    try {
+      limited = await limitFormRequest(`demo:${ip}`);
+    } catch {
+      console.error("[demo] rate limit unavailable");
+      limited = null;
+    }
+
+    if (limited && !limited.success) {
       return NextResponse.json(
         {
           error:
             "Too many requests were received from this connection. Please try again later.",
+          code: "rate_limited",
         },
         { status: 429 }
       );
     }
 
-    const body = await request.json();
+    let body: unknown;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json(
+        { error: "Validation failed", code: "validation_failed" },
+        { status: 400 }
+      );
+    }
+
     const parsed = demoSchema.safeParse(body);
 
     if (!parsed.success) {
       return NextResponse.json(
-        { error: "Validation failed", details: parsed.error.flatten() },
+        {
+          error: "Validation failed",
+          code: "validation_failed",
+          details: parsed.error.flatten(),
+        },
         { status: 400 }
+      );
+    }
+
+    // Do not send mail when the rate limiter cannot be reached.
+    if (!limited) {
+      return NextResponse.json(
+        {
+          error:
+            "Online submission is temporarily unavailable. Please email info@isbsecuritysolutions.nl.",
+          code: "server",
+        },
+        { status: 503 }
       );
     }
 
@@ -87,6 +120,9 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true, id: result.id });
   } catch {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Server error", code: "server" },
+      { status: 500 }
+    );
   }
 }

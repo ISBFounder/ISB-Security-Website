@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
+import { absoluteLocaleUrl } from "@/i18n/paths";
+import type { Locale } from "@/i18n/routing";
 import { SITE } from "@/lib/constants";
 
 export const DEFAULT_DESCRIPTION =
   "ISB Security Solutions is building the ISB Security Platform for professional security operations, reporting, personnel planning and site management. The platform is in active development.";
+
+const OG_LOCALE: Record<Locale, string> = {
+  en: "en_US",
+  nl: "nl_NL",
+};
 
 export function absoluteUrl(path: string = "/"): string {
   if (path.startsWith("http")) return path;
@@ -11,28 +18,45 @@ export function absoluteUrl(path: string = "/"): string {
 }
 
 export function routeMetadata(opts: {
+  locale: Locale;
   title: string;
   description: string;
   path: string;
+  absoluteTitle?: boolean;
+  ogDescription?: string;
+  twitterDescription?: string;
 }): Metadata {
-  const url = absoluteUrl(opts.path);
-  const socialTitle = `${opts.title} | ${SITE.name}`;
+  const url = absoluteLocaleUrl(opts.locale, opts.path);
+  const socialTitle = opts.absoluteTitle
+    ? opts.title
+    : `${opts.title} | ${SITE.name}`;
+  const ogDescription = opts.ogDescription ?? opts.description;
+  const twitterDescription = opts.twitterDescription ?? opts.description;
+  const languages = {
+    en: absoluteLocaleUrl("en", opts.path),
+    nl: absoluteLocaleUrl("nl", opts.path),
+    "x-default": absoluteLocaleUrl("en", opts.path),
+  };
   return {
-    title: opts.title,
+    title: opts.absoluteTitle ? { absolute: opts.title } : opts.title,
     description: opts.description,
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      languages,
+    },
     openGraph: {
       title: socialTitle,
-      description: opts.description,
+      description: ogDescription,
       url,
       siteName: SITE.name,
       type: "website",
-      locale: "en_US",
+      locale: OG_LOCALE[opts.locale],
+      alternateLocale: opts.locale === "nl" ? ["en_US"] : ["nl_NL"],
     },
     twitter: {
       card: "summary_large_image",
       title: socialTitle,
-      description: opts.description,
+      description: twitterDescription,
     },
   };
 }
@@ -61,19 +85,19 @@ export function organizationJsonLd() {
       contactType: "enquiries",
       email: SITE.email,
       areaServed: "NL",
-      availableLanguage: ["English"],
+      availableLanguage: ["English", "Dutch"],
     },
   };
 }
 
-export function websiteJsonLd() {
+export function websiteJsonLd(opts: { locale: Locale; description: string }) {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: SITE.name,
     url: SITE.url,
-    inLanguage: "en",
-    description: DEFAULT_DESCRIPTION,
+    inLanguage: opts.locale,
+    description: opts.description,
     publisher: {
       "@type": "Organization",
       name: SITE.name,
@@ -82,16 +106,19 @@ export function websiteJsonLd() {
   };
 }
 
-export function softwareApplicationJsonLd() {
+export function softwareApplicationJsonLd(opts: {
+  locale: Locale;
+  description: string;
+}) {
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: SITE.product,
-    url: absoluteUrl("/platform"),
+    url: absoluteLocaleUrl(opts.locale, "/platform"),
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    description:
-      "The ISB Security Platform is in active development for professional security operations, reporting, personnel planning and site management. It has not been announced as commercially available or production-validated. AI-assisted reporting does not make autonomous operational decisions.",
+    inLanguage: opts.locale,
+    description: opts.description,
     provider: {
       "@type": "Organization",
       name: SITE.name,
@@ -101,6 +128,7 @@ export function softwareApplicationJsonLd() {
 }
 
 export function breadcrumbJsonLd(
+  locale: Locale,
   items: { name: string; path: string }[]
 ) {
   return {
@@ -110,17 +138,19 @@ export function breadcrumbJsonLd(
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      item: absoluteUrl(item.path),
+      item: absoluteLocaleUrl(locale, item.path),
     })),
   };
 }
 
 export function faqPageJsonLd(
-  items: { question: string; answer: string }[]
+  items: { question: string; answer: string }[],
+  locale?: Locale
 ) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    ...(locale ? { inLanguage: locale } : {}),
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,

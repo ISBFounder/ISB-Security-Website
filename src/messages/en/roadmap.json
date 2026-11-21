@@ -1,0 +1,186 @@
+{
+  "metaTitle": "Product Roadmap",
+  "metaDescription": "ISB Security Platform roadmap: now, next and later. No public release date. The platform is in active development and is not commercially available.",
+  "twitterDescription": "ISB Security Platform roadmap: now, next and later. No public release date. Not commercially available.",
+  "breadcrumbHome": "Home",
+  "breadcrumb": "Roadmap",
+  "eyebrow": "Roadmap",
+  "title": "ISB Security Platform: Active Development",
+  "intro": "Now: refine and validate operational, reporting, workforce, planning, object-management and selected offline workflows. Next: complete current integration and recovery work, and the required environment and authority validation. Later: expand connected operational capabilities, external integrations and advanced AI research.",
+  "disclaimer": "The platform has not been announced as commercially available or production-validated. No public release date has been established. Priorities may change. Stage placement is not a delivery commitment.",
+  "progressionEyebrow": "Architecture progression",
+  "horizons": {
+    "now": "Now",
+    "next": "Next",
+    "later": "Later"
+  },
+  "foundationsNote": "Technical foundations already include role-based access, company-scoped data, scheduling and assignment authority, attendance and worked time, audit and events, bounded billing and payroll data, an integration outbox, and selected offline reporting and patrol workflows. Those foundations are not commercial availability.",
+  "stagesEyebrow": "Product roadmap",
+  "stagesTitle": "Operational layers. One connected direction.",
+  "stages": {
+    "now": {
+      "index": "Now",
+      "label": "Refine and validate",
+      "layer": "Active development",
+      "groups": {
+        "focus": {
+          "title": "Current focus",
+          "items": {
+            "workflows": "Operational workflows",
+            "reporting": "Reporting and recovery",
+            "workforce": "Workforce and personnel planning",
+            "objects": "Object management",
+            "offline": "Selected offline workflows"
+          }
+        },
+        "active": {
+          "title": "In active development",
+          "items": {
+            "operations": "Security operations",
+            "patrols": "Patrols",
+            "incidents": "Incident workflows",
+            "personnel": "Personnel and workforce management",
+            "objects": "Objects and locations",
+            "ai": "AI-assisted report drafting",
+            "mobile": "Selected mobile and offline workflows",
+            "service": "Service requests and contracts",
+            "documents": "Document workspaces",
+            "client": "Client-facing reporting workflows"
+          }
+        }
+      }
+    },
+    "next": {
+      "index": "Next",
+      "label": "Integrate and validate",
+      "layer": "No release date",
+      "groups": {
+        "required": {
+          "title": "Required next work",
+          "items": {
+            "integration": "Current integration work",
+            "recovery": "Recovery work",
+            "environment": "Environment validation",
+            "authority": "Authority validation"
+          }
+        },
+        "discovery": {
+          "title": "Discovery / architecture",
+          "items": {
+            "evidence": "Immutable evidence custody",
+            "documents": "Definitive document publication authority",
+            "qualifications": "Personnel qualification authority",
+            "privacy": "Privacy retention and legal-hold governance"
+          }
+        }
+      }
+    },
+    "later": {
+      "index": "Later",
+      "label": "Expand and research",
+      "layer": "Not committed delivery",
+      "groups": {
+        "planned": {
+          "title": "Planned",
+          "items": {
+            "analytics": "Connected analytics",
+            "visitors": "Visitor management",
+            "journal": "Duty journal and handovers",
+            "alarms": "Alarm-provider integrations",
+            "maps": "Interactive site maps",
+            "cases": "Case management",
+            "orders": "Work orders",
+            "voice": "Voice transcription",
+            "exports": "Centralized exports",
+            "connectors": "Enterprise connectors"
+          }
+        },
+        "future": {
+          "title": "Future / research",
+          "items": {
+            "wearables": "Wearable integrations",
+            "predictive": "Predictive AI risk analysis"
+          }
+        }
+      }
+    }
+  },
+  "statusEyebrow": "Status definitions",
+  "statusTitle": "How maturity labels are used.",
+  "status": {
+    "foundation": {
+      "label": "Foundation established",
+      "text": "Technical foundations exist in the development platform. This is not commercial availability or production validation."
+    },
+    "development": {
+      "label": "Active development",
+      "text": "Work is actively progressing and is not production-validated. Progress is not equal across all items."
+    },
+    "discovery": {
+      "label": "Discovery / architecture",
+      "text": "Authority and design questions are under study. They are not available capabilities."
+    },
+    "planned": {
+      "label": "Planned",
+      "text": "Part of the intended platform direction. No release date is authorized."
+    },
+    "future": {
+      "label": "Future / research",
+      "text": "Research direction subject to validation and prioritization. Not committed delivery."
+    }
+  },
+  "dependenciesEyebrow": "Capability dependencies",
+  "dependenciesTitle": "Later capabilities build on earlier foundations.",
+  "dependenciesDescription": "Deliberate architecture — not random feature development.",
+  "dependsOn": "depends on",
+  "dependencies": {
+    "ai": {
+      "capability": "AI-assisted reporting",
+      "depends": "Reporting workflows in active development"
+    },
+    "analytics": {
+      "capability": "Connected analytics",
+      "depends": "Consistent operational data"
+    },
+    "predictive": {
+      "capability": "Predictive AI research",
+      "depends": "Validated data and human review"
+    },
+    "connectors": {
+      "capability": "Enterprise connectors",
+      "depends": "Integration outbox foundations"
+    },
+    "client": {
+      "capability": "Client-facing reporting",
+      "depends": "Company-scoped access boundaries"
+    }
+  },
+  "boundariesEyebrow": "Boundaries",
+  "boundariesTitle": "What this roadmap does not claim.",
+  "boundariesDescription": "Development categories are not commercial availability labels. AI does not make autonomous operational decisions.",
+  "boundaries": {
+    "date": "No release date",
+    "commercial": "Not commercially available",
+    "production": "Not production-validated",
+    "certification": "No certification claimed",
+    "offline": "Not every module works offline",
+    "ai": "AI does not decide"
+  },
+  "prioritiesEyebrow": "How roadmap priorities are evaluated",
+  "prioritiesTitle": "Operational and technical criteria.",
+  "priorities": {
+    "value": "Operational value",
+    "security": "Security impact",
+    "dependency": "Platform dependency",
+    "workflow": "User workflow",
+    "maturity": "Technical maturity",
+    "validation": "Validation requirements",
+    "scale": "Scalability"
+  },
+  "policyEyebrow": "Roadmap policy",
+  "policyBody": "The roadmap represents current development direction rather than a contractual delivery schedule. No release dates, delivery commitments or commercial availability claims are implied by stage placement.",
+  "ctaTitle": "Discuss how the platform direction aligns with your operational requirements.",
+  "ctaDemo": "Request Demo",
+  "ctaPlatform": "Explore Platform",
+  "ctaContact": "Contact ISB"
+}

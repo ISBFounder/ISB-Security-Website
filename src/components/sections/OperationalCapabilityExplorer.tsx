@@ -7,6 +7,7 @@ import {
   type KeyboardEvent as RKEvent,
 } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 type Stage = "foundation" | "development" | "discovery" | "planned" | "future";
@@ -20,17 +21,26 @@ type CapId =
   | "ai"
   | "intelligence";
 
-type Capability = {
-  id: CapId;
-  title: string;
-  category: string;
-  stage: Stage;
-  overview: string;
-  purpose: string;
-  workflow: string[];
-  modules: string[];
-  related: string[];
-  stageLabel: string;
+const CAP_IDS: CapId[] = [
+  "reporting",
+  "operations",
+  "objects",
+  "personnel",
+  "customers",
+  "compliance",
+  "ai",
+  "intelligence",
+];
+
+const CAP_STAGE: Record<CapId, Stage> = {
+  reporting: "development",
+  operations: "development",
+  objects: "development",
+  personnel: "development",
+  customers: "development",
+  compliance: "foundation",
+  ai: "development",
+  intelligence: "planned",
 };
 
 const STAGE_STYLE: Record<Stage, string> = {
@@ -41,270 +51,26 @@ const STAGE_STYLE: Record<Stage, string> = {
   future: "border-dashed border-border text-ink-faint",
 };
 
-const STAGE_LABEL: Record<Stage, string> = {
-  foundation: "Foundation established",
-  development: "Active development",
-  discovery: "Discovery / architecture",
-  planned: "Planned",
-  future: "Future / research",
-};
-
-const CAPABILITIES: Capability[] = [
-  {
-    id: "reporting",
-    title: "Reporting",
-    category: "DOCUMENTATION",
-    stage: "development",
-    overview:
-      "Reporting and recovery are in active development, from field observation through human review.",
-    purpose:
-      "Replace ad-hoc notes and messaging with traceable reports that share the same object, personnel and audit context as the rest of the platform.",
-    workflow: [
-      "Field observation captured",
-      "Structured draft created",
-      "Attachments linked",
-      "Officer reviews draft",
-      "Supervisor approval",
-      "Record locked in history",
-    ],
-    modules: [
-      "Specific Report",
-      "Daily Report",
-      "Incident Report",
-      "Damage Report",
-      "Accident Report",
-      "AI Draft",
-      "Attachments",
-      "Approval",
-      "History",
-    ],
-    related: ["Operations", "Objects", "Compliance", "AI Assistance"],
-    stageLabel: "Active development. AI-assisted drafting requires human review.",
-  },
-  {
-    id: "operations",
-    title: "Operations",
-    category: "CONTROL",
-    stage: "development",
-    overview:
-      "Security operations, patrols and incident workflows are in active development. Selected offline reporting and patrol workflows are part of the technical foundation.",
-    purpose:
-      "Coordinate day-to-day security activity without losing context across tools, shifts or sites.",
-    workflow: [
-      "Shift opens",
-      "Assignments issued",
-      "Patrol executes",
-      "Checkpoint exception",
-      "Escalation raised",
-      "Supervisor acts",
-      "Outcome recorded",
-    ],
-    modules: [
-      "Shift context",
-      "Patrol timeline",
-      "Tasks",
-      "Escalations",
-      "Notifications",
-      "Open actions",
-      "Selected offline workflows",
-      "Duty journal — planned",
-    ],
-    related: ["Personnel", "Objects", "Reporting", "Compliance"],
-    stageLabel: "Active development. Not every module works offline, and no realtime service level is claimed.",
-  },
-  {
-    id: "objects",
-    title: "Object Management",
-    category: "STRUCTURE",
-    stage: "development",
-    overview:
-      "Objects and locations, including customer and object hierarchy, are in active development.",
-    purpose:
-      "Anchor every report, patrol and instruction to a shared site model so context is never re-entered.",
-    workflow: [
-      "Customer defined",
-      "Object created",
-      "Buildings & zones mapped",
-      "Posts & checkpoints set",
-      "Requirements attached",
-      "Routes & risks maintained",
-    ],
-    modules: [
-      "Buildings",
-      "Floors",
-      "Zones",
-      "Rooms",
-      "Posts",
-      "Checkpoints",
-      "Assets",
-      "Emergency contacts",
-      "Routes",
-      "Requirements",
-      "Risks",
-    ],
-    related: ["Operations", "Reporting", "Compliance", "Customers"],
-    stageLabel: "Active development. Not a completed production hierarchy.",
-  },
-  {
-    id: "personnel",
-    title: "Personnel",
-    category: "PEOPLE",
-    stage: "development",
-    overview:
-      "Personnel and workforce management are in active development. Scheduling and assignment authority are established foundations.",
-    purpose:
-      "Keep assignments tied to operational objects. Qualification authority is in discovery, not an available qualification system.",
-    workflow: [
-      "Profile & role set",
-      "Qualification — discovery",
-      "Assignment to object",
-      "Shift active",
-      "Operational activity",
-      "Audit retained",
-    ],
-    modules: [
-      "Users",
-      "Roles",
-      "Qualifications — discovery",
-      "Availability",
-      "Scheduling and assignment authority",
-      "Assignments",
-      "Team structure",
-    ],
-    related: ["Operations", "Compliance", "Objects"],
-    stageLabel: "Active development. Scheduling and assignment authority are established. Qualification authority is in discovery.",
-  },
-  {
-    id: "customers",
-    title: "Customer Management",
-    category: "COMMERCIAL",
-    stage: "development",
-    overview:
-      "Customer context spanning objects, contacts and contractual requirements.",
-    purpose:
-      "Keep multi-customer operations coherent without separate spreadsheets per client.",
-    workflow: [
-      "Customer onboarding",
-      "Objects linked",
-      "Contacts registered",
-      "Requirements captured",
-      "Operational delivery",
-      "Evidence available",
-    ],
-    modules: [
-      "Customers",
-      "Linked objects",
-      "Contacts",
-      "Contractual notes",
-      "Requirements",
-      "Visibility scopes",
-    ],
-    related: ["Objects", "Reporting", "Compliance"],
-    stageLabel: "Active development",
-  },
-  {
-    id: "compliance",
-    title: "Compliance",
-    category: "GOVERNANCE",
-    stage: "foundation",
-    overview:
-      "Role-based access, company-scoped data and audit foundations are established. Evidence custody and qualification authority are in discovery.",
-    purpose:
-      "Support oversight and customer requirements without claiming external certifications the product does not hold.",
-    workflow: [
-      "Requirement defined",
-      "Control assigned",
-      "Operational action",
-      "Evidence recorded",
-      "Review completed",
-      "Audit trail retained",
-    ],
-    modules: [
-      "Role-based access",
-      "Audit logging",
-      "Approval trails",
-      "Qualification authority — discovery",
-      "Change history",
-      "Evidence custody — discovery",
-      "Customer requirements",
-    ],
-    related: ["Reporting", "Personnel", "Objects"],
-    stageLabel: "Access and audit foundations established. Evidence custody and privacy retention are in discovery. No certification is claimed.",
-  },
-  {
-    id: "ai",
-    title: "AI Assistance",
-    category: "ASSIST",
-    stage: "development",
-    overview:
-      "AI structures field notes into draft reports. Human review remains mandatory before any official record.",
-    purpose:
-      "Reduce administrative load while keeping operational decisions with officers and supervisors.",
-    workflow: [
-      "Field notes entered",
-      "AI structures draft",
-      "Missing fields flagged",
-      "Officer reviews",
-      "Supervisor approves",
-      "Record finalized",
-    ],
-    modules: [
-      "Field note input",
-      "Structured extraction",
-      "Draft generation",
-      "Missing-field prompts",
-      "Human review gate",
-      "Approval link",
-    ],
-    related: ["Reporting", "Operations", "Compliance"],
-    stageLabel: "Active development. Drafts require human review. AI does not make autonomous operational decisions.",
-  },
-  {
-    id: "intelligence",
-    title: "Intelligence",
-    category: "INSIGHT",
-    stage: "planned",
-    overview:
-      "Connected analytics is planned. Predictive AI risk analysis is future research and does not make operational decisions.",
-    purpose:
-      "Help supervisors understand patterns over time — without autonomous decision-making.",
-    workflow: [
-      "Operational data accumulates",
-      "Structured signals derived",
-      "Pattern support presented",
-      "Human interpretation",
-      "Action decided by operations",
-    ],
-    modules: [
-      "Connected analytics — planned",
-      "Predictive AI risk analysis — future research",
-      "Wearable integrations — future research",
-    ],
-    related: ["Reporting", "Operations", "Personnel", "Objects"],
-    stageLabel: "Connected analytics is planned. Predictive AI risk analysis is future research.",
-  },
-];
-
-/* ——— Purpose-built interfaces per capability ——— */
-
 function ReportingInterface() {
+  const t = useTranslations("home");
+  const rows = [
+    ["SR-2026-00482", t("capUi.reporting.specific"), "NL-OBJ-042", t("capUi.reporting.awaiting")],
+    ["IR-2026-00194", t("capUi.reporting.incident"), t("places.siteA"), t("capUi.reporting.escalated")],
+    ["DR-2026-00067", t("capUi.reporting.damage"), t("places.campus03"), t("capUi.reporting.draft")],
+  ];
   return (
     <div className="overflow-x-auto border border-border-subtle">
       <table className="w-full min-w-[300px] text-left text-[12px]">
         <thead>
           <tr className="border-b border-border-subtle bg-surface/50 font-mono text-[9px] uppercase tracking-wide text-ink-faint">
-            <th className="px-3 py-2 font-medium">ID</th>
-            <th className="px-3 py-2 font-medium">Type</th>
-            <th className="px-3 py-2 font-medium">Object</th>
-            <th className="px-3 py-2 font-medium">Status</th>
+            <th className="px-3 py-2 font-medium">{t("capUi.reporting.id")}</th>
+            <th className="px-3 py-2 font-medium">{t("capUi.reporting.type")}</th>
+            <th className="px-3 py-2 font-medium">{t("capUi.reporting.object")}</th>
+            <th className="px-3 py-2 font-medium">{t("capUi.reporting.status")}</th>
           </tr>
         </thead>
         <tbody className="text-ink-secondary">
-          {[
-            ["SR-2026-00482", "Specific", "NL-OBJ-042", "Awaiting review"],
-            ["IR-2026-00194", "Incident", "Site A", "Escalated"],
-            ["DR-2026-00067", "Damage", "Campus 03", "Draft"],
-          ].map((r) => (
+          {rows.map((r) => (
             <tr key={r[0]} className="border-b border-border-subtle last:border-0">
               <td className="px-3 py-2 font-mono text-gold">{r[0]}</td>
               <td className="px-3 py-2">{r[1]}</td>
@@ -319,22 +85,24 @@ function ReportingInterface() {
 }
 
 function OperationsInterface() {
+  const t = useTranslations("home");
+  const rows = [
+    ["14:00", t("capUi.operations.shift")],
+    ["14:12", t("capUi.operations.patrol")],
+    ["14:28", t("capUi.operations.checkpoint")],
+    ["14:35", t("capUi.operations.supervisor")],
+    ["14:41", t("capUi.operations.action")],
+  ];
   return (
     <div className="border border-border-subtle">
       <div className="border-b border-border-subtle bg-surface/40 px-3 py-2 font-mono text-[10px] text-ink-faint">
-        Patrol timeline · illustrative
+        {t("capUi.operations.kicker")}
       </div>
       <ul className="divide-y divide-border-subtle font-mono text-[11px]">
-        {[
-          ["14:00", "Shift open · North Region"],
-          ["14:12", "Patrol NL-OBJ-042 started"],
-          ["14:28", "Checkpoint CP-04 missed · escalation"],
-          ["14:35", "Supervisor assigned"],
-          ["14:41", "Action recorded · door secured"],
-        ].map(([t, e]) => (
-          <li key={t} className="flex gap-3 px-3 py-2">
-            <span className="w-10 shrink-0 text-ink-faint">{t}</span>
-            <span className="text-ink-secondary">{e}</span>
+        {rows.map(([time, event]) => (
+          <li key={time} className="flex gap-3 px-3 py-2">
+            <span className="w-10 shrink-0 text-ink-faint">{time}</span>
+            <span className="text-ink-secondary">{event}</span>
           </li>
         ))}
       </ul>
@@ -343,42 +111,43 @@ function OperationsInterface() {
 }
 
 function ObjectsInterface() {
+  const t = useTranslations("home");
   return (
     <div className="border border-border-subtle bg-bg/40 p-3 font-mono text-[12px] leading-7 text-ink-secondary">
-      <p className="text-gold">North Region Operations</p>
+      <p className="text-gold">{t("places.northOps")}</p>
       <p className="pl-3">└ NL-OBJ-042</p>
-      <p className="pl-6">├ Building A · Floor 01 · Zone North</p>
-      <p className="pl-9 text-ink">· North Entrance · CP-04</p>
-      <p className="pl-6">└ Requirements · Risks · Routes</p>
-      <p className="mt-1 pl-3 text-ink-muted">└ Corporate Site A</p>
+      <p className="pl-6">{t("capUi.objects.building")}</p>
+      <p className="pl-9 text-ink">{t("capUi.objects.entrance")}</p>
+      <p className="pl-6">{t("capUi.objects.requirements")}</p>
+      <p className="mt-1 pl-3 text-ink-muted">{t("capUi.objects.corporate")}</p>
     </div>
   );
 }
 
 function PersonnelInterface() {
+  const t = useTranslations("home");
+  const rows = [
+    ["K. Jansen", "NL-OBJ-042", t("capUi.personnel.qualified"), t("capUi.personnel.onDuty"), false],
+    ["D. Vermeer", t("places.siteA"), t("capUi.personnel.qualified"), t("capUi.personnel.onDuty"), false],
+    ["M. de Wit", t("places.campus03"), t("capUi.personnel.renewal"), t("capUi.personnel.onDuty"), true],
+  ] as const;
   return (
     <div className="overflow-x-auto border border-border-subtle">
       <table className="w-full min-w-[300px] text-left text-[12px]">
         <thead>
           <tr className="border-b border-border-subtle bg-surface/50 font-mono text-[9px] uppercase tracking-wide text-ink-faint">
-            <th className="px-3 py-2">Officer</th>
-            <th className="px-3 py-2">Assignment</th>
-            <th className="px-3 py-2">Qualification</th>
-            <th className="px-3 py-2">Status</th>
+            <th className="px-3 py-2">{t("capUi.personnel.officer")}</th>
+            <th className="px-3 py-2">{t("capUi.personnel.assignment")}</th>
+            <th className="px-3 py-2">{t("capUi.personnel.qualification")}</th>
+            <th className="px-3 py-2">{t("capUi.personnel.status")}</th>
           </tr>
         </thead>
         <tbody className="text-ink-secondary">
-          {[
-            ["K. Jansen", "NL-OBJ-042", "Qualified", "On duty"],
-            ["D. Vermeer", "Site A", "Qualified", "On duty"],
-            ["M. de Wit", "Campus 03", "Renewal due", "On duty"],
-          ].map((r) => (
+          {rows.map((r) => (
             <tr key={r[0]} className="border-b border-border-subtle last:border-0">
               <td className="px-3 py-2 font-medium text-ink">{r[0]}</td>
               <td className="px-3 py-2">{r[1]}</td>
-              <td className={cn("px-3 py-2", r[2] === "Renewal due" && "text-status-warning")}>
-                {r[2]}
-              </td>
+              <td className={cn("px-3 py-2", r[4] && "text-status-warning")}>{r[2]}</td>
               <td className="px-3 py-2">{r[3]}</td>
             </tr>
           ))}
@@ -389,14 +158,16 @@ function PersonnelInterface() {
 }
 
 function CustomersInterface() {
+  const t = useTranslations("home");
+  const rows = [
+    [t("capUi.customers.customer"), t("places.northOps")],
+    [t("capUi.customers.linked"), t("capUi.customers.linkedValue")],
+    [t("capUi.customers.contact"), t("capUi.customers.contactValue")],
+    [t("capUi.customers.requirements"), t("capUi.customers.requirementsValue")],
+  ];
   return (
     <div className="grid gap-2 sm:grid-cols-2">
-      {[
-        ["Customer", "North Region Operations"],
-        ["Linked objects", "3 active"],
-        ["Primary contact", "Ops desk · on-call"],
-        ["Requirements", "12 tracked"],
-      ].map(([k, v]) => (
+      {rows.map(([k, v]) => (
         <div key={k} className="border border-border-subtle bg-bg/40 px-3 py-2">
           <p className="font-mono text-[9px] uppercase text-ink-faint">{k}</p>
           <p className="mt-0.5 text-[12px] text-ink-secondary">{v}</p>
@@ -407,17 +178,12 @@ function CustomersInterface() {
 }
 
 function ComplianceInterface() {
+  const t = useTranslations("home");
+  const steps = t.raw("capUi.compliance.steps") as string[];
   return (
     <div className="border border-border-subtle">
       <ol className="divide-y divide-border-subtle text-[12px]">
-        {[
-          "Requirement · perimeter check every 60 min",
-          "Control assigned · patrol route Zone North",
-          "Operational action · CP-04 logged",
-          "Evidence · report SR-2026-00482",
-          "Review · supervisor signed",
-          "Audit trail · immutable entry retained",
-        ].map((s, i) => (
+        {steps.map((s, i) => (
           <li key={s} className="flex gap-3 px-3 py-2 text-ink-secondary">
             <span className="font-mono text-[10px] text-ink-faint">{i + 1}</span>
             {s}
@@ -429,40 +195,40 @@ function ComplianceInterface() {
 }
 
 function AIInterface() {
+  const t = useTranslations("home");
   return (
     <div className="space-y-2">
       <div className="border border-border-subtle bg-bg/50 p-3">
-        <p className="font-mono text-[9px] text-ink-faint">Field notes</p>
-        <p className="mt-1 text-[12px] text-ink-secondary">
-          &ldquo;22:14 north patrol. gate 3 open. secured. cam 4 blocked vegetation.&rdquo;
-        </p>
+        <p className="font-mono text-[9px] text-ink-faint">{t("capUi.ai.notes")}</p>
+        <p className="mt-1 text-[12px] text-ink-secondary">{t("capUi.ai.quote")}</p>
       </div>
       <div className="border border-border-subtle bg-bg/40 p-3 font-mono text-[11px] text-ink-secondary">
-        <p>Time · 22:14</p>
-        <p>Location · Gate 3</p>
-        <p>Action · Secured</p>
-        <p>Secondary · Camera obstructed</p>
+        <p>{t("capUi.ai.time")}</p>
+        <p>{t("capUi.ai.location")}</p>
+        <p>{t("capUi.ai.action")}</p>
+        <p>{t("capUi.ai.secondary")}</p>
       </div>
       <div className="border border-gold/30 bg-gold/5 p-3 text-[12px] text-ink-secondary">
-        Review required — draft is not an official record until approved.
+        {t("capUi.ai.review")}
       </div>
     </div>
   );
 }
 
 function IntelligenceInterface() {
+  const t = useTranslations("home");
+  const items = t.raw("capUi.intelligence.items") as string[];
   return (
     <div className="border border-border-subtle p-3">
-      <p className="font-mono text-[9px] uppercase text-ink-faint">Staged capability</p>
+      <p className="font-mono text-[9px] uppercase text-ink-faint">{t("capUi.intelligence.kicker")}</p>
       <ul className="mt-2 space-y-1.5 text-[12px] text-ink-muted">
-        <li>Insight views — planned</li>
-        <li>Pattern analysis — planned</li>
-        <li>Risk signals — planned</li>
-        <li className="text-ink-faint">Recommendations — future direction</li>
+        {items.map((item, i) => (
+          <li key={item} className={i === items.length - 1 ? "text-ink-faint" : undefined}>
+            {item}
+          </li>
+        ))}
       </ul>
-      <p className="mt-3 text-[11px] text-ink-faint">
-        Human interpretation required. No autonomous decisions.
-      </p>
+      <p className="mt-3 text-[11px] text-ink-faint">{t("capUi.intelligence.note")}</p>
     </div>
   );
 }
@@ -489,10 +255,24 @@ function CapabilityInterface({ id }: { id: CapId }) {
 }
 
 export function OperationalCapabilityExplorer() {
+  const t = useTranslations("home");
   const [active, setActive] = useState<CapId>("reporting");
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
   const reduce = useReducedMotion();
-  const current = CAPABILITIES.find((c) => c.id === active)!;
+
+  const capabilities = CAP_IDS.map((id) => ({
+    id,
+    title: t(`cap.items.${id}.title`),
+    category: t(`cap.items.${id}.category`),
+    stage: CAP_STAGE[id],
+    overview: t(`cap.items.${id}.overview`),
+    purpose: t(`cap.items.${id}.purpose`),
+    workflow: t.raw(`cap.items.${id}.workflow`) as string[],
+    modules: t.raw(`cap.items.${id}.modules`) as string[],
+    related: t.raw(`cap.items.${id}.related`) as string[],
+    stageLabel: t(`cap.items.${id}.stageLabel`),
+  }));
+  const current = capabilities.find((c) => c.id === active)!;
 
   const select = useCallback((id: CapId, i: number) => {
     setActive(id);
@@ -503,31 +283,30 @@ export function OperationalCapabilityExplorer() {
     let n = i;
     if (e.key === "ArrowDown" || e.key === "ArrowRight") {
       e.preventDefault();
-      n = (i + 1) % CAPABILITIES.length;
+      n = (i + 1) % capabilities.length;
     } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
       e.preventDefault();
-      n = (i - 1 + CAPABILITIES.length) % CAPABILITIES.length;
+      n = (i - 1 + capabilities.length) % capabilities.length;
     } else if (e.key === "Home") {
       e.preventDefault();
       n = 0;
     } else if (e.key === "End") {
       e.preventDefault();
-      n = CAPABILITIES.length - 1;
+      n = capabilities.length - 1;
     } else return;
-    select(CAPABILITIES[n].id, n);
+    select(capabilities[n].id, n);
   }
 
   return (
     <div className="overflow-hidden border border-border">
       <div className="grid lg:grid-cols-[minmax(0,0.32fr)_minmax(0,0.68fr)]">
-        {/* Navigator */}
         <div
           role="tablist"
           aria-orientation="vertical"
-          aria-label="Operational capabilities"
+          aria-label={t("cap.aria")}
           className="flex gap-0 overflow-x-auto border-b border-border lg:flex-col lg:overflow-visible lg:border-b-0 lg:border-r"
         >
-          {CAPABILITIES.map((c, i) => {
+          {capabilities.map((c, i) => {
             const selected = active === c.id;
             return (
               <button
@@ -564,7 +343,7 @@ export function OperationalCapabilityExplorer() {
                       STAGE_STYLE[c.stage]
                     )}
                   >
-                    {STAGE_LABEL[c.stage]}
+                    {t(`cap.stages.${c.stage}`)}
                   </span>
                 </span>
               </button>
@@ -572,7 +351,6 @@ export function OperationalCapabilityExplorer() {
           })}
         </div>
 
-        {/* Workspace */}
         <div
           role="tabpanel"
           id={`cap-panel-${current.id}`}
@@ -599,7 +377,7 @@ export function OperationalCapabilityExplorer() {
                       STAGE_STYLE[current.stage]
                     )}
                   >
-                    {STAGE_LABEL[current.stage]}
+                    {t(`cap.stages.${current.stage}`)}
                   </span>
                 </div>
                 <h3 className="heading-md mt-1">{current.title}</h3>
@@ -609,7 +387,7 @@ export function OperationalCapabilityExplorer() {
 
               <div className="grid gap-6 lg:grid-cols-2">
                 <div className="min-w-0">
-                  <p className="label mb-3">Operational workflow</p>
+                  <p className="label mb-3">{t("cap.workflow")}</p>
                   <ol className="border border-border-subtle bg-bg/40 p-3">
                     {current.workflow.map((step, i) => (
                       <li key={step} className="flex gap-3 text-[12px]">
@@ -633,16 +411,14 @@ export function OperationalCapabilityExplorer() {
                 </div>
 
                 <div className="min-w-0">
-                  <p className="label mb-3">Example interface</p>
+                  <p className="label mb-3">{t("cap.example")}</p>
                   <CapabilityInterface id={current.id} />
-                  <p className="mt-2 font-mono text-[9px] text-ink-faint">
-                    Illustrative demonstration data
-                  </p>
+                  <p className="mt-2 font-mono text-[9px] text-ink-faint">{t("cap.illustrative")}</p>
                 </div>
               </div>
 
               <div className="min-w-0">
-                <p className="label mb-3">Modules</p>
+                <p className="label mb-3">{t("cap.modules")}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {current.modules.map((m) => (
                     <span
@@ -656,7 +432,7 @@ export function OperationalCapabilityExplorer() {
               </div>
 
               <div className="min-w-0">
-                <p className="label mb-3">Related capabilities</p>
+                <p className="label mb-3">{t("cap.related")}</p>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="border border-gold/30 bg-gold/10 px-2.5 py-1.5 text-[12px] font-medium text-ink">
                     {current.title}
@@ -676,7 +452,7 @@ export function OperationalCapabilityExplorer() {
 
               <div className="border-t border-border-subtle pt-4">
                 <p className="font-mono text-[10px] uppercase tracking-wide text-ink-faint">
-                  Implementation stage
+                  {t("cap.implementation")}
                 </p>
                 <p className="mt-1 text-[13px] text-ink-secondary">{current.stageLabel}</p>
               </div>

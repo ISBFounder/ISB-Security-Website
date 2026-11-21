@@ -1,0 +1,257 @@
+{
+  "privacy": {
+    "metaTitle": "Privacyverklaring",
+    "metaDescription": "Privacyverklaring van ISB Security Solutions — hoe persoonsgegevens die via de bedrijfswebsite worden ingediend, worden behandeld.",
+    "title": "Privacyverklaring",
+    "intro": "ISB Security Solutions hecht waarde aan een gecontroleerde en transparante omgang met informatie die via de bedrijfswebsite wordt ingediend. In deze verklaring wordt beschreven hoe persoonsgegevens kunnen worden verwerkt wanneer u <site>{url}</site> gebruikt, met inbegrip van de contactformulieren en de formulieren voor een demonstratieaanvraag.",
+    "sections": {
+      "about": {
+        "title": "Over deze verklaring",
+        "body": "Deze verklaring is van toepassing op de openbare bedrijfswebsite van ISB Security Solutions. Zij regelt geen klantportaal, geen inlog voor een SaaS-product en geen offline operationele diensten, die niet via deze openbare website worden aangeboden."
+      },
+      "controller": {
+        "title": "Wie is verantwoordelijk",
+        "intro": "De organisatie die verantwoordelijk is voor de verwerking van persoonsgegevens die via deze website worden ingediend, is:",
+        "location": "Tilburg, Nederland",
+        "kvk": "Kamer van Koophandel (KVK): {kvk}",
+        "emailLabel": "E-mail:"
+      },
+      "collect": {
+        "title": "Gegevens die wij kunnen verzamelen",
+        "body": "Wij verwerken informatie die u ervoor kiest in te dienen via formulieren op de website, en beperkte technische informatie die noodzakelijk is om de website te laten functioneren en te beschermen."
+      },
+      "contactForm": {
+        "title": "Gegevens van het contactformulier",
+        "intro": "Wanneer u het contactformulier gebruikt, kunnen wij het volgende verwerken:",
+        "items": {
+          "name": "Naam",
+          "company": "Bedrijf",
+          "email": "E-mailadres",
+          "phone": "Telefoonnummer",
+          "subject": "Onderwerp",
+          "message": "Inhoud van het bericht",
+          "enquiryType": "Type aanvraag"
+        }
+      },
+      "demoForm": {
+        "title": "Gegevens van de demonstratieaanvraag",
+        "intro": "Wanneer u een demonstratieaanvraag indient, kunnen wij het volgende verwerken:",
+        "items": {
+          "companyName": "Bedrijfsnaam",
+          "contactPerson": "Contactpersoon en functietitel",
+          "businessEmail": "Zakelijk e-mailadres en telefoonnummer",
+          "companySize": "Bedrijfsgrootte en omvang van het beveiligingspersoneel",
+          "country": "Land en optionele website",
+          "sectors": "Operationele sectoren",
+          "software": "Huidige software en rapportagemethoden",
+          "context": "Operationele context (objecten, klanten, planning, mobiel personeel)",
+          "challenges": "Operationele uitdagingen",
+          "timeline": "Interesse in een gesprek en het tijdspad voor de evaluatie",
+          "message": "Optioneel bericht in vrije tekst"
+        }
+      },
+      "technical": {
+        "title": "Technische gegevens en gegevens ter voorkoming van misbruik",
+        "p1": "Beperkte technische informatie over verzoeken kan worden verwerkt om formulieren te beschermen tegen misbruik en buitensporige inzendingen. Dit kan maatregelen omvatten die worden gebruikt voor het beperken van de verzoekfrequentie en het voorkomen van spam (waaronder een honeypotveld dat niet voor menselijke gebruikers is bedoeld).",
+        "p2": "Wij voeren via deze bedrijfswebsite niet opzettelijk gedragsprofilering of brede fingerprinting van apparaten uit. Ruwe IP-adressen worden gebruikt waar dat noodzakelijk is voor het beperken van de verzoekfrequentie en de beveiliging van de eindpunten van formulieren, en worden niet gepresenteerd als een bron van marketinggegevens."
+      },
+      "purposes": {
+        "title": "Doeleinden van de verwerking",
+        "intro": "Persoonsgegevens die via de website worden ingediend, kunnen worden gebruikt om:",
+        "items": {
+          "respond": "Aanvragen te beantwoorden",
+          "evaluate": "Demonstratieaanvragen te beoordelen",
+          "prepare": "Relevante platformgesprekken voor te bereiden",
+          "pilot": "Aanvragen voor een pilot of een partnerschap te verwerken",
+          "disclosure": "Berichten over responsible disclosure te beantwoorden",
+          "protect": "De website en de formulieren te beschermen tegen misbruik",
+          "maintain": "De operationele beveiliging van de website in stand te houden"
+        },
+        "closing": "Wij gebruiken formulierinzendingen niet voor reclamecampagnes of ongevraagde marketing, tenzij er een afzonderlijke, uitdrukkelijke grondslag bestaat."
+      },
+      "legalBasis": {
+        "title": "Rechtsgrond",
+        "p1": "Afhankelijk van de context kan de verwerking berusten op gerechtvaardigde belangen bij het beantwoorden van professionele aanvragen en het beveiligen van de website; op stappen die op uw verzoek worden ondernomen voorafgaand aan een mogelijke zakelijke relatie; en, waar van toepassing, op toestemming die wordt aangegeven via de toestemmingsformulering van het formulier.",
+        "p2": "De precieze rechtsgrond kan verschillen per type aanvraag en toepasselijk recht. Als u vragen heeft over de grondslag voor een specifieke verwerkingsactiviteit, neemt u contact met ons op via de onderstaande gegevens."
+      },
+      "providers": {
+        "title": "Dienstverleners",
+        "intro": "Om de websiteformulieren te laten functioneren, kan ISB dienstverleners gebruiken die beperkte gegevens verwerken die noodzakelijk zijn voor het leveren van hun dienst:",
+        "resend": "<strong>Resend</strong> — e-mailbezorging van formulierinzendingen aan ISB",
+        "upstash": "<strong>Upstash</strong> — beperking van de verzoekfrequentie / voorkoming van misbruik wanneer dit in de productieomgeving is geconfigureerd",
+        "closing": "Hosting- en infrastructuurproviders die worden gebruikt om de website te publiceren, kunnen technische verzoekgegevens verwerken als onderdeel van normale webhostingactiviteiten."
+      },
+      "international": {
+        "title": "Aandachtspunten bij internationale gegevensverwerking",
+        "body": "Dienstverleners kunnen gegevens in meer dan één rechtsgebied verwerken. Passende waarborgen voor grensoverschrijdende verwerking dienen te worden beoordeeld op basis van de definitieve productieconfiguratie. In deze verklaring wordt niet gesteld dat alle verwerking is beperkt tot de Europese Unie, en evenmin dat specifieke doorgiftemechanismen al zijn geconfigureerd, tenzij dit afzonderlijk is geverifieerd."
+      },
+      "retention": {
+        "title": "Bewaartermijn",
+        "body": "Informatie wordt alleen bewaard zo lang als redelijkerwijs noodzakelijk is voor het doel waarvoor zij is ingediend, voor toepasselijke wettelijke verplichtingen, voor beveiligingsbehoeften of voor legitieme bedrijfsbescheiden die verband houden met de aanvraag. Exacte bewaartermijnen kunnen in interne bewaarschema’s worden vastgelegd naarmate de organisatie haar processen verder ontwikkelt."
+      },
+      "security": {
+        "title": "Gegevensbeveiliging",
+        "body": "ISB past beveiligingsmaatregelen toe die passend zijn bij een openbare bedrijfswebsite, waaronder validatie van formulieren aan de serverzijde, beheerste e-mailbezorging, voorkoming van misbruik en toegangsdiscipline rond de productieconfiguratie. Productiebeveiligingsmaatregelen voor gerelateerde systemen blijven in voortdurende ontwikkeling. Geen enkele website kan absolute beveiliging garanderen."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "body": "Informatie over cookies en vergelijkbare technologieën wordt beschreven in de <policy>Cookieverklaring</policy>."
+      },
+      "rights": {
+        "title": "Uw rechten",
+        "p1": "Afhankelijk van het toepasselijke recht (waaronder de AVG waar deze van toepassing is), kunt u rechten hebben op inzage, correctie, verwijdering of beperking van de verwerking van uw persoonsgegevens; op bezwaar tegen bepaalde verwerkingen; op gegevensoverdraagbaarheid waar van toepassing; op het intrekken van toestemming waar de verwerking op toestemming berust; en op het indienen van een klacht bij een bevoegde toezichthoudende autoriteit.",
+        "p2": "Niet elk recht is in elke omstandigheid van toepassing. Om rechten met betrekking tot deze website uit te oefenen, neemt u contact op met <mail>{email}</mail>."
+      },
+      "children": {
+        "title": "Kinderen",
+        "body": "Deze bedrijfswebsite is gericht op professionele en zakelijke gebruikers. Zij is niet opzettelijk op kinderen gericht."
+      },
+      "links": {
+        "title": "Externe koppelingen",
+        "body": "De website kan koppelingen naar externe sites bevatten. ISB is niet verantwoordelijk voor de privacypraktijken van websites van derden."
+      },
+      "changes": {
+        "title": "Wijzigingen van deze verklaring",
+        "body": "Wij kunnen deze verklaring bijwerken wanneer de website, de formulieren of de verwerkingsactiviteiten wijzigen. De datum “Laatst bijgewerkt” bovenaan deze pagina wordt herzien wanneer wezenlijke wijzigingen worden gepubliceerd."
+      },
+      "contact": {
+        "title": "Contact",
+        "intro": "Voor privacyvragen over deze website neemt u contact op met:"
+      }
+    }
+  },
+  "terms": {
+    "metaTitle": "Gebruiksvoorwaarden voor de website",
+    "metaDescription": "Gebruiksvoorwaarden voor de openbare bedrijfswebsite van ISB Security Solutions. Deze voorwaarden vormen geen SaaS-abonnementsovereenkomst.",
+    "title": "Gebruiksvoorwaarden voor de website",
+    "intro": "Deze gebruiksvoorwaarden voor de website regelen de toegang tot en het gebruik van de openbare bedrijfswebsite van {name} op <site>{url}</site>.",
+    "notice": "<strong>Deze voorwaarden zijn uitsluitend van toepassing op de openbare website.</strong> Zij zijn niet de SaaS-klantovereenkomst voor ISB Security Platform, niet een abonnementscontract en niet een overeenkomst voor operationele diensten of met een opdrachtnemer.",
+    "sections": {
+      "about": {
+        "title": "Over deze voorwaarden",
+        "body": "Door deze website te gebruiken stemt u in met deze voorwaarden. Als u niet instemt, gebruikt u de website niet. Op afzonderlijke commerciële afspraken kunnen aanvullende voorwaarden van toepassing zijn, als en wanneer die schriftelijk worden aangegaan."
+      },
+      "purpose": {
+        "title": "Doel van de website",
+        "body": "Deze website biedt informatie over {name}, de productrichting van ISB Security Platform en manieren om contact op te nemen met het bedrijf voor demonstraties, pilotgesprekken, partnerschappen en algemene aanvragen."
+      },
+      "development": {
+        "title": "Informatie over de ontwikkelingsfase",
+        "body": "ISB Security Platform is in actieve ontwikkeling. Het is niet aangekondigd als commercieel beschikbaar of productie-gevalideerd, en er is geen openbare releasedatum vastgesteld. Beschrijvingen op de website kunnen deze ontwikkelingscategorieën gebruiken: “Fundament aanwezig”, “Actieve ontwikkeling”, “Verkenning / architectuur”, “Gepland” en “Toekomst / onderzoek”. De labels geven de mate van volwassenheid weer. Zij scheppen geen oplevertermijnen en geen commerciële beschikbaarheid."
+      },
+      "nonBinding": {
+        "title": "Geen contractuele productverplichting",
+        "body": "Roadmap-onderdelen, functiebeschrijvingen, architectuurdiagrammen en sectorvoorbeelden beschrijven de productrichting en de beoogde aansluiting. Zij zijn geen bindende leveringsverplichtingen, geen garanties van commerciële beschikbaarheid en geen garanties dat een bepaalde functionaliteit op een bepaalde datum wordt vrijgegeven."
+      },
+      "acceptable": {
+        "title": "Aanvaardbaar gebruik",
+        "intro": "U mag deze website niet gebruiken om:",
+        "items": {
+          "access": "Onbevoegde toegang tot systemen of gegevens proberen te verkrijgen",
+          "damage": "De website of gerelateerde diensten te beschadigen, te verstoren of te overbelasten",
+          "automation": "Kwaadaardige automatisering te gebruiken of formulieren te misbruiken",
+          "malware": "Malware of schadelijke code in te brengen",
+          "unlawful": "De site voor onwettige doeleinden te gebruiken",
+          "extract": "Beschermde inhoud op onredelijke schaal zonder toestemming te extraheren"
+        },
+        "closing": "Normaal browsen en legitieme formulierinzendingen zijn toegestaan."
+      },
+      "ip": {
+        "title": "Intellectuele eigendom",
+        "p1": "Tenzij anders aangegeven, bezit of beheert {name} de rechten op de naam en de huisstijl van ISB, het oorspronkelijke ontwerp en de oorspronkelijke teksten van de website, de platformconcepten zoals gepresenteerd, interfaceontwerpen, software en documentatie die op deze site beschikbaar worden gesteld. U mag beschermd materiaal niet kopiëren, wijzigen of herdistribueren zonder voorafgaande schriftelijke toestemming, behalve voor zover dwingend recht dit toestaat.",
+        "p2": "In deze voorwaarden wordt geen eigendom geclaimd van algemene concepten uit de beveiligingssector of van merken van derden."
+      },
+      "content": {
+        "title": "Inhoud van de website",
+        "body": "De inhoud wordt verstrekt ter algemene informatie. Hoewel wij streven naar juistheid, kan informatie wijzigen naarmate het product en het bedrijf zich ontwikkelen. De inhoud is geen professioneel advies (juridisch, op het gebied van beveiliging, technisch of anderszins)."
+      },
+      "demos": {
+        "title": "Demonstraties en pilotgesprekken",
+        "body": "Het indienen van een demonstratieaanvraag of een contactaanvraag vormt geen garantie voor acceptatie, inplanning, commerciële beschikbaarheid, deelname aan een pilot of een toekomstig contract. Een demonstratie of een gesprek schept op zichzelf geen bindende commerciële overeenkomst."
+      },
+      "links": {
+        "title": "Koppelingen naar derden",
+        "body": "Koppelingen naar websites van derden worden gemakshalve aangeboden. ISB is niet verantwoordelijk voor inhoud of praktijken van derden."
+      },
+      "security": {
+        "title": "Beveiliging",
+        "body": "Gebruikers mogen niet proberen de beveiliging van de website te compromitteren. Beveiligingsproblemen kunnen worden gemeld aan <mail>{email}</mail>. Alleen op grond van deze voorwaarden wordt geen bug bounty of reactie-SLA toegezegd."
+      },
+      "availability": {
+        "title": "Beschikbaarheid",
+        "body": "De openbare website wordt verstrekt op een “naar beschikbaarheid”-basis. ISB garandeert geen ononderbroken of foutloze beschikbaarheid en biedt geen uptime-serviceniveau voor deze bedrijfssite."
+      },
+      "liability": {
+        "title": "Beperkingen van aansprakelijkheid",
+        "body": "Voor zover het toepasselijke recht dit toestaat, is {name} niet aansprakelijk voor indirecte, incidentele of gevolgschade die voortvloeit uit het gebruik van deze website of uit het vertrouwen op de inhoud ervan. Niets in deze voorwaarden sluit aansprakelijkheid uit of beperkt aansprakelijkheid die op grond van dwingend recht niet kan worden uitgesloten of beperkt."
+      },
+      "changes": {
+        "title": "Wijzigingen",
+        "body": "Wij kunnen deze voorwaarden bijwerken wanneer de website of de bedrijfspraktijken wijzigen. De datum “Laatst bijgewerkt” wordt herzien wanneer wezenlijke wijzigingen worden gepubliceerd. Voortgezet gebruik na publicatie geldt als aanvaarding van de bijgewerkte voorwaarden, voor zover het recht dit toestaat."
+      },
+      "governing": {
+        "title": "Toepasselijke context",
+        "body": "{name} is gevestigd in Nederland. Deze voorwaarden zijn bedoeld om te functioneren binnen het toepasselijke Nederlandse recht, onder voorbehoud van dwingendrechtelijke bepalingen waarvan niet kan worden afgeweken. Specifieke bedingen over de bevoegde rechter kunnen in een toekomstige juridische beoordeling worden vastgelegd."
+      },
+      "contact": {
+        "title": "Contact",
+        "location": "Tilburg, Nederland",
+        "kvk": "KVK {kvk}"
+      }
+    }
+  },
+  "cookies": {
+    "metaTitle": "Cookieverklaring",
+    "metaDescription": "Cookieverklaring voor de bedrijfswebsite van ISB Security Solutions — essentiële technologie, geen advertentie- of marketingcookies.",
+    "title": "Cookieverklaring",
+    "intro": "In deze cookieverklaring wordt uitgelegd hoe de openbare bedrijfswebsite van {name} omgaat met cookies en vergelijkbare technologieën.",
+    "sections": {
+      "what": {
+        "title": "Wat cookies zijn",
+        "body": "Cookies zijn kleine tekstbestanden die een website op uw apparaat kan opslaan. Vergelijkbare technologieën kunnen lokale opslag of sessiemechanismen omvatten die door browsers en hostingplatforms worden gebruikt."
+      },
+      "approach": {
+        "title": "Huidige aanpak van de ISB-website",
+        "p1": "De bedrijfswebsite is ontworpen om te functioneren zonder advertentie- of marketingcookies. Op het moment waarop deze verklaring betrekking heeft, plaatst de website niet opzettelijk niet-essentiële analyse- of advertentiecookies.",
+        "p2": "In deze verklaring wordt niet gesteld dat de site in alle technische omstandigheden “nul cookies” gebruikt, omdat hostingplatforms en browsers strikt noodzakelijke mechanismen kunnen gebruiken voor beveiliging of sessie-integriteit."
+      },
+      "necessary": {
+        "title": "Strikt noodzakelijke technologie",
+        "body": "Strikt noodzakelijke technologie kan worden gebruikt om de website veilig en betrouwbaar te laten functioneren — bijvoorbeeld infrastructuur die de hostingomgeving vereist, of beschermingsmaatregelen die verband houden met de integriteit van formulierinzendingen."
+      },
+      "language": {
+        "title": "Taalvoorkeur",
+        "p1": "Taalvoorkeur (isb_locale). Deze cookie wordt alleen geplaatst wanneer u een taal kiest. Hij onthoudt Nederlands of English gedurende ongeveer zes maanden. Functionele cookie. SameSite=Lax. Niet gebruikt voor advertenties.",
+        "p2": "Sluiten van de taalsuggestie (isb_locale_suggest). Sessiecookie die wordt geplaatst als u de taalsuggestie sluit. Deze cookie wordt niet geplaatst als u de suggestie niet sluit."
+      },
+      "forms": {
+        "title": "Formulierbeveiliging",
+        "body": "Contact- en demonstratieformulieren gebruiken validatie aan de serverzijde, honeypotvelden (niet bedoeld voor menselijke gebruikers) en beperking van de verzoekfrequentie wanneer dit is geconfigureerd. Deze maatregelen zijn bedoeld om misbruik te verminderen. Het zijn geen advertentietechnologieën."
+      },
+      "analytics": {
+        "title": "Analyse",
+        "body": "Op het moment waarop deze verklaring betrekking heeft, plaatst de website niet opzettelijk niet-essentiële analysecookies. Als in de toekomst analysetechnologie wordt geïntroduceerd, wordt deze verklaring beoordeeld en bijgewerkt, en worden de toestemmingsvereisten opnieuw beoordeeld voordat die technologie wordt ingezet."
+      },
+      "marketing": {
+        "title": "Marketing",
+        "body": "Op de huidige bedrijfswebsite worden niet opzettelijk advertentiecookies of cookies voor gedragsmarketing gebruikt."
+      },
+      "thirdParty": {
+        "title": "Diensten van derden",
+        "body": "Diensten voor formulierbezorging en voor het beperken van de verzoekfrequentie (zoals Resend en Upstash, wanneer deze zijn geconfigureerd) verwerken hoofdzakelijk formulier- en verzoekgegevens aan de serverzijde. Zij worden niet gebruikt om advertentiecookies op deze site te plaatsen."
+      },
+      "browser": {
+        "title": "Browserbediening",
+        "body": "U kunt cookies en sitegegevens beheren via uw browserinstellingen, waaronder het blokkeren of verwijderen van cookies. Het beperken van strikt noodzakelijke technologie kan de functionaliteit van de website beïnvloeden."
+      },
+      "changes": {
+        "title": "Toekomstige wijzigingen",
+        "body": "Als de website later analyse, marketing of andere niet-essentiële technologieën introduceert, zal ISB deze verklaring bijwerken en opnieuw beoordelen of op grond van het toepasselijke recht een toestemmingsmechanisme vereist is voordat die technologieën worden gebruikt."
+      },
+      "contact": {
+        "title": "Contact",
+        "body": "Vragen over deze cookieverklaring kunnen worden gestuurd naar <mail>{email}</mail>."
+      }
+    }
+  }
+}

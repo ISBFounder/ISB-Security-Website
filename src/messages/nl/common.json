@@ -1,0 +1,35 @@
+{
+  "status": {
+    "foundation": "Fundament aanwezig",
+    "development": "Actieve ontwikkeling",
+    "discovery": "Verkenning / architectuur",
+    "planned": "Gepland",
+    "future": "Toekomst / onderzoek"
+  },
+  "statusShort": {
+    "foundation": "Fundament",
+    "development": "Actieve ontwikkeling",
+    "discovery": "Verkenning / architectuur",
+    "planned": "Gepland",
+    "future": "Toekomst / onderzoek"
+  },
+  "tryAgain": "Opnieuw proberen",
+  "returnHome": "Naar home",
+  "contactIsb": "Contact met ISB",
+  "explorePlatform": "Bekijk het platform",
+  "errorEyebrow": "Fout",
+  "errorTitle": "Deze pagina kon niet correct worden geladen.",
+  "errorBody": "U kunt het opnieuw proberen, naar de homepage gaan of contact opnemen met ISB als het probleem aanhoudt.",
+  "notFoundEyebrow": "Fout 404",
+  "notFoundMeta": "Pagina niet gevonden",
+  "notFoundTitle": "Pagina niet gevonden.",
+  "notFoundBody": "De opgevraagde pagina is niet gevonden of is verplaatst.",
+  "helpfulLinks": "Nuttige links",
+  "solutions": "Oplossingen",
+  "faq": "Veelgestelde vragen",
+  "requestDemo": "Demo aanvragen",
+  "globalEyebrow": "Fout",
+  "globalTitle": "Er ging iets mis.",
+  "globalBody": "De applicatie kon deze fout niet herstellen. U kunt het opnieuw proberen of naar home gaan.",
+  "reference": "Referentie"
+}

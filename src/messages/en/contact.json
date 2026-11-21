@@ -1,0 +1,43 @@
+{
+  "metaTitle": "Contact ISB Security Solutions",
+  "metaDescription": "Contact ISB Security Solutions for platform, pilot, partnership, security or general enquiries. Tilburg, The Netherlands.",
+  "breadcrumbHome": "Home",
+  "breadcrumbCurrent": "Contact",
+  "eyebrow": "Contact",
+  "title": "Start the right conversation.",
+  "intro": "Use the form below for platform, pilot, partnership, company or general enquiries. Messages are routed to ISB Security Solutions.",
+  "formTitle": "Send a message",
+  "formIntro": "ISB reviews incoming enquiries and responds where follow-up is appropriate. No specific response time is promised.",
+  "loadingForm": "Loading form…",
+  "companyLabel": "Company",
+  "location": "Tilburg, The Netherlands",
+  "engagementLabel": "Engagement routes",
+  "engagement": {
+    "platform": {
+      "title": "Platform",
+      "copy": "Request a demonstration of the current development direction.",
+      "label": "Request Demo"
+    },
+    "pilot": {
+      "title": "Pilot",
+      "copy": "Discuss future operational validation opportunities.",
+      "label": "Pilot conversation"
+    },
+    "partnership": {
+      "title": "Partnership",
+      "copy": "Strategic or technology collaboration conversations.",
+      "label": "Partnership enquiry"
+    },
+    "security": {
+      "title": "Security",
+      "copy": "Responsible disclosure of potential security issues.",
+      "label": "Security disclosure"
+    }
+  },
+  "privacyBefore": "Information submitted through this form is used to respond to your enquiry. ",
+  "privacyLink": "Privacy Policy",
+  "ctaTitle": "Prefer a structured demonstration?",
+  "ctaBody": "Use the dedicated demo request if you want to explore how the current platform direction maps to your operation.",
+  "requestDemo": "Request Demo",
+  "explorePlatform": "Explore Platform"
+}

@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { motion, useReducedMotion } from "framer-motion";
 import { osPanelTransition } from "@/lib/motion";
+import { SITE } from "@/lib/constants";
 
 type LayerId =
   | "identity"
@@ -14,142 +16,62 @@ type LayerId =
   | "audit"
   | "storage";
 
-const LAYERS: {
-  id: LayerId;
-  label: string;
-  purpose: string;
-  controls: string;
-  maturity: string;
-}[] = [
-  {
-    id: "identity",
-    label: "Identity",
-    purpose:
-      "Identity and organization context form the first access boundary.",
-    controls: "Authenticated users · organization context · role · assignment context",
-    maturity: "Design foundation",
-  },
-  {
-    id: "roles",
-    label: "Roles & Permissions",
-    purpose:
-      "Designed around least-privilege access — what a user may view, create, approve or manage.",
-    controls: "Role scopes · supervisor vs officer vs customer context · function-specific access",
-    maturity: "Design foundation",
-  },
-  {
-    id: "tenant",
-    label: "Tenant Boundaries",
-    purpose:
-      "Tenant-aware data boundaries separate organizations, customers and objects.",
-    controls: "Company separation · customer separation · object separation · authorized context only",
-    maturity: "Design foundation",
-  },
-  {
-    id: "data",
-    label: "Data Access",
-    purpose:
-      "Architecture supports context-aware data access and row-level data controls.",
-    controls: "Role + tenant + object context · API boundaries · secure storage foundations",
-    maturity: "Design foundation · coverage expanding",
-  },
-  {
-    id: "actions",
-    label: "Operational Actions",
-    purpose:
-      "Sensitive actions occur only after identity, permission and context checks.",
-    controls:
-      "Create/approve report · update instruction · assign officer · close escalation · change context",
-    maturity: "Design foundation",
-  },
-  {
-    id: "audit",
-    label: "Audit Trail",
-    purpose:
-      "Traceable operational actions — critical changes and approvals associated with users.",
-    controls: "Action logging · change history · approval association · record history",
-    maturity: "Design foundation",
-  },
-  {
-    id: "storage",
-    label: "Storage & Infrastructure",
-    purpose:
-      "Production infrastructure controls remain subject to deployment validation.",
-    controls:
-      "Controlled storage · environment separation · access controls · backup direction · monitoring direction",
-    maturity: "Active development",
-  },
+const LAYER_IDS: LayerId[] = [
+  "identity",
+  "roles",
+  "tenant",
+  "data",
+  "actions",
+  "audit",
+  "storage",
 ];
 
-const PRINCIPLES = [
-  "Least-privilege access",
-  "Tenant-aware boundaries",
-  "Traceable actions",
-  "Controlled operational context",
-  "Privacy-conscious design",
-  "Secure development practices",
-] as const;
-
-const MATURITY = [
-  {
-    stage: "Design foundation",
-    items: "RBAC model · Multi-tenant structure · Audit architecture · Data separation model",
-  },
-  {
-    stage: "Active development",
-    items: "Production hardening · Security monitoring · Recovery procedures · Operational controls",
-  },
-  {
-    stage: "Planned validation",
-    items: "External security testing · Compliance assessment · Backup/recovery testing · Production control validation",
-  },
-  {
-    stage: "Future compliance direction",
-    items: "ISO 27001 readiness direction · European security/privacy standards assessment",
-  },
-] as const;
-
-type TenantId = "A" | "B";
+const MATURITY_IDS = ["design", "development", "validation", "future"] as const;
+const STEP_IDS = ["architecture", "hardening", "validation", "assessment", "maturity"] as const;
+const TENANT_IDS = ["A", "B"] as const;
 
 export function SecurityTrustArchitecture() {
+  const t = useTranslations("home");
   const [active, setActive] = useState<LayerId>("tenant");
-  const [tenant, setTenant] = useState<TenantId>("A");
+  const [tenant, setTenant] = useState<(typeof TENANT_IDS)[number]>("A");
   const reduce = useReducedMotion();
+  const principles = t.raw("trust.principles") as string[];
+
+  const layers = LAYER_IDS.map((id) => ({
+    id,
+    label: t(`trust.layers.${id}.label`),
+    purpose: t(`trust.layers.${id}.purpose`),
+    controls: t(`trust.layers.${id}.controls`),
+    maturity: t(`trust.layers.${id}.maturity`),
+  }));
+  const maturity = MATURITY_IDS.map((id) => ({
+    id,
+    stage: t(`trust.maturity.${id}.stage`),
+    items: t(`trust.maturity.${id}.items`),
+  }));
 
   const activate = useCallback((id: LayerId) => setActive(id), []);
-  const current = LAYERS.find((l) => l.id === active)!;
+  const current = layers.find((l) => l.id === active)!;
 
   return (
     <div>
-      <p className="sr-only">
-        ISB trust architecture layers from identity through roles and permissions,
-        tenant boundaries, data access, operational actions, audit trail, to
-        storage and infrastructure. Designed around least-privilege access,
-        tenant-aware boundaries and traceable operational actions. Production
-        controls remain subject to deployment validation. No certifications claimed.
-      </p>
+      <p className="sr-only">{t("trust.summary")}</p>
 
       <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-        {/* Editorial + maturity */}
         <div className="space-y-6">
           <div>
-            <p className="body max-w-prose">
-              ISB is being designed around identity, role-based access, tenant
-              boundaries, traceability and controlled operational data flows.
-              Production controls remain subject to deployment and infrastructure
-              validation.
-            </p>
+            <p className="body max-w-prose">{t("trust.intro")}</p>
           </div>
 
           <div>
-            <p className="label mb-3">Maturity model</p>
+            <p className="label mb-3">{t("trust.maturityLabel")}</p>
             <div className="space-y-0 border border-border">
-              {MATURITY.map((m, i) => (
+              {maturity.map((m, i) => (
                 <div
-                  key={m.stage}
+                  key={m.id}
                   className={cn(
                     "px-4 py-3",
-                    i < MATURITY.length - 1 && "border-b border-border-subtle"
+                    i < maturity.length - 1 && "border-b border-border-subtle"
                   )}
                 >
                   <p className="font-mono text-[10px] uppercase tracking-wider text-gold">
@@ -162,11 +84,10 @@ export function SecurityTrustArchitecture() {
           </div>
         </div>
 
-        {/* Layered architecture */}
         <div>
-          <p className="label mb-3">Trust architecture</p>
+          <p className="label mb-3">{t("trust.architecture")}</p>
           <div className="border border-border bg-surface/20">
-            {LAYERS.map((layer, i) => {
+            {layers.map((layer, i) => {
               const selected = active === layer.id;
               return (
                 <div key={layer.id}>
@@ -190,7 +111,7 @@ export function SecurityTrustArchitecture() {
                       {layer.maturity.split(" · ")[0]}
                     </span>
                   </button>
-                  {i < LAYERS.length - 1 && (
+                  {i < layers.length - 1 && (
                     <div
                       className="flex justify-center border-t border-border-subtle py-0.5 font-mono text-[10px] text-ink-faint"
                       aria-hidden
@@ -203,7 +124,6 @@ export function SecurityTrustArchitecture() {
             })}
           </div>
 
-          {/* Layer detail */}
           <div
             id="trust-layer-detail"
             className="mt-3 min-h-[5.5rem] border border-border-subtle bg-bg/40 px-4 py-3"
@@ -225,34 +145,20 @@ export function SecurityTrustArchitecture() {
             </motion.div>
           </div>
 
-          {/* Tenant visual */}
           <div className="mt-4 border border-border-subtle bg-bg/30 p-4">
             <p className="font-mono text-[9px] uppercase tracking-wide text-ink-faint">
-              Tenant-aware boundaries · illustrative
+              {t("trust.tenantKicker")}
             </p>
             <div className="mt-3 grid gap-3 sm:grid-cols-2">
-              {(
-                [
-                  {
-                    id: "A" as const,
-                    org: "Organization A",
-                    path: "Customer A1 → Building A → NL-OBJ-042",
-                  },
-                  {
-                    id: "B" as const,
-                    org: "Organization B",
-                    path: "Customer B1 → Campus 03",
-                  },
-                ] as const
-              ).map((t) => {
-                const on = tenant === t.id;
+              {TENANT_IDS.map((id) => {
+                const on = tenant === id;
                 return (
                   <button
-                    key={t.id}
+                    key={id}
                     type="button"
-                    onClick={() => setTenant(t.id)}
-                    onMouseEnter={() => setTenant(t.id)}
-                    onFocus={() => setTenant(t.id)}
+                    onClick={() => setTenant(id)}
+                    onMouseEnter={() => setTenant(id)}
+                    onFocus={() => setTenant(id)}
                     aria-pressed={on}
                     className={cn(
                       "border px-3 py-3 text-left font-mono text-[11px] transition-colors",
@@ -262,31 +168,26 @@ export function SecurityTrustArchitecture() {
                         : "border-border-subtle bg-bg/20 text-ink-faint"
                     )}
                   >
-                    <p className={on ? "text-ink" : "text-ink-muted"}>{t.org}</p>
-                    <p className="mt-1">{on ? t.path : "Context inactive"}</p>
+                    <p className={on ? "text-ink" : "text-ink-muted"}>{t(`trust.tenants.${id}.org`)}</p>
+                    <p className="mt-1">{on ? t(`trust.tenants.${id}.path`) : t("trust.inactive")}</p>
                     {!on && (
-                      <p className="mt-2 text-[10px] text-ink-faint">
-                        No path across tenant boundary
-                      </p>
+                      <p className="mt-2 text-[10px] text-ink-faint">{t("trust.noPath")}</p>
                     )}
                   </button>
                 );
               })}
             </div>
-            <p className="mt-2 text-[11px] text-ink-faint">
-              No path across tenant boundary
-            </p>
+            <p className="mt-2 text-[11px] text-ink-faint">{t("trust.noPath")}</p>
           </div>
         </div>
       </div>
 
-      {/* Principles rail */}
       <div className="mt-8 border border-border bg-surface/20 px-4 py-4">
         <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-muted">
-          Trust principles
+          {t("trust.principlesLabel")}
         </p>
         <div className="flex flex-wrap gap-1.5">
-          {PRINCIPLES.map((p) => (
+          {principles.map((p) => (
             <span
               key={p}
               className="border border-border-subtle bg-bg/50 px-2.5 py-1.5 text-[12px] text-ink-secondary"
@@ -297,51 +198,35 @@ export function SecurityTrustArchitecture() {
         </div>
       </div>
 
-      {/* Compliance roadmap */}
       <div className="mt-4 border border-border-subtle bg-bg/30 px-4 py-4">
         <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-muted">
-          Compliance direction
+          {t("trust.complianceLabel")}
         </p>
         <div className="flex flex-wrap items-center gap-2 font-mono text-[11px] text-ink-secondary">
-          {[
-            "Architecture",
-            "Hardening",
-            "Validation",
-            "External assessment",
-            "Compliance maturity",
-          ].map((step, i) => (
-            <span key={step} className="flex items-center gap-2">
+          {STEP_IDS.map((id, i) => (
+            <span key={id} className="flex items-center gap-2">
               {i > 0 && (
                 <span className="text-ink-faint" aria-hidden>
                   →
                 </span>
               )}
               <span className="border border-border-subtle bg-surface/40 px-2 py-1">
-                {step}
+                {t(`trust.steps.${id}`)}
               </span>
             </span>
           ))}
         </div>
-        <p className="mt-2 text-[11px] text-ink-faint">
-          Direction only · no dates · no guaranteed certification
-        </p>
+        <p className="mt-2 text-[11px] text-ink-faint">{t("trust.directionOnly")}</p>
       </div>
 
-      {/* Responsible disclosure */}
       <div className="mt-4 border border-border-subtle px-4 py-3 text-[13px] text-ink-muted">
         <p className="font-mono text-[9px] uppercase tracking-wide text-ink-faint">
-          Responsible disclosure
+          {t("trust.disclosureLabel")}
         </p>
-        <p className="mt-1.5">
-          Security researchers and organizations can report potential security
-          issues directly to ISB Security Solutions.
-        </p>
+        <p className="mt-1.5">{t("trust.disclosure")}</p>
         <p className="mt-1">
-          <a
-            href="mailto:info@isbsecuritysolutions.nl"
-            className="text-gold hover:text-gold-light"
-          >
-            info@isbsecuritysolutions.nl
+          <a href={`mailto:${SITE.email}`} className="text-gold hover:text-gold-light">
+            {SITE.email}
           </a>
         </p>
       </div>

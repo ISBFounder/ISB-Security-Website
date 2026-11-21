@@ -6,106 +6,92 @@ import {
   useCallback,
   type KeyboardEvent as RKEvent,
 } from "react";
+import { useTranslations } from "next-intl";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type StageId = "input" | "assist" | "review" | "approve" | "audit";
 
-const STAGES: { id: StageId; label: string; index: string }[] = [
-  { id: "input", label: "Input", index: "01" },
-  { id: "assist", label: "Assist", index: "02" },
-  { id: "review", label: "Review", index: "03" },
-  { id: "approve", label: "Approve", index: "04" },
-  { id: "audit", label: "Audit", index: "05" },
-];
+const STAGE_IDS: StageId[] = ["input", "assist", "review", "approve", "audit"];
+
+const REVIEW_WARN = [true, true, false];
 
 function Content({ id }: { id: StageId }) {
+  const t = useTranslations("ai");
+
   if (id === "input") {
     return (
       <div className="space-y-4">
         <div className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11px] text-ink-muted">
-          <span>Officer · K. Jansen</span>
-          <span>Object · NL-OBJ-042</span>
-          <span>Time · 22:14</span>
+          <span>{t("lifecycle.input.officer")}</span>
+          <span>{t("lifecycle.input.object")}</span>
+          <span>{t("lifecycle.input.time")}</span>
         </div>
         <div className="border border-border-subtle bg-bg/50 p-4">
-          <p className="font-mono text-[9px] uppercase text-ink-faint">Field notes</p>
+          <p className="font-mono text-[9px] uppercase text-ink-faint">
+            {t("lifecycle.input.fieldNotes")}
+          </p>
           <p className="mt-2 text-[14px] leading-relaxed text-ink-secondary">
-            &ldquo;22:14 north patrol. gate 3 open. secured gate. camera 4 partly
-            blocked by vegetation. supervisor informed.&rdquo;
+            {t("lifecycle.input.note")}
           </p>
         </div>
-        <p className="font-mono text-[9px] text-ink-faint">Illustrative demonstration data</p>
+        <p className="font-mono text-[9px] text-ink-faint">{t("lifecycle.input.demo")}</p>
       </div>
     );
   }
   if (id === "assist") {
+    const rows = t.raw("lifecycle.assist.rows") as { k: string; v: string }[];
     return (
       <div className="space-y-4">
-        <p className="text-[12px] text-ink-muted">Suggested extraction · requires review</p>
+        <p className="text-[12px] text-ink-muted">{t("lifecycle.assist.lead")}</p>
         <dl className="divide-y divide-border-subtle border border-border-subtle text-[13px]">
-          {[
-            ["Time", "22:14"],
-            ["Location", "North perimeter · Gate 3"],
-            ["Observation", "Gate found unsecured"],
-            ["Action", "Gate secured on location"],
-            ["Secondary", "Camera 4 partially obstructed"],
-            ["Escalation", "Object supervisor informed"],
-          ].map(([k, v]) => (
-            <div key={k} className="flex gap-4 px-3 py-2">
-              <dt className="w-28 shrink-0 font-mono text-[10px] text-ink-faint">{k}</dt>
-              <dd className="text-ink-secondary">{v}</dd>
+          {rows.map((row) => (
+            <div key={row.k} className="flex gap-4 px-3 py-2">
+              <dt className="w-28 shrink-0 font-mono text-[10px] text-ink-faint">{row.k}</dt>
+              <dd className="text-ink-secondary">{row.v}</dd>
             </div>
           ))}
         </dl>
         <div className="border border-border-subtle bg-bg/40 px-3 py-2 text-[12px]">
-          <span className="text-ink-muted">Completeness · </span>
-          <span className="text-ink-secondary">6 / 7 identified</span>
+          <span className="text-ink-muted">{t("lifecycle.assist.completeness")}</span>
+          <span className="text-ink-secondary">{t("lifecycle.assist.identified")}</span>
           <span className="mx-2 text-ink-faint">·</span>
-          <span className="text-status-warning">Missing · Follow-up owner</span>
+          <span className="text-status-warning">{t("lifecycle.assist.missing")}</span>
         </div>
         <div className="border border-border-subtle bg-bg/50 p-4 text-[13px] leading-relaxed text-ink-secondary">
-          At 22:14 hours, during a scheduled patrol of the north perimeter of object
-          NL-OBJ-042, Gate 3 was found unsecured. The gate was secured on location.
-          Camera 4 was also observed to have a partially obstructed field of view due
-          to vegetation. The object supervisor was informed for follow-up.
+          {t("lifecycle.assist.draft")}
         </div>
         <span className="inline-block border border-gold/40 px-2 py-0.5 font-mono text-[9px] uppercase text-gold">
-          AI-generated draft · not final
+          {t("lifecycle.assist.badge")}
         </span>
       </div>
     );
   }
   if (id === "review") {
+    const warnings = t.raw("lifecycle.review.warnings") as string[];
     return (
       <div className="space-y-4">
         <div className="border border-border-subtle bg-bg/50 p-4 text-[13px] leading-relaxed text-ink-secondary">
-          … The object supervisor was informed for follow-up.{" "}
-          <span className="bg-status-warning/15">
-            Follow-up assigned to on-call supervisor.
-          </span>
+          {t("lifecycle.review.lead")}{" "}
+          <span className="bg-status-warning/15">{t("lifecycle.review.added")}</span>
         </div>
         <ul className="space-y-1.5 text-[12px]">
-          {[
-            { t: "Follow-up owner not specified", w: true },
-            { t: "No photo attached", w: true },
-            { t: "Object instruction reference optional", w: false },
-          ].map((x) => (
+          {warnings.map((text, i) => (
             <li
-              key={x.t}
+              key={text}
               className={cn(
                 "border px-3 py-2",
-                x.w
+                REVIEW_WARN[i]
                   ? "border-status-warning/30 bg-status-warning/5 text-ink-secondary"
                   : "border-border-subtle text-ink-muted"
               )}
             >
-              {x.t}
+              {text}
             </li>
           ))}
         </ul>
         <p className="font-mono text-[11px] text-ink-secondary">
-          Reviewed by officer · Pending supervisor review
+          {t("lifecycle.review.status")}
         </p>
       </div>
     );
@@ -115,54 +101,45 @@ function Content({ id }: { id: StageId }) {
       <div className="space-y-4">
         <div className="grid gap-3 sm:grid-cols-2">
           <div className="border border-border-subtle bg-bg/40 p-3">
-            <p className="font-mono text-[9px] text-ink-faint">v2 · Officer correction</p>
+            <p className="font-mono text-[9px] text-ink-faint">{t("lifecycle.approve.version")}</p>
             <p className="mt-2 text-[12px] text-ink-secondary">
-              Follow-up owner added · ready where workflow requires approval.
+              {t("lifecycle.approve.versionBody")}
             </p>
           </div>
           <div className="border border-border-subtle bg-bg/40 p-3">
-            <p className="font-mono text-[9px] text-ink-faint">Supervisor</p>
+            <p className="font-mono text-[9px] text-ink-faint">{t("lifecycle.approve.supervisor")}</p>
             <p className="mt-1 text-[12px] text-ink-secondary">
-              Comment: &ldquo;Clarify follow-up responsibility.&rdquo;
+              {t("lifecycle.approve.comment")}
             </p>
             <p className="mt-2 font-mono text-[10px] text-status-warning">
-              Revision requested → Revised → Approved
+              {t("lifecycle.approve.revision")}
             </p>
           </div>
         </div>
         <div className="border border-status-success/30 bg-status-success/5 px-3 py-2 text-[12px] text-ink-secondary">
-          Supervisor approved · 22:24 · authorized human decision
+          {t("lifecycle.approve.approved")}
         </div>
       </div>
     );
   }
+  const events = t.raw("lifecycle.audit.events") as string[];
   return (
     <div className="space-y-3">
-      <p className="text-[12px] text-ink-muted">
-        AI involvement can be recorded as part of workflow history.
-      </p>
+      <p className="text-[12px] text-ink-muted">{t("lifecycle.audit.lead")}</p>
       <ul className="border border-border-subtle divide-y divide-border-subtle text-[12px] text-ink-secondary">
-        {[
-          "22:16 · AI draft generated",
-          "22:19 · Officer edited draft",
-          "22:19 · Missing-context warning shown",
-          "22:21 · Supervisor requested revision",
-          "22:24 · Final report approved",
-        ].map((e) => (
+        {events.map((e) => (
           <li key={e} className="px-3 py-2 font-mono text-[11px]">
             {e}
           </li>
         ))}
       </ul>
-      <p className="text-[11px] text-ink-faint">
-        Traceable workflow history · not claimed as full production audit coverage or
-        immutable storage
-      </p>
+      <p className="text-[11px] text-ink-faint">{t("lifecycle.audit.footer")}</p>
     </div>
   );
 }
 
 export function AILifecycleExplorer() {
+  const t = useTranslations("ai");
   const [active, setActive] = useState<StageId>("input");
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
   const reduce = useReducedMotion();
@@ -176,42 +153,42 @@ export function AILifecycleExplorer() {
     let n = i;
     if (e.key === "ArrowRight" || e.key === "ArrowDown") {
       e.preventDefault();
-      n = (i + 1) % STAGES.length;
+      n = (i + 1) % STAGE_IDS.length;
     } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
       e.preventDefault();
-      n = (i - 1 + STAGES.length) % STAGES.length;
+      n = (i - 1 + STAGE_IDS.length) % STAGE_IDS.length;
     } else if (e.key === "Home") {
       e.preventDefault();
       n = 0;
     } else if (e.key === "End") {
       e.preventDefault();
-      n = STAGES.length - 1;
+      n = STAGE_IDS.length - 1;
     } else return;
-    select(STAGES[n].id, n);
+    select(STAGE_IDS[n], n);
   }
 
   return (
     <div className="border border-border">
       <div
         role="tablist"
-        aria-label="AI report lifecycle"
+        aria-label={t("lifecycle.aria")}
         className="flex gap-0 overflow-x-auto border-b border-border"
       >
-        {STAGES.map((s, i) => {
-          const selected = active === s.id;
+        {STAGE_IDS.map((id, i) => {
+          const selected = active === id;
           return (
             <button
-              key={s.id}
+              key={id}
               ref={(el) => {
                 refs.current[i] = el;
               }}
               type="button"
               role="tab"
-              id={`ai-life-${s.id}`}
+              id={`ai-life-${id}`}
               aria-selected={selected}
-              aria-controls={`ai-life-panel-${s.id}`}
+              aria-controls={`ai-life-panel-${id}`}
               tabIndex={selected ? 0 : -1}
-              onClick={() => select(s.id, i)}
+              onClick={() => select(id, i)}
               onKeyDown={(e) => onKey(e, i)}
               className={cn(
                 "flex shrink-0 flex-col gap-0.5 border-b-2 px-3 py-3 text-left transition-colors sm:px-4",
@@ -221,8 +198,12 @@ export function AILifecycleExplorer() {
                   : "border-transparent text-ink-muted hover:text-ink-secondary"
               )}
             >
-              <span className="font-mono text-[9px] text-ink-faint">{s.index}</span>
-              <span className="text-[12px] font-medium sm:text-[13px]">{s.label}</span>
+              <span className="font-mono text-[9px] text-ink-faint">
+                {t(`lifecycle.stages.${id}.index`)}
+              </span>
+              <span className="text-[12px] font-medium sm:text-[13px]">
+                {t(`lifecycle.stages.${id}.label`)}
+              </span>
             </button>
           );
         })}

@@ -1,83 +1,30 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
-const LAYERS = [
-  {
-    id: "identity",
-    label: "Identity",
-    purpose: "Authenticated user and organization context form the first access boundary.",
-    control: "User identity · organization context · assignment context",
-    maturity: "Design foundation",
-  },
-  {
-    id: "role",
-    label: "Role & Permission",
-    purpose: "Designed around least-privilege access — what a user may view, create, approve or manage.",
-    control: "Role scopes · officer / supervisor / customer / administrator",
-    maturity: "Design foundation",
-  },
-  {
-    id: "tenant",
-    label: "Tenant Context",
-    purpose: "Tenant-aware data separation between organizations and their customers.",
-    control: "Organization · customer · authorized context only",
-    maturity: "Design foundation",
-  },
-  {
-    id: "object",
-    label: "Object / Customer Context",
-    purpose: "Operational data scoped to the objects and customers a role may access.",
-    control: "Object hierarchy · customer scope · assignment linkage",
-    maturity: "Design foundation",
-  },
-  {
-    id: "data",
-    label: "Data Access",
-    purpose: "Architecture supports row-level security controls and server-side validation.",
-    control: "Role + tenant + object context · API boundaries · coverage expanding",
-    maturity: "Design foundation",
-  },
-  {
-    id: "action",
-    label: "Operational Action",
-    purpose: "Sensitive actions occur only after identity, permission and context checks.",
-    control: "Create/approve report · update instruction · assign · escalate",
-    maturity: "Design foundation",
-  },
-  {
-    id: "audit",
-    label: "Audit Event",
-    purpose: "Traceable operational actions — critical changes and approvals associated with users.",
-    control: "Action logging · change history · approval association",
-    maturity: "Design foundation",
-  },
-  {
-    id: "storage",
-    label: "Storage & Infrastructure",
-    purpose: "Production infrastructure controls remain subject to deployment validation.",
-    control: "Controlled storage · environment separation · access discipline",
-    maturity: "Active hardening",
-  },
-] as const;
+type Layer = {
+  id: string;
+  label: string;
+  purpose: string;
+  control: string;
+  maturity: string;
+};
 
 export function TrustArchitecture() {
+  const t = useTranslations("security");
+  const layers = t.raw("trust.layers") as Layer[];
   const [active, setActive] = useState<string>("tenant");
-  const current = LAYERS.find((l) => l.id === active) ?? LAYERS[0];
+  const current = layers.find((l) => l.id === active) ?? layers[0];
 
   const activate = useCallback((id: string) => setActive(id), []);
 
   return (
     <div>
-      <p className="sr-only">
-        Trust architecture layers: Identity, Role and Permission, Tenant Context,
-        Object and Customer Context, Data Access, Operational Action, Audit Event,
-        Storage and Infrastructure. Designed around least-privilege access and
-        tenant-aware separation. No certifications claimed.
-      </p>
+      <p className="sr-only">{t("trust.sr")}</p>
       <div className="border border-border bg-surface/20">
-        {LAYERS.map((layer, i) => {
+        {layers.map((layer, i) => {
           const selected = active === layer.id;
           return (
             <div key={layer.id}>
@@ -98,7 +45,7 @@ export function TrustArchitecture() {
                   {layer.maturity}
                 </span>
               </button>
-              {i < LAYERS.length - 1 && (
+              {i < layers.length - 1 && (
                 <div className="flex justify-center border-t border-border-subtle py-0.5 font-mono text-[10px] text-ink-faint" aria-hidden>
                   ↓
                 </div>

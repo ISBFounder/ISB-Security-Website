@@ -1,0 +1,396 @@
+{
+  "metaTitle": "Security Operations Capabilities",
+  "metaDescription": "Capability catalogue for ISB Security Platform — reporting, objects, personnel, operations, security governance and intelligence by development stage.",
+  "breadcrumbHome": "Home",
+  "breadcrumbCurrent": "Features",
+  "eyebrow": "Features",
+  "title": "Operational capability, structured by domain.",
+  "intro": "ISB Security Platform is built as a modular operational system. Capabilities are grouped by domain but share the same organizational, object, access and audit context.",
+  "maturityNote": "Development maturity labels, not commercial availability: Foundation established · Active development · Discovery / architecture · Planned · Future / research.",
+  "navAria": "Capability categories",
+  "workflowPrefix": "Workflow",
+  "connectedPrefix": "Connected",
+  "nav": {
+    "reporting": "Reporting",
+    "organizations": "Organizations",
+    "objects": "Objects",
+    "personnel": "Personnel",
+    "operations": "Operations",
+    "security": "Security",
+    "intelligence": "Intelligence"
+  },
+  "reporting": {
+    "eyebrow": "Reporting",
+    "title": "Structured operational documentation",
+    "body": "Reporting and recovery are in active development. AI-assisted drafting requires human review and does not make operational decisions.",
+    "lifecycleLabel": "Report lifecycle",
+    "lifecycle": [
+      "Observation",
+      "Draft",
+      "AI assistance",
+      "Officer review",
+      "Supervisor review",
+      "Finalized record",
+      "History"
+    ],
+    "rows": {
+      "specificReport": {
+        "name": "Specific Report",
+        "purpose": "Targeted operational reports with structured fields.",
+        "workflow": "Observation → human review",
+        "connected": "Objects, Personnel"
+      },
+      "aiAssisted": {
+        "name": "AI-Assisted Specific Report",
+        "purpose": "Draft structuring from field input under mandatory human review.",
+        "note": "Does not decide"
+      },
+      "dailyReports": {
+        "name": "Daily Reports",
+        "purpose": "Shift and daily operational summaries."
+      },
+      "incidentReports": {
+        "name": "Incident Reports",
+        "purpose": "Categorized incident registration with context."
+      },
+      "damageReports": {
+        "name": "Damage Reports",
+        "purpose": "Damage registration with evidence support."
+      },
+      "accidentReports": {
+        "name": "Accident Reports",
+        "purpose": "Accident documentation workflows."
+      },
+      "attachments": {
+        "name": "Attachments & Photos",
+        "purpose": "Files attached to reports. Not immutable evidence custody."
+      },
+      "voiceNotes": {
+        "name": "Voice Notes",
+        "purpose": "Voice transcription for later processing."
+      },
+      "signatures": {
+        "name": "Digital Signatures",
+        "purpose": "Formal acknowledgment support."
+      },
+      "review": {
+        "name": "Review & Approval",
+        "purpose": "Supervisory review before finalization."
+      },
+      "history": {
+        "name": "Report History",
+        "purpose": "Version and change visibility."
+      }
+    }
+  },
+  "organizations": {
+    "eyebrow": "Organizations & Customers",
+    "title": "Multi-customer operational structure",
+    "body": "One security provider may manage several customers while maintaining separate operational context.",
+    "tree": {
+      "organization": "Organization",
+      "customer": "→ Customer",
+      "objects": "→ Objects",
+      "requirements": "→ Requirements",
+      "context": "→ Operational context"
+    },
+    "rows": {
+      "company": {
+        "name": "Company Management",
+        "purpose": "Organization-level configuration."
+      },
+      "customer": {
+        "name": "Customer Management",
+        "purpose": "Customer and object hierarchy management."
+      },
+      "multiTenant": {
+        "name": "Multi-Tenant Structure",
+        "purpose": "Company-scoped data boundaries between organizations."
+      },
+      "clientReporting": {
+        "name": "Client-facing reporting",
+        "purpose": "Client-facing reporting workflows. Not a released portal product."
+      },
+      "contacts": {
+        "name": "Contact Management",
+        "purpose": "Operational and emergency contacts."
+      },
+      "serviceRequests": {
+        "name": "Service requests and contracts",
+        "purpose": "Service requirements linked to sites."
+      }
+    }
+  },
+  "objects": {
+    "eyebrow": "Objects & Locations",
+    "title": "Hierarchical site model",
+    "body": "Objects and locations are in active development. Document publication authority is in discovery, not an available publishing control.",
+    "tree": {
+      "customer": "Customer",
+      "object": "└ Object · instructions · risks · contacts · documents",
+      "building": "└ Building / Floor / Zone · access · patrol context",
+      "room": "└ Room / Post · assignment instructions",
+      "checkpoint": "└ Checkpoint · verification",
+      "asset": "└ Asset · equipment"
+    },
+    "rows": {
+      "buildings": {
+        "name": "Objects & Buildings",
+        "purpose": "Site and building structure."
+      },
+      "floors": {
+        "name": "Floors, Zones, Rooms",
+        "purpose": "Fine-grained location hierarchy."
+      },
+      "posts": {
+        "name": "Posts & Checkpoints",
+        "purpose": "Patrol and inspection points."
+      },
+      "assets": {
+        "name": "Assets",
+        "purpose": "Equipment and resource registration."
+      },
+      "emergencyContacts": {
+        "name": "Emergency Contacts",
+        "purpose": "Object-level emergency context."
+      },
+      "documents": {
+        "name": "Document workspaces",
+        "purpose": "Object-linked documentation. Publication authority is in discovery."
+      },
+      "history": {
+        "name": "Object History",
+        "purpose": "Historical operational context per object."
+      },
+      "requirements": {
+        "name": "Requirements & Risks",
+        "purpose": "Site-specific instructions and risk notes."
+      },
+      "escalation": {
+        "name": "Escalation Procedures",
+        "purpose": "Object-linked escalation paths."
+      },
+      "routes": {
+        "name": "Patrol Routes",
+        "purpose": "Route definitions across checkpoints."
+      },
+      "maps": {
+        "name": "Interactive site maps",
+        "purpose": "Map-based site context."
+      }
+    }
+  },
+  "personnel": {
+    "eyebrow": "Personnel",
+    "title": "People bound to operational context",
+    "body": "Scheduling and assignment authority are established foundations. Personnel management is in active development. Qualification authority is in discovery.",
+    "modelLabel": "Assignment model",
+    "model": [
+      "Officer",
+      "Qualification",
+      "Role",
+      "Assignment",
+      "Shift",
+      "Operational activity",
+      "Audit record"
+    ],
+    "rows": {
+      "users": {
+        "name": "User Management",
+        "purpose": "Account and identity foundations."
+      },
+      "records": {
+        "name": "Personnel Records",
+        "purpose": "Operational personnel context."
+      },
+      "roles": {
+        "name": "Roles & Permissions",
+        "purpose": "Least-privilege access scopes."
+      },
+      "qualifications": {
+        "name": "Qualifications & Certifications",
+        "purpose": "Personnel qualification authority. Not an available qualification system."
+      },
+      "attendance": {
+        "name": "Attendance and worked time",
+        "purpose": "Attendance and finalized worked-time foundations."
+      },
+      "scheduling": {
+        "name": "Scheduling and assignment authority",
+        "purpose": "Shift planning and assignment authority."
+      },
+      "teams": {
+        "name": "Team Management",
+        "purpose": "Team structure for operational coordination."
+      },
+      "assignments": {
+        "name": "Assignments",
+        "purpose": "Link personnel to objects and shifts."
+      }
+    }
+  },
+  "operations": {
+    "eyebrow": "Operations",
+    "title": "Day-to-day operational control",
+    "body": "Security operations, patrols and incident workflows are in active development. Selected offline reporting and patrol workflows are part of the technical foundation. Not every module works offline. No realtime service level is claimed.",
+    "flowLabel": "Operational flow",
+    "flow": [
+      "Assignment",
+      "Patrol",
+      "Checkpoint",
+      "Issue",
+      "Escalation",
+      "Notification",
+      "Supervisor action",
+      "Recorded outcome"
+    ],
+    "rows": {
+      "notifications": {
+        "name": "Notifications",
+        "purpose": "Workflow and escalation notices."
+      },
+      "tasks": {
+        "name": "Tasks",
+        "purpose": "Operational task assignment and tracking."
+      },
+      "patrols": {
+        "name": "Patrols",
+        "purpose": "Patrol execution against routes and objects."
+      },
+      "checkpoints": {
+        "name": "Checkpoint Verification",
+        "purpose": "Confirm or exception at checkpoints.",
+        "note": "Not claimed as released"
+      },
+      "escalations": {
+        "name": "Escalations",
+        "purpose": "Structured escalation handling."
+      },
+      "handovers": {
+        "name": "Duty journal and handovers",
+        "purpose": "Shift handover records."
+      },
+      "workOrders": {
+        "name": "Work orders",
+        "purpose": "Work-order handling."
+      },
+      "cases": {
+        "name": "Case management",
+        "purpose": "Longer-running operational cases."
+      },
+      "realtime": {
+        "name": "Realtime Updates",
+        "purpose": "Live operational status.",
+        "note": "No latency guarantee"
+      },
+      "offline": {
+        "name": "Selected offline workflows",
+        "purpose": "Selected offline reporting and patrol workflows. Not every module."
+      },
+      "mobile": {
+        "name": "Selected mobile workflows",
+        "purpose": "Selected mobile workflows in active development."
+      }
+    }
+  },
+  "security": {
+    "eyebrow": "Security & Governance",
+    "title": "Access, separation and traceability",
+    "body": "Designed around identity, role, tenant and action context. Architecture supports row-level data controls where relevant.",
+    "chain": "Identity → Role → Tenant → Data scope → Action → Audit",
+    "rows": {
+      "rbac": {
+        "name": "Role-Based Access Control",
+        "purpose": "Permission scopes by operational role."
+      },
+      "companyScope": {
+        "name": "Company-scoped data",
+        "purpose": "Company-scoped data and multi-tenant boundaries."
+      },
+      "audit": {
+        "name": "Audit and events",
+        "purpose": "Traceable critical actions and approvals."
+      },
+      "billing": {
+        "name": "Bounded billing and payroll data",
+        "purpose": "Bounded financial, billing and payroll-data foundations. Not a payroll product."
+      },
+      "outbox": {
+        "name": "Integration outbox",
+        "purpose": "Bounded outbound integration foundations."
+      },
+      "authentication": {
+        "name": "Authentication",
+        "purpose": "Authenticated user access model."
+      },
+      "connectors": {
+        "name": "Enterprise connectors",
+        "purpose": "External system connectors."
+      },
+      "alarms": {
+        "name": "Alarm-provider integrations",
+        "purpose": "Connections to alarm providers."
+      },
+      "exports": {
+        "name": "Centralized exports",
+        "purpose": "Controlled export of operational records."
+      },
+      "custody": {
+        "name": "Immutable evidence custody",
+        "purpose": "Custody model for operational evidence."
+      },
+      "publication": {
+        "name": "Document publication authority",
+        "purpose": "Who may publish the definitive document."
+      },
+      "retention": {
+        "name": "Privacy retention and legal hold",
+        "purpose": "Retention and legal-hold governance."
+      }
+    }
+  },
+  "intelligence": {
+    "eyebrow": "Intelligence",
+    "title": "Assisted insight. Human decisions.",
+    "body": "AI-assisted report drafting is in active development. Connected analytics is planned. Predictive AI risk analysis is future research. AI does not make autonomous operational decisions.",
+    "chainLabel": "Intelligence chain",
+    "chain": [
+      "Operational data",
+      "Structured context",
+      "Patterns",
+      "Human interpretation",
+      "Future recommendation layer"
+    ],
+    "rows": {
+      "aiReporting": {
+        "name": "AI Reporting",
+        "purpose": "AI-assisted report drafting under human review.",
+        "note": "Does not decide"
+      },
+      "analytics": {
+        "name": "Connected analytics",
+        "purpose": "Connected views over operational data."
+      },
+      "predictive": {
+        "name": "Predictive AI risk analysis",
+        "purpose": "Risk analysis research for human review. Not an autonomous decision system."
+      },
+      "wearables": {
+        "name": "Wearable integrations",
+        "purpose": "Wearable device research."
+      }
+    }
+  },
+  "statusModel": {
+    "eyebrow": "Status model",
+    "title": "How capability stages are labeled",
+    "foundation": "Foundation established — technical foundations in the development platform. Not commercial availability.",
+    "development": "Active development — work in progress. Not production-validated.",
+    "discovery": "Discovery / architecture — authority and design questions. Not an available capability.",
+    "planned": "Planned — intended later capability. No release date.",
+    "future": "Future / research — research direction, not delivery."
+  },
+  "ctaTitle": "Explore how these capabilities map to your operation.",
+  "ctaDemo": "Request Demo",
+  "ctaPlatform": "Explore Platform"
+}

@@ -20,9 +20,16 @@ if (published !== key) {
   process.exit(1);
 }
 
+if (process.env.INDEXNOW_CONFIRM !== "production") {
+  console.error(
+    "IndexNow was not sent. Run this only after the Dutch URLs are live in production, with INDEXNOW_CONFIRM=production."
+  );
+  process.exit(1);
+}
+
 const host = "www.isbsecuritysolutions.nl";
 const site = `https://${host}`;
-const paths = [
+const englishPaths = [
   "/",
   "/platform",
   "/features",
@@ -40,6 +47,11 @@ const paths = [
   "/privacy",
   "/terms",
   "/cookies",
+];
+
+const paths = [
+  ...englishPaths,
+  ...englishPaths.map((path) => (path === "/" ? "/nl" : `/nl${path}`)),
 ];
 
 const response = await fetch("https://api.indexnow.org/indexnow", {
