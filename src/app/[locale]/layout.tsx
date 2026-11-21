@@ -2,8 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import localFont from "next/font/local";
-import "../globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { LocaleSuggestion } from "@/components/layout/LocaleSuggestion";
@@ -16,37 +14,6 @@ import {
   softwareApplicationJsonLd,
   websiteJsonLd,
 } from "@/lib/seo";
-
-const fontDisplay = localFont({
-  src: "../../fonts/plus-jakarta-sans-latin.woff2",
-  weight: "500 700",
-  display: "swap",
-  variable: "--font-display",
-});
-
-const fontSans = localFont({
-  src: "../../fonts/ibm-plex-sans-latin.woff2",
-  weight: "400 600",
-  display: "swap",
-  variable: "--font-sans",
-});
-
-const fontMono = localFont({
-  src: [
-    {
-      path: "../../fonts/ibm-plex-mono-400.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../fonts/ibm-plex-mono-500.woff2",
-      weight: "500",
-      style: "normal",
-    },
-  ],
-  display: "swap",
-  variable: "--font-mono",
-});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -127,10 +94,6 @@ export default async function LocaleLayout({
   const t = await getTranslations({ locale, namespace: "meta" });
 
   return (
-    <html lang={locale} className="dark">
-      <body
-        className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
-      >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <StructuredData
             data={[
@@ -152,7 +115,5 @@ export default async function LocaleLayout({
           </main>
           <Footer />
         </NextIntlClientProvider>
-      </body>
-    </html>
   );
 }
